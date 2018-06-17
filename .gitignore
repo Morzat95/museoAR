@@ -32,6 +32,10 @@
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
+vcs.xml
+misc.xml
+museoAr.iml
+modules.xml
 
 # Gradle:
 .idea/**/gradle.xml
@@ -103,3 +107,4 @@ $RECYCLE.BIN/
 
 
 # End of https://www.gitignore.io/api/linux,windows,webstorm
+*.iml
