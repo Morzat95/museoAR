@@ -1,0 +1,9 @@
+X = Centro (30,30)mm, radio=20 mm, 
+
+W= Centro (120, 30) mm, radio= 20 mm
+
+Y= centro (30, 110) mm, radio= 20 mm
+
+Z=centro (120, 110) mm, radio =20 mm 
+
+Espesor= 50 mm  
