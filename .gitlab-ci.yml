@@ -1,10 +1,9 @@
-Build My App:
-  stage: build
-  before_script:
-   - apt get install npm
-   - apt get install openssl
-   - apt get intall nodejs-legacy
-   - npm install http-server -g
-   - openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
-  script:
-    - http-server -S
+before_script:
+  - "apt get install npm"
+  - "apt get install openssl"
+  - "apt get intall nodejs-legacy"
+  - "npm install http-server -g"
+  - "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem"
+script:
+  - "http-server -S"
+stage: build
