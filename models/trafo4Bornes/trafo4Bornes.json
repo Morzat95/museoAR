@@ -1,0 +1,29 @@
+{
+  "name": "Trafo 4 Bornes",
+  "terminals": [
+    {
+      "name": "X",
+      "diameter": 20,
+      "x": 30,
+      "y": 30
+    },
+    {
+      "name": "Y",
+      "diameter": 20,
+      "x": 30,
+      "y": 110
+    },
+    {
+      "name": "W",
+      "diameter": 20,
+      "x": 120,
+      "y": 30
+    },
+    {
+      "name": "Z",
+      "diameter": 20,
+      "x": 120,
+      "y": 110
+    }
+  ]
+}
