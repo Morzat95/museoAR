@@ -15,4 +15,17 @@ function loadJSON(callback) {
 loadJSON(function(response){
   var actual_JSON = JSON.parse(response);
   console.log(actual_JSON);
+  // Component to change to a sequential color on click.
+});
+AFRAME.registerComponent('cursor-listener', {
+  init: function () {
+    var lastIndex = -1;
+    var COLORS = ['red', 'green', 'lightblue'];
+    this.el.addEventListener('click', function (evt) {
+      lastIndex = (lastIndex + 1) % COLORS.length;
+      this.setAttribute('material', 'color', COLORS[lastIndex]);
+      console.log(this.getAttribute('scale'))
+      console.log('I was clicked at: ', evt.detail.intersection.point);
+    });
+  }
 });
