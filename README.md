@@ -1,5 +1,12 @@
 Proyecto de realidad aumentada para el museo UNGS
 
+Open a-frame Inspector.. Hit *<ctrl> + <alt> + i* on any A-Frame scene.
+
+Emulate webcam 
+
+https://gist.github.com/agusalex/031ae2401c191f4a74bbbaf3e2242384
+
+`ffmpeg -loop 1 -re -i kanji-marker.png -f v4l2 -vcodec rawvideo -pix_fmt yuv420p /dev/video1`
 
 https://threejs.org/
 

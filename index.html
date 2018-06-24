@@ -9,15 +9,17 @@
   </title>
   <meta name="Demo Realidad Aumentada" content="MuseoAR">
 </head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 <script src="lib/aframe.min.js"></script>
 <script src="lib/aframe-ar.js"></script>
+<script src="aframe-mouse-cursor-component.min.js"></script>
 <script src="main.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
   <!-- <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">-->
     <!-- create your content here. just a box for now -->
 
 <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
-  <a-entity light="type: directional; color: #FFFFFF; intensity: 1.5" position="-0.5 1 1"></a-entity>
+  <a-entity light="type: directional; color: #f1f0dd; intensity: 1.2" position="-2.102 1.443 3.303"></a-entity>
   <a-assets>
         <a-asset-item id="buddha" src="models/buddha/rijks-buddha.obj"></a-asset-item>
         <a-asset-item id="buddhamtl" src="models/buddha/rijks-buddha.mtl"></a-asset-item>
@@ -28,9 +30,9 @@
 
     <a-marker preset='kanji'>
         <a-entity scale=".2 .2 .2">
-        <a-entity id="obj" cursor-listener obj-model="obj: #trafo" position="0.363 -0.276 0.458" rotation="0.410 -0.271 -37.331" material="color: lightblue"> </a-entity>
+        <a-entity id="obj" cursor-listener obj-model="obj: #trafo" position="0 0 0" rotation="24.634 0.213 0.132" material="color: lightblue"> </a-entity>
       <!--<a-gltf-model id="obj" cursor-listener src="models/trafo4Bornes/obj.gltf" material="color: lightblue"></a-gltf-model>-->
-        <a-animation attribute="rotation" to="0 0 360" dur="9000"></a-animation>
+        <!--<a-animation attribute="rotation" to="0 0 360" dur="9000"></a-animation>-->
         </a-entity>
         <!--<a-obj-model src="#trafo"  position="0 0 0" rotation="0 0 0" scale="0.14 0.14 0.14"> </a-obj-model>-->
      </a-marker>
