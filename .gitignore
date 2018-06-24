@@ -109,3 +109,5 @@ v4l2loopback/
 cert\.pem
 
 key\.pem
+
+*.out
