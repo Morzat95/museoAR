@@ -1,46 +1,56 @@
 {
-  "name": "Trafo 4 Bornes",
-  "terminals": [
-    {
-      "name": "X",
-      "diameter": 20,
-      "x": 30,
-      "y": 30,
-      "valid": [
-        {"name":"Y"},
-        {"name":"Z"}
-      ]
-    },
-    {
-      "name": "Y",
-      "diameter": 20,
-      "x": 30,
-      "y": 110,
-      "valid": [
-        {"name":"X"},
-        {"name":"W"}
-      ]
-    },
-    {
-      "name": "W",
-      "diameter": 20,
-      "x": 120,
-      "y": 30,
-      "valid": [
-        {"name":"Y"},
-        {"name":"Z"}
-      ]
-    },
-    {
-      "name": "Z",
-      "diameter": 20,
-      "x": 120,
-      "y": 110,
-      "valid": [
-        {"name":"X"},
-        {"name":"W"}
-      ]
-    }
-  ]
+    "id": "trafo4Bornes",
+    "file": "TRAFO_4BORNES.obj",
+    "position": "0 0 0",
+    "rotation": "24.634 0.213 0.132",
+    "scale": "0.2 0.2 0.2",
+    "material": "color: lightblue",
+    "terminals": [
+      {
+        
+        "id": "X",
+        "file": "BORNE.obj",
+        "diameter": 20,
+        "x": 30,
+        "y": 30,
+        "valid": [
+          {"id":"Y"},
+          {"id":"Z"}
+        ]
+      },
+      {
+        "id": "Y",
+        "file": "BORNE.obj",
+        "diameter": 20,
+        "x": 30,
+        "y": 110,
+        "valid": [
+          {"id":"X"},
+          {"id":"W"}
+        ]
+      },
+      {
+        "id": "W",
+        "file": "BORNE.obj",
+        "diameter": 20,
+        "x": 120,
+        "y": 30,
+        "valid": [
+          {"id":"Y"},
+          {"id":"Z"}
+        ]
+      },
+      {
+        "id": "Z",
+        "file": "BORNE.obj",
+        "diameter": 20,
+        "x": 120,
+        "y": 110,
+        "valid": [
+          {"id":"X"},
+          {"id":"W"}
+        ]
+      }
+    ]
 
-}
+  }

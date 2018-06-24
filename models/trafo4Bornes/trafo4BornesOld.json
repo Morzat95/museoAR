@@ -1,0 +1,47 @@
+{
+
+  "name": "Trafo 4 Bornes",
+  "terminals": [
+    {
+      "name": "X",
+      "diameter": 20,
+      "x": 30,
+      "y": 30,
+      "valid": [
+        {"name":"Y"},
+        {"name":"Z"}
+      ]
+    },
+    {
+      "name": "Y",
+      "diameter": 20,
+      "x": 30,
+      "y": 110,
+      "valid": [
+        {"name":"X"},
+        {"name":"W"}
+      ]
+    },
+    {
+      "name": "W",
+      "diameter": 20,
+      "x": 120,
+      "y": 30,
+      "valid": [
+        {"name":"Y"},
+        {"name":"Z"}
+      ]
+    },
+    {
+      "name": "Z",
+      "diameter": 20,
+      "x": 120,
+      "y": 110,
+      "valid": [
+        {"name":"X"},
+        {"name":"W"}
+      ]
+    }
+  ]
+
+}
