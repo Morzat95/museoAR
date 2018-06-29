@@ -9,6 +9,10 @@ loadJSON(function(response){
   // Component to change to a sequential color on click.
 });
 
+function hide() {
+      $("#dialog").removeClass('intro-overlay');
+  }
+
 AFRAME.registerComponent('cursor-listener', {
   init: function () {
     var lastIndex = -1;
