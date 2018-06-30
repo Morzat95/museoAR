@@ -1,0 +1,59 @@
+[{
+    "id": "trafo4Bornes",
+    "file": "TRAFO_4BORNES.obj",
+    "scale": "0.2 0.2 0.2",
+    "position": "0 0 0",
+    "rotation": "24.634 0.213 0.132",
+    "material": "color: lightblue",
+    "terminals": [ {"id":"W"},{"id":"X"},{"id":"Y"},{"id":"Z"}
+    ]
+
+  },
+  {
+    "id": "W",
+    "file": "soccerball.obj",
+    "position": "0 0 0",
+    "rotation": "0 0 0",
+    "scale": "0.2 0.2 0.2",
+    "material": "color: red",
+    "valid": [
+      {"id":"Y"},
+      {"id":"Z"}
+    ]
+  },{
+
+    "id": "X",
+    "file": "soccerball.obj",
+    "position": "0 0 0",
+    "rotation": "0 0 0",
+    "scale": "0.2 0.2 0.2",
+    "material": "color: red",
+    "valid": [
+      {"id":"Y"},
+      {"id":"Z"}
+    ]
+  },
+  {
+    "id": "Y",
+    "file": "soccerball.obj",
+    "position": "0 0 0",
+    "rotation": "0 0 0",
+    "scale": "0.2 0.2 0.2",
+    "material": "color: red",
+    "valid": [
+      {"id":"X"},
+      {"id":"W"}
+    ]
+  },
+  {
+    "id": "Z",
+    "file": "soccerball.obj",
+    "position": "0 0 0",
+    "rotation": "0 0 0",
+    "scale": "0.2 0.2 0.2",
+    "material": "color: red",
+    "valid": [
+      {"id":"X"},
+      {"id":"W"}
+    ]
+  }]

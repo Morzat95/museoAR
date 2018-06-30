@@ -8,26 +8,18 @@
     MuseoAR
   </title>
   <meta name="Demo Realidad Aumentada" content="MuseoAR">
+  <link type="text/css" rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link  rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/aframe.min.js"></script>
+  <script src="lib/aframe-ar.js"></script>
+  <script src="main.js"></script>
 </head>
-<style>
- .intro-overlay {
-   z-index: 1;
-   position: absolute;
-   top: 20px;
-   left: 20px;
-   max-width: 700px;
-   box-sizing: border-box;
-   padding: 1.5em;
-   color: #FFF;
-   background: rgba(0, 0, 0, 0.75);
-   font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
- }
-</style>
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-<script src="lib/jquery.min.js"></script>
-<script src="lib/aframe.min.js"></script>
-<script src="lib/aframe-ar.js"></script>
-<script src="main.js"></script>
+
+
 <body style='margin : 0px; overflow: hidden;'>
   <!-- <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">-->
     <!-- create your content here. just a box for now -->
@@ -35,39 +27,34 @@
 
 
  <!-- dialog box overlay for desktop users -->
-<div id="dialog" class="img-rounded intro-overlay">
-  <!-- <p><a onclick="hide()" class="btn btn-danger pull-right">x</a></p> -->
+<div id="menu" class="img-rounded intro-overlay">
+
   <h4><strong>MuseoAR</strong></h4>
-  <p><div class="input-group">
-    <input id="jsonInput" type="text" class="form-control" placeholder="Paste JSON String Here">
+  <div class="input-group">
+    <input id="jsonInput" type="text" class="form-control" placeholder="Paste JSON filename here">
     <span class="input-group-btn">
-      <button onclick="hide()" class="btn btn-info" type="button">Load JSON String</button></span></p>
+      <button onclick="load()" class="btn btn-info" type="button">Cargar</button></span>
     </div>
   </div>
+<a onclick="showOrHideMenu()"><div class="menu-overlay"></div></a>
 
 
   <!--  <a onclick="show()"><div class="menu-overlay btn btn-outline-secondary"></div></a> -->
 
-<a-scene cursor="rayOrigin: mouse" embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+<a-scene cursor="rayOrigin: mouse" embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
   <a-entity light="type: directional; color: #f1f0dd; intensity: 1.2" position="-2.102 1.443 3.303"></a-entity>
   <a-assets>
-        <a-asset-item id="buddha" src="models/buddha/rijks-buddha.obj"></a-asset-item>
-        <a-asset-item id="buddhamtl" src="models/buddha/rijks-buddha.mtl"></a-asset-item>
-        <a-asset-item id="trafo" src="models/trafo4Bornes/TRAFO_4BORNES.obj"></a-asset-item>
-        <a-asset-item id="trafomtl" src="models/trafo4Bornes/TRAFO_4BORNES.mtl"></a-asset-item>
+        <a-asset-item id="trafo" src="assets/models/TRAFO_4BORNES.obj"></a-asset-item>
+        <!--<a-asset-item id="trafomtl" src="assets/models/TRAFO_4BORNES.mtl"></a-asset-item>-->
 </a-assets>
 
 
     <a-marker preset='kanji'>
-        <a-entity scale=".2 .2 .2">
-        <a-entity id="obj" cursor-listener obj-model="obj: #trafo" position="0 0 0" rotation="24.634 0.213 0.132" material="color: lightblue"> </a-entity>
-      <!--<a-gltf-model id="obj" cursor-listener src="models/trafo4Bornes/obj.gltf" material="color: lightblue"></a-gltf-model>-->
-        <!--<a-animation attribute="rotation" to="0 0 360" dur="9000"></a-animation>-->
+        <a-entity id="marker" scale=".2 .2 .2">
+        <a-entity cursor-listener obj-model="obj: #trafo" position="0 0 0" rotation="24.634 0.213 0.132" material="color: lightblue"> </a-entity>
         </a-entity>
-        <!--<a-obj-model src="#trafo"  position="0 0 0" rotation="0 0 0" scale="0.14 0.14 0.14"> </a-obj-model>-->
      </a-marker>
 
-     <!-- add a simple camera -->
   <a-camera camera></a-camera>
   </a-scene>
 </body>
