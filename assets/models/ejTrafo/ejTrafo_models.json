@@ -43,5 +43,5 @@
             "cursorListener":true
           }
           ],
-      "cursorListener":true
+      "cursorListener":false
   }]
