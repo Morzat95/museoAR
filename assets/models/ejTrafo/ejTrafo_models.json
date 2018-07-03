@@ -4,7 +4,7 @@
     "scale": ".2 .2 .2",
     "position": "0 0 0",
     "rotation": "24.634 0.213 0.132",
-    "material": {"color": "brown"},
+    "material": {"color": "orange"},
     "children": [
           {
             "id": "W",
