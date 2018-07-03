@@ -1,21 +1,21 @@
 <!-- include A-Frame obviously -->
-<!--<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>-->
+
 <!-- include ar.js for A-Frame -->
-<!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>-->
+
 <html>
 <head>
   <title>
     MuseoAR
   </title>
   <meta name="Demo Realidad Aumentada" content="MuseoAR">
-  <link type="text/css" rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link  rel="stylesheet" href="lib/bootstrap.min.css">
   <link  rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
   <script src="lib/jquery.min.js"></script>
   <script src="lib/aframe.min.js"></script>
+  <!--<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>-->
   <script src="lib/aframe-ar.js"></script>
+  <!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>-->
   <script src="main.js"></script>
 </head>
 
@@ -23,8 +23,6 @@
 <body style='margin : 0px; overflow: hidden;'>
   <!-- <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">-->
     <!-- create your content here. just a box for now -->
-
-
 
  <!-- dialog box overlay for desktop users -->
 <div id="menu" class="img-rounded intro-overlay">
@@ -44,15 +42,14 @@
 <a-scene cursor="rayOrigin: mouse" embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
   <a-entity light="type: directional; color: #f1f0dd; intensity: 1.2" position="-2.102 1.443 3.303"></a-entity>
   <a-assets>
-        <a-asset-item id="trafo" src="assets/models/TRAFO_4BORNES.obj"></a-asset-item>
+        <!--<a-asset-item id="trafo" src="assets/models/ejTrafo/TRAFO_4BORNES.obj"></a-asset-item><!--
+
         <!--<a-asset-item id="trafomtl" src="assets/models/TRAFO_4BORNES.mtl"></a-asset-item>-->
 </a-assets>
 
-
-    <a-marker preset='kanji'>
-        <a-entity id="marker" scale=".2 .2 .2">
-        <a-entity cursor-listener obj-model="obj: #trafo" position="0 0 0" rotation="24.634 0.213 0.132" material="color: lightblue"> </a-entity>
-        </a-entity>
+<!---->
+    <a-marker id="marker" preset='kanji'>
+      <!-- <a-entity cursor-listener obj-model="obj: #trafo" scale=".2 .2 .2" position="0 0 0" rotation="24.634 0.213 0.132" material="color: lightblue"> </a-entity>-->
      </a-marker>
 
   <a-camera camera></a-camera>

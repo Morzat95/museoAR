@@ -1,0 +1,82 @@
+[
+    {"name" :"Nivel 1",
+    "displayText": "Conecte los bornes de manera correcta",
+    "objects":
+  [
+    {
+      "id": "trafo4Bornes",
+      "name":"Transformador de cuatro bornes",
+      "valid": [
+      ]},
+
+    {
+      "id": "W",
+      "name":"Borne W",
+      "valid": [
+      {"id": "X"},
+      {"id": "Y"}
+      ]},
+    {
+      "id": "X",
+      "name":"Borne X",
+      "valid": [
+        {"id": "W"},
+        {"id": "Z"}
+          ]},
+    {
+      "id": "Y",
+      "name":"Borne Y",
+      "valid": [
+        {"id": "W"},
+        {"id": "Z"}
+          ]},
+    {
+      "id": "Z",
+      "name":"Borne Z",
+      "valid": [
+        {"id": "X"},
+        {"id": "Y"}
+          ]}
+  ]
+},
+{"name" :"Nivel 2",
+"displayText": "Conecte los bornes de manera correcta",
+"objects":
+[
+{
+  "id": "trafo4Bornes",
+  "name":"Transformador de cuatro bornes",
+  "valid": [
+  ]},
+
+{
+  "id": "W",
+  "name":"Borne W",
+  "valid": [
+  {"id": "X"},
+  {"id": "Y"}
+  ]},
+{
+  "id": "X",
+  "name":"Borne X",
+  "valid": [
+    {"id": "W"},
+    {"id": "Z"}
+      ]},
+{
+  "id": "Y",
+  "name":"Borne Y",
+  "valid": [
+    {"id": "W"},
+    {"id": "Z"}
+      ]},
+{
+  "id": "Z",
+  "name":"Borne Z",
+  "valid": [
+    {"id": "X"},
+    {"id": "Y"}
+      ]}
+]
+}
+]
