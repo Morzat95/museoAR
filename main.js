@@ -1,14 +1,13 @@
 var levelsLogic;
 
-function showOrHideMenu(){
+/*function showOrHideMenu(){
     $("#menu").toggle();
-}
+    $("#card").toggle();
+}*/
 
 function load(){
-    showOrHideMenu();
-    filename = "assets/"+$("#jsonInput")[0].value+".json";
     console.log("loading activity...");
-    loadJSON(filename,loadActivity);
+    loadJSON("assets/"+"ejTrafo.json",loadActivity);
 }
 function loadJSON(filename,callback) {
     console.log("loading file "+ filename);
@@ -92,26 +91,35 @@ function toDOM(jsonInput,father) {
       obj.setAttribute('material','color',jObj.material.color);
       obj.setAttribute('isClicked',false);
       if(jObj.cursorListener==true){
-        obj.addEventListener('click', function() {
-          if(obj.getAttribute('isClicked')=="true"){
-            obj.setAttribute('material', {color: 'grey'});
-            obj.setAttribute('isClicked',false);
-          }
-          else{
-            obj.setAttribute('material', {color: 'blue'});
-            obj.setAttribute('isClicked',true);
-          }
-          console.log("#" +jObj.id+" was clicked");
-        });
+        obj.setAttribute('cursor-listener','');
       }
       marker.appendChild(obj);
       console.log("Adding entity #" + jObj.id);
       console.log(jObj.material.color);
       console.log(marker.querySelector("#" +jObj.id));
-      toDOM(jObj.children,"#"+jObj.id)
+      toDOM(jObj.children,"#"+jObj.id);
       
       
 }
+
+AFRAME.registerComponent('cursor-listener', {
+  init: function () {
+    var lastIndex = -1;
+    var COLORS = ['red', 'green', 'lightblue'];
+    this.el.addEventListener('click', function (evt) {
+      if(this.getAttribute('isClicked')=="true"){
+        this.setAttribute('material', {color: 'grey'});
+        this.setAttribute('isClicked',false);
+      }
+      else{
+        this.setAttribute('material', {color: 'blue'});
+        this.setAttribute('isClicked',true);
+      }
+      console.log("#" +this.id+" was clicked");
+      console.log('I was clicked at: ', evt.detail.intersection.point);
+    });
+  }
+});
 
 $(function () {
   $("#jsonInput").val("ejTrafo");
