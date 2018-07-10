@@ -1,6 +1,7 @@
 [
     {"name" :"Nivel 1",
-    "displayText": "Conecte los bornes de manera correcta",
+    "description": "Conecte los bornes de manera correcta",
+    "preview":"assets/images/transformador4BornesL1.png",
     "objects":
   [
     {
@@ -40,7 +41,8 @@
   ]
 },
 {"name" :"Nivel 2",
-"displayText": "Conecte los bornes de manera correcta",
+"description": "Conecte los bornes de manera correcta",
+"preview":"assets/images/transformador4BornesL2.png",
 "objects":
 [
 {

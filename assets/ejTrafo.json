@@ -1,7 +1,0 @@
-{
-  "name":"Actividad Transformador de cuatro bornes",
-  "description":"Actividad de laboratorio que permite el aprendizaje de etc etc",
-  "thubmnail": "assets/images/ejTrafo.jpg",
-  "models": "assets/models/ejTrafo/ejTrafo_models.json",
-  "levels": "assets/models/ejTrafo/ejTrafo_levels.json"
-  }

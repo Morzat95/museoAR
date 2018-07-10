@@ -12,9 +12,10 @@
   transform: translate(-50%, -50%);
 }
 html, body { background-color:#ddd }
-.card-img-top {
 
+.card-img-top {
   width: 100%;
+  margin-left: 0.15%;
 }     
 .card {
   box-sizing: border-box;
@@ -28,6 +29,7 @@ html, body { background-color:#ddd }
   width: 50%;
 
 }
+
 .play-overlay {
   z-index: 99999;
   position: fixed;
@@ -74,6 +76,23 @@ a {
 a:hover {
   background-color: #007BFF;
   color: #ddd;
+}
+.back{
+  position: absolute;
+  width: 30px;
+  height: 40px;
+  top: 2.9%;
+  left: 4%;
+  border-radius: 50%;
+  padding: 12px 24px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.5) url(./assets/images/backArrow.png) center no-repeat;
+  background-size:  22.5px 22.5px;
+ 
 }
 .next{
   position: absolute;
