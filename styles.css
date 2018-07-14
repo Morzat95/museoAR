@@ -1,4 +1,22 @@
 
+.menu-overlay {
+  z-index: 99999;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-sizing: border-box;
+  padding: 1.5em;
+  width: 60px;
+  height: 60px;
+  padding-bottom: 0px;
+  background: rgba(0, 0, 0, 0.5) url(./assets/images/hamburger-white.png) center no-repeat;
+  background-size: 40px 40px;
+  font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.menu-overlay:hover {
+  background: rgba(0, 0, 0, 0.2) url(./assets/images/hamburger-white.png) center no-repeat;
+  background-size: 40px 40px;
+}
 .intro-overlay {
   position: relative;
   align-content: center;
@@ -11,8 +29,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-html, body { background-color:#ddd }
-
 .card-img-top {
   width: 100%;
   margin-left: 0.15%;
@@ -49,24 +65,6 @@ html, body { background-color:#ddd }
   background-size: 40px 40px;
 }
 
-.menu-overlay {
-  z-index: 99999;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  box-sizing: border-box;
-  padding: 1.5em;
-  width: 60px;
-  height: 60px;
-  padding-bottom: 0px;
-  background: rgba(0, 0, 0, 0.5) url(./assets/images/hamburger-white.png) center no-repeat;
-  background-size: 40px 40px;
-  font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
-}
-.menu-overlay:hover {
-  background: rgba(0, 0, 0, 0.2) url(./assets/images/hamburger-white.png) center no-repeat;
-  background-size: 40px 40px;
-}
 a {
   text-decoration: none;
 
