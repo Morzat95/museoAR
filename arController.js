@@ -15,10 +15,6 @@ function loadLevels(jsonInput){
 
 }
 function loadLevel(jsonInput,index){
-  if(index>jsonInput.length-1){  
-    console.log("Activity Finished");
-    return;
-  }
   console.log("iteracion: "+index);
 
   var item=jsonInput[index];
@@ -28,8 +24,13 @@ function loadLevel(jsonInput,index){
 
   var delayInMilliseconds = item.delay;
   setTimeout(function() {
-    removeAllChildren('#marker');
-    loadLevel(jsonInput,index+1);
+    if(index<jsonInput.length-1){
+      removeAllChildren('#marker');
+      loadLevel(jsonInput,index+1);
+    }
+    else{
+      console.log("Activity Finished");
+    }
       }, delayInMilliseconds);
 }
 
