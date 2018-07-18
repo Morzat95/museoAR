@@ -1,0 +1,87 @@
+[
+{
+  "name" :"Nivel 1",
+"description": "Esto es un transformador...",
+"type":"delay",
+"delay":"5000",
+"objects":[{
+    "id": "trafo4Bornes",
+    "file": "assets/models/ejTrafo/TRAFO_4BORNES.obj",
+    "scale": ".2 .2 .2",
+    "position": "0 0 0",
+    "rotation": "24.634 0.213 0.132",
+    "material": {"color": "orange"},
+      "cursorListener":true
+  }] 
+},
+{"name" :"Nivel 2",
+  "description": "Un transformador tiene bornes, puedes ver los bornes?",
+  "type":"delay",
+  "delay":"5000",
+    "objects":[{
+      "id": "trafo4Bornes",
+      "file": "assets/models/ejTrafo/TRAFO_4BORNES.obj",
+      "scale": ".2 .2 .2",
+      "position": "0 0 0",
+      "rotation": "24.634 0.213 0.132",
+      "material": {"color": "orange"},
+      "children": [
+            {
+              "id": "W",
+              "file": "assets/models/ejTrafo/soccerball.obj",
+              "position": "1.396 1.7 -1.770",
+              "rotation": "0 0 0",
+              "scale": "0.005 0.005 0.005",
+              "material": {"color": "grey"},
+              "cursorListener":true
+            },{
+
+              "id": "X",
+              "file": "assets/models/ejTrafo/soccerball.obj",
+              "position": "-1.143 1.7 -1.779",
+              "rotation": "0 0 0",
+              "scale": "0.005 0.005 0.005",
+              "material": {"color": "grey"},
+              "cursorListener":true
+            },
+            {
+              "id": "Y",
+              "file": "assets/models/ejTrafo/soccerball.obj",
+              "position": "-1.183 1.7 0.474",
+              "rotation": "0 0 0",
+              "scale": "0.005 0.005 0.005",
+              "material": {"color": "grey"},
+              "cursorListener":true
+            },
+            {
+              "id": "Z",
+              "file": "assets/models/ejTrafo/soccerball.obj",
+              "position": "1.378 1.7 0.504",
+              "rotation": "0 0 0",
+              "scale": "0.005 0.005 0.005",
+              "material": {"color": "grey"},
+              "cursorListener":true
+            }
+            ],
+        "cursorListener":false
+    }]
+
+
+},
+{"name" :"Nivel 3",
+  "description": "Esto es un borne...",
+  "type":"delay",
+  "delay":"5000",
+  "objects":[
+          {
+            "id": "W",
+            "file": "assets/models/ejTrafo/soccerball.obj",
+            "position": "0 0 0",
+            "rotation": "24.634 0.213 0.132",
+            "scale": "0.005 0.005 0.005",
+            "material": {"color": "grey"},
+            "cursorListener":true
+          }
+          ]
+}
+]

@@ -1,10 +1,9 @@
 var activity;
-var level;
-var actFileName;
+var levelsFile;
 
 function loadMenu(input){
-  actFileName=input;
-  loadJSON("assets/"+actFileName+".json",loadActivity);
+  loadJSON("assets/"+input+".json",loadActivity);
+  levelsFile=input;
   
 }
 
@@ -25,11 +24,11 @@ function showActivity(){
 }  
 function goTo(){
   if(document.getElementById("arCheck").checked){
-    window.location.href = "ar.html?Act="+actFileName;
+    window.location.href = "ar.html?Act="+levelsFile;
   }
     else{
       
-     window.location.href = "vr.html?Act="+actFileName;
+     window.location.href = "vr.html?Act="+levelsFile;
     }
 }
 
