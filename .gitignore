@@ -113,3 +113,5 @@ key\.pem
 *.out
 
 *.log
+
+bashScripts/runVirtualCamera\.sh

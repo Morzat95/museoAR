@@ -4,22 +4,17 @@ var activity;
 var level;
 
 function run(){
-    var equals=name.indexOf("-");
-    level = name.substring(equals+1);
-    activity = name.substring(0,equals);
-    console.log("level= "+level+" activity= "+activity);
+    console.log("activity= "+name);
     load();
 }
 
-
 function load(){
     console.log("loading activity and Level...");
-    loadJSON("assets/"+"main.json",loadActivity);
+    loadJSON("assets/"+name+".json",loadActivity);
 }
 
 function loadActivity(jsonInput){
-    var array = jsonInput;
-    var obj = array[activity];
+    var obj = jsonInput;
     console.log(obj.name);
     console.log("loading models...");
     loadJSON(obj.models,loadModels);

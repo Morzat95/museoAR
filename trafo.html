@@ -24,23 +24,19 @@
   <body style='margin : 0px; overflow: hidden;'>
         
     <div id="menu" class="card" >
-      <a id="back" onclick="back()"class="back"></a>
-      
-            <img id="preview" class="card-img-top" src="assets/images/loading.png" alt="Loading">
-            <a onclick="previous()" class="previous"></a>
-            <a onclick="next()" class="next"></a>
+            <img id="preview" class="card-img-top" alt="Loading">
             <div class="card-body">
                 <h5 id="name" class="card-title">Loading</h5>
                 <p id="description" class="card-text">Loading...</p>
+                <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="arCheck">
+                        <label class="form-check-label" for="arCheck">AR</label>
+                      </div>
                 <a onclick="goTo()" class="btn btn-primary play-overlay"></a>
             </div>
           </div>
 
 
-          <script>
-          loadMenu();
-            $("#back").toggle();
-            window.location.href = "trafo.html";</script>
-            
-
+          <script>loadMenu("trafo");
+          $("#arCheck").prop('checked', true);</script>
 </html>
