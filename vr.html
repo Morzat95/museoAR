@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <title>
     MuseoAR
@@ -14,14 +15,17 @@
 
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a href="index.html"><div class="menu-overlay"></div></a>
-    <ul id="checklist" class="checklist" style="list-style-type:square">
-    </ul>
+  <a href="index.html">
+    <div class="menu-overlay"></div>
+  </a>
+  <ul id="checklist" class="checklist" style="list-style-type:square">
+  </ul>
 
-<a-scene cursor="rayOrigin: mouse " vr-mode-ui="enabled:false">
-    <a-entity id="marker" rotation="63.873 0 0" position="-0.227 1.597 -0.829"></a-entity>
+  <a-scene cursor="rayOrigin: mouse " vr-mode-ui="enabled:false">
+    <a-entity markerhandler id="marker" rotation="63.873 0 0" position="-0.227 1.597 -0.829"></a-entity>
   </a-scene>
 
   <script>run();</script>
 </body>
-</html> 
+
+</html>

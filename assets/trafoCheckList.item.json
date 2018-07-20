@@ -1,9 +1,7 @@
 [
 {
 
-"description": "Esto es un transformador...",
-"type":"delay",
-"delay":"5000",
+"description": "Esto es un transformador... haz click en el",
 "marker":"marker",
 "objects":[{
     "id": "trafo4Bornes",
@@ -15,13 +13,15 @@
     "material": {"color": "orange"},
     "onclick":"goTo('3')"
     
-  }] 
+  }]
 },
 {
   "description": "Un transformador tiene bornes, puedes ver los bornes?",
   "type":"delay",
-  "marker":"marker",
   "delay":"5000",
+  "next":"2",
+  "marker":"marker",
+
     "objects":[{
       "id": "trafo4Bornes",
       "type":"a-entity",
@@ -83,15 +83,20 @@
             "position": "0 0 0",
             "rotation": "24.634 0.213 0.132",
             "scale": "0.005 0.005 0.005",
-            "material": {"color": "grey"},
+            "material": {"shader": "html", 
+              "target": "#planeHTML",
+               "ratio": "height",
+                "transparent": true,
+                "side": "double"},
             "onclick":"goTo('4')"
           }
           ]
 },
 {
-  "description": "Esto es una Imagen...",
+  "description": "Asi se ve un transformador en la vida real...",
   "type":"delay",
   "delay":"5000",
+  "next":"1",
   "marker":"marker",
   "objects":[
           {
@@ -104,18 +109,29 @@
           ] 
 },
 {
-  "description": "Esto es un Video...",
-  "type":"delay",
+  "description": "toca el video para finalizar la actividad",
   "marker":"marker",
+  "persistent":"true",
   "objects":[
           {
             "id": "video",
             "rotation": "-67.962 7.602 -7.026",
             "type":"a-video",
-            "src": "assets/video/test.mp4"
+            "src": "assets/video/test.mp4",
+            "onclick":"goTo('5')"
           }
           ] 
+},
+{
+  "description": "Fin de la actividad, Volviendo al inicio",
+  "type":"delay",
+  "delay":"5000",
+  "next":"6"
+},
+{
+  "description": "Fin de la actividad",
+  "type":"redirect",
+  "destiny":"index.html"
 }
-
 
 ]
