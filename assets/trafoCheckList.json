@@ -3,5 +3,5 @@
   "description":"Actividad de laboratorio con un transformador de cuatro bornes.",
   "type":"checklist",
   "preview": "assets/images/transformador4Bornes.png",
-  "levels": "ejTrafoCheckList"
+  "activity": "ejTrafoCheckList"
   }

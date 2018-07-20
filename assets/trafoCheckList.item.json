@@ -1,8 +1,7 @@
 [
 {
-
-"description": "Esto es un transformador... haz click en el",
-"marker":"marker",
+"description": "toca el transformador...",
+"marker":"kanji",
 "objects":[{
     "id": "trafo4Bornes",
     "type":"a-entity",
@@ -20,7 +19,7 @@
   "type":"delay",
   "delay":"5000",
   "next":"2",
-  "marker":"marker",
+  "marker":"kanji",
 
     "objects":[{
       "id": "trafo4Bornes",
@@ -73,18 +72,19 @@
 
 },
 {
-  "description": "Haz click en el borne",
-  "marker":"marker",
+  "description": "",
+  "marker":"kanji",
   "objects":[
           {
-            "id": "W",
-            "type":"a-entity",
-            "file": "assets/models/ejTrafo/soccerball.obj",
-            "position": "0 0 0",
-            "rotation": "24.634 0.213 0.132",
-            "scale": "0.005 0.005 0.005",
-            "material": {"color": "grey"},
-            "onclick":"goTo('4')"
+            "id": "text",
+            "type":"a-text",
+            "position": "-1 0 0",
+            "rotation": "-68.048 31.364 -27.007",
+            "side":"double",
+            "color": "orange",
+            "shadow":"receive: true",
+            "value":"Toca el cartel!!",
+            "onclick":"goTo('7')"
           }
           ]
 },
@@ -93,7 +93,7 @@
   "type":"delay",
   "delay":"5000",
   "next":"1",
-  "marker":"marker",
+  "marker":"kanji",
   "objects":[
           {
             "id": "image",
@@ -106,7 +106,7 @@
 },
 {
   "description": "toca el video para finalizar la actividad",
-  "marker":"marker",
+  "marker":"hiro",
   "persistent":"true",
   "objects":[
           {
@@ -121,13 +121,19 @@
 {
   "description": "Fin de la actividad, Volviendo al inicio",
   "type":"delay",
-  "delay":"5000",
+  "delay":"3000",
   "next":"6"
 },
 {
-  "description": "Fin de la actividad",
+  "description": "",
   "type":"redirect",
   "destiny":"index.html"
+},
+{
+  "description": "Ahora busca el marker hiro...",
+  "type":"delay",
+  "delay":"1000",
+  "next":"4"
 }
 
 ]

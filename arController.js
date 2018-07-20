@@ -26,7 +26,7 @@ function goTo(index){
 
 
 function loadItem(item){
-  showText(item.description);
+  drawText(item.description);
   toDOM(item.objects,item.marker);
   if(item.type=="delay"){
       startTimer(item);
@@ -72,10 +72,20 @@ function removeAllChildren(father){
       }
     }
 }
-  
-function showText(text){
+function appendText(text){
+  var obj = document.createElement('li');
+  obj.setAttribute('class','checklist-text');
+  obj.innerText=text;
+  var list= document.querySelector("#checklist");
+  list.appendChild(obj);
+
+
+}
+function drawText(text){
   var obj = document.createElement('li');
   obj.innerText=text;
+  obj.setAttribute('class','checklist-text');
+
   var list= document.querySelector("#checklist");
   while (list.firstChild) {
     list.removeChild(list.firstChild);
@@ -98,11 +108,15 @@ function appendObject(jObj,father){
       }
       if(jObj.material!=null){
         obj.setAttribute('material',jObj.material);
-
       }
+     
       else{
         obj.setAttribute('src',jObj.src);
       }   
+      obj.setAttribute('color',jObj.color);
+      obj.setAttribute('value',jObj.value);
+      obj.setAttribute('shadow',jObj.shadow);
+
       marker.appendChild(obj);
       console.log("Adding entity #" + jObj.id);
       console.log(marker.querySelector("#" +jObj.id));
@@ -145,7 +159,6 @@ AFRAME.registerComponent('markerhandler', {
         }
         else if((isCurrentMarkerVisible()==false) && (playing == false)){
           if(activity!=null){//not yet loaded
-              showText("Buscando el marker: "+currentItem.marker);
               console.log("looking for marker... "+currentItem.marker);
           }
         }
