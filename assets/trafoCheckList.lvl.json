@@ -1,25 +1,30 @@
 [
 {
-  "name" :"Nivel 1",
+
 "description": "Esto es un transformador...",
 "type":"delay",
 "delay":"5000",
+"marker":"marker",
 "objects":[{
     "id": "trafo4Bornes",
+    "type":"a-entity",
     "file": "assets/models/ejTrafo/TRAFO_4BORNES.obj",
     "scale": ".2 .2 .2",
     "position": "0 0 0",
     "rotation": "24.634 0.213 0.132",
     "material": {"color": "orange"},
-      "cursorListener":true
+    "onclick":"goTo('3')"
+    
   }] 
 },
-{"name" :"Nivel 2",
+{
   "description": "Un transformador tiene bornes, puedes ver los bornes?",
   "type":"delay",
+  "marker":"marker",
   "delay":"5000",
     "objects":[{
       "id": "trafo4Bornes",
+      "type":"a-entity",
       "file": "assets/models/ejTrafo/TRAFO_4BORNES.obj",
       "scale": ".2 .2 .2",
       "position": "0 0 0",
@@ -28,60 +33,89 @@
       "children": [
             {
               "id": "W",
+              "type":"a-entity",
               "file": "assets/models/ejTrafo/soccerball.obj",
               "position": "1.396 1.7 -1.770",
               "rotation": "0 0 0",
               "scale": "0.005 0.005 0.005",
-              "material": {"color": "grey"},
-              "cursorListener":true
+              "material": {"color": "grey"}
             },{
 
               "id": "X",
+              "type":"a-entity",
               "file": "assets/models/ejTrafo/soccerball.obj",
               "position": "-1.143 1.7 -1.779",
               "rotation": "0 0 0",
               "scale": "0.005 0.005 0.005",
-              "material": {"color": "grey"},
-              "cursorListener":true
+              "material": {"color": "grey"}
             },
             {
               "id": "Y",
+              "type":"a-entity",
               "file": "assets/models/ejTrafo/soccerball.obj",
               "position": "-1.183 1.7 0.474",
               "rotation": "0 0 0",
               "scale": "0.005 0.005 0.005",
-              "material": {"color": "grey"},
-              "cursorListener":true
+              "material": {"color": "grey"}
             },
             {
               "id": "Z",
+              "type":"a-entity",
               "file": "assets/models/ejTrafo/soccerball.obj",
               "position": "1.378 1.7 0.504",
               "rotation": "0 0 0",
               "scale": "0.005 0.005 0.005",
-              "material": {"color": "grey"},
-              "cursorListener":true
+              "material": {"color": "grey"}
             }
-            ],
-        "cursorListener":false
+            ]
     }]
 
 
 },
-{"name" :"Nivel 3",
-  "description": "Esto es un borne...",
-  "type":"delay",
-  "delay":"5000",
+{
+  "description": "Haz click en el borne",
+  "marker":"marker",
   "objects":[
           {
             "id": "W",
+            "type":"a-entity",
             "file": "assets/models/ejTrafo/soccerball.obj",
             "position": "0 0 0",
             "rotation": "24.634 0.213 0.132",
             "scale": "0.005 0.005 0.005",
             "material": {"color": "grey"},
-            "cursorListener":true
+            "onclick":"goTo('4')"
           }
           ]
+},
+{
+  "description": "Esto es una Imagen...",
+  "type":"delay",
+  "delay":"5000",
+  "marker":"marker",
+  "objects":[
+          {
+            "id": "image",
+            "rotation": "-67.962 7.602 -7.026",
+            "type":"a-image",
+            "src": "assets/images/transformador4Bornes.png"
+
+          }
+          ] 
+},
+{
+  "description": "Esto es un Video...",
+  "type":"delay",
+  "marker":"marker",
+  "objects":[
+          {
+            "id": "video",
+            "rotation": "-67.962 7.602 -7.026",
+            "type":"a-video",
+            "src": "assets/video/test.mp4"
+          }
+          ] 
 }
+
+
 ]
