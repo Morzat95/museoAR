@@ -83,11 +83,7 @@
             "position": "0 0 0",
             "rotation": "24.634 0.213 0.132",
             "scale": "0.005 0.005 0.005",
-            "material": {"shader": "html", 
-              "target": "#planeHTML",
-               "ratio": "height",
-                "transparent": true,
-                "side": "double"},
+            "material": {"color": "grey"},
             "onclick":"goTo('4')"
           }
           ]
