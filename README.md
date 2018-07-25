@@ -2,22 +2,23 @@ Proyecto de realidad aumentada para el museo UNGS
 
 Open a-frame Inspector.. Hit *<ctrl> + <alt> + i* on any A-Frame scene.
 
+
+
+
 Emulate webcam 
 
-https://painttheworld.github.io/
+
 https://gist.github.com/agusalex/031ae2401c191f4a74bbbaf3e2242384
 
-`sh virtualCamera.sh`
+`sh /bashScripts/virtualCamera.sh`
 
-https://threejs.org/
+https://github.com/muaz-khan/RecordRTC
 
-https://aframe.io/
+https://painttheworld.github.io/
 
-https://github.com/jeromeetienne/AR.js
+https://github.com/muaz-khan/WebRTC-Experiment/blob/master/Canvas-Designer/README.md
 
 https://github.com/donmccurdy/aframe-physics-system/blob/master/README.md
-
-https://stackoverflow.com/questions/41336889/adding-new-entities-on-the-fly-in-aframe
 
 https://github.com/aframevr/aframe/blob/master/docs/components/cursor.md
 
