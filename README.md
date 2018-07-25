@@ -4,6 +4,7 @@ Open a-frame Inspector.. Hit *<ctrl> + <alt> + i* on any A-Frame scene.
 
 Emulate webcam 
 
+https://painttheworld.github.io/
 https://gist.github.com/agusalex/031ae2401c191f4a74bbbaf3e2242384
 
 `sh virtualCamera.sh`
