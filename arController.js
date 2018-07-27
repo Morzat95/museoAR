@@ -3,6 +3,7 @@ var name = a.substring(a.indexOf("=")+1);
 var activity;
 var playing=false;
 var currentItem=0;
+let mymap;
 
 function run(){
     console.log("activity= "+name);
@@ -13,6 +14,11 @@ function run(){
 function loadItems(jsonInput){
   activity=jsonInput;
   currentItem=activity[0];
+  mymap=new Map();
+  activity.forEach(element => {
+    mymap.set(element.id,element);
+  });
+  console.log(mymap);
 }
 
 function goTo(index){
