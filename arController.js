@@ -3,6 +3,7 @@ var name = a.substring(a.indexOf("=")+1);
 var activity;
 var playing=false;
 var currentItem=0;
+var dict = {};
 
 function run(){
     console.log("activity= "+name);
@@ -12,6 +13,7 @@ function run(){
 
 function loadItems(jsonInput){
   activity=jsonInput;
+  
   currentItem=activity[0];
 }
 
@@ -58,6 +60,7 @@ function toDOM(jsonInput,father) {
       for(var i = 0; i < jsonInput.length; i++) {
           var obj = jsonInput[i];
           appendObject(obj,father);
+          console.log("adding obj ID"+obj.id);
       }
       objectCount = i;
       console.log("objectCount:" + objectCount);
