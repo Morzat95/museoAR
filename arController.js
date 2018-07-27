@@ -13,6 +13,7 @@ function run(){
 
 function loadItems(jsonInput){
   activity=jsonInput;
+  
   currentItem=activity[0];
   mymap=new Map();
   activity.forEach(element => {
@@ -64,6 +65,7 @@ function toDOM(jsonInput,father) {
       for(var i = 0; i < jsonInput.length; i++) {
           var obj = jsonInput[i];
           appendObject(obj,father);
+          console.log("adding obj ID"+obj.id);
       }
       objectCount = i;
       console.log("objectCount:" + objectCount);
