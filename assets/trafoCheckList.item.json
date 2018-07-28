@@ -1,6 +1,6 @@
 [
   {
-    "id":"A",
+    "id":"first",
   "description": "toca el transformador...",
   "marker":"kanji",
   "objects":[{
@@ -82,7 +82,7 @@
             "rotation": "-67.962 7.602 -7.026",
             "type":"a-image",
             "src": "assets/images/bigNextArrow.png"
-            ,"onclick":"goTo('7')"
+            ,"onclick":"goTo('H')"
   
           },
         
@@ -90,7 +90,7 @@
               "id": "text",
               "type":"a-text",
               "position": "-1.132 0.080 -0.792",
-              "rotation": "-68.048 31.364 -27.007",
+              "rotation": "-70.739 7.139 -5.376",
               "side":"double",
               "color": "orange",
               "shadow":"receive: true",
@@ -149,7 +149,7 @@
     "description": "Ahora busca el marker hiro...",
     "type":"delay",
     "delay":"1000",
-    "next":"4"
+    "next":"E"
   }
   
   ]

@@ -14,6 +14,7 @@ function loadItems(jsonInput){
   currentItem=jsonInput[0];
   activity=new Map();
   jsonInput.forEach(element => {
+    console.log("loading...id:"+element.id+" element: "+element.description)
     activity.set(element.id,element);
   });
   console.log(activity);
@@ -24,7 +25,13 @@ function goTo(next){
   if(currentItem.persistent==null){
     removeAllChildren(currentItem.marker);
   }
+  console.log(
+  next
+  )
   currentItem=activity.get(next);
+  if(currentItem==null){
+    console.error("attemped to redirect to: "+next+" but it was not found...");
+  }
   playing=false;
 }
 
@@ -44,11 +51,7 @@ function startTimer(item){
   var delayInMilliseconds = item.delay;
   setTimeout(function(timeout) {
         if(playing){ //if marker is still visible
-          if(item.persistent==null){
-            removeAllChildren(item.marker);}
-          currentItem=activity.get(item.next);
-          playing=false;
-          console.log("next! "+item.next);
+          goTo(item.next);
                   }
   }, delayInMilliseconds);
 
