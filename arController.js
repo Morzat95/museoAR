@@ -20,6 +20,8 @@ function loadItems(jsonInput){
   console.log(activity);
 }
 
+
+
 function goTo(next){
   currentTimeout="";
   if(currentItem.persistent==null){
@@ -120,6 +122,12 @@ function appendObject(jObj,father){
      
       else{
         obj.setAttribute('src',jObj.src);
+      }
+      if(jObj.type="video"){
+        if(jObj.autoplay=="true"){
+          obj.setAttribute('autoplay','');}
+          
+        obj.setAttribute('loop',jObj.loop);
       }   
       obj.setAttribute('color',jObj.color);
       obj.setAttribute('value',jObj.value);

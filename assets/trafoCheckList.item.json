@@ -125,8 +125,17 @@
               "id": "video",
               "rotation": "-67.962 7.602 -7.026",
               "type":"a-video",
-              "src": "assets/video/test.mp4",
-              "onclick":"goTo('F')"
+              "src": "#videoNoLoop",
+              "onclick":"goTo('F')",
+              "children":[
+                {
+                  "id": "videoNoLoop",
+                  "type":"video",
+                  "src": "assets/video/test.mp4",
+                  "loop":"false",
+                  "autoplay":"true"
+                }
+              ]
             }
             ] 
   },
