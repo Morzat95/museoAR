@@ -85,7 +85,6 @@
             ,"onclick":"goTo('H')"
   
           },
-        
             {
               "id": "text",
               "type":"a-text",
