@@ -117,8 +117,8 @@
   },
   {
     "id":"E",
-    "description": "toca el video para finalizar la actividad",
-    "marker":"hiro",
+    "description": "y esto es un video de prueba",
+    "marker":"kanji",
     "persistent":"true",
     "objects":[
             {
@@ -126,7 +126,7 @@
               "rotation": "-67.962 7.602 -7.026",
               "type":"a-video",
               "src": "#videoNoLoop",
-              "onclick":"goTo('F')",
+              "onclick":"playPause('videoNoLoop')",
               "children":[
                 {
                   "id": "videoNoLoop",
@@ -135,6 +135,26 @@
                   "loop":"false",
                   "autoplay":"true"
                 }
+                , {
+                  "id": "image",
+                  "position": "0.951 0.114 -0.140",
+                  "rotation":"-64.107 6.931 -6.590",
+                  "type":"a-image",
+                  "src": "assets/images/bigNextArrow.png"
+                  ,"onclick":"goTo('F')"
+        
+                },
+                  {
+                    "id": "text",
+                    "type":"a-text",
+                    "position": "-0.545 0.520 -0.571",
+                    "rotation": "-10.060 2.581 -3.028",
+                    "side":"double",
+                    "color": "orange",
+                    "shadow":"receive: true",
+                    "value":"Toca la flecha para finalizar!!!",
+                    "onclick":"goTo('F')"
+                  }
               ]
             }
             ] 

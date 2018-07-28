@@ -37,6 +37,17 @@ function goTo(next){
   playing=false;
 }
 
+function playPause(id){
+  var aVideoAsset= document.querySelector('#'+id);
+  if(aVideoAsset.paused==false){
+    aVideoAsset.pause();
+  }
+  else{
+    aVideoAsset.play();
+    aVideoAsset.setAttribute('loop','false');
+  }
+}
+
 
 function loadItem(item){
   drawText(item.description);
@@ -126,7 +137,7 @@ function appendObject(jObj,father){
       if(jObj.type="video"){
         if(jObj.autoplay=="true"){
           obj.setAttribute('autoplay','');}
-          
+
         obj.setAttribute('loop',jObj.loop);
       }   
       obj.setAttribute('color',jObj.color);
