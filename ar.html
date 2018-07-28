@@ -20,10 +20,10 @@
       <ul id="checklist" class="checklist" style="list-style-type:square">
         </ul>
 
-    <a-scene markerhandler cursor="rayOrigin: mouse" embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+    <a-scene markerhandler cursor="rayOrigin: mouse" embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
       <a-entity light="type: directional; color: #f1f0dd; intensity: 1.2" position="-2.102 1.443 3.303"></a-entity>
-      <a-marker id="kanji" preset='kanji'></a-camera>
-      <a-marker id="hiro" preset='hiro'></a-camera>
+      <a-marker id="kanji" preset='kanji'></a-marker>
+      <a-marker id="hiro" preset='hiro'></a-marker>
       <a-entity camera></a-entity>
       </a-scene>
 
