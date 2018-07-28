@@ -82,7 +82,7 @@
             "rotation": "-67.962 7.602 -7.026",
             "type":"a-image",
             "src": "assets/images/bigNextArrow.png"
-            ,"onclick":"goTo('H')"
+            ,"onclick":"goTo('E')"
   
           },
             {
@@ -94,7 +94,7 @@
               "color": "orange",
               "shadow":"receive: true",
               "value":"Toca la flecha!!!",
-              "onclick":"goTo('H')"
+              "onclick":"goTo('E')"
             }
             ]
   },
@@ -142,13 +142,6 @@
     "description": "",
     "type":"redirect",
     "destiny":"index.html"
-  },
-  {
-    "id":"H",
-    "description": "Ahora busca el marker hiro...",
-    "type":"delay",
-    "delay":"1000",
-    "next":"E"
   }
   
   ]
