@@ -1,9 +1,8 @@
 var a = window.location.toString();
 var name = a.substring(a.indexOf("=")+1);
-var activity;
 var playing=false;
 var currentItem=0;
-let mymap;
+let activity;
 
 function run(){
     console.log("activity= "+name);
@@ -12,22 +11,20 @@ function run(){
 
 
 function loadItems(jsonInput){
-  activity=jsonInput;
-  
-  currentItem=activity[0];
-  mymap=new Map();
-  activity.forEach(element => {
-    mymap.set(element.id,element);
+  currentItem=jsonInput[0];
+  activity=new Map();
+  jsonInput.forEach(element => {
+    activity.set(element.id,element);
   });
-  console.log(mymap);
+  console.log(activity);
 }
 
-function goTo(index){
+function goTo(next){
   currentTimeout="";
   if(currentItem.persistent==null){
     removeAllChildren(currentItem.marker);
   }
-  currentItem=activity[index];
+  currentItem=activity.get(next);
   playing=false;
 }
 
@@ -49,7 +46,7 @@ function startTimer(item){
         if(playing){ //if marker is still visible
           if(item.persistent==null){
             removeAllChildren(item.marker);}
-          currentItem=activity[item.next];
+          currentItem=activity.get(item.next);
           playing=false;
           console.log("next! "+item.next);
                   }
