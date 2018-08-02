@@ -12,6 +12,10 @@ https://gist.github.com/agusalex/031ae2401c191f4a74bbbaf3e2242384
 
 `sh /bashScripts/virtualCamera.sh`
 
+https://www.npmjs.com/package/networked-aframe
+
+https://hacks.mozilla.org/2017/07/picasso-tower-360o-tour-with-a-frame/
+
 https://github.com/muaz-khan/RecordRTC
 
 https://painttheworld.github.io/
