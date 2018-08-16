@@ -50,10 +50,15 @@ function playPause(id){
 
 
 function loadItem(item){
-  drawText(item.description);
-  toDOM(item.objects,item.marker);
+  console.log("was the item loaded already? "+item.loaded);
+    drawText(item.description);
+    toDOM(item.objects,item.marker);
+
+
+  item.loaded=true;
   if(item.type=="delay"){
       startTimer(item);
+    
     }
   if(currentItem.type=="redirect"){
     window.location.href = item.destiny;
@@ -63,7 +68,9 @@ function loadItem(item){
 function startTimer(item){
   var delayInMilliseconds = item.delay;
   setTimeout(function(timeout) {
-        if(playing){ //if marker is still visible
+    console.log("timer finished");
+        if(playing&&isCurrentMarkerVisible){ //if marker is still visible
+          
           goTo(item.next);
                   }
   }, delayInMilliseconds);
@@ -122,7 +129,7 @@ function appendObject(jObj,father){
       obj.setAttribute('scale',jObj.scale);
       obj.setAttribute('rotation',jObj.rotation);
       obj.setAttribute('position',jObj.position);
-      obj.setAttribute('isClicked',false);
+    // obj.setAttribute('loaded',true);
       if(jObj.onclick!=null){
         obj.setAttribute('cursor-listener','');
         obj.setAttribute('onclick',jObj.onclick);
@@ -135,6 +142,7 @@ function appendObject(jObj,father){
         obj.setAttribute('src',jObj.src);
       }
       if(jObj.type="video"){
+        
         if(jObj.autoplay=="true"){
           obj.setAttribute('autoplay','');}
 
@@ -180,7 +188,8 @@ AFRAME.registerComponent('markerhandler', {
           
         } else if ((isCurrentMarkerVisible()==false) && (playing == true)) {
           currentTimeout="";
-          removeAllChildren(currentItem.marker);
+         
+         // removeOnlyVideos(currentItem.marker);
           playing=false;
           console.log("marker lost!");
         }
