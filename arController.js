@@ -51,10 +51,8 @@ function playPause(id){
 
 function loadItem(item){
   console.log("was the item loaded already? "+item.loaded);
-    drawText(item.description);
-    toDOM(item.objects,item.marker);
-
-
+  drawText(item.description);
+  toDOM(item.objects,item.marker);
   item.loaded=true;
   if(item.type=="delay"){
       startTimer(item);
@@ -189,7 +187,6 @@ AFRAME.registerComponent('markerhandler', {
         } else if ((isCurrentMarkerVisible()==false) && (playing == true)) {
           currentTimeout="";
          
-         // removeOnlyVideos(currentItem.marker);
           playing=false;
           console.log("marker lost!");
         }

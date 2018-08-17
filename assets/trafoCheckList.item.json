@@ -118,8 +118,7 @@
   {
     "id":"E",
     "description": "y esto es un video de prueba",
-    "marker":"hiro",
-    "hasVideo":"true",
+    "marker":"kanji",
     "objects":[
             {
               "id": "video",
