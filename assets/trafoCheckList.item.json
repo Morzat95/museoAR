@@ -81,7 +81,7 @@
             "id": "image",
             "rotation": "-67.962 7.602 -7.026",
             "type":"a-image",
-            "src": "assets/images/bigNextArrow.png"
+            "src": "assets/images/bignextarrow.png"
             ,"onclick":"goTo('H')"
   
           },
@@ -110,7 +110,7 @@
               "id": "image",
               "rotation": "-67.962 7.602 -7.026",
               "type":"a-image",
-              "src": "assets/images/transformador4Bornes.png"
+              "src": "assets/images/transformador4bornes.png"
   
             }
             ] 
@@ -119,7 +119,6 @@
     "id":"E",
     "description": "y esto es un video de prueba",
     "marker":"kanji",
-    "persistent":"true",
     "objects":[
             {
               "id": "video",
@@ -136,11 +135,11 @@
                   "autoplay":"true"
                 }
                 , {
-                  "id": "image",
+                  "id": "image2",
                   "position": "0.951 0.114 -0.140",
                   "rotation":"-64.107 6.931 -6.590",
                   "type":"a-image",
-                  "src": "assets/images/bigNextArrow.png"
+                  "src": "assets/images/bignextarrow.png"
                   ,"onclick":"goTo('F')"
         
                 },
