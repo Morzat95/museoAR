@@ -81,7 +81,7 @@
             "id": "image",
             "rotation": "-67.962 7.602 -7.026",
             "type":"a-image",
-            "src": "assets/images/bignextarrow.png"
+            "src": "assets/images/nextArrow.png"
             ,"onclick":"goTo('H')"
   
           },
@@ -139,7 +139,7 @@
                   "position": "0.951 0.114 -0.140",
                   "rotation":"-64.107 6.931 -6.590",
                   "type":"a-image",
-                  "src": "assets/images/bignextarrow.png"
+                  "src": "assets/images/nextArrow.png"
                   ,"onclick":"goTo('F')"
         
                 },
