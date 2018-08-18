@@ -107,7 +107,7 @@
     "marker":"kanji",
     "objects":[
             {
-              "id": "image",
+              "id": "image3",
               "rotation": "-67.962 7.602 -7.026",
               "type":"a-image",
               "src": "assets/images/transformador4bornes.png"

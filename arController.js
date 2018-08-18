@@ -1,80 +1,65 @@
 var a = window.location.toString();
 var name = a.substring(a.indexOf("=")+1);
 var playing=false;
-var currentItem=0;
+var currentCard=0;
 let activity;
 
 function run(){
     console.log("activity= "+name);
-    loadJSON("assets/"+name+".item.json",loadItems);
+    loadJSON("assets/"+name+".item.json",loadCards);
 }
 
 
-function loadItems(jsonInput){
-  currentItem=jsonInput[0];
+function loadCards(jsonInput){
+  currentCard=jsonInput[0];
   activity=new Map();
-  jsonInput.forEach(element => {
-    console.log("loading...id:"+element.id+" element: "+element.description)
-    activity.set(element.id,element);
+  jsonInput.forEach(card => {
+    console.log("loading...id:"+card.id+" card"+card.description)
+    activity.set(card.id,card);
+    preLoadCard(card);
   });
+
   console.log(activity);
 }
 
 
-
-function goTo(next){
-  currentTimeout="";
-  if(currentItem.persistent==null){
-    removeAllChildren(currentItem.marker);
-  }
-  console.log(
-  next
-  )
-  currentItem=activity.get(next);
-  if(currentItem==null){
-    console.error("attemped to redirect to: "+next+" but it was not found...");
-  }
-  playing=false;
-}
-
-function playPause(id){
-  var aVideoAsset= document.querySelector('#'+id);
-  if(aVideoAsset.paused==false){
-    aVideoAsset.pause();
-  }
-  else{
-    aVideoAsset.play();
-    aVideoAsset.setAttribute('loop','false');
-  }
+function preLoadCard(card){
+  toDOM(card.objects,card.marker);
 }
 
 
-function loadItem(item){
-  console.log("was the item loaded already? "+item.loaded);
-  drawText(item.description);
-  toDOM(item.objects,item.marker);
-  item.loaded=true;
-  if(item.type=="delay"){
-      startTimer(item);
+function loadCard(card){
+  console.log("was the card loaded already? "+card.loaded);
+  drawText(card.description);
+ // toDOM(card.objects,card.marker);
+  card.loaded=true;
+  if(card.type=="delay"){
+      startTimer(card);
     
     }
-  if(currentItem.type=="redirect"){
-    window.location.href = item.destiny;
+  if(currentCard.type=="redirect"){
+    window.location.href = card.destiny;
   }
 }
 
-function startTimer(item){
-  var delayInMilliseconds = item.delay;
+function startTimer(card){
+  var delayInMilliseconds = card.delay;
   setTimeout(function(timeout) {
     console.log("timer finished");
         if(playing&&isCurrentMarkerVisible){ //if marker is still visible
           
-          goTo(item.next);
+          goTo(card.next);
                   }
   }, delayInMilliseconds);
 
 }
 
+function makeVisible(){
+
+}
+function makeInvisible(){
+  
+}
 
 function toDOM(jsonInput,father) {
     if(jsonInput==null ||jsonInput=="")
@@ -98,30 +83,12 @@ function removeAllChildren(father){
       }
     }
 }
-function appendText(text){
-  var obj = document.createElement('li');
-  obj.setAttribute('class','checklist-text');
-  obj.innerText=text;
-  var list= document.querySelector("#checklist");
-  list.appendChild(obj);
 
-
-}
-function drawText(text){
-  var obj = document.createElement('li');
-  obj.innerText=text;
-  obj.setAttribute('class','checklist-text');
-
-  var list= document.querySelector("#checklist");
-  while (list.firstChild) {
-    list.removeChild(list.firstChild);
-    }
-  list.appendChild(obj);
-}
 
 function appendObject(jObj,father){
       var marker= document.querySelector('#'+father);
       var obj = document.createElement(jObj.type);
+      obj.object3D.visible = false;  //starts invisible
       obj.setAttribute('id',jObj.id); 
       obj.setAttribute('obj-model','obj','url('+jObj.file+')');
       obj.setAttribute('scale',jObj.scale);
@@ -156,16 +123,60 @@ function appendObject(jObj,father){
       toDOM(jObj.children,jObj.id);
      
 }
-  
+function goTo(next){
+  currentTimeout="";
+  if(currentCard.persistent==null){
+    removeAllChildren(currentCard.marker);
+  }
+  console.log(
+  next
+  )
+  currentCard=activity.get(next);
+  if(currentCard==null){
+    console.error("attemped to redirect to: "+next+" but it was not found...");
+  }
+  playing=false;
+}
+
+function playPause(id){
+  var aVideoAsset= document.querySelector('#'+id);
+  if(aVideoAsset.paused==false){
+    aVideoAsset.pause();
+  }
+  else{
+    aVideoAsset.play();
+    aVideoAsset.setAttribute('loop','false');
+  }
+}
+function appendText(text){
+  var obj = document.createElement('li');
+  obj.setAttribute('class','checklist-text');
+  obj.innerText=text;
+  var list= document.querySelector("#checklist");
+  list.appendChild(obj);
+
+
+}
+function drawText(text){
+  var obj = document.createElement('li');
+  obj.innerText=text;
+  obj.setAttribute('class','checklist-text');
+
+  var list= document.querySelector("#checklist");
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
+    }
+  list.appendChild(obj);
+}
 
 function isCurrentMarkerVisible(){
-    if(currentItem==null){
+    if(currentCard==null){
       return false;
     }
-    if(currentItem.marker==null){//if it has no marker its excecuted anyway
+    if(currentCard.marker==null){//if it has no marker its excecuted anyway
       return true;
     }
-    return document.querySelector("#"+currentItem.marker).object3D.visible;
+    return document.querySelector("#"+currentCard.marker).object3D.visible;
 }
 
 
@@ -182,7 +193,7 @@ AFRAME.registerComponent('markerhandler', {
           console.log("Found!");
           currentTimeout="";
           playing = true;
-          loadItem(currentItem);
+          loadCard(currentCard);
           
         } else if ((isCurrentMarkerVisible()==false) && (playing == true)) {
           currentTimeout="";
@@ -192,7 +203,7 @@ AFRAME.registerComponent('markerhandler', {
         }
         else if((isCurrentMarkerVisible()==false) && (playing == false)){
           if(activity!=null){//not yet loaded
-              console.log("looking for marker... "+currentItem.marker);
+              console.log("looking for marker... "+currentCard.marker);
           }
         }
 
