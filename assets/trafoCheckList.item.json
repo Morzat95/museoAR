@@ -132,7 +132,7 @@
                   "type":"video",
                   "src": "assets/video/test.mp4",
                   "loop":"false",
-                  "autoplay":"true"
+                  "autoplay":"false"
                 }
                 , {
                   "id": "image2",
