@@ -33,7 +33,8 @@
       {
         "id": "fuente",
         "rotation": "-67.962 7.602 -7.026",
-        "position":"0 0.5 -1.4",
+        "position":"-0.046 0.599 -1.835",
+        "scale":"2 2 1.600",
         "type":"a-image",
         "src": "assets/images/Variac8.jpg",
         "children": [
