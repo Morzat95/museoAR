@@ -1,0 +1,64 @@
+[
+    {
+      "id":"first",
+    "description": "Conecte correctamente la fuente para realizar ensayo de vacio",
+    "marker":"kanji",
+    "objects":[{
+        "id": "trafo",
+        "rotation": "-67.962 7.602 -7.026",
+        "type":"a-image",
+        "scale": "2 2 1",
+        "src": "assets/images/transformador4bornes.png",
+        "children": [
+            {
+                "id": "X",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "0.110 -0.451 -0.089",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "grey"}
+              },
+              {
+                "id": "Y",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.008 -0.447 -0.095",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "grey"}
+              }
+              ]
+      },
+      {
+        "id": "fuente",
+        "rotation": "-67.962 7.602 -7.026",
+        "position":"0 0.5 -1.4",
+        "type":"a-image",
+        "src": "assets/images/Variac8.jpg",
+        "children": [
+            {
+                "id": "Z",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.069 -0.485 -0.098",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "green"}
+              },
+              {
+                "id": "W",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.069 -0.286 -0.089",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "grey"}
+              }
+              ]
+      }
+    
+    ]
+    }
+    ]
+    
