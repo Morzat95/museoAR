@@ -68,15 +68,15 @@
         "marker":"kanji",
         "objects":[
                 {
-                  "id": "text",
+                  "id": "textB",
                   "type":"a-text",
                   "position": "-1.132 0.080 -0.792",
                   "rotation": "-70.739 7.139 -5.376",
                   "side":"double",
                   "color": "orange",
                   "shadow":"receive: true",
-                  "value":"Muy bien!",
-                  "onclick":"goTo('H')"
+                  "value":"Muy bien!, toca aqui",
+                  "onclick":"goTo('fin')"
                 }
                 ]
       },
@@ -85,14 +85,14 @@
         "marker":"kanji",
         "objects":[
                 {
-                  "id": "text",
+                  "id": "textM",
                   "type":"a-text",
                   "position": "-1.132 0.080 -0.792",
                   "rotation": "-70.739 7.139 -5.376",
                   "side":"double",
                   "color": "orange",
                   "shadow":"receive: true",
-                  "value":"Mejor suerte la proxima...!",
+                  "value":"Mejor suerte la proxima...! toca aqui",
                   "onclick":"goTo('fin')"
                 }
                 ]
