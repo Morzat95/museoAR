@@ -55,6 +55,9 @@ function setObjectProperties(jObj,fatherID){
   obj.setAttribute('scale',jObj.scale);
   obj.setAttribute('rotation',jObj.rotation);
   obj.setAttribute('position',jObj.position);
+  obj.setAttribute('width',jObj.width);
+  obj.setAttribute('height',jObj.height);
+  obj.setAttribute('depth',jObj.depth );
 // obj.setAttribute('loaded',true);
   if(jObj.onclick!=null){
     obj.setAttribute('cursor-listener','');

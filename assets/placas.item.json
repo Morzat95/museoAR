@@ -1,0 +1,63 @@
+[
+    {
+        "id":"A",
+      "description": "",
+      "marker":"kanji",
+      "objects":[
+            {
+            "id": "video1",
+            "rotation": "-67.962 7.602 -7.026",
+            "type":"a-video",
+            "src": "#source1",
+            "onclick":"playPause('source1')",
+            "children":
+            [
+                {
+                  "id": "source1",
+                  "type":"video",
+                  "src": "assets/video/prueba4.webm",
+                  "loop":"false",
+                  "autoplay":"false"
+                },{
+                    "id":"button",
+                    "position":"0.314 -0.007 0.072",
+                    "type":"a-box",
+                    "depth":"0.1",
+                    "height":"0.1",
+                    "width":"0.1",
+                    "onclick":"goTo('B')",
+                    "material": {"color": "grey",
+                        "transparent":true,
+                        "opacity":"0.00",
+                    "alphaTest":"0.5"}
+                    
+                }
+        ]
+      }
+      ]
+    },
+    {
+      "id":"B",
+    "description": "",
+    "marker":"kanji",
+    "objects":[
+      {
+        "id": "video2",
+        "rotation": "-67.962 7.602 -7.026",
+        "type":"a-video",
+        "src": "#source2",
+        "onclick":"playPause('source2')",
+        "children":[
+            {
+              "id": "source2",
+              "type":"video",
+              "src": "assets/video/test.mp4",
+              "loop":"false",
+              "autoplay":"false"
+            }
+    ]
+  }
+  ]
+  }
+  ]
+      
