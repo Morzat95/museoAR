@@ -16,8 +16,8 @@
                   "id": "source1",
                   "type":"video",
                   "src": "assets/video/prueba4.webm",
-                  "loop":"false",
-                  "autoplay":"false"
+                  "loop":"true",
+                  "autoplay":"true"
                 },{
                     "id":"button",
                     "position":"0.314 -0.007 0.072",
