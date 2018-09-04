@@ -21,7 +21,7 @@
                   "type":"video",
                   "src": "assets/video/placas/@PLACA5-SF.webm",
                   "loop":"false",
-                  "autoplay":"false"
+                  "autoplay":"true"
                 },{
                     "id":"button1",
                     "position":"0.314 -0.007 0.072",   
@@ -64,7 +64,7 @@
               "type":"video",
               "src": "assets/video/placas/@PLACA6A-SF.webm",  
               "loop":"false",
-              "autoplay":"false"
+              "autoplay":"true"
             },{
                 "id":"button2",
                 "position":"0.314 -0.007 0.072",   
@@ -107,7 +107,7 @@
             "type":"video",
             "src": "assets/video/placas/@PLACA6B-SF.webm",  
             "loop":"false",
-            "autoplay":"false"
+            "autoplay":"true"
           },{
               "id":"button3",
               "position":"0.314 -0.007 0.072",   
@@ -150,7 +150,7 @@
           "type":"video",
           "src": "assets/video/placas/@PLACA6C-SF.webm",  
           "loop":"false",
-          "autoplay":"false"
+          "autoplay":"true"
         },{
             "id":"button4",
             "position":"0.314 -0.007 0.072",   
@@ -193,7 +193,7 @@
           "type":"video",
           "src": "assets/video/placas/@PLACA7-SF.webm",  
           "loop":"false",
-          "autoplay":"false"
+          "autoplay":"true"
         },{
             "id":"button5",
             "position":"0.314 -0.007 0.072",   
