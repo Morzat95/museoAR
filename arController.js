@@ -28,7 +28,7 @@ function preLoadCard(card){
 function loadCard(card){
   makeCardVisible(card);
   if(card.autoplay!=null){
-    playPause(card.autoplay);
+    play(card.autoplay);
   }
   drawText(card.description);
   if(card.type=="delay"){
@@ -159,7 +159,13 @@ function goTo(next){
   }
   playing=false;
 }
+function play(id){
+  var aVideoAsset= document.querySelector('#'+id);
+  aVideoAsset.play();
+  aVideoAsset.setAttribute('loop','false');
+  console.log("Playing! "+ id);
 
+}
 function playPause(id){
   var aVideoAsset= document.querySelector('#'+id);
   if(aVideoAsset.paused==false){
@@ -187,7 +193,7 @@ AFRAME.registerComponent('markerhandler', {
   init: function() {
     // Set up the tick throttling. Will check if marker is active every 500ms
     console.log("setting up marker handler...");
-    this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
+    this.tick = AFRAME.utils.throttleTick(this.tick, 1000, this);
   },
   tick: function(t, dt) {
     if(activity!=null){

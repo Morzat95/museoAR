@@ -49,6 +49,7 @@
     "type":"delay",
     "delay":"5000",
     "next":"C",
+    "autoplay":"source2",
     "objects":[
       {
         "id": "video2",
@@ -91,6 +92,7 @@
   "type":"delay",
   "delay":"5000",
   "next":"D",
+  "autoplay":"source3",
   "objects":[
     {
       "id": "video3",
@@ -133,6 +135,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"E",
+"autoplay":"source4",
 "objects":[
   {
     "id": "video4",
@@ -175,6 +178,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"F",
+"autoplay":"source5",
 "objects":[
   {
     "id": "video5",
@@ -217,6 +221,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"G",
+"autoplay":"source6",
 "objects":[
   {
     "id": "video6",
@@ -259,6 +264,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"H",
+"autoplay":"source7",
 "objects":[
   {
     "id": "video7",
@@ -301,6 +307,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"I",
+"autoplay":"source8",
 "objects":[
   {
     "id": "video8",
@@ -343,6 +350,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"J",
+"autoplay":"source9",
 "objects":[
   {
     "id": "video9",
@@ -384,6 +392,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"K",
+"autoplay":"source10",
 "objects":[
   {
     "id": "video10",
@@ -426,6 +435,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"L",
+"autoplay":"source11",
 "objects":[
   {
     "id": "video11",
@@ -467,6 +477,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"M",
+"autoplay":"source12",
 "objects":[
   {
     "id": "video12",
@@ -508,6 +519,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"N",
+"autoplay":"source13",
 "objects":[
   {
     "id": "video13",
@@ -549,6 +561,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"O",
+"autoplay":"source14",
 "objects":[
   {
     "id": "video14",
@@ -590,6 +603,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"FIN",
+"autoplay":"source15",
 "objects":[
   {
     "id": "video15",
