@@ -1,17 +1,17 @@
 [
     {
         "id":"A",
-      "description": "@PLACA5-SF.webm",
+      "description": "pulse el circulo amarillo...",
       "marker":"kanji",
       "type":"delay",
-      "delay":"10000",
+      "delay":"15000",
       "next":"B",
       "autoplay":"source1",
       "objects":[
             {
             "id": "video1",
             "rotation": "-67.962 7.602 -7.026",
-            "scale":"2 2 1",
+            "scale":"3 3 1",
             "type":"a-video",
             "src": "#source1",
             "onclick":"playPause('source1')",
@@ -55,7 +55,7 @@
       {
         "id": "video2",
         "rotation": "-67.962 7.602 -7.026",
-        "scale":"2 2 1",
+        "scale":"3 3 1",
         "type":"a-video",
         "src": "#source2",
         "onclick":"playPause('source2')",
@@ -99,7 +99,7 @@
     {
       "id": "video3",
       "rotation": "-67.962 7.602 -7.026",
-      "scale":"2 2 1",
+      "scale":"3 3 1",
       "type":"a-video",
       "src": "#source3",
       "onclick":"playPause('source3')",
@@ -143,7 +143,7 @@
   {
     "id": "video4",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source4",
     "onclick":"playPause('source4')",
@@ -187,7 +187,7 @@
   {
     "id": "video5",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source5",
     "onclick":"playPause('source5')",
@@ -232,7 +232,7 @@
   {
     "id": "video6",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source6",
     "onclick":"playPause('source6')",
@@ -276,7 +276,7 @@
   {
     "id": "video7",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source7",
     "onclick":"playPause('source7')",
@@ -320,7 +320,7 @@
   {
     "id": "video8",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source8",
     "onclick":"playPause('source8')",
@@ -364,7 +364,7 @@
   {
     "id": "video9",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source9",
     "onclick":"playPause('source9')",
@@ -407,7 +407,7 @@
   {
     "id": "video10",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source10",
     "onclick":"playPause('source10')",
@@ -451,7 +451,7 @@
   {
     "id": "video11",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source11",
     "onclick":"playPause('source11')",
@@ -494,7 +494,7 @@
   {
     "id": "video12",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source12",
     "onclick":"playPause('source12')",
@@ -537,7 +537,7 @@
   {
     "id": "video13",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source13",
     "onclick":"playPause('source13')",
@@ -580,7 +580,7 @@
   {
     "id": "video14",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source14",
     "onclick":"playPause('source14')",
@@ -622,7 +622,7 @@
   {
     "id": "video15",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"2 2 1",
+    "scale":"3 3 1",
     "type":"a-video",
     "src": "#source15",
     "onclick":"playPause('source15')",
