@@ -27,6 +27,9 @@ function preLoadCard(card){
 
 function loadCard(card){
   makeCardVisible(card);
+  if(card.autoplay!=null){
+    playPause(card.autoplay);
+  }
   drawText(card.description);
   if(card.type=="delay"){
       startTimer(card);

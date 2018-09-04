@@ -3,6 +3,10 @@
         "id":"A",
       "description": "@PLACA5-SF.webm",
       "marker":"kanji",
+      "type":"delay",
+      "delay":"5000",
+      "next":"B",
+      "autoplay":"source1",
       "objects":[
             {
             "id": "video1",
@@ -42,6 +46,9 @@
       "id":"B",
     "description": "@PLACA6A-SF.webm",
     "marker":"kanji",
+    "type":"delay",
+    "delay":"5000",
+    "next":"C",
     "objects":[
       {
         "id": "video2",
@@ -81,6 +88,9 @@
     "id":"C",
   "description": "@PLACA6B-SF.webm",
   "marker":"kanji",
+  "type":"delay",
+  "delay":"5000",
+  "next":"D",
   "objects":[
     {
       "id": "video3",
@@ -120,6 +130,9 @@
   "id":"D",
 "description": "@PLACA6C-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"E",
 "objects":[
   {
     "id": "video4",
@@ -159,6 +172,9 @@
   "id":"E",
 "description": "@PLACA7-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"F",
 "objects":[
   {
     "id": "video5",
@@ -198,6 +214,9 @@
   "id":"F",
 "description": "@PLACA8A-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"G",
 "objects":[
   {
     "id": "video6",
@@ -237,6 +256,9 @@
   "id":"G",
 "description": "@PLACA8B-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"H",
 "objects":[
   {
     "id": "video7",
@@ -276,6 +298,9 @@
   "id":"H",
 "description": "@PLACA8C-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"I",
 "objects":[
   {
     "id": "video8",
@@ -315,6 +340,9 @@
   "id":"I",
 "description": "@PLACA8D-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"J",
 "objects":[
   {
     "id": "video9",
@@ -353,6 +381,9 @@
   "id":"J",
 "description": "@PLACA9A-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"K",
 "objects":[
   {
     "id": "video10",
@@ -392,6 +423,9 @@
   "id":"K",
 "description": "@PLACA9B-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"L",
 "objects":[
   {
     "id": "video11",
@@ -430,6 +464,9 @@
   "id":"L",
 "description": "@PLACA10A-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"M",
 "objects":[
   {
     "id": "video12",
@@ -468,6 +505,9 @@
   "id":"M",
 "description": "@PLACA10B-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"N",
 "objects":[
   {
     "id": "video13",
@@ -506,6 +546,9 @@
   "id":"N",
 "description": "@PLACA10C-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"O",
 "objects":[
   {
     "id": "video14",
@@ -544,6 +587,9 @@
   "id":"O",
 "description": "@PLACA11-SF.webm",
 "marker":"kanji",
+"type":"delay",
+"delay":"5000",
+"next":"FIN",
 "objects":[
   {
     "id": "video15",
