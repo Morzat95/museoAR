@@ -4,7 +4,7 @@
       "description": "@PLACA5-SF.webm",
       "marker":"kanji",
       "type":"delay",
-      "delay":"5000",
+      "delay":"10000",
       "next":"B",
       "autoplay":"source1",
       "objects":[
@@ -20,8 +20,8 @@
                   "id": "source1",
                   "type":"video",
                   "src": "assets/video/placas/@PLACA5-SF.webm",
-                  "loop":"true",
-                  "autoplay":"true"
+                  "loop":"false",
+                  "autoplay":"false"
                 },{
                     "id":"button1",
                     "position":"0.314 -0.007 0.072",   
@@ -47,7 +47,7 @@
     "description": "@PLACA6A-SF.webm",
     "marker":"kanji",
     "type":"delay",
-    "delay":"5000",
+    "delay":"10000",
     "next":"C",
     "autoplay":"source2",
     "objects":[
@@ -63,8 +63,8 @@
               "id": "source2",
               "type":"video",
               "src": "assets/video/placas/@PLACA6A-SF.webm",  
-              "loop":"true",
-              "autoplay":"true"
+              "loop":"false",
+              "autoplay":"false"
             },{
                 "id":"button2",
                 "position":"0.314 -0.007 0.072",   
@@ -90,7 +90,7 @@
   "description": "@PLACA6B-SF.webm",
   "marker":"kanji",
   "type":"delay",
-  "delay":"5000",
+  "delay":"10000",
   "next":"D",
   "autoplay":"source3",
   "objects":[
@@ -106,8 +106,8 @@
             "id": "source3",
             "type":"video",
             "src": "assets/video/placas/@PLACA6B-SF.webm",  
-            "loop":"true",
-            "autoplay":"true"
+            "loop":"false",
+            "autoplay":"false"
           },{
               "id":"button3",
               "position":"0.314 -0.007 0.072",   
@@ -133,7 +133,7 @@
 "description": "@PLACA6C-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"10000",
 "next":"E",
 "autoplay":"source4",
 "objects":[
@@ -149,8 +149,8 @@
           "id": "source4",
           "type":"video",
           "src": "assets/video/placas/@PLACA6C-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button4",
             "position":"0.314 -0.007 0.072",   
@@ -176,7 +176,7 @@
 "description": "@PLACA7-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"10000",
 "next":"F",
 "autoplay":"source5",
 "objects":[
@@ -192,8 +192,8 @@
           "id": "source5",
           "type":"video",
           "src": "assets/video/placas/@PLACA7-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button5",
             "position":"0.314 -0.007 0.072",   
@@ -219,7 +219,7 @@
 "description": "@PLACA8A-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"10000",
 "next":"G",
 "autoplay":"source6",
 "objects":[
@@ -235,8 +235,8 @@
           "id": "source6",
           "type":"video",
           "src": "assets/video/placas/@PLACA8A-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button6",
             "position":"0.314 -0.007 0.072",   
@@ -278,8 +278,8 @@
           "id": "source7",
           "type":"video",
           "src": "assets/video/placas/@PLACA8B-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button7",
             "position":"0.314 -0.007 0.072",   
@@ -321,8 +321,8 @@
           "id": "source8",
           "type":"video",
           "src": "assets/video/placas/@PLACA8C-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button8",
             "position":"0.314 -0.007 0.072",   
@@ -364,8 +364,8 @@
           "id": "source9",
           "type":"video",
           "src": "assets/video/placas/@PLACA8D-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button9",
             "position":"0.314 -0.007 0.072",   
@@ -406,8 +406,8 @@
           "id": "source10",
           "type":"video",
           "src": "assets/video/placas/@PLACA9A-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button10",
             "position":"0.314 -0.007 0.072",   
@@ -449,8 +449,8 @@
           "id": "source11",
           "type":"video",
           "src": "assets/video/placas/@PLACA9B-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button11",
             "position":"0.314 -0.007 0.072",   
@@ -491,8 +491,8 @@
           "id": "source12",
           "type":"video",
           "src": "assets/video/placas/@PLACA10A-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button12",
             "position":"0.314 -0.007 0.072",   
@@ -533,8 +533,8 @@
           "id": "source13",
           "type":"video",
           "src": "assets/video/placas/@PLACA10B-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button13",
             "position":"0.314 -0.007 0.072",   
@@ -561,7 +561,7 @@
 "type":"delay",
 "delay":"5000",
 "next":"O",
-"autoplay":"source14",
+"autoplay":"source1",
 "objects":[
   {
     "id": "video14",
@@ -575,8 +575,8 @@
           "id": "source14",
           "type":"video",
           "src": "assets/video/placas/@PLACA10D-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button14",
             "position":"0.314 -0.007 0.072",   
@@ -603,7 +603,6 @@
 "type":"delay",
 "delay":"5000",
 "next":"FIN",
-"autoplay":"source15",
 "objects":[
   {
     "id": "video15",
@@ -617,8 +616,8 @@
           "id": "source15",
           "type":"video",
           "src": "assets/video/placas/@PLACA11-SF.webm",  
-          "loop":"true",
-          "autoplay":"true"
+          "loop":"false",
+          "autoplay":"false"
         },{
             "id":"button15",
             "position":"0.314 -0.007 0.072",   
