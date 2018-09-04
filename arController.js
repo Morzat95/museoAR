@@ -77,7 +77,6 @@ function setObjectProperties(jObj,fatherID){
     
     if(jObj.autoplay=="true"){
       obj.setAttribute('autoplay','');}
-
     obj.setAttribute('loop',jObj.loop);
   }   
   obj.setAttribute('color',jObj.color);
@@ -150,8 +149,8 @@ function startTimer(item){
 }
 function goTo(next){
   currentTimeout="";
-  if(card.autoplay!=null){
-    playPause(card.autoplay);
+  if(currentCard.autoplay!=null){
+    playPause(currentCard.autoplay);
     }
  makeCardInvisible(currentCard);
  // }
