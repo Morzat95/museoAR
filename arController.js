@@ -175,7 +175,7 @@ function goTo(next){
 function firstPlay(){
   hideOrShow("playButton");
   play();
-  startTimer(activity.get("INICIO"));
+  //startTimer(activity.get("INICIO"));
   drawText("Comenzando...");
 
 }
