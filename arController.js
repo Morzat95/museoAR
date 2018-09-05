@@ -162,23 +162,57 @@ function goTo(next){
   }
   playing=false;
 }
-function play(id){
-  var aVideoAsset= document.querySelector('#'+id);
-  aVideoAsset.play();
-  aVideoAsset.setAttribute('loop','false');
-  console.log("Playing! "+ id);
+
+function firstPlay(){
+  hideOrShow("playButton");
+  play();
+  startTimer(activity.get("INICIO"));
+  drawText("Comenzando...");
 
 }
+function hideOrShow(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+      x.style.display = "block";
+  } else {
+      x.style.display = "none";
+  }
+}
+function play(id){
+  if(id==null){
+    id=currentCard.autoplay;
+  }
+  console.log("playPause: "+id);
+  var aVideoAsset= document.querySelector('#'+id);
+  aVideoAsset.play().catch(function(error) {
+    aVideoAsset.pause();
+    drawText("Presione el boton de play");
+    hideOrShow("playButton");
+  
+});
+    aVideoAsset.setAttribute('loop','false');
+  
+}
 function playPause(id){
+  if(id==null){
+    id=currentCard.autoplay;
+  }
   console.log("playPause: "+id);
   var aVideoAsset= document.querySelector('#'+id);
   if(aVideoAsset.paused==false){
     aVideoAsset.pause();
   }
   else{
-    aVideoAsset.play();
-    aVideoAsset.setAttribute('loop','false');
+
+      aVideoAsset.play().catch(function(error) {
+        drawText("Presione el boton de play");
+        hideOrShow("playButton");
+     
+    });
   }
+    
+    aVideoAsset.setAttribute('loop','false');
+  
 }
 
 
@@ -191,6 +225,7 @@ function isCurrentMarkerVisible(){
     }
     return document.querySelector("#"+currentCard.marker).object3D.visible;
 }
+
 
 
 AFRAME.registerComponent('markerhandler', {
@@ -223,6 +258,7 @@ AFRAME.registerComponent('markerhandler', {
       }
     }
 });
+
 
 AFRAME.registerComponent('cursor-listener', {
   init: function () {

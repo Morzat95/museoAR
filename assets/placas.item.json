@@ -3,7 +3,6 @@
     "id":"INICIO",
   "description": "@PLACA4-SF.webm",
   "marker":"kanji",
-  "type":"delay",
   "delay":"15000",
   "next":"B",
   "autoplay":"source0",
@@ -14,7 +13,6 @@
         "scale":"3 3 1",
         "type":"a-video",
         "src": "#source0",
-        "onclick":"playPause('source0')",
         "children":
         [
             {
@@ -59,7 +57,6 @@
             "scale":"3 3 1",
             "type":"a-video",
             "src": "#source1",
-            "onclick":"playPause('source1')",
             "children":
             [
                 {
@@ -103,7 +100,6 @@
         "scale":"3 3 1",
         "type":"a-video",
         "src": "#source2",
-        "onclick":"playPause('source2')",
         "children":
         [
             {
@@ -147,7 +143,6 @@
       "scale":"3 3 1",
       "type":"a-video",
       "src": "#source3",
-      "onclick":"playPause('source3')",
       "children":
       [
           {
@@ -191,7 +186,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source4",
-    "onclick":"playPause('source4')",
     "children":
     [
         {
@@ -235,7 +229,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source5",
-    "onclick":"playPause('source5')",
     "children":
     [
         {
@@ -280,7 +273,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source6",
-    "onclick":"playPause('source6')",
     "children":
     [
         {
@@ -324,7 +316,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source7",
-    "onclick":"playPause('source7')",
     "children":
     [
         {
@@ -368,7 +359,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source8",
-    "onclick":"playPause('source8')",
     "children":
     [
         {
@@ -412,7 +402,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source9",
-    "onclick":"playPause('source9')",
     "children":
     [
         {
@@ -455,7 +444,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source10",
-    "onclick":"playPause('source10')",
     "children":
     [
         {
@@ -499,7 +487,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source11",
-    "onclick":"playPause('source11')",
     "children":
     [
         {
@@ -542,7 +529,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source12",
-    "onclick":"playPause('source12')",
     "children":
     [
         {
@@ -585,7 +571,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source13",
-    "onclick":"playPause('source13')",
     "children":
     [
         {
@@ -628,7 +613,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source14",
-    "onclick":"playPause('source14')",
     "children":
     [
         {
@@ -670,7 +654,6 @@
     "scale":"3 3 1",
     "type":"a-video",
     "src": "#source15",
-    "onclick":"playPause('source15')",
     "children":
     [
         {

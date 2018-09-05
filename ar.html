@@ -19,7 +19,7 @@
     <a href="index.html"><div class="menu-overlay"></div></a>  
       <ul id="checklist" class="checklist" style="list-style-type:square">
         </ul>
-        <!--<a onclick="playPause(source0)" class="btn btn-primary play-overlay"></a>-->
+        <a id="playButton" onclick="firstPlay()" class="btn btn-primary play-overlay"></a>
         
 
     <a-scene markerhandler embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
@@ -32,6 +32,7 @@
       </a-scene>
 
       
-      <script>run();</script>
+      <script>hideOrShow("playButton");
+      run();</script>
 </body>
 </html>
