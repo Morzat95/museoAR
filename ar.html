@@ -16,10 +16,10 @@
 
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a href="index.html"><div class="menu-overlay"></div></a>  
-      <ul id="checklist" class="checklist" style="list-style-type:square">
+    <a id="playButton" onclick="firstPlay()"><div class="btn btn-primary play-overlay menu-overlay"></div></a>  
+      <ul id="checklist" class="checklist" style="list-style-type:none">
         </ul>
-        <a id="playButton" onclick="firstPlay()" class="btn btn-primary play-overlay"></a>
+       <!--  <a id="playButton" onclick="firstPlay()" class="btn btn-primary play-overlay"></a>-->
         
 
     <a-scene markerhandler embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">

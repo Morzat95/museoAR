@@ -10,7 +10,7 @@
         {
         "id": "video0",
         "rotation": "-67.962 7.602 -7.026",
-        "scale":"3 3 1",
+        "scale":"5 5 1",
         "type":"a-video",
         "src": "#source0",
         "children":
@@ -21,21 +21,6 @@
               "src": "assets/video/placas/@PLACA4-SF.webm",
               "loop":"false",
               "autoplay":"false"
-            },{
-                "id":"button0",
-                "position":"0.314 -0.007 0.072",   
-                "type":"a-box",
-                "depth":"0.1",
-                "height":"0.1",
-                "width":"0.1",
-                "onclick":"goTo('B')",
-                "material": {
-                  "color": "grey",
-                  "transparent":true,
-                  "opacity":"0.00",
-                  "alphaTest":"0.5"
-                }
-                
             }
     ]
   }
@@ -54,7 +39,7 @@
             {
             "id": "video1",
             "rotation": "-67.962 7.602 -7.026",
-            "scale":"3 3 1",
+            "scale":"5 5 1",
             "type":"a-video",
             "src": "#source1",
             "children":
@@ -65,21 +50,6 @@
                   "src": "assets/video/placas/@PLACA5-SF.webm",
                   "loop":"false",
                   "autoplay":"false"
-                },{
-                    "id":"button1",
-                    "position":"0.314 -0.007 0.072",   
-                    "type":"a-box",
-                    "depth":"0.1",
-                    "height":"0.1",
-                    "width":"0.1",
-                    "onclick":"goTo('B')",
-                    "material": {
-                      "color": "grey",
-                      "transparent":true,
-                      "opacity":"0.00",
-                      "alphaTest":"0.5"
-                    }
-                    
                 }
         ]
       }
@@ -97,7 +67,7 @@
       {
         "id": "video2",
         "rotation": "-67.962 7.602 -7.026",
-        "scale":"3 3 1",
+        "scale":"5 5 1",
         "type":"a-video",
         "src": "#source2",
         "children":
@@ -108,21 +78,6 @@
               "src": "assets/video/placas/@PLACA6A-SF.webm",  
               "loop":"false",
               "autoplay":"false"
-            },{
-                "id":"button2",
-                "position":"0.314 -0.007 0.072",   
-                "type":"a-box",
-                "depth":"0.1",
-                "height":"0.1",
-                "width":"0.1",
-                "onclick":"goTo('C')",
-                "material": {
-                  "color": "grey",
-                  "transparent":true,
-                  "opacity":"0.00",
-                  "alphaTest":"0.5"
-                }
-                
             }
     ]
     }
@@ -140,7 +95,7 @@
     {
       "id": "video3",
       "rotation": "-67.962 7.602 -7.026",
-      "scale":"3 3 1",
+      "scale":"5 5 1",
       "type":"a-video",
       "src": "#source3",
       "children":
@@ -151,21 +106,6 @@
             "src": "assets/video/placas/@PLACA6B-SF.webm",  
             "loop":"false",
             "autoplay":"false"
-          },{
-              "id":"button3",
-              "position":"0.314 -0.007 0.072",   
-              "type":"a-box",
-              "depth":"0.1",
-              "height":"0.1",
-              "width":"0.1",
-              "onclick":"goTo('D')",
-              "material": {
-                "color": "grey",
-                "transparent":true,
-                "opacity":"0.00",
-                "alphaTest":"0.5"
-              }
-              
           }
   ]
   }
@@ -183,7 +123,7 @@
   {
     "id": "video4",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source4",
     "children":
@@ -194,21 +134,6 @@
           "src": "assets/video/placas/@PLACA6C-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button4",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('E')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-            }
-            
         }
 ]
 }
@@ -226,7 +151,7 @@
   {
     "id": "video5",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source5",
     "children":
@@ -237,21 +162,6 @@
           "src": "assets/video/placas/@PLACA7-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button5",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('F')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-            }
-            
         }
 ]
 }
@@ -270,7 +180,7 @@
   {
     "id": "video6",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source6",
     "children":
@@ -281,21 +191,6 @@
           "src": "assets/video/placas/@PLACA8A-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button6",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('G')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-            }
-            
         }
 ]
 }
@@ -313,7 +208,7 @@
   {
     "id": "video7",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source7",
     "children":
@@ -324,21 +219,6 @@
           "src": "assets/video/placas/@PLACA8B-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button7",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('H')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-            }
-            
         }
 ]
 }
@@ -356,7 +236,7 @@
   {
     "id": "video8",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source8",
     "children":
@@ -367,20 +247,6 @@
           "src": "assets/video/placas/@PLACA8C-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button8",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('I')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-          }
         }
       ] 
     }
@@ -399,7 +265,7 @@
   {
     "id": "video9",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source9",
     "children":
@@ -410,20 +276,6 @@
           "src": "assets/video/placas/@PLACA8D-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button9",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('J')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-          }
         }
       ] 
     }
@@ -441,7 +293,7 @@
   {
     "id": "video10",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source10",
     "children":
@@ -452,20 +304,6 @@
           "src": "assets/video/placas/@PLACA9A-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button10",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('K')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-          }
         }
       ] 
     }
@@ -484,7 +322,7 @@
   {
     "id": "video11",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source11",
     "children":
@@ -495,20 +333,6 @@
           "src": "assets/video/placas/@PLACA9B-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button11",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('L')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-          }
         }
       ] 
     }
@@ -526,7 +350,7 @@
   {
     "id": "video12",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source12",
     "children":
@@ -537,20 +361,6 @@
           "src": "assets/video/placas/@PLACA10A-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button12",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('M')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-          }
         }
       ] 
     }
@@ -568,7 +378,7 @@
   {
     "id": "video13",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source13",
     "children":
@@ -579,20 +389,6 @@
           "src": "assets/video/placas/@PLACA10B-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button13",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('N')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-          }
         }
       ] 
     }
@@ -610,7 +406,7 @@
   {
     "id": "video14",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source14",
     "children":
@@ -621,20 +417,6 @@
           "src": "assets/video/placas/@PLACA10D-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button14",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('O')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-          }
         }
       ] 
     }
@@ -651,7 +433,7 @@
   {
     "id": "video15",
     "rotation": "-67.962 7.602 -7.026",
-    "scale":"3 3 1",
+    "scale":"5 5 1",
     "type":"a-video",
     "src": "#source15",
     "children":
