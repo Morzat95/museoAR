@@ -3,8 +3,9 @@
     "id":"INICIO",
   "description": "@PLACA4-SF.webm",
   "marker":"kanji",
+  "type":"delay",
   "delay":"15000",
-  "next":"B",
+  "next":"A",
   "autoplay":"source0",
   "objects":[
         {

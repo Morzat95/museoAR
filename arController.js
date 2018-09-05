@@ -139,12 +139,21 @@ function drawText(text){
 }
 function startTimer(item){
   var delayInMilliseconds = item.delay;
+  item.delayStart=Date.now();
+  console.log("starting point is:"+item.delayStart);
   setTimeout(function(timeout) {
-    console.log("timer finished");
-        if(playing&&isCurrentMarkerVisible){ //if marker is still visible
-          
-          goTo(item.next);
-                  }
+    var diff = Date.now()-item.delayStart;
+    console.log("timer finished, delta: "+diff);
+    if(playing&&isCurrentMarkerVisible&&(diff>=delayInMilliseconds)){ //if marker is still visible
+      console.log("next!");
+      goTo(item.next);
+              }
+    else{
+      console.log("timer cancelled...");
+    }
+  
+  
+  console.log("Delta= "+diff); 
   }, delayInMilliseconds);
 
 }
