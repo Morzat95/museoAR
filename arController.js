@@ -28,6 +28,7 @@ function preLoadCard(card){
 function loadCard(card){
   makeCardVisible(card);
  if(card.autoplay!=null){
+   
   playPause(card.autoplay);
   }
   drawText(card.description);
@@ -149,9 +150,9 @@ function startTimer(item){
 }
 function goTo(next){
   currentTimeout="";
-  if(currentCard.autoplay!=null){
+  /*if(currentCard.autoplay!=null){
     playPause(currentCard.autoplay);
-    }
+    }*/
  makeCardInvisible(currentCard);
  // }
   console.log(next);
@@ -169,6 +170,7 @@ function play(id){
 
 }
 function playPause(id){
+  console.log("playPause: "+id);
   var aVideoAsset= document.querySelector('#'+id);
   if(aVideoAsset.paused==false){
     aVideoAsset.pause();
