@@ -402,7 +402,7 @@
 "type":"delay",
 "delay":"15000",
 "next":"O",
-"autoplay":"source1",
+"autoplay":"source14",
 "objects":[
   {
     "id": "video14",
@@ -430,6 +430,7 @@
 "type":"delay",
 "delay":"15000",
 "next":"FIN",
+"autoplay":"source15",
 "objects":[
   {
     "id": "video15",
@@ -445,20 +446,6 @@
           "src": "assets/video/placas/@PLACA11-SF.webm",  
           "loop":"false",
           "autoplay":"false"
-        },{
-            "id":"button15",
-            "position":"0.314 -0.007 0.072",   
-            "type":"a-box",
-            "depth":"0.1",
-            "height":"0.1",
-            "width":"0.1",
-            "onclick":"goTo('FIN')",
-            "material": {
-              "color": "grey",
-              "transparent":true,
-              "opacity":"0.00",
-              "alphaTest":"0.5"
-          }
         }
       ] 
     }
