@@ -61,7 +61,7 @@
     "description": "@PLACA6A-SF.webm",
     "marker":"kanji",
     "type":"delay",
-    "delay":"10000",
+    "delay":"15000",
     "next":"C",
     "autoplay":"source2",
     "objects":[
@@ -89,7 +89,7 @@
   "description": "@PLACA6B-SF.webm",
   "marker":"kanji",
   "type":"delay",
-  "delay":"10000",
+  "delay":"15000",
   "next":"D",
   "autoplay":"source3",
   "objects":[
@@ -117,7 +117,7 @@
 "description": "@PLACA6C-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"10000",
+"delay":"15000",
 "next":"E",
 "autoplay":"source4",
 "objects":[
@@ -145,7 +145,7 @@
 "description": "@PLACA7-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"10000",
+"delay":"15000",
 "next":"F",
 "autoplay":"source5",
 "objects":[
@@ -174,7 +174,7 @@
 "description": "@PLACA8A-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"10000",
+"delay":"15000",
 "next":"G",
 "autoplay":"source6",
 "objects":[
@@ -202,7 +202,7 @@
 "description": "@PLACA8B-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"15000",
 "next":"H",
 "autoplay":"source7",
 "objects":[
@@ -230,7 +230,7 @@
 "description": "@PLACA8C-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"15000",
 "next":"I",
 "autoplay":"source8",
 "objects":[
@@ -259,7 +259,7 @@
 "description": "@PLACA8D-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"15000",
 "next":"J",
 "autoplay":"source9",
 "objects":[
@@ -287,7 +287,7 @@
 "description": "@PLACA9A-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"15000",
 "next":"K",
 "autoplay":"source10",
 "objects":[
@@ -316,7 +316,7 @@
 "description": "@PLACA9B-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"15000",
 "next":"L",
 "autoplay":"source11",
 "objects":[
@@ -344,7 +344,7 @@
 "description": "@PLACA10A-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"15000",
 "next":"M",
 "autoplay":"source12",
 "objects":[
@@ -372,7 +372,7 @@
 "description": "@PLACA10B-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"15000",
 "next":"N",
 "autoplay":"source13",
 "objects":[
@@ -400,7 +400,7 @@
 "description": "@PLACA10C-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"15000",
 "next":"O",
 "autoplay":"source1",
 "objects":[
@@ -428,7 +428,7 @@
 "description": "@PLACA11-SF.webm",
 "marker":"kanji",
 "type":"delay",
-"delay":"5000",
+"delay":"15000",
 "next":"FIN",
 "objects":[
   {

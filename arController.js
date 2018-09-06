@@ -45,8 +45,17 @@ function makeCardVisible(card){
 }
 function makeCardInvisible(card){
   iterateObjects(card.objects,false,setObjectVisible);
+  iterateObjects(card.objects,false,removeObject); //boolean here is not needed
 }
+function removeObject(Jobj,bool){
+  console.log(Jobj);
+  var obj= document.querySelector('#'+Jobj.id);
+  if(obj.parent!=null){
+    obj.parentNode.removeChild(obj);}
+}
+
 function setObjectVisible(Jobj,value){
+  
   var obj= document.querySelector('#'+Jobj.id);
   obj.setAttribute('visible',value); 
 }

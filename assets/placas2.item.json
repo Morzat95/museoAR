@@ -1,0 +1,30 @@
+[
+  {
+    "id":"INICIO",
+  "description": "@PLACA4-SF.webm",
+  "marker":"kanji",
+  "type":"delay",
+  "delay":"15000",
+  "next":"A",
+  "autoplay":"source0",
+  "objects":[
+        {
+        "id": "video0",
+        "rotation": "-67.962 7.602 -7.026",
+        "scale":"5 5 1",
+        "type":"a-video",
+        "src": "#source0",
+        "children":
+        [
+            {
+              "id": "source0",
+              "type":"video",
+              "src": "assets/video/placas/@PLACA8A-SF.webm",
+              "loop":"false",
+              "autoplay":"false"
+            }
+    ]
+  }
+  ]
+  }
+  ]
