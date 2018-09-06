@@ -3,6 +3,7 @@ var name = a.substring(a.indexOf("=")+1);
 var playing=false;
 var currentCard=0;
 let activity;
+var awaitingDeletion=0;
 
 function run(){
     console.log("activity= "+name);
@@ -45,13 +46,38 @@ function makeCardVisible(card){
 }
 function makeCardInvisible(card){
   iterateObjects(card.objects,false,setObjectVisible);
-  iterateObjects(card.objects,false,removeObject); //boolean here is not needed
+  awaitingDeletion=0;
+  iterateObjects(card.objects,true,markForRemoval);
+  garbageCollection();
+
+  //iterateObjects(card.objects,false,removeObject); //boolean here is not needed
 }
-function removeObject(Jobj,bool){
-  console.log(Jobj);
-  var obj= document.querySelector('#'+Jobj.id);
-  if(obj.parent!=null){
-    obj.parentNode.removeChild(obj);}
+
+function markForRemoval(Jobj,value){
+    var obj= document.querySelector('#'+Jobj.id);
+    obj.setAttribute('remove',value); 
+    awaitingDeletion+=1;
+}
+
+function garbageCollection(){
+  console.log("removing...");
+  while(awaitingDeletion>0){
+        console.log("awaiting removal.."+awaitingDeletion);
+        document.querySelectorAll('*').forEach(function(node) {
+          //console.log(node.id+" "+(node.getAttribute('remove')));
+          if (node.getAttribute('remove')!=null){
+            if(node.firstChild==null){
+              var parent=node.parentNode;
+              parent.removeChild(node);
+              console.log("deleting: "+node.id);
+              awaitingDeletion-=1;
+            }
+            else{
+              console.log("my child "+node.firstChild.id+ " needs me");
+            }
+          }  
+      });
+  }
 }
 
 function setObjectVisible(Jobj,value){
@@ -104,28 +130,16 @@ function iterateObjects(jsonInput,value,callback) {
   }
     for(var i = 0; i < jsonInput.length; i++) {
         var obj = jsonInput[i];
-        console.log("obj ID"+obj.id);
         callback(obj,value);
         iterateObjects(obj.children,obj.id,callback);
         
     }
     objectCount = i;
-    console.log("objectCount:" + objectCount);
+   // console.log("objectCount:" + objectCount);
 
 }
 
 
-
-
-/*function removeAllChildren(father){
-  
-  var marker= document.querySelector('#'+father);
-  if(marker!=null){
-    while (marker.firstChild) {
-      marker.removeChild(marker.firstChild);
-      }
-    }
-}*/
 function appendText(text){
   var obj = document.createElement('li');
   obj.setAttribute('class','checklist-text');
@@ -149,7 +163,6 @@ function drawText(text){
 function startTimer(item){
   var delayInMilliseconds = item.delay;
   item.delayStart=Date.now();
-  console.log("starting point is:"+item.delayStart);
   setTimeout(function(timeout) {
     var diff = Date.now()-item.delayStart;
     console.log("timer finished, delta: "+diff);
