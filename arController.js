@@ -4,6 +4,8 @@ var playing=false;
 var currentCard=0;
 let activity;
 var awaitingDeletion=0;
+var index=0
+var array;
 
 function run(){
     console.log("activity= "+name);
@@ -13,20 +15,34 @@ function run(){
 
 function loadActivity(jsonInput){
   currentCard=jsonInput[0];
+  array=jsonInput;
   activity=new Map();
   jsonInput.forEach(card => {
     console.log("loading...id:"+card.id+" element: "+card.description)
     activity.set(card.id,card);
-    preLoadCard(card);
+   
   });
+  iterateObjects(currentCard.objects,currentCard.marker,setObjectProperties); //load first
+  preLoadNextCard();
   console.log(activity);
 }
+function preLoadNextCard(){
+  if(array.length>index+1){
+  var card=array[index+1];
+  iterateObjects(card.objects,card.marker,setObjectProperties);
+}
+  }
+
+ 
+  
 
 function preLoadCard(card){
   iterateObjects(card.objects,card.marker,setObjectProperties);
 }
 
 function loadCard(card){
+  index+=1;
+  preLoadNextCard();
   makeCardVisible(card);
  if(card.autoplay!=null){
    
@@ -166,7 +182,7 @@ function startTimer(item){
   setTimeout(function(timeout) {
     var diff = Date.now()-item.delayStart;
     console.log("timer finished, delta: "+diff);
-    if(playing&&isCurrentMarkerVisible&&(diff>=delayInMilliseconds)){ //if marker is still visible
+    if(playing&&isCurrentMarkerVisible&&((diff-delayInMilliseconds))>-100){ //if marker is still visible
       console.log("next!");
       goTo(item.next);
               }
