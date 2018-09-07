@@ -11,7 +11,7 @@
         {
         "id": "video0",
         "rotation": "-67.962 7.602 -7.026",
-        "scale":"5 5 1",
+        "scale":"1 1 1",
         "type":"a-video",
         "src": "#source0",
         "children":
