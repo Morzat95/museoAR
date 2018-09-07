@@ -67,7 +67,8 @@
     "objects":[
       {
         "id": "video2",
-        "rotation": "-67.962 7.602 -7.026",
+        "position":"2.233 -18.203 -1.263",
+        "rotation": "-90 0 0",
         "scale":"5 5 1",
         "type":"a-video",
         "src": "#source2",
