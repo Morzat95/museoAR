@@ -3,14 +3,12 @@
     "id":"INICIO",
   "description": "@PLACA4-SF.webm",
   "marker":"kanji",
-  "type":"delay",
-  "delay":"15000",
   "next":"A",
   "autoplay":"source0",
   "objects":[
         {
         "id": "video0",
-        "rotation": "-67.962 7.602 -7.026",
+        "rotation": "-90 0 0",
         "scale":"1 1 1",
         "type":"a-video",
         "src": "#source0",
