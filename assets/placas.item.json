@@ -3,6 +3,7 @@
     "id":"INICIO",
   "description": "@PLACA4-SF.webm",
   "marker":"kanji",
+  "delay":"15000",
   "next":"A",
   "autoplay":"source0",
   "objects":[
@@ -37,8 +38,9 @@
       "objects":[
             {
             "id": "video1",
-            "rotation": "-67.962 7.602 -7.026",
-            "scale":"5 5 1",
+            "rotation": "-90 0 0",
+            "position":"-0.272 2.275 0.151",
+            "scale":"1 1 1",
             "type":"a-video",
             "src": "#source1",
             "children":
