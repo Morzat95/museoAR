@@ -24,7 +24,7 @@
 
  	</a-assets>
       
-    <a-marker preset='hiro'>
+    <a-marker preset='kanji'>
 	  <a-video src="#video" position="0 0 0" rotation="-90 0 0" scale="1 1 1"></a-video>
 
     </a-marker>
@@ -36,7 +36,6 @@
 <script>
 var video = document.getElementById('video');
 console.log(video);
-
 document.getElementById('play-button').addEventListener("click", function(e){
   this.style.display = 'none';
   video.play();

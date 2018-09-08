@@ -15,6 +15,7 @@
 
 
 <body style='margin : 0px; overflow: hidden;'>
+  <a id="playButton" onclick="firstPlay()"><div class="btn btn-primary play-overlay menu-overlay"></div></a>  
   <ul id="checklist" class="checklist" style="list-style-type:square">
   </ul>
 
@@ -23,7 +24,7 @@
     <a-entity  id="hiro" rotation="63.873 0 0" position="-0.227 1.597 -0.829"></a-entity>
   </a-scene>
 
-  <script>run();</script>
+  <script>hideOrShow("playButton");run();</script>
 </body>
 
 </html>

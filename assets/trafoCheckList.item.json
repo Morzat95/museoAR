@@ -3,6 +3,7 @@
     "id":"first",
   "description": "toca el transformador...",
   "marker":"kanji",
+  "next":"B",
   "objects":[{
       "id": "trafo4Bornes",
       "type":"a-entity",
@@ -24,7 +25,7 @@
     "marker":"kanji",
   
       "objects":[{
-        "id": "trafo4Bornes",
+        "id": "trafo4Bornes2",
         "type":"a-entity",
         "file": "assets/models/ejTrafo/TRAFO_4BORNES.obj",
         "scale": ".2 .2 .2",
@@ -75,6 +76,7 @@
   },
   { "id":"C",
     "description": "",
+    "next":"H",
     "marker":"kanji",
     "objects":[
           {
@@ -119,6 +121,7 @@
     "id":"E",
     "description": "y esto es un video de prueba",
     "marker":"hiro",
+    "next":"F",
     "objects":[
             {
               "id": "video",
