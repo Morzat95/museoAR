@@ -4,7 +4,8 @@
   "description": "@PLACA4-SF.webm",
   "marker":"kanji",
   "next":"A",
-  "delay":"15000",
+  "type":"delay",
+  "delay":"5000",
   "autoplay":"source0",
   "objects":[
         {
