@@ -1,7 +1,7 @@
 {
-    "name":"Demostracion",
+    "name":"Tablet",
     "description":"...",
     "type":"checklist",
     "preview": "assets/images/transformador4bornes.png",
-    "activity": "placas2"
+    "activity": "tablet"
     }

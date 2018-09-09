@@ -23,6 +23,9 @@ function loadActivity(jsonInput) {
   console.log(activity);
 }
 function preLoadCard(card) {
+  if(card==null){
+    console.error("check JSON file card is null");
+  }
   if (!isPreloaded(card)) {
     iterateObjects(card.objects, card.marker, setObjectProperties);
     card.preoloaded = true;
@@ -117,7 +120,7 @@ function setObjectProperties(jObj, fatherID) {
   var obj = document.createElement(jObj.type);
   obj.setAttribute('visible', false); //Makes the object invisible by default
   obj.setAttribute('id', jObj.id);
-  obj.setAttribute('obj-model', 'obj', 'url(' + jObj.file + ')');
+ 
   obj.setAttribute('scale', jObj.scale);
   obj.setAttribute('rotation', jObj.rotation);
   obj.setAttribute('position', jObj.position);
@@ -126,6 +129,9 @@ function setObjectProperties(jObj, fatherID) {
   obj.setAttribute('depth', jObj.depth);
   obj.setAttribute('jsonLoaded', '');
   // obj.setAttribute('loaded',true);
+  if(jObj.file!=null){
+    obj.setAttribute('obj-model', 'obj', 'url(' + jObj.file + ')');
+  }
   if (jObj.onclick != null) {
     obj.setAttribute('cursor-listener', '');
     obj.setAttribute('onclick', jObj.onclick);
@@ -144,13 +150,14 @@ function setObjectProperties(jObj, fatherID) {
     }
     obj.setAttribute('loop', jObj.loop);
   }
+  else{
   obj.setAttribute('color', jObj.color);
   obj.setAttribute('value', jObj.value);
   obj.setAttribute('shadow', jObj.shadow);
+  }
 
   marker.appendChild(obj);
-  console.log("Adding entity #" + jObj.id);
-  console.log(marker.querySelector("#" + jObj.id));
+
 }
 
 function iterateObjects(jsonInput, value, callback) {
