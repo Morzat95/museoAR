@@ -22,7 +22,7 @@
        <!--  <a id="playButton" onclick="firstPlay()" class="btn btn-primary play-overlay"></a>-->
         
 
-    <a-scene id="scene" markerhandler embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+    <a-scene id="scene" markerhandler embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; sourceWidth: 240; sourceHeight: 180; maxDetectionRate: 5;' vr-mode-ui="enabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
     <!--<a-scene id="scene" markerhandler embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false; detectionMode: matrix; matrixCodeType: 3x3;">-->
       <a-marker id="kanji" preset='kanji'></a-marker>
         <a-camera-static/>
