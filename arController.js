@@ -71,7 +71,7 @@ function deleteCard(card) {
   iterateObjects(card.objects, false, setObjectVisible);
   iterateObjects(card.objects, true, markForRemoval);
   card.prelodaded = false;
-  //garbageCollection();
+  garbageCollection();
 }
 
 function markForRemoval(Jobj, value) {
