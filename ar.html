@@ -23,8 +23,11 @@
         
 
     <a-scene id="scene" markerhandler embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
-    <!--<a-scene id="scene" markerhandler embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false; detectionMode: matrix; matrixCodeType: 3x3;">-->
+    <!--<a-scene id="scene" markerhandler embedded arjs='trackingMethod: best; sourceType: image; sourceUrl: bashScripts/stelliumMarker.png;debugUIEnabled: false;' vr-mode-ui="enabled: false; detectionMode: matrix; matrixCodeType: 3x3;">-->
       <a-marker id="kanji" preset='kanji'></a-marker>
+     <!-- <a-marker preset="custom" type="pattern" url="stellium.patt">
+        <a-box  color="#4CC3D9" shadow></a-box>
+      </a-marker>-->
       <a-entity camera mouse-cursor >
         <a-cursor fuse="false" color="yellow"></a-cursor>
       </a-entity>

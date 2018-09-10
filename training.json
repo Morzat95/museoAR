@@ -1,0 +1,105 @@
+{
+	"meta": {
+		"createdBy": "Area Learning - AR.js 1.6.0",
+		"createdAt": "2018-09-10T02:32:26.527Z"
+	},
+	"trackingBackend": "artoolkit",
+	"subMarkersControls": [
+		{
+			"parameters": {
+				"type": "pattern",
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt"
+			},
+			"poseMatrix": [
+				1,
+				0,
+				0,
+				0,
+				0,
+				1,
+				0,
+				0,
+				0,
+				0,
+				1,
+				0,
+				0,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"parameters": {
+				"type": "pattern",
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-kanji.patt"
+			},
+			"poseMatrix": [
+				0.9825399274321667,
+				0.18601534418221363,
+				0.0037445797046136552,
+				0,
+				-0.17085991740790793,
+				0.9100885562191565,
+				-0.37755258113071555,
+				0,
+				-0.07363843489956973,
+				0.3703204827577684,
+				0.9259804388459322,
+				0,
+				5.183512404433761,
+				0.9855290649852897,
+				0.9294888157388437,
+				1.0000000000000002
+			]
+		},
+		{
+			"parameters": {
+				"type": "pattern",
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-letterA.patt"
+			},
+			"poseMatrix": [
+				0.9991854744934501,
+				-0.03718161004720294,
+				-0.01569153907420806,
+				0,
+				0.037006040245378055,
+				0.9992508965076432,
+				-0.011334790320534274,
+				0,
+				0.01610123336043752,
+				0.010744877872402725,
+				0.9998124529841772,
+				0,
+				-0.37080406764248314,
+				-1.894652999564864,
+				-3.2446312836329705,
+				1
+			]
+		},
+		{
+			"parameters": {
+				"type": "pattern",
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-letterB.patt"
+			},
+			"poseMatrix": [
+				0.9719301971180822,
+				0.23237978415936164,
+				-0.03675962848034061,
+				0,
+				-0.23126746279250904,
+				0.9149692303115072,
+				-0.3306763067562759,
+				0,
+				-0.04320852570539592,
+				0.32989549173731025,
+				0.943027891452854,
+				0,
+				5.870917288822139,
+				-0.8896704885921386,
+				-2.78620797297139,
+				1.0000000000000002
+			]
+		}
+	]
+}
