@@ -4,12 +4,12 @@
     "description": "@PLACA4-SF.webm",
     "marker": "kanji",
     "next": "A",
-    "type": "delay",
     "delay": "5000",
     "autoplay": "source0",
     "objects": [
       {
         "id": "video0",
+        "position":"4.665 1.169 1.545",
         "rotation": "-90 0 0",
         "scale": "8 4.5 1",
         "type": "a-video",
