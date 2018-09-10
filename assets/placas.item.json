@@ -4,13 +4,14 @@
     "description": "@PLACA4-SF.webm",
     "marker": "kanji",
     "next": "A",
+    "type": "delay",
     "delay": "5000",
     "autoplay": "source0",
     "objects": [
       {
-        "id": "video0",
-        "position":"4.665 1.169 1.545",
-        "rotation": "-90 0 0",
+        "id": "video10",
+        "position":"4.665 1.169 1.545", 
+        "rotation": "-46.799 -91.200 91.506",
         "scale": "8 4.5 1",
         "type": "a-video",
         "src": "#source0",
@@ -37,8 +38,9 @@
     "objects": [
       {
         "id": "video1",
-        "rotation": "-90 0 0",
-        "scale": "8 4.5 1",
+        "rotation": "-54.920 -78.760 82.231",
+        "position":"-1.362 -0.171 -1.622",
+        "scale": "13.5 11 1",
         "type": "a-video",
         "src": "#source1",
         "children": [
@@ -64,8 +66,9 @@
     "objects": [
       {
         "id": "video5",
-        "rotation": "-67.962 7.602 -7.026",
-        "scale": "8 4.5 1",
+        "rotation": "-54.920 -78.760 82.231",
+        "position":"-1.362 -0.171 -1.622",
+        "scale": "13.5 11 1",
         "type": "a-video",
         "src": "#source5",
         "children": [
@@ -87,17 +90,18 @@
     "type": "delay",
     "delay": "5000",
     "next": "K",
-    "autoplay": "source10",
+    "autoplay": "source20",
     "objects": [
       {
-        "id": "video10",
-        "rotation": "-90 0 0",
-        "scale": "8 4.5 1",
+        "id": "video20",
+        "rotation": "-54.920 -78.760 82.231",
+        "position":"-1.362 -0.171 -1.622",
+        "scale": "13.5 11 1",
         "type": "a-video",
-        "src": "#source10",
+        "src": "#source20",
         "children": [
           {
-            "id": "source10",
+            "id": "source20",
             "type": "video",
             "src": "assets/video/placas/@PLACA9A-SF.webm",
             "loop": "false",
@@ -118,8 +122,9 @@
     "objects": [
       {
         "id": "video11",
-        "rotation": "-90 0 0",
-        "scale": "8 4.5 1",
+        "rotation": "-54.920 -78.760 82.231",
+        "position":"-1.362 -0.171 -1.622",
+        "scale": "13.5 11 1",
         "type": "a-video",
         "src": "#source11",
         "children": [
@@ -145,8 +150,9 @@
     "objects": [
       {
         "id": "video12",
-        "rotation": "-90 0 0",
-        "scale": "8 4.5 1",
+        "rotation": "-67.907 -93.399 91.776",
+        "position":"0.056 0.255 1.442",
+        "scale": "13.5 11 1",
         "type": "a-video",
         "src": "#source12",
         "children": [
@@ -172,8 +178,9 @@
     "objects": [
       {
         "id": "video13",
-        "rotation": "-90 0 0",
-        "scale": "8 4.5 1",
+        "rotation": "-67.907 -93.399 91.776",
+        "position":"0.056 0.255 1.442",
+        "scale": "13.5 11 1",
         "type": "a-video",
         "src": "#source13",
         "children": [
@@ -199,8 +206,9 @@
     "objects": [
       {
         "id": "video14",
-        "rotation": "-90 0 0",
-        "scale": "8 4.5 1",
+        "rotation": "-67.907 -93.399 91.776",
+        "position":"0.056 0.255 1.442",
+        "scale": "13.5 11 1",
         "type": "a-video",
         "src": "#source14",
         "children": [
@@ -226,8 +234,9 @@
     "objects": [
       {
         "id": "video15",
-        "rotation": "-90 0 0",
-        "scale": "8 4.5 1",
+        "rotation": "-67.907 -93.399 91.776",
+        "position":"0.056 0.255 1.442",
+        "scale": "13.5 11 1",
         "type": "a-video",
         "src": "#source15",
         "children": [
