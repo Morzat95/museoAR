@@ -3,6 +3,7 @@ var name = a.substring(a.indexOf("=") + 1);
 var playing = false;
 var currentCard = 0;
 let activity;
+var historyStack = [];
 
 function run() {
   console.log("activity= " + name);
@@ -70,7 +71,7 @@ function deleteCard(card) {
   iterateObjects(card.objects, false, setObjectVisible);
   iterateObjects(card.objects, true, markForRemoval);
   card.prelodaded = false;
-  garbageCollection();
+  //garbageCollection();
 }
 
 function markForRemoval(Jobj, value) {
@@ -87,6 +88,35 @@ function logCurrentObjects() {
 
 
   });
+}
+function goTo(next) {
+  currentTimeout = "";
+  /*if(currentCard.autoplay!=null){
+    playPause(currentCard.autoplay);
+    }*/
+  historyStack.push(currentCard.id);
+  deleteCard(currentCard);
+  // }
+  console.log(next);
+  currentCard = activity.get(next);
+  if (currentCard == null) {
+    console.error("attemped to redir(ect to: " + next + " but it was not found...");
+  }
+  playing = false;
+}
+
+function next(){
+  if(currentCard.next!=null){
+    goTo(currentCard.next);
+  }
+  console.log("next!");
+}
+function previous(){
+ var previous=historyStack.pop();
+ if(previous!=null){
+    goTo(previous); 
+ }  
+ console.log("previous! "+previous);
 }
 function garbageCollection() {
   console.log("Removing card...");
@@ -215,20 +245,7 @@ function startTimer(item) {
   }, delayInMilliseconds);
 
 }
-function goTo(next) {
-  currentTimeout = "";
-  /*if(currentCard.autoplay!=null){
-    playPause(currentCard.autoplay);
-    }*/
-  deleteCard(currentCard);
-  // }
-  console.log(next);
-  currentCard = activity.get(next);
-  if (currentCard == null) {
-    console.error("attemped to redirect to: " + next + " but it was not found...");
-  }
-  playing = false;
-}
+
 
 function firstPlay() {
   hideOrShow("playButton");
