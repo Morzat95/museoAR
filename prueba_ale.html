@@ -7,8 +7,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <script src="lib/jquery.min.js"></script>
-  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <script src="lib/aframe.min.js"></script>
+  <script src="lib/aframe-ar.js"></script> 
   <script src="lib/aframe-html-shader.min.js"></script>
   <script src="arController.js"></script>
   <script src="jsonUtils.js"></script>
@@ -16,25 +16,15 @@
 
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a id="playButton" onclick="firstPlay()"><div class="btn btn-primary play-overlay menu-overlay"></div></a>  
-      <ul id="checklist" class="checklist" style="list-style-type:none">
-        </ul>
-       <!--  <a id="playButton" onclick="firstPlay()" class="btn btn-primary play-overlay"></a>-->
-        
-
-    <a-scene id="scene" markerhandler embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; sourceWidth: 800; sourceHeight: 600; ' vr-mode-ui="enabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
-    <!--<a-scene id="scene" markerhandler embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false; detectionMode: matrix; matrixCodeType: 3x3;">-->
-      <a-marker id="kanji" preset='kanji'></a-marker>
+<!-- add arjs into your scene -->
+<a-scene arjs>
+        <!-- define a marker -->
+        <a-anchor>
+                <!-- define the content to be displayed on top of the marker -->
+                <a-box color="#2EAFAC"></a-box>
+        </a-anchor>
+        <!-- define a simple camera -->
         <a-camera-static/>
-
-	      <!--<a-entity camera mouse-cursor >
-        <a-cursor fuse="false" color="yellow"></a-cursor>
-      </a-entity>
-      -->
-      </a-scene>
-
-      
-      <script>hideOrShow("playButton");
-      run();</script>
+</a-scene>
 </body>
 </html>
