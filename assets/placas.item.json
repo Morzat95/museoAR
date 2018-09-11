@@ -37,8 +37,8 @@
       {
         "id": "video1",
         "rotation": "-89.340 136.243 -134.958",
-        "position":"0.262 -1.248 0.399",
-        "scale": "15.000 7.500 1",
+        "position":"0.378 -1.252 0.395",
+        "scale": "16 9 1",
         "type": "a-video",
         "src": "#source1",
         "children": [
