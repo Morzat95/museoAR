@@ -2,7 +2,7 @@
   {
     "id": "INICIO",
     "description": "@PLACA4-SF.webm",
-    "marker": "stellium",
+    "marker": "kanji",
     "next": "A",
     "delay": "5000",
     "autoplay": "source0",
@@ -29,7 +29,7 @@
   {
     "id": "A",
     "description": "@PLACA5-SF.webm",
-    "marker": "stellium",
+    "marker": "kanji",
     "delay": "5000",
     "next": "E",
     "autoplay": "source1",
@@ -56,7 +56,7 @@
   {
     "id": "E",
     "description": "@PLACA7-SF.webm",
-    "marker": "stellium",
+    "marker": "kanji",
     "delay": "5000",
     "next": "J",
     "autoplay": "source5",
@@ -83,7 +83,7 @@
   {
     "id": "J",
     "description": "@PLACA9A-SF.webm",
-    "marker": "stellium",
+    "marker": "kanji",
     "delay": "5000",
     "next": "K",
     "autoplay": "source20",
@@ -110,7 +110,7 @@
   {
     "id": "K",
     "description": "@PLACA9B-SF.webm",
-    "marker": "stellium",
+    "marker": "kanji",
     "delay": "5000",
     "next": "L",
     "autoplay": "source11",
@@ -137,7 +137,7 @@
   {
     "id": "L",
     "description": "@PLACA10A-SF.webm",
-    "marker": "stellium",
+    "marker": "kanji",
     "delay": "5000",
     "next": "M",
     "autoplay": "source12",
@@ -164,7 +164,7 @@
   {
     "id": "M",
     "description": "@PLACA10B-SF.webm",
-    "marker": "stellium",
+    "marker": "kanji",
     "delay": "5000",
     "next": "N",
     "autoplay": "source13",
@@ -191,7 +191,7 @@
   {
     "id": "N",
     "description": "@PLACA10C-SF.webm",
-    "marker": "stellium",
+    "marker": "kanji",
     "delay": "5000",
     "next": "O",
     "autoplay": "source14",
@@ -218,7 +218,7 @@
   {
     "id": "O",
     "description": "@PLACA11-SF.webm",
-    "marker": "stellium",
+    "marker": "kanji",
     "delay": "5000",
     "next": "FIN",
     "autoplay": "source15",

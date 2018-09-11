@@ -43,7 +43,7 @@ function isPreloaded(card) {
 
 function loadCard(card) {
   preLoadCard(card);
-  if (card.next != null) { //if possible loads next oen
+  if (card.next != null) { //if possible loads next
     preLoadCard(activity.get(card.next));
   }
   else {
@@ -70,8 +70,8 @@ function makeCardVisible(card) {
 function deleteCard(card) {
   iterateObjects(card.objects, false, setObjectVisible);
   iterateObjects(card.objects, true, markForRemoval);
-  card.prelodaded = false;
-  garbageCollection();
+  //card.prelodaded = false;
+  //garbageCollection();
 }
 
 function markForRemoval(Jobj, value) {
