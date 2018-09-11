@@ -56,7 +56,7 @@
   {
     "id": "E",
     "description": "@PLACA7-SF.webm",
-    "marker": "hiro",
+    "marker": "kanji",
     "delay": "5000",
     "next": "J",
     "autoplay": "source5",
@@ -71,7 +71,7 @@
           {
             "id": "source5",
             "type": "video",
-            "src": "assets/video/placas/tablet/@PLACA7-SF.webm",
+            "src": "assets/video/placas/@PLACA7-SF.webm",
             "loop": "false",
             "autoplay": "false"
           }
@@ -82,7 +82,7 @@
   {
     "id": "J",
     "description": "@PLACA9A-SF.webm",
-    "marker": "A",
+    "marker": "kanji",
     "delay": "5000",
     "next": "K",
     "autoplay": "source20",
@@ -109,7 +109,7 @@
   {
     "id": "K",
     "description": "@PLACA9B-SF.webm",
-    "marker": "B",
+    "marker": "kanji",
     "delay": "5000",
     "next": "L",
     "autoplay": "source11",
@@ -155,7 +155,17 @@
             "src": "assets/video/placas/@PLACA10A-SF.webm",
             "loop": "false",
             "autoplay": "false"
-          }
+          },
+          {
+            "id": "W",
+            "type":"a-obj-model",
+            "file": "assets/models/CONTACTOR_CARCAZA.obj",
+            "mtl":"assets/models/CONTACTOR_CARCAZA.mtl",
+            "position": "0 0 0 ", 
+            "rotation": "0 0 0",
+            "scale": "0.005 0.005 0.005",
+            "material": {"color": "grey"}            }
+
         ]
       }
     ]
