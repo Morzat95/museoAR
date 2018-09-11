@@ -70,8 +70,8 @@ function makeCardVisible(card) {
 function deleteCard(card) {
   iterateObjects(card.objects, false, setObjectVisible);
   iterateObjects(card.objects, true, markForRemoval);
-  //card.prelodaded = false;
-  //garbageCollection();
+  card.prelodaded = false;
+  garbageCollection();
 }
 
 function markForRemoval(Jobj, value) {
@@ -106,6 +106,7 @@ function goTo(next) {
 }
 
 function next(){
+  playPause(currentCard.autoplay);
   if(currentCard.next!=null){
     goTo(currentCard.next);
   }
