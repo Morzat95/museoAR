@@ -9,18 +9,31 @@
   
 <style>
 #videoElement {
+    position:absolute;
+    top:0;
+    left:0;
     z-index: auto;
     width: 100%;
-    background-color: #666;
 }
+#placa {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: auto;
+    width: 100%;
+}
+
 </style>
 </head>
   
 <body>
 <div id="kanji"></div>    
 <div id="container">
-    <video autoplay="true" id="videoElement">
+    <video autoplay="true" id="videoElement" controls="false">
     </video>   
+    <video class:"overlay" controls  id="placa">
+            <source src="/assets/video/placas/@PLACA10A-SF.webm" type="video/webm">
+          </video>
 </div>
 <script>var video = document.querySelector("#videoElement");
  
@@ -33,8 +46,6 @@
         console.log("Something went wrong!");
       });
     }
-    
- 
 </script>
 </body>
 </html>
