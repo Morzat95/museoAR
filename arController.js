@@ -165,7 +165,9 @@ function setObjectProperties(jObj, fatherID) {
   obj.setAttribute('jsonLoaded', '');
   // obj.setAttribute('loaded',true);
   if(jObj.file!=null){
-    obj.setAttribute('obj-model', 'obj', 'url(' + jObj.file + ')');
+    //obj.setAttribute('obj-model', 'obj: url(' + jObj.file + '); mtl: url(' + jObj.mtl + ')');
+    obj.setAttribute('src', jObj.file);
+    obj.setAttribute('mtl', jObj.mtl );
   }
   if (jObj.onclick != null) {
     obj.setAttribute('cursor-listener', '');
