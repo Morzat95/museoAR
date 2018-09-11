@@ -51,10 +51,10 @@ function loadCard(card) {
   }
 
   makeCardVisible(card);
-  if (card.autoplay != null) {
+ /* if (card.autoplay != null) {
 
     playPause(card.autoplay);
-  }
+  }*/
   drawText(card.description);
   if (card.type == "delay") {
     startTimer(card);
@@ -110,12 +110,16 @@ function next(){
     goTo(currentCard.next);
   }
   console.log("next!");
+  playPause(currentCard.next.autoplay);
 }
 function previous(){
  var previous=historyStack.pop();
+ playPause(currentCard.autoplay);
  if(previous!=null){
     goTo(previous); 
- }  
+    
+ }
+ historyStack.pop();   
  console.log("previous! "+previous);
 }
 function garbageCollection() {
