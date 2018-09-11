@@ -36,9 +36,9 @@
     "objects": [
       {
         "id": "video1",
-        "rotation": "-86.884 173.152 -171.791",
-        "position":"0.255 -1.020 -0.062",
-        "scale": "12.5 6 1",
+        "rotation": "-89.340 136.243 -134.958",
+        "position":"0.262 -1.248 0.399",
+        "scale": "15.000 7.500 1",
         "type": "a-video",
         "src": "#source1",
         "children": [
