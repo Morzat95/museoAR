@@ -127,7 +127,7 @@ a:hover {
   top: 0%;
   left: 80%;
   font-size: 16px;
-  background: rgba(0, 0, 0, 0.1) center no-repeat;
+  background: rgba(0, 0, 0, 0) center no-repeat;
   background-size:  22.5px 22.5px;
 }
 .previousRect{
