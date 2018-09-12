@@ -111,7 +111,12 @@ function next(){
     goTo(currentCard.next);
   }
   console.log("next!");
-  playPause(currentCard.next.autoplay);
+  if(currentCard.next!=null){
+  
+    if(currentCard.next.autoplay!=null){
+      playPause(currentCard.next.autoplay);
+    }
+}
 }
 function previous(){
  var previous=historyStack.pop();
@@ -165,9 +170,17 @@ function setObjectProperties(jObj, fatherID) {
   obj.setAttribute('jsonLoaded', '');
   // obj.setAttribute('loaded',true);
   if(jObj.file!=null){
-    //obj.setAttribute('obj-model', 'obj: url(' + jObj.file + '); mtl: url(' + jObj.mtl + ')');
-    obj.setAttribute('src', jObj.file);
-    obj.setAttribute('mtl', jObj.mtl );
+    obj.setAttribute('obj-model', 'obj', 'url(' + jObj.file + ')');
+
+   // obj.setAttribute('src', jObj.file);
+   // obj.setAttribute('mtl', jObj.mtl );
+  }
+  if (jObj.type == "a-animation") {
+    obj.setAttribute('dur', jObj.dur);
+    obj.setAttribute('fill', jObj.fill);
+    obj.setAttribute('to', jObj.to);
+    obj.setAttribute('repeat', jObj.repeat);
+
   }
   if (jObj.onclick != null) {
     obj.setAttribute('cursor-listener', '');
