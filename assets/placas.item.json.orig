@@ -9,9 +9,9 @@
     "objects": [
       {
         "id": "video10",
-        "rotation": "-89.340 136.243 -134.958", 
-        "position":"0.378 -1.252 0.395", 
-        "scale": "13 6.5 1",
+        "position":"4.665 1.169 1.545", 
+        "rotation": "-46.799 -91.200 91.506",
+        "scale": "8 4.5 1",
         "type": "a-video",
         "src": "#source0",
         "children": [
@@ -38,7 +38,7 @@
         "id": "video1",
         "rotation": "-89.340 136.243 -134.958",
         "position":"0.378 -1.252 0.395",
-        "scale": "13 6.5 1",
+        "scale": "16 9 1",
         "type": "a-video",
         "src": "#source1",
         "children": [
@@ -63,7 +63,7 @@
     "objects": [
       {
         "rotation": "-89.340 136.243 -134.958",
-        "position":"0.184 -1.496 3.156",
+        "position":"0.378 -1.252 0.395",
         "scale": "16 9 1",
         "type": "a-video",
         "src": "#source5",
@@ -71,7 +71,7 @@
           {
             "id": "source5",
             "type": "video",
-            "src": "assets/video/placas/@PLACA7-SF.webm",
+            "src": "assets/video/placas/tablet/@PLACA7-SF.webm",
             "loop": "false",
             "autoplay": "false"
           }
@@ -156,7 +156,6 @@
             "loop": "false",
             "autoplay": "false"
           }
-
         ]
       }
     ]
