@@ -12,38 +12,59 @@
     position:absolute;
     top:0;
     left:0;
-    z-index: auto;
+    z-index: 0;
     width: 100%;
 }
 #placa {
     position:absolute;
     top:0;
     left:0;
-    z-index: auto;
+    z-index: 1;
     width: 100%;
 }
 
 #boton_adelante {
+	position: absolute;
 	height: 100%;
 	width: 20%;
 	right: 0;
+	z-index: 2;
 }
 
-#boton_adelante {
+#boton_atras{
+	position: absolute;
 	height: 100%;
 	width: 20%;
 	left: 0;
+	z-index: 2;
 }
 
 </style>
 </head>
   
 <body>
+<div id="boton_adelante" onclick="estado = estado + 1; cambio_estado()"></div>    
+<div id="boton_atras" onclick="estado = estado - 1; cambio_estado()"></div>    
+<div id="container">
+    <video autoplay="true" id="videoElement" controls="false">
+    </video>   
+    <video class:"overlay" controls  id="placa" controls = "false">
+            <source type="video/webm">
+          </video>
+</div>
 <script>
+function cambio_estado() {
+	placa = placas[estado];
+	videoPlaca.setAttribute('src', placas_path + placa);
+	videoPlaca.play();
+}
+
+var videoPlaca = document.querySelector("#placa");
 var estado=0;
 var placas_path = "assets/video/placas/";
 var pagina = window.location.search.substring(1);
-alert(pagina);
+pagina = pagina.split("=")[1];
+
 //var url = new URL(query);
 //var pagina = query.searchParams.get("pagina");
 if(pagina == "tablet") {
@@ -54,28 +75,11 @@ if(pagina == "tablet") {
 
 }
 
-alert(placas);
-
-function cambio_estado() {
-	alert(placas[estado]);
-	placa = placas[estado];
-	var videoPlaca = document.querySelector("#placa");
-	videoPlaca.setAttribute('src', placas_path + placa)
-	videoPlaca.play();
-}
+videoPlaca.setAttribute('src', placas_path + placas[0]);
 </script>
 
-<div id="boton_adelante" onclick="estado = estado + 1; cambio_estado()"></div>    
-<div id="boton_atras" onclick="estado = estado - 1; cambio_estado()"></div>    
-<div id="container">
-    <video autoplay="true" id="videoElement" controls="false">
-    </video>   
-    <video class:"overlay" controls  id="placa">
-            <source src="assets/video/placas/@PLACA9A-SF.webm" type="video/webm">
-          </video>
-</div>
-<script>
 
+<script>
 var video = document.querySelector("#videoElement");
  
     if (navigator.mediaDevices.getUserMedia) {       
