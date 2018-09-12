@@ -54,7 +54,10 @@
 </div>
 <script>
 function cambio_estado() {
+	if (estado > 6) estado = 6;
+	if(estado < 0) estado = 0;
 	placa = placas[estado];
+	alert(placa)
 	videoPlaca.setAttribute('src', placas_path + placa);
 	videoPlaca.play();
 }
