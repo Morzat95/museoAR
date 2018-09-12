@@ -23,19 +23,60 @@
     width: 100%;
 }
 
+#boton_adelante {
+	height: 100%;
+	width: 20%;
+	right: 0;
+}
+
+#boton_adelante {
+	height: 100%;
+	width: 20%;
+	left: 0;
+}
+
 </style>
 </head>
   
 <body>
-<div id="kanji"></div>    
+<script>
+var estado=0;
+var placas_path = "assets/video/placas/";
+var pagina = window.location.search.substring(1);
+alert(pagina);
+//var url = new URL(query);
+//var pagina = query.searchParams.get("pagina");
+if(pagina == "tablet") {
+	placas_path = placas_path + "tablet/";
+	var placas = ["@PLACA6A-SF.webm", "@PLACA6B-SF.webm", "@PLACA6C-SF.webm", "@PLACA8A-SF.webm", "@PLACA8B-SF.webm", "@PLACA8C-SF.webm", "@PLACA8D-SF.webm"];
+} else {
+	var placas = ["@PLACA9A-SF.webm", "@PLACA9B-SF.webm", "@PLACA10A-SF.webm", "@PLACA10B-SF.webm", "@PLACA10C-SF.webm", "@PLACA10D-SF.webm", "@PLACA11-SF.webm"];
+
+}
+
+alert(placas);
+
+function cambio_estado() {
+	alert(placas[estado]);
+	placa = placas[estado];
+	var videoPlaca = document.querySelector("#placa");
+	videoPlaca.setAttribute('src', placas_path + placa)
+	videoPlaca.play();
+}
+</script>
+
+<div id="boton_adelante" onclick="estado = estado + 1; cambio_estado()"></div>    
+<div id="boton_atras" onclick="estado = estado - 1; cambio_estado()"></div>    
 <div id="container">
     <video autoplay="true" id="videoElement" controls="false">
     </video>   
     <video class:"overlay" controls  id="placa">
-            <source src="/assets/video/placas/@PLACA10A-SF.webm" type="video/webm">
+            <source src="assets/video/placas/@PLACA9A-SF.webm" type="video/webm">
           </video>
 </div>
-<script>var video = document.querySelector("#videoElement");
+<script>
+
+var video = document.querySelector("#videoElement");
  
     if (navigator.mediaDevices.getUserMedia) {       
         navigator.mediaDevices.getUserMedia({video: true})
