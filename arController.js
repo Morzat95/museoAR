@@ -106,7 +106,10 @@ function goTo(next) {
 }
 
 function next(){
-  playPause(currentCard.autoplay);
+    if(currentCard.autoplay!=null){
+      playPause(currentCard.autoplay);
+    }
+
   if(currentCard.next!=null){
     goTo(currentCard.next);
   }

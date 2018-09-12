@@ -30,6 +30,7 @@
     "id": "A",
     "description": "",
     "marker": "kanji",
+    "next":"Z",
     "delay": "5000",
     "objects": [
       {
@@ -52,6 +53,25 @@
             "repeat": "indefinite"
           }
         ]}
+    ]
+  },
+  
+  {
+    "id": "Z",
+    "description": "",
+    "marker": "kanji",
+    "delay": "5000",
+    "objects": [
+      {
+        "id": "e",
+        "type": "a-entity",
+        "file": "assets/models/LOGO_STELLIUM.obj",
+        "position": "0.132 0.055 -0.418 ",
+        "rotation": "-75.048 -117.914 116.692",
+        "scale": "0.04 0.04 0.04",
+        "material": {
+          "color": "grey"
+        }}
     ]
   }
 ]
