@@ -31,3 +31,10 @@ https://github.com/aframevr/a-painter
 https://aframe.io/docs/0.8.0/components/laser-controls.html
 
 https://aframe.io/docs/0.8.0/components/line.html
+
+
+---------------
+Que hay en este directorio
+webcam.html -> Pasando directo la webcam y las imagenes
+webcam_learn.html -> tiene las pruebas detectando rostros
+jitter.html -> Lo nuestro para probar jitter. Ya pasados los resultados a ar.html
