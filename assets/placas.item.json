@@ -1,7 +1,7 @@
 [
   {
     "id": "INICIO",
-    "description": "@PLACA4-SF.webm",
+    "description": "",
     "marker": "kanji",
     "next": "A",
     "delay": "5000",
@@ -28,7 +28,7 @@
   },
   {
     "id": "A",
-    "description": "@PLACA5-SF.webm",
+    "description": "",
     "marker": "kanji",
     "delay": "5000",
     "objects": [
@@ -36,9 +36,9 @@
         "id": "W",
         "type": "a-entity",
         "file": "assets/models/CONTACTOR_EXPLOTADO.obj",
-        "position": "0.433 8.908 4.968 ",
+        "position": "0.132 0.055 -0.418 ",
         "rotation": "0 0 0",
-        "scale": "0.001 0.001 0.001",
+        "scale": "0.01 0.01 0.01",
         "material": {
           "color": "grey"
         },
