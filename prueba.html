@@ -24,14 +24,12 @@
 
  	</a-assets>
       
-        <a-anchor>
-
+    <a-marker preset='area'>
 	  <a-video src="#video"  position="0 0 0" rotation="-90 0 0" scale="8 8 8"></a-video>
-        </a-anchor>
 
+    </a-marker>
 
-	        <a-camera-static/>
-
+      <a-entity camera></a-entity>
   </a-scene>
 <script>
 var video = document.getElementById('video');
