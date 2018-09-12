@@ -8,7 +8,7 @@
 		{
 			"parameters": {
 				"type": "pattern",
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt"
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-kanji.patt"
 			},
 			"poseMatrix": [
 				1,
@@ -32,7 +32,7 @@
 		{
 			"parameters": {
 				"type": "pattern",
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-kanji.patt"
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt"
 			},
 			"poseMatrix": [
 				0.9825399274321667,
