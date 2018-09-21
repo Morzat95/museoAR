@@ -24,7 +24,7 @@
     "marker":"kanji",
   
       "objects":[{
-        "id": "trafo4Bornes",
+        "id": "trafo4Bornes2",
         "type":"a-entity",
         "file": "assets/models/ejTrafo/TRAFO_4BORNES.obj",
         "scale": ".2 .2 .2",

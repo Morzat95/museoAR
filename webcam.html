@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<title>Display Webcam Stream</title>
+  
+<style>
+#videoElement {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 0;
+    width: 100%;
+}
+#placa {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+    width: 100%;
+}
+
+#boton_adelante {
+	position: absolute;
+	height: 100%;
+	width: 20%;
+	right: 0;
+	z-index: 2;
+}
+
+#boton_atras{
+	position: absolute;
+	height: 100%;
+	width: 20%;
+	left: 0;
+	z-index: 2;
+}
+
+</style>
+</head>
+  
+<body>
+<div id="boton_adelante" onclick="estado = estado + 1; cambio_estado()"></div>    
+<div id="boton_atras" onclick="estado = estado - 1; cambio_estado()"></div>    
+<div id="container">
+    <video autoplay="true" id="videoElement" controls="false">
+    </video>   
+    <video class:"overlay" controls  id="placa" controls = "false">
+            <source type="video/webm">
+          </video>
+</div>
+<script>
+function cambio_estado() {
+	if (estado > 6) estado = 6;
+	if(estado < 0) estado = 0;
+	placa = placas[estado];
+	videoPlaca.setAttribute('src', placas_path + placa);
+	videoPlaca.play();
+}
+
+var videoPlaca = document.querySelector("#placa");
+var estado=0;
+var placas_path = "assets/video/placas/";
+var pagina = window.location.search.substring(1);
+pagina = pagina.split("=")[1];
+
+//var url = new URL(query);
+//var pagina = query.searchParams.get("pagina");
+if(pagina == "tablet") {
+	placas_path = placas_path + "tablet/";
+	var placas = ["@PLACA6A-SF.webm", "@PLACA6B-SF.webm", "@PLACA6C-SF.webm", "@PLACA8A-SF.webm", "@PLACA8B-SF.webm", "@PLACA8C-SF.webm", "@PLACA8D-SF.webm"];
+} else {
+	var placas = ["@PLACA7-SF.webm", "@PLACA9B-SF.webm", "@PLACA10A-SF.webm", "@PLACA10B-SF.webm", "@PLACA10C-SF.webm", "@PLACA10D-SF.webm", "@PLACA11-SF.webm"];
+
+}
+
+videoPlaca.setAttribute('src', placas_path + placas[0]);
+</script>
+
+
+<script>
+var video = document.querySelector("#videoElement");
+ 
+    if (navigator.mediaDevices.getUserMedia) {       
+        navigator.mediaDevices.getUserMedia({video: true})
+      .then(function(stream) {
+        video.srcObject = stream;
+      })
+      .catch(function(err0r) {
+        console.log("Something went wrong!");
+      });
+    }
+</script>
+</body>
+</html>

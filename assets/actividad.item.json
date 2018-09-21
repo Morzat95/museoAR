@@ -1,0 +1,109 @@
+[
+    {
+      "id":"first",
+    "description": "Conecte correctamente la fuente para realizar ensayo de vacio",
+    "marker":"kanji",
+    "objects":[{
+        "id": "trafo",
+        "rotation": "-67.962 7.602 -7.026",
+        "type":"a-image",
+        "scale": "2 2 1",
+        "src": "assets/images/transformador4bornes.png",
+        "children": [
+            {
+                "id": "X",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "0.107 -0.455 -0.014",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "grey"},
+                "onclick":"goTo('bien')"
+  
+              },
+              {
+                "id": "Y",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.011 -0.452 -0.033",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "grey"},
+                "onclick":"goTo('mal')"
+              }
+              ]
+      },
+      {
+        "id": "fuente",
+        "rotation": "-67.962 7.602 -7.026",
+        "position":"-0.046 0.599 -1.835",
+        "scale":"2 2 1.600",
+        "type":"a-image",
+        "src": "assets/images/Variac8.jpg",
+        "children": [
+            {
+                "id": "Z",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.073 -0.491 -0.024",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "green"}
+              },
+              {
+                "id": "W",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.072 -0.291 -0.026", 
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "grey"}            }
+              ]
+      }
+    
+    ]
+    },
+      { "id":"bien",
+        "description": "",
+        "marker":"kanji",
+        "objects":[
+                {
+                  "id": "textB",
+                  "type":"a-text",
+                  "position": "-1.132 0.080 -0.792",
+                  "rotation": "-70.739 7.139 -5.376",
+                  "side":"double",
+                  "color": "orange",
+                  "shadow":"receive: true",
+                  "value":"Muy bien!, toca aqui",
+                  "onclick":"goTo('fin')"
+                }
+                ]
+      },
+      { "id":"mal",
+        "description": "",
+        "marker":"kanji",
+        "objects":[
+                {
+                  "id": "textM",
+                  "type":"a-text",
+                  "position": "-1.132 0.080 -0.792",
+                  "rotation": "-70.739 7.139 -5.376",
+                  "side":"double",
+                  "color": "orange",
+                  "shadow":"receive: true",
+                  "value":"Mejor suerte la proxima...! toca aqui",
+                  "onclick":"goTo('fin')"
+                }
+                ]
+      },
+      {
+        "id":"fin",
+        "description": "",
+        "type":"redirect",
+        "destiny":"actividad.html"
+      }
+
+
+    ]
+    

@@ -115,3 +115,5 @@ key\.pem
 *.log
 
 bashScripts/runVirtualCamera\.sh
+.vscode/settings.json
+

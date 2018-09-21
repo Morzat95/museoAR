@@ -22,6 +22,7 @@ function showActivity(){
     
   });
 }  
+
 function goTo(){
   if(document.getElementById("arCheck").checked){
     window.location.href = "ar.html?Act="+levelsFile;
