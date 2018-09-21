@@ -20,12 +20,12 @@
   width: 60px;
   height: 60px;
   padding-bottom: 0px;
-  background: rgba(0, 0, 0, 0.5) url(./assets/images/hamburger-white.png) center no-repeat;
+  background: rgba(0, 0, 0, 0.5) url(../images/hamburger-white.png) center no-repeat;
   background-size: 40px 40px;
   font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 .menu-overlay:hover {
-  background: rgba(0, 0, 0, 0.2) url(./assets/images/hamburger-white.png) center no-repeat;
+  background: rgba(0, 0, 0, 0.2) url(../images/hamburger-white.png) center no-repeat;
   background-size: 40px 40px;
 }
 .intro-overlay {
@@ -68,7 +68,7 @@
   border-radius: 50%;
   padding: 12px 24px;
   padding-bottom: 0px;
-  background: rgba(0, 123, 255) url(./assets/images/white-play-256.png) center no-repeat;
+  background: rgba(0, 123, 255) url(../images/white-play-256.png) center no-repeat;
   background-size: 40px 40px;
 }
 .play-overlay:hover {
@@ -99,7 +99,7 @@ a:hover {
   background-color: #555;
   color: white;
   font-size: 16px;
-  background: rgba(0, 0, 0, 0.5) url(./assets/images/backArrow.png) center no-repeat;
+  background: rgba(0, 0, 0, 0.5) url(../images/backArrow.png) center no-repeat;
   background-size:  22.5px 22.5px;
  
 }
@@ -116,7 +116,7 @@ a:hover {
   background-color: #555;
   color: white;
   font-size: 16px;
-  background: rgba(0, 0, 0, 0.5) url(./assets/images/nextArrow.png) center no-repeat;
+  background: rgba(0, 0, 0, 0.5) url(../images/nextArrow.png) center no-repeat;
   background-size:  22.5px 22.5px;
  
 }
@@ -154,7 +154,7 @@ a:hover {
   background-color: #555;
   color: white;
   font-size: 16px;
-  background: rgba(0, 0, 0, 0.5) url(./assets/images/previousArrow.png) center no-repeat;
+  background: rgba(0, 0, 0, 0.5) url(../images/previousArrow.png) center no-repeat;
   background-size:  22.5px 22.5px;
 
 }

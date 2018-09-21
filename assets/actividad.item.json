@@ -1,11 +1,14 @@
 [
+
     {
       "id":"first",
     "description": "Conecte correctamente la fuente para realizar ensayo de vacio",
     "marker":"kanji",
+    "next":"second",
     "objects":[{
         "id": "trafo",
         "rotation": "-67.962 7.602 -7.026",
+        "position":"0.015 -0.548 0.84",
         "type":"a-image",
         "scale": "2 2 1",
         "src": "assets/images/transformador4bornes.png",
@@ -14,18 +17,19 @@
                 "id": "X",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "0.107 -0.455 -0.014",
+                "position": "-0.005003893815263571 -0.4705009098819775 0.011621872132693238",
+                
                 "rotation": "0 0 0",
                 "scale": "0.005 0.005 0.005",
                 "material": {"color": "grey"},
-                "onclick":"goTo('bien')"
+                "onclick":"goTo('second')"
   
               },
               {
                 "id": "Y",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.011 -0.452 -0.033",
+                "position": "0.11003438926211735 -0.47163948768276903 0.002506964254176643",
                 "rotation": "0 0 0",
                 "scale": "0.005 0.005 0.005",
                 "material": {"color": "grey"},
@@ -36,28 +40,160 @@
       {
         "id": "fuente",
         "rotation": "-67.962 7.602 -7.026",
-        "position":"-0.046 0.599 -1.835",
+        "position":"0.223 0.148 -0.923",
         "scale":"2 2 1.600",
         "type":"a-image",
-        "src": "assets/images/Variac8.jpg",
+        "src": "assets/images/Variac8.png",
         "children": [
             {
                 "id": "Z",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.073 -0.491 -0.024",
+                "position": "-0.096 -0.475 -0.025",
                 "rotation": "0 0 0",
-                "scale": "0.005 0.005 0.005",
-                "material": {"color": "green"}
+                "scale": "0.004 0.004 0.004",
+                "material": {"color": "#414141"}
               },
               {
                 "id": "W",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.072 -0.291 -0.026", 
+                "position": "-0.09390324990805245 -0.27123883803220344 0.009540094558910183", 
+                "rotation": "0 0 0",
+                "scale": "0.004 0.004 0.004",
+                "material": {"color": "grey"},
+                "onclick":"goTo('mal')"            }
+              ]
+      }
+    
+    ]
+    },
+    {
+      "id":"second",
+    "description": "Aun queda un borne!",
+    "marker":"kanji",
+    "next":"third",
+    "objects":[{
+        "id": "trafo2",
+        "rotation": "-67.962 7.602 -7.026",
+        "position":"0.015 -0.548 0.84",
+        "type":"a-image",
+        "scale": "2 2 1",
+        "src": "assets/images/transformador4bornes.png",
+        "children": [
+            {
+                "id": "X2",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.005003893815263571 -0.4705009098819775 0.011621872132693238",
+                
                 "rotation": "0 0 0",
                 "scale": "0.005 0.005 0.005",
-                "material": {"color": "grey"}            }
+                "material": {"color": "#414141"}
+  
+              },
+              {
+                "id": "Y2",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "0.11003438926211735 -0.47163948768276903 0.002506964254176643",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "grey"},
+                "onclick":"goTo('third')"
+              }
+              ]
+      },
+      {
+        "id": "fuente2",
+        "rotation": "-67.962 7.602 -7.026",
+        "position":"0.223 0.148 -0.923",
+        "scale":"2 2 1.600",
+        "type":"a-image",
+        "src": "assets/images/Variac8.png",
+        "children": [
+            {
+                "id": "Z2",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.096 -0.475 -0.025",
+                "rotation": "0 0 0",
+                "scale": "0.004 0.004 0.004",
+                "material": {"color": "#414141"}
+              },
+              {
+                "id": "W2",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.09390324990805245 -0.27123883803220344 0.009540094558910183", 
+                "rotation": "0 0 0",
+                "scale": "0.004 0.004 0.004",
+                "material": {"color": "red"}           }
+              ]
+      }
+    
+    ]
+    },{
+      "id":"third",
+    "description": "Ahora si, el transformador esta conectado",
+    "marker":"kanji",
+    "delay":"5000",
+    "type":"delay",
+    "next":"bien",
+    "objects":[{
+        "id": "trafo3",
+        "rotation": "-67.962 7.602 -7.026",
+        "position":"0.015 -0.548 0.84",
+        "type":"a-image",
+        "scale": "2 2 1",
+        "src": "assets/images/transformador4bornes.png",
+        "children": [
+            {
+                "id": "X3",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.005003893815263571 -0.4705009098819775 0.011621872132693238",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "#414141"}
+  
+              },
+              {
+                "id": "Y3",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "0.11003438926211735 -0.47163948768276903 0.002506964254176643",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "red"}
+              }
+              ]
+      },
+      {
+        "id": "fuente3",
+        "rotation": "-67.962 7.602 -7.026",
+        "position":"0.223 0.148 -0.923",
+        "scale":"2 2 1.600",
+        "type":"a-image",
+        "src": "assets/images/Variac8.png",
+        "children": [
+            {
+                "id": "Z3",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.096 -0.475 -0.025",
+                "rotation": "0 0 0",
+                "scale": "0.004 0.004 0.004",
+                "material": {"color": "#414141"}
+              },
+              {
+                "id": "W3",
+                "type":"a-entity",
+                "file": "assets/models/bornera.obj",
+                "position": "-0.09390324990805245 -0.27123883803220344 0.009540094558910183", 
+                "rotation": "0 0 0",
+                "scale": "0.004 0.004 0.004",
+                "material": {"color": "red"}}
               ]
       }
     
@@ -70,12 +206,13 @@
                 {
                   "id": "textB",
                   "type":"a-text",
-                  "position": "-1.132 0.080 -0.792",
+                  "position": "-1.6902803450574524 -2.350114495667147 -0.5818714939029046",
                   "rotation": "-70.739 7.139 -5.376",
+                  "scale":"8 8 8",
                   "side":"double",
                   "color": "orange",
                   "shadow":"receive: true",
-                  "value":"Muy bien!, toca aqui",
+                  "value":"Muy bien! ahora a la siguiente actividad...",
                   "onclick":"goTo('fin')"
                 }
                 ]
@@ -87,8 +224,10 @@
                 {
                   "id": "textM",
                   "type":"a-text",
-                  "position": "-1.132 0.080 -0.792",
+                  "position": "-1.6902803450574524 -2.350114495667147 -0.5818714939029046",
                   "rotation": "-70.739 7.139 -5.376",
+                  "scale":"8 8 8",
+                  "side":"double",
                   "side":"double",
                   "color": "orange",
                   "shadow":"receive: true",
@@ -101,7 +240,7 @@
         "id":"fin",
         "description": "",
         "type":"redirect",
-        "destiny":"actividad.html"
+        "destiny":"menu.html?actividad2"
       }
 
 

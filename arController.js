@@ -51,10 +51,6 @@ function loadCard(card) {
   }
 
   makeCardVisible(card);
- /* if (card.autoplay != null) {
-
-    playPause(card.autoplay);
-  }*/
   drawText(card.description);
   if (card.type == "delay") {
     startTimer(card);
@@ -91,12 +87,8 @@ function logCurrentObjects() {
 }
 function goTo(next) {
   currentTimeout = "";
-  /*if(currentCard.autoplay!=null){
-    playPause(currentCard.autoplay);
-    }*/
   historyStack.push(currentCard.id);
   deleteCard(currentCard);
-  // }
   console.log(next);
   currentCard = activity.get(next);
   if (currentCard == null) {
@@ -104,33 +96,27 @@ function goTo(next) {
   }
   playing = false;
 }
-
+/*
 function next(){
-    if(currentCard.autoplay!=null){
-      playPause(currentCard.autoplay);
-    }
-
+  playPause(currentCard.autoplay);
   if(currentCard.next!=null){
     goTo(currentCard.next);
   }
   console.log("next!");
-  if(currentCard.next!=null){
-  
-    if(currentCard.next.autoplay!=null){
-      playPause(currentCard.next.autoplay);
-    }
+  playPause(currentCard.next.autoplay);
 }
-}
+
 function previous(){
  var previous=historyStack.pop();
  playPause(currentCard.autoplay);
  if(previous!=null){
     goTo(previous); 
-    
  }
  historyStack.pop();   
  console.log("previous! "+previous);
 }
+*/
+
 function garbageCollection() {
   console.log("Removing card...");
   getGarbage().forEach(garbage => {
@@ -154,7 +140,6 @@ function getGarbage() {
 }
 
 function setObjectVisible(Jobj, value) {
-
   var obj = document.querySelector('#' + Jobj.id);
   obj.setAttribute('visible', value);
 }
@@ -163,7 +148,6 @@ function setObjectProperties(jObj, fatherID) {
   var obj = document.createElement(jObj.type);
   obj.setAttribute('visible', false); //Makes the object invisible by default
   obj.setAttribute('id', jObj.id);
- 
   obj.setAttribute('scale', jObj.scale);
   obj.setAttribute('rotation', jObj.rotation);
   obj.setAttribute('position', jObj.position);
@@ -171,19 +155,8 @@ function setObjectProperties(jObj, fatherID) {
   obj.setAttribute('height', jObj.height);
   obj.setAttribute('depth', jObj.depth);
   obj.setAttribute('jsonLoaded', '');
-  // obj.setAttribute('loaded',true);
   if(jObj.file!=null){
     obj.setAttribute('obj-model', 'obj', 'url(' + jObj.file + ')');
-
-   // obj.setAttribute('src', jObj.file);
-   // obj.setAttribute('mtl', jObj.mtl );
-  }
-  if (jObj.type == "a-animation") {
-    obj.setAttribute('dur', jObj.dur);
-    obj.setAttribute('fill', jObj.fill);
-    obj.setAttribute('to', jObj.to);
-    obj.setAttribute('repeat', jObj.repeat);
-
   }
   if (jObj.onclick != null) {
     obj.setAttribute('cursor-listener', '');
@@ -196,8 +169,7 @@ function setObjectProperties(jObj, fatherID) {
   else {
     obj.setAttribute('src', jObj.src);
   }
-  if (jObj.type = "video") {
-
+  if (jObj.type == "video") {
     if (jObj.autoplay == "true") {
       obj.setAttribute('autoplay', '');
     }
@@ -206,13 +178,13 @@ function setObjectProperties(jObj, fatherID) {
   else{
   obj.setAttribute('color', jObj.color);
   obj.setAttribute('value', jObj.value);
+  console.log("value "+jObj.value);
   obj.setAttribute('shadow', jObj.shadow);
   }
 
   marker.appendChild(obj);
 
 }
-
 function iterateObjects(jsonInput, value, callback) {
   if (jsonInput == null || jsonInput == "") {
     return;
@@ -227,16 +199,12 @@ function iterateObjects(jsonInput, value, callback) {
   // console.log("objectCount:" + objectCount);
 
 }
-
-
 function appendText(text) {
   var obj = document.createElement('li');
   obj.setAttribute('class', 'checklist-text');
   obj.innerText = text;
   var list = document.querySelector("#checklist");
   list.appendChild(obj);
-
-
 }
 function drawText(text) {
   var obj = document.createElement('li');
@@ -268,14 +236,10 @@ function startTimer(item) {
   }, delayInMilliseconds);
 
 }
-
-
 function firstPlay() {
   hideOrShow("playButton");
   play();
-  //startTimer(activity.get("INICIO"));
   drawText("Comenzando...");
-
 }
 function hideOrShow(id) {
   var x = document.getElementById(id);
@@ -300,7 +264,6 @@ function play(id) {
   aVideoAsset.setAttribute('loop', 'false');
 
 }
-
 function playPause(id) {
   if (id == null) {
     id = currentCard.autoplay;
@@ -322,8 +285,6 @@ function playPause(id) {
   aVideoAsset.setAttribute('loop', 'false');
 
 }
-
-
 function isCurrentMarkerVisible() {
   if (currentCard == null) {
     return false;
@@ -333,9 +294,6 @@ function isCurrentMarkerVisible() {
   }
   return document.querySelector("#" + currentCard.marker).object3D.visible;
 }
-
-
-
 AFRAME.registerComponent('markerhandler', {
   init: function () {
     // Set up the tick throttling. Will check if marker is active every 500ms
