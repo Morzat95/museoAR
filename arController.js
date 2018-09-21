@@ -50,6 +50,7 @@ function loadCard(card) {
     console.log("next is null!, no preloading this time");
   }
 
+
   makeCardVisible(card);
  /* if (card.autoplay != null) {
 
@@ -136,6 +137,7 @@ function garbageCollection() {
   getGarbage().forEach(garbage => {
     garbage.parentNode.removeChild(garbage);
   });
+
 
 }
 
@@ -230,6 +232,7 @@ function iterateObjects(jsonInput, value, callback) {
 
 
 function appendText(text) {
+
   var obj = document.createElement('li');
   obj.setAttribute('class', 'checklist-text');
   obj.innerText = text;
@@ -249,6 +252,7 @@ function drawText(text) {
   }
   list.appendChild(obj);
 }
+
 function startTimer(item) {
   var delayInMilliseconds = item.delay;
   item.delayStart = Date.now();
@@ -332,6 +336,7 @@ function isCurrentMarkerVisible() {
     return true;
   }
   return document.querySelector("#" + currentCard.marker).object3D.visible;
+
 }
 
 
@@ -342,6 +347,7 @@ AFRAME.registerComponent('markerhandler', {
     console.log("setting up marker handler...");
     this.tick = AFRAME.utils.throttleTick(this.tick, 1000, this);
   },
+
   tick: function (t, dt) {
     if (activity != null) {
       if (isCurrentMarkerVisible() && playing == false) {
@@ -353,6 +359,7 @@ AFRAME.registerComponent('markerhandler', {
 
       } else if ((isCurrentMarkerVisible() == false) && (playing == true)) {
         currentTimeout = "";
+
 
         playing = false;
         console.log("marker lost!");
