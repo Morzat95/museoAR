@@ -204,7 +204,7 @@
         "marker":"kanji",
         "delay":"5000",
         "type":"delay",
-        "next":"fin",
+        "next":"finBien",
         "objects":[
                 {
                   "id": "textB",
@@ -215,14 +215,17 @@
                   "side":"double",
                   "color": "orange",
                   "shadow":"receive: true",
-                  "value":"Muy bien! ahora a la siguiente actividad...",
-                  "onclick":"goTo('fin')"
+                  "value":"Muy bien!",
+                  "onclick":"goTo('finBien')"
                 }
                 ]
       },
       { "id":"mal",
         "description": "",
         "marker":"kanji",
+        "delay":"5000",
+        "type":"delay",
+        "next":"finMal",
         "objects":[
                 {
                   "id": "textM",
@@ -234,16 +237,23 @@
                   "side":"double",
                   "color": "orange",
                   "shadow":"receive: true",
-                  "value":"Mejor suerte la proxima...! toca aqui",
-                  "onclick":"goTo('fin')"
+                  "value":"Mejor suerte la proxima!",
+                  "onclick":"goTo('finMal')"
                 }
                 ]
       },
       {
-        "id":"fin",
+        "id":"finBien",
         "description": "",
         "type":"redirect",
         "destiny":"menu.html?actividad2"
+      }
+      ,
+      {
+        "id":"finMal",
+        "description": "",
+        "type":"redirect",
+        "destiny":"menu.html?actividad"
       }
 
 
