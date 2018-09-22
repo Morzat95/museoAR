@@ -1,6 +1,6 @@
 {
   "name":"Ensayo indirecto del transformador monofasico de potencia",
-  "description":"Ensayo indirecto del transformador monofasico de potencia",
+  "description":"Medicion",
   "type":"checklist",
   "preview": "assets/images/transformador4bornes.png",
   "activity": "actividad"
