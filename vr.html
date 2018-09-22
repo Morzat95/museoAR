@@ -7,7 +7,9 @@
         <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" /> 
         <link rel="stylesheet" type="text/css" href="assets/styles/styles.css" /> 
         <script src="lib/jquery.min.js"></script> 
-        <script src="lib/aframe.min.js"></script> 
+        
+        <script src="lib/aframe.min.js"></script>
+        <script src="lib/a-touch-controls.js"></script>  
         <script src="arController.js"></script> 
         <script src="jsonUtils.js"></script> 
       </head> 
@@ -21,7 +23,7 @@
           <a-entity id="kanji" position="0 0.723 -3.143" rotation="70 0 0" ></a-entity> 
           <a-entity id="hiro" aaposition="0 0.723 -3.143" rotation="70 0 0" ></a-entity> 
         </a-scene> 
-        <a-entity camera="active:false" wasd-controls="true" position="0 0 0"></a-entity> 
+        <a-entity camera touch-controls></a-entity>
       </a-entity> 
        
         <script>run();</script> 
