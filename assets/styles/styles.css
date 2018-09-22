@@ -72,7 +72,7 @@
   background-size: 40px 40px;
 }
 .play-overlay:hover {
-  background: rgba(0, 0, 0, 0.2) url(./assets/images/white-play-256.png) center no-repeat;
+  background: rgba(0, 0, 0, 0.2) url(../images/white-play-256.png) center no-repeat;
   background-size: 40px 40px;
 }
 
