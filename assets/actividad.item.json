@@ -12,7 +12,29 @@
         "type":"a-image",
         "scale": "2 2 1",
         "src": "assets/images/transformador4bornes.png",
-        "children": [
+        "children": [{
+          "id": "A",
+          "type":"a-entity",
+          "file": "assets/models/bornera.obj",
+          "position": "-0.141 -0.467 -0.052",
+          
+          "rotation": "0 0 0",
+          "scale": "0.005 0.005 0.007",
+          "material": {"color": "grey"},
+          "onclick":"goTo('mal')"
+
+        },
+        {
+          "id": "B",
+          "type":"a-entity",
+          "file": "assets/models/bornera.obj",
+          "position": "-0.072 -0.469 -0.049",
+          "rotation": "0 0 0",
+          "scale": "0.005 0.005 0.007",
+          "material": {"color": "grey"},
+          "onclick":"goTo('mal')"
+          
+        },
             {
                 "id": "X",
                 "type":"a-entity",
@@ -80,6 +102,26 @@
         "scale": "2 2 1",
         "src": "assets/images/transformador4bornes.png",
         "children": [
+          {
+            "id": "A2",
+            "type":"a-entity",
+            "file": "assets/models/bornera.obj",
+            "position": "-0.141 -0.467 -0.052",
+            
+            "rotation": "0 0 0",
+            "scale": "0.005 0.005 0.007",
+            "material": {"color": "grey"}
+  
+          },
+          {
+            "id": "B2",
+            "type":"a-entity",
+            "file": "assets/models/bornera.obj",
+            "position": "-0.072 -0.469 -0.049",
+            "rotation": "0 0 0",
+            "scale": "0.005 0.005 0.007",
+            "material": {"color": "grey"}
+          },
             {
                 "id": "X2",
                 "type":"a-entity",
@@ -146,7 +188,28 @@
         "scale": "2 2 1",
         "src": "assets/images/transformador4bornes.png",
         "children": [
+          {
+            "id": "A3",
+            "type":"a-entity",
+            "file": "assets/models/bornera.obj",
+            "position": "-0.141 -0.467 -0.052",
+            
+            "rotation": "0 0 0",
+            "scale": "0.005 0.005 0.007",
+            "material": {"color": "grey"}
+  
+          },
+          {
+            "id": "B3",
+            "type":"a-entity",
+            "file": "assets/models/bornera.obj",
+            "position": "-0.072 -0.469 -0.049",
+            "rotation": "0 0 0",
+            "scale": "0.005 0.005 0.007",
+            "material": {"color": "grey"}
+          },
             {
+              
                 "id": "X3",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
