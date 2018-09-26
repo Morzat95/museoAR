@@ -8,7 +8,7 @@
     "objects":[{
         "id": "trafo",
         "rotation": "-67.962 7.602 -7.026",
-        "position":"0.015 -0.548 0.84",
+        "position":"0.525 -0.444 0.573",
         "type":"a-image",
         "scale": "2 2 1",
         "src": "assets/images/transformador4bornes.png",
@@ -17,10 +17,9 @@
                 "id": "X",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.005003893815263571 -0.4705009098819775 0.011621872132693238",
-                
+                "position": "0.005 -0.465 -0.061",
                 "rotation": "0 0 0",
-                "scale": "0.005 0.005 0.005",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "grey"},
                 "onclick":"goTo('second')"
   
@@ -29,9 +28,9 @@
                 "id": "Y",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "0.11003438926211735 -0.47163948768276903 0.002506964254176643",
+                "position": "0.110 -0.467 -0.054",
                 "rotation": "0 0 0",
-                "scale": "0.005 0.005 0.005",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "grey"},
                 "onclick":"goTo('mal')"
               }
@@ -40,7 +39,7 @@
       {
         "id": "fuente",
         "rotation": "-67.962 7.602 -7.026",
-        "position":"0.223 0.148 -0.923",
+        "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
         "scale":"2 2 1.600",
         "type":"a-image",
         "src": "assets/images/Variac8.png",
@@ -49,18 +48,18 @@
                 "id": "Z",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.096 -0.475 -0.025",
+                "position": "-0.09635727546684814 -0.47871469644264775 -0.08526059023938858",
                 "rotation": "0 0 0",
-                "scale": "0.004 0.004 0.004",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "#414141"}
               },
               {
                 "id": "W",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.09390324990805245 -0.27123883803220344 0.009540094558910183", 
+                "position": "-0.093 -0.282 -0.08", 
                 "rotation": "0 0 0",
-                "scale": "0.004 0.004 0.004",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "grey"},
                 "onclick":"goTo('mal')"            }
               ]
@@ -76,7 +75,7 @@
     "objects":[{
         "id": "trafo2",
         "rotation": "-67.962 7.602 -7.026",
-        "position":"0.015 -0.548 0.84",
+        "position":"0.525 -0.444 0.573",
         "type":"a-image",
         "scale": "2 2 1",
         "src": "assets/images/transformador4bornes.png",
@@ -85,10 +84,9 @@
                 "id": "X2",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.005003893815263571 -0.4705009098819775 0.011621872132693238",
-                
+                "position": "0.005 -0.465 -0.061",
                 "rotation": "0 0 0",
-                "scale": "0.005 0.005 0.005",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "#414141"}
   
               },
@@ -96,9 +94,9 @@
                 "id": "Y2",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "0.11003438926211735 -0.47163948768276903 0.002506964254176643",
+                "position": "0.110 -0.467 -0.054",
                 "rotation": "0 0 0",
-                "scale": "0.005 0.005 0.005",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "grey"},
                 "onclick":"goTo('third')"
               }
@@ -107,7 +105,7 @@
       {
         "id": "fuente2",
         "rotation": "-67.962 7.602 -7.026",
-        "position":"0.223 0.148 -0.923",
+        "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
         "scale":"2 2 1.600",
         "type":"a-image",
         "src": "assets/images/Variac8.png",
@@ -116,18 +114,18 @@
                 "id": "Z2",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.096 -0.475 -0.025",
+                "position": "-0.09635727546684814 -0.47871469644264775 -0.08526059023938858",
                 "rotation": "0 0 0",
-                "scale": "0.004 0.004 0.004",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "#414141"}
               },
               {
                 "id": "W2",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.09390324990805245 -0.27123883803220344 0.009540094558910183", 
+                "position": "-0.093 -0.282 -0.08", 
                 "rotation": "0 0 0",
-                "scale": "0.004 0.004 0.004",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "red"}           }
               ]
       }
@@ -143,7 +141,7 @@
     "objects":[{
         "id": "trafo3",
         "rotation": "-67.962 7.602 -7.026",
-        "position":"0.015 -0.548 0.84",
+        "position":"0.525 -0.444 0.573",
         "type":"a-image",
         "scale": "2 2 1",
         "src": "assets/images/transformador4bornes.png",
@@ -152,9 +150,9 @@
                 "id": "X3",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.005003893815263571 -0.4705009098819775 0.011621872132693238",
+                "position": "0.005 -0.465 -0.061",
                 "rotation": "0 0 0",
-                "scale": "0.005 0.005 0.005",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "#414141"}
   
               },
@@ -162,9 +160,9 @@
                 "id": "Y3",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "0.11003438926211735 -0.47163948768276903 0.002506964254176643",
+                "position": "0.110 -0.467 -0.054",
                 "rotation": "0 0 0",
-                "scale": "0.005 0.005 0.005",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "red"}
               }
               ]
@@ -172,7 +170,7 @@
       {
         "id": "fuente3",
         "rotation": "-67.962 7.602 -7.026",
-        "position":"0.223 0.148 -0.923",
+        "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
         "scale":"2 2 1.600",
         "type":"a-image",
         "src": "assets/images/Variac8.png",
@@ -181,18 +179,18 @@
                 "id": "Z3",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.096 -0.475 -0.025",
+                "position": "-0.09635727546684814 -0.47871469644264775 -0.08526059023938858",
                 "rotation": "0 0 0",
-                "scale": "0.004 0.004 0.004",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "#414141"}
               },
               {
                 "id": "W3",
                 "type":"a-entity",
                 "file": "assets/models/bornera.obj",
-                "position": "-0.09390324990805245 -0.27123883803220344 0.009540094558910183", 
+                "position": "-0.093 -0.282 -0.08",  
                 "rotation": "0 0 0",
-                "scale": "0.004 0.004 0.004",
+                "scale": "0.005 0.005 0.007",
                 "material": {"color": "red"}}
               ]
       }

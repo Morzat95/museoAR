@@ -164,17 +164,20 @@ function setObjectProperties(jObj, fatherID) {
     obj.setAttribute('cursor-listener', '');
     obj.setAttribute('onclick', jObj.onclick);
   }
-  if (jObj.material != null) {
+  if (jObj.material != null&& jObj.src == null) {
     obj.setAttribute('material', jObj.material);
   }
-
+  if (jObj.src != null&& jObj.material == null) {
+    obj.setAttribute('src', jObj.src);
+  }
   else {
     obj.setAttribute('src', jObj.src);
+    obj.setAttribute('material', jObj.material);
   }
   if (jObj.type == "video") {
     if (jObj.autoplay == "true") {
       obj.setAttribute('autoplay', '');
-    }
+    } 
     obj.setAttribute('loop', jObj.loop);
   }
   else{

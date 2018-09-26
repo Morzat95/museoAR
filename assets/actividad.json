@@ -1,6 +1,6 @@
 {
-  "name":"Ensayo indirecto del transformador monofasico de potencia",
-  "description":"primero conecte la fuente",
+  "name":"Ensayo de vacio",
+  "description":"Ensayo indirecto del transformador monofasico de potencia, pruba de vacio.",
   "type":"checklist",
   "preview": "assets/images/transformador4bornes.png",
   "activity": "actividad"
