@@ -1,0 +1,103 @@
+[
+    {
+      "id":"first",
+      "description": "",
+    "delay":"5000",
+    "type":"delay",
+    "marker":"multi",
+    "next":"B",
+    "objects":[  {
+        "id": "image0",
+        "position":"1.933 -0.28538117510589095 0.2942423933567931",
+        "rotation": "-90 110 0",
+        "scale":"8 8 8",
+        "type":"a-image",
+        "src": "assets/images/demo1.png"
+
+      }]
+    },
+    {
+      "id":"B",
+      "description": "",
+      "type":"delay",
+      "delay":"5000",
+      "next":"C",
+      "marker":"multi",
+    
+        "objects":[  {
+            "id": "image1",
+            "position":"1.933 -0.28538117510589095 0.2942423933567931",
+            "rotation": "-90 110 0",
+            "scale":"8 8 8",
+            "type":"a-image",
+            "src": "assets/images/demo2.png"
+    
+          }]
+    
+    
+    },
+    { "id":"C",
+      "description": "",
+      "type":"delay",
+      "delay":"5000",
+      "marker":"multi",
+      "next":"D",
+      "objects":[
+        {
+            "id": "image2",
+            "position":"1.933 -0.28538117510589095 0.2942423933567931",
+            "rotation": "-90 110 0",
+            "scale":"8 8 8",
+            "type":"a-image",
+            "src": "assets/images/demo3.png"
+    
+          }
+              ]
+    },
+    {
+      "id":"D",
+      "description": "",
+      "type":"delay",
+      "delay":"5000",
+      "next":"E",
+      "marker":"multi",
+      "objects":[
+        {
+            "id": "image3",
+            "position":"1.933 -0.28538117510589095 0.2942423933567931",
+            "rotation": "-90 110 0",
+            "scale":"8 8 8",
+            "type":"a-image",
+            "src": "assets/images/demo4.png"
+    
+          }
+              ] 
+    },
+    
+    {
+      "id":"E",
+      "description": "",
+      "type":"delay",
+      "delay":"5000",
+      "next":"G",
+      "marker":"multi",
+      "objects":[
+        {
+            "id": "image4",
+            "position":"1.933 -0.28538117510589095 0.2942423933567931",
+            "rotation": "-90 110 0",
+            "scale":"8 8 8",
+            "type":"a-image",
+            "src": "assets/images/demo5.png"
+    
+          }
+              ] 
+    },
+    {
+      "id":"G",
+      "description": "",
+      "type":"redirect",
+      "destiny":"index.html"
+    }
+    ]
+    
