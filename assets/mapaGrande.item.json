@@ -1,0 +1,72 @@
+[
+    {
+    "id":"A",
+    "description": "",
+    "marker":"kanji",
+    "next":"B",
+    "objects":[
+      {
+        "id": "image0",
+        "position":"0 -0.28538117510589095 0.2942423933567931",
+        "rotation": "-90 110 0",
+        "scale":"2 2 2",
+        "type":"a-image",
+        "src": "assets/images/demo2.png",
+        "onclick":"goTo('B')"
+      }]
+    },
+    {
+    "id":"B",
+    "description": "",
+    "marker":"kanji",
+    "next":"C",
+    "objects":[
+      {
+        "id": "image1",
+        "position":"0 -0.28538117510589095 0.2942423933567931",
+        "rotation": "-90 110 0",
+        "scale":"4 4 4",
+        "type":"a-image",
+        "src": "assets/images/demo2.png",
+        "onclick":"goTo('C')"
+      }]
+    },
+    {
+    "id":"C",
+    "description": "",
+    "marker":"kanji",
+    "next":"D",
+    "objects":[
+      {
+        "id": "image2",
+        "position":"0 -0.28538117510589095 0.2942423933567931",
+        "rotation": "-90 110 0",
+        "scale":"6 6 6",
+        "type":"a-image",
+        "src": "assets/images/demo2.png",
+        "onclick":"goTo('D')"
+      }]
+    },
+    {
+    "id":"D",
+    "description": "",
+    "marker":"kanji",
+    "next":"E",
+    "objects":[
+      {
+        "id": "image3",
+        "position":"0 -0.28538117510589095 0.2942423933567931",
+        "rotation": "-90 110 0",
+        "scale":"8 8 8",
+        "type":"a-image",
+        "src": "assets/images/demo2.png",
+        "onclick":"goTo('E')"
+      }]
+    },
+    {
+      "id":"E",
+      "description": "",
+      "type":"redirect",
+      "destiny":"ar.html?Act=mapaGrande"
+    }
+    ]
