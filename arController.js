@@ -23,15 +23,50 @@ function loadActivity(jsonInput) {
   preLoadCard(currentCard);
   console.log(activity);
 }
+
+
+function getCardMarkers(card) {
+  var markerStack = [];
+  if (card.marker != null) {
+    markerStack.push(card.marker);
+    return markerStack;
+  }
+  else if(card.objects!=null){
+    card.objects.forEach(node => {
+      if (node.marker != null) {
+        markerStack.push(node.marker);
+      }
+    });
+  }
+    if(markerStack.length==0){
+      return null;
+    }
+    return markerStack;
+  }
+
+
 function preLoadCard(card) {
-  if(card==null){
+  if (card == null) {
     console.error("check JSON file card is null");
   }
   if (!isPreloaded(card)) {
-    iterateObjects(card.objects, card.marker, setObjectProperties);
+    if (card.marker == null&&card.objects!=null) { //if null we asume its because we are using multipleIndependentMarkers
+      card.objects.forEach(node => {
+        if (node.marker != null) {
+          setObjectProperties(node, node.marker);
+          iterateObjects(node.children, node.id, setObjectProperties);
+        }
+      });
+    }
+    else {
+      iterateObjects(card.objects, card.marker, setObjectProperties); //we use a marker for all objects
+    }
     card.preoloaded = true;
   }
+
+  
 }
+
 function isPreloaded(card) {
   if (card.isPreloaded != null) {
     if (card.isPreloaded == true) {
@@ -97,26 +132,6 @@ function goTo(next) {
   }
   playing = false;
 }
-/*
-function next(){
-  playPause(currentCard.autoplay);
-  if(currentCard.next!=null){
-    goTo(currentCard.next);
-  }
-  console.log("next!");
-  playPause(currentCard.next.autoplay);
-}
-
-function previous(){
- var previous=historyStack.pop();
- playPause(currentCard.autoplay);
- if(previous!=null){
-    goTo(previous); 
- }
- historyStack.pop();   
- console.log("previous! "+previous);
-}
-*/
 
 function garbageCollection() {
   console.log("Removing card...");
@@ -146,9 +161,9 @@ function setObjectVisible(Jobj, value) {
   obj.setAttribute('visible', value);
 }
 function setObjectProperties(jObj, fatherID) {
-  var marker = document.querySelector('#' + fatherID);
+  var father = document.querySelector('#' + fatherID);
   var obj = document.createElement(jObj.type);
-  obj.setAttribute('visible', false); //Makes the object invisible by default
+  obj.setAttribute('visible', false); //Makes the object invisible by default so that we can make it visible later
   obj.setAttribute('id', jObj.id);
   obj.setAttribute('scale', jObj.scale);
   obj.setAttribute('rotation', jObj.rotation);
@@ -157,17 +172,17 @@ function setObjectProperties(jObj, fatherID) {
   obj.setAttribute('height', jObj.height);
   obj.setAttribute('depth', jObj.depth);
   obj.setAttribute('jsonLoaded', '');
-  if(jObj.file!=null){
+  if (jObj.file != null) {
     obj.setAttribute('obj-model', 'obj', 'url(' + jObj.file + ')');
   }
   if (jObj.onclick != null) {
     obj.setAttribute('cursor-listener', '');
     obj.setAttribute('onclick', jObj.onclick);
   }
-  if (jObj.material != null&& jObj.src == null) {
+  if (jObj.material != null && jObj.src == null) {
     obj.setAttribute('material', jObj.material);
   }
-  if (jObj.src != null&& jObj.material == null) {
+  if (jObj.src != null && jObj.material == null) {
     obj.setAttribute('src', jObj.src);
   }
   else {
@@ -177,17 +192,16 @@ function setObjectProperties(jObj, fatherID) {
   if (jObj.type == "video") {
     if (jObj.autoplay == "true") {
       obj.setAttribute('autoplay', '');
-    } 
+    }
     obj.setAttribute('loop', jObj.loop);
   }
-  else{
-  obj.setAttribute('color', jObj.color);
-  obj.setAttribute('value', jObj.value);
-  console.log("value "+jObj.value);
-  obj.setAttribute('shadow', jObj.shadow);
+  else {
+    obj.setAttribute('color', jObj.color);
+    obj.setAttribute('value', jObj.value);
+    obj.setAttribute('shadow', jObj.shadow);
   }
 
-  marker.appendChild(obj);
+  father.appendChild(obj);
 
 }
 function iterateObjects(jsonInput, value, callback) {
@@ -201,7 +215,6 @@ function iterateObjects(jsonInput, value, callback) {
 
   }
   objectCount = i;
-  // console.log("objectCount:" + objectCount);
 
 }
 function appendText(text) {
@@ -296,12 +309,17 @@ function isCurrentMarkerVisible() {
   if (currentCard == null) {
     return false;
   }
-  if (currentCard.marker == null) {//if it has no marker its excecuted anyway
+  var markerStack = getCardMarkers(currentCard);
+  if (markerStack == null) {//if it has no marker its excecuted anyway
     return true;
   }
-  return document.querySelector("#" + currentCard.marker).object3D.visible;
-
+  var isVisible = false;
+  markerStack.forEach(marker => {
+    isVisible = isVisible | document.querySelector("#" + marker).object3D.visible; //if at least one marker is visible
+  });
+  return isVisible;
 }
+
 AFRAME.registerComponent('markerhandler', {
   init: function () {
     // Set up the tick throttling. Will check if marker is active every 500ms
@@ -320,14 +338,12 @@ AFRAME.registerComponent('markerhandler', {
 
       } else if ((isCurrentMarkerVisible() == false) && (playing == true)) {
         currentTimeout = "";
-
-
         playing = false;
         console.log("marker lost!");
       }
       else if ((isCurrentMarkerVisible() == false) && (playing == false)) {
-        if (activity != null) {//not yet loaded
-          console.log("looking for marker... " + currentCard.marker);
+        if (activity != null) { //if its already loading
+          console.log("looking for marker... " + getCardMarkers(currentCard));
         }
       }
 

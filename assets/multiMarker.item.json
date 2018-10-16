@@ -3,12 +3,12 @@
     {
       "id":"first",
     "description": "Conecte correctamente la fuente para realizar ensayo de vacio",
-    "marker":"kanji",
     "next":"second",
     "objects":[{
         "id": "trafo",
         "rotation": "-67.962 7.602 -7.026",
         "position":"0.525 -0.444 0.573",
+        "marker":"kanji",
         "type":"a-image",
         "scale": "2 2 1",
         "src": "assets/images/transformador4bornes.png",
@@ -17,7 +17,6 @@
           "type":"a-entity",
           "file": "assets/models/bornera.obj",
           "position": "-0.141 -0.467 -0.052",
-          
           "rotation": "0 0 0",
           "scale": "0.005 0.005 0.007",
           "material": {"color": "grey"},
@@ -63,6 +62,7 @@
         "rotation": "-67.962 7.602 -7.026",
         "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
         "scale":"2 2 1.600",
+        "marker":"hiro",
         "type":"a-image",
         "src": "assets/images/Variac8.png",
         "children": [
@@ -92,12 +92,12 @@
     {
       "id":"second",
     "description": "Aun queda un borne!",
-    "marker":"kanji",
     "next":"third",
     "objects":[{
         "id": "trafo2",
         "rotation": "-67.962 7.602 -7.026",
         "position":"0.525 -0.444 0.573",
+        "marker":"kanji",
         "type":"a-image",
         "scale": "2 2 1",
         "src": "assets/images/transformador4bornes.png",
@@ -149,6 +149,7 @@
         "rotation": "-67.962 7.602 -7.026",
         "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
         "scale":"2 2 1.600",
+        "marker":"hiro",
         "type":"a-image",
         "src": "assets/images/Variac8.png",
         "children": [
@@ -176,7 +177,6 @@
     },{
       "id":"third",
     "description": "Ahora si, el transformador esta conectado",
-    "marker":"kanji",
     "delay":"5000",
     "type":"delay",
     "next":"bien",
@@ -185,6 +185,7 @@
         "rotation": "-67.962 7.602 -7.026",
         "position":"0.525 -0.444 0.573",
         "type":"a-image",
+        "marker":"kanji",
         "scale": "2 2 1",
         "src": "assets/images/transformador4bornes.png",
         "children": [
@@ -235,6 +236,7 @@
         "rotation": "-67.962 7.602 -7.026",
         "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
         "scale":"2 2 1.600",
+        "marker":"hiro",
         "type":"a-image",
         "src": "assets/images/Variac8.png",
         "children": [
