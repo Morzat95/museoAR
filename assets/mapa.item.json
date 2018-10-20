@@ -1,55 +1,82 @@
 [
-    {
-      "id":"first",
-      "description": "",
-    "delay":"5000",
-    "type":"delay",
-    "marker":"multi",
-    "next":"B",
-    "objects":[  {
-        "id": "image0",
-        "position":"1.933 -0.28538117510589095 0.2942423933567931",
-        "rotation": "-90 110 0",
-        "scale":"8 8 8",
-        "type":"a-image",
-        "src": "assets/images/demo1.png"
-
-      }]
-    },
+    
     {
       "id":"B",
       "description": "",
-      "type":"delay",
-      "delay":"5000",
       "next":"C",
-      "marker":"multi",
-    
         "objects":[  {
             "id": "image1",
-            "position":"1.933 -0.28538117510589095 0.2942423933567931",
+            "marker":"multi",
+            "position":"-0.893 0.697673148147879 -3.1947469136850053",
             "rotation": "-90 110 0",
-            "scale":"8 8 8",
+            "scale":"18 24 12",
             "type":"a-image",
-            "src": "assets/images/demo2.png"
+            "src": "assets/images/demo2.png",
+            "onclick":"goTo('C')"}
+            ,{
+              "id": "X2",
+              "marker":"kanji",
+              "type":"a-entity",
+              "file": "assets/models/windturbine.obj",
+              "position": "0.005 -0.465 -0.061",
+              "rotation": "0 0 0",
+              "scale": "0.001 0.001 0.001",
+              "material": {"color": "#414141"}
+      
+            }
+            ,{
+              "id": "Y2",
+              "marker":"hiro",
+              "type":"a-entity",
+              "file": "assets/models/windturbine.obj",
+              "position": "0.005 -0.465 -0.061",
+              "rotation": "0 0 0",
+              "scale": "0.001 0.001 0.001",
+              "material": {"color": "#414141"}
+      
+            }
+
+            
     
-          }]
+          ]
     
     
     },
     { "id":"C",
       "description": "",
-      "type":"delay",
-      "delay":"5000",
-      "marker":"multi",
       "next":"D",
       "objects":[
         {
             "id": "image2",
-            "position":"1.933 -0.28538117510589095 0.2942423933567931",
+            "position":"-0.893 0.697673148147879 -3.1947469136850053",
             "rotation": "-90 110 0",
-            "scale":"8 8 8",
+            "marker":"multi",
+            "scale":"18 24 12",
             "type":"a-image",
-            "src": "assets/images/demo3.png"
+            "src": "assets/images/demo3.png",
+            "onclick":"goTo('D')"
+    
+          }
+          ,{
+            "id": "X3",
+            "marker":"kanji",
+            "type":"a-entity",
+            "file": "assets/models/windturbine.obj",
+            "position": "0.005 -0.465 -0.061",
+            "rotation": "0 0 0",
+            "scale": "0.001 0.001 0.001",
+            "material": {"color": "#414141"}
+    
+          }
+          ,{
+            "id": "Y3",
+            "marker":"hiro",
+            "type":"a-entity",
+            "file": "assets/models/windturbine.obj",
+            "position": "0.005 -0.465 -0.061",
+            "rotation": "0 0 0",
+            "scale": "0.001 0.001 0.001",
+            "material": {"color": "#414141"}
     
           }
               ]
@@ -57,18 +84,29 @@
     {
       "id":"D",
       "description": "",
-      "type":"delay",
-      "delay":"5000",
       "next":"E",
-      "marker":"multi",
+     
       "objects":[
         {
             "id": "image3",
-            "position":"1.933 -0.28538117510589095 0.2942423933567931",
+            "marker":"multi",
+            "position":"-0.893 0.697673148147879 -3.1947469136850053",
             "rotation": "-90 110 0",
-            "scale":"8 8 8",
+            "scale":"18 24 12",
             "type":"a-image",
-            "src": "assets/images/demo4.png"
+            "src": "assets/images/demo4.png",
+            "onclick":"goTo('E')"
+    
+          }
+          ,{
+            "id": "Y4",
+            "marker":"hiro",
+            "type":"a-entity",
+            "file": "assets/models/windturbine.obj",
+            "position": "0.005 -0.465 -0.061",
+            "rotation": "0 0 0",
+            "scale": "0.001 0.001 0.001",
+            "material": {"color": "#414141"}
     
           }
               ] 
@@ -77,18 +115,28 @@
     {
       "id":"E",
       "description": "",
-      "type":"delay",
-      "delay":"5000",
       "next":"G",
-      "marker":"multi",
       "objects":[
         {
             "id": "image4",
-            "position":"1.933 -0.28538117510589095 0.2942423933567931",
+            "marker":"multi",
+            "position":"-0.893 0.697673148147879 -3.1947469136850053",
             "rotation": "-90 110 0",
-            "scale":"8 8 8",
+            "scale":"18 24 12",
             "type":"a-image",
-            "src": "assets/images/demo5.png"
+            "src": "assets/images/demo5.png",
+            "onclick":"goTo('G')"
+    
+          }
+          ,{
+            "id": "Y5",
+            "marker":"hiro",
+            "type":"a-entity",
+            "file": "assets/models/windturbine.obj",
+            "position": "0.005 -0.465 -0.061",
+            "rotation": "0 0 0",
+            "scale": "0.001 0.001 0.001",
+            "material": {"color": "#414141"}
     
           }
               ] 
