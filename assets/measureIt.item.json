@@ -1,0 +1,22 @@
+[
+    {
+    "id":"A",
+    "description": "",
+    "objects":[
+      {
+        "id": "cube1",
+        "marker":"kanji",
+        "scale":"0.5 0.5 0.5",
+        "type":"a-box",
+        "onclick":"getDistance('kanji','hiro');",
+        "color": "blue"
+      },{
+        "id": "cube2",
+        "marker":"hiro",
+        "scale":"0.5 0.5 0.5",
+        "type":"a-box",
+        "onclick":"getDistance('hiro','kanji');",
+        "color": "orange"
+      }]
+    }
+    ]

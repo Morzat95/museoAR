@@ -6,6 +6,7 @@ let activity;
 var historyStack = [];
 var renderQueue = [];
 
+
 function run() {
   console.log("activity= " + name);
   loadJSON("assets/" + name + ".item.json", loadActivity);
@@ -85,8 +86,6 @@ function loadCard(card) {
   else {
     console.log("next is null!, no preloading this time");
   }
-
-
   makeCardVisible(card);
   drawText(card.description);
   if (card.type == "delay") {
@@ -186,7 +185,7 @@ function setObjectProperties(jObj, fatherID) {
   if (jObj.src != null && jObj.material == null) {
     obj.setAttribute('src', jObj.src);
   }
-  else {
+  if (jObj.src != null && jObj.material != null){
     obj.setAttribute('src', jObj.src);
     obj.setAttribute('material', jObj.material);
   }
@@ -313,8 +312,22 @@ function playPause(id) {
 
 }
 
+function increaseScale(entityID,value){
+  var obj = document.querySelector('#'+entityID)
+  var scale = obj.getAttribute('scale');
+  console.log('scale',Number(scale.x+value)+" "+scale.y+value+" "+scale.z+value);
+  obj.setAttribute('scale',Number(scale.x+value)+" "+Number(scale.y+value)+" "+Number(scale.z+value));
+ 
+}
+function resetScale(entityID,value){
+  var obj = document.querySelector('#'+entityID)
+  console.log('scale',Number(value)+" "+value+" "+value);
+  obj.setAttribute('scale',Number(value)+" "+Number(value)+" "+Number(value));
+ 
+}
 
 function getDistance(IDEntity3D,IDOtherEntity3D){
+  console.log("distance...");
   var entity3D= document.querySelector("#" + IDEntity3D).object3D;
   var otherEntity3D= document.querySelector("#" + IDOtherEntity3D).object3D;
   var scene= document.querySelector("#scene").object3D;
@@ -364,13 +377,15 @@ AFRAME.registerComponent('markerhandler', {
   init: function () {
     // Set up the tick throttling. Will check if marker is active every 500ms
     console.log("setting up marker handler...");
-    this.tick = AFRAME.utils.throttleTick(this.tick, 1000, this);
+    this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
   },
 
   tick: function (t, dt) {
     if (activity != null) {
       if (isCurrentMarkerVisible() && playing == false) {
         // MARKER IS PRESENT
+        var cursor=document.querySelector('#cursor');
+        cursor.setAttribute('visible', true);
         document.querySelector('.scanningSpinner').style.display = 'none'; 
         currentTimeout = "";
         playing = true;
@@ -379,6 +394,8 @@ AFRAME.registerComponent('markerhandler', {
       } else if ((isCurrentMarkerVisible() == false) && (playing == true)) {
         currentTimeout = "";
         playing = false;
+        var cursor=document.querySelector('#cursor');
+        cursor.setAttribute('visible', false);
         document.querySelector('.scanningSpinner').style.display = '';
       }
       else if ((isCurrentMarkerVisible() == false) && (playing == false)) {
@@ -404,7 +421,9 @@ AFRAME.registerComponent('cursor-listener', {
   init: function () {
     this.el.addEventListener('click', function (evt) {
       console.log("#" + this.id + " was clicked");
-      this.onclick;
+      if(this.object3D.visible){
+        this.onclick;
+      }
     });
   }
 });

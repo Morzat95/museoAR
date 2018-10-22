@@ -1,8 +1,7 @@
 {
-    "name":"Mapa de la republica",
-    "description":"demo mapa",
+    "name":"Mapa grande de la republica",
+    "description":"demo mapa grande",
     "type":"checklist",
-    "preview": "assets/images/demo.png",
-    "activity": "actividad"
+    "preview": "assets/images/aframe.png",
+    "activity": "mapa"
     }
-  
