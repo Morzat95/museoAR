@@ -1,1 +1,1 @@
-<?php header( 'Location: /menu.html?trafoCheckList' ) ;  ?>
+<?php header( 'Location: /menu.html?mapa' ) ;  ?>
