@@ -21,7 +21,8 @@
               "position": "0.005 -0.465 -0.061",
               "rotation": "0 0 0",
               "scale": "0.001 0.001 0.001",
-              "material": {"color": "#414141"}
+              "material": {"color": "#414141"},
+              "onclick":"getDistance('kanji','hiro');"
       
             }
             ,{
@@ -32,7 +33,8 @@
               "position": "0.005 -0.465 -0.061",
               "rotation": "0 0 0",
               "scale": "0.001 0.001 0.001",
-              "material": {"color": "#414141"}
+              "material": {"color": "#414141"},
+              "onclick":"getDistance('hiro','kanji');"
       
             }
 

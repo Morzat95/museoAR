@@ -4,6 +4,7 @@ var playing = false;
 var currentCard = 0;
 let activity;
 var historyStack = [];
+var renderQueue = [];
 
 function run() {
   console.log("activity= " + name);
@@ -204,6 +205,12 @@ function setObjectProperties(jObj, fatherID) {
   father.appendChild(obj);
 
 }
+
+/*var html = '<select>  combo</select> '
+json.data.forEach( (elem)  => {
+    html += `<optiion id = "${elem.id}"> ${elem.name} </option>`
+})*/
+
 function iterateObjects(jsonInput, value, callback) {
   if (jsonInput == null || jsonInput == "") {
     return;
@@ -305,6 +312,39 @@ function playPause(id) {
   aVideoAsset.setAttribute('loop', 'false');
 
 }
+
+
+function getDistance(IDEntity3D,IDOtherEntity3D){
+  var entity3D= document.querySelector("#" + IDEntity3D).object3D;
+  var otherEntity3D= document.querySelector("#" + IDOtherEntity3D).object3D;
+  var scene= document.querySelector("#scene").object3D;
+  var from = entity3D.position;
+  var to = otherEntity3D.position;
+  var direction = to.clone().sub(from);
+  var length = direction.length();
+  var arrowHelper = new THREE.ArrowHelper(direction.normalize(), from, length, 0xff0000 );
+  arrowHelper.name="arrowHelper";
+  scene.add( arrowHelper );
+  
+  renderQueue.push(function(){
+    var scene= document.querySelector("#scene").object3D;
+    var object = scene.getObjectByName( "arrowHelper" );
+    scene.remove(object);
+    var entity3D= document.querySelector("#" + IDEntity3D).object3D;
+    var otherEntity3D= document.querySelector("#" + IDOtherEntity3D).object3D;
+    var from = entity3D.position;
+    var to = otherEntity3D.position;
+    var direction = to.clone().sub(from);
+    var length = direction.length();
+    var arrowHelper = new THREE.ArrowHelper(direction.normalize(), from, length, 0xff0000 );
+    arrowHelper.name="arrowHelper";
+    scene.add( arrowHelper );
+    drawText(IDEntity3D +" -> "+IDOtherEntity3D+" : " +from.distanceTo(to));
+  });
+ 
+
+  
+}
 function isCurrentMarkerVisible() {
   if (currentCard == null) {
     return false;
@@ -331,7 +371,7 @@ AFRAME.registerComponent('markerhandler', {
     if (activity != null) {
       if (isCurrentMarkerVisible() && playing == false) {
         // MARKER IS PRESENT
-        console.log("Found!");
+        document.querySelector('.scanningSpinner').style.display = 'none'; 
         currentTimeout = "";
         playing = true;
         loadCard(currentCard);
@@ -339,13 +379,21 @@ AFRAME.registerComponent('markerhandler', {
       } else if ((isCurrentMarkerVisible() == false) && (playing == true)) {
         currentTimeout = "";
         playing = false;
-        console.log("marker lost!");
+        document.querySelector('.scanningSpinner').style.display = '';
       }
       else if ((isCurrentMarkerVisible() == false) && (playing == false)) {
         if (activity != null) { //if its already loading
           console.log("looking for marker... " + getCardMarkers(currentCard));
         }
       }
+      else if ((isCurrentMarkerVisible() == true) && (playing == true)) {
+        //playing
+        renderQueue.forEach(function(renderFnc){ //executes functions added to the render queue
+          renderFnc();
+        })
+
+      }
+
 
     }
   }
