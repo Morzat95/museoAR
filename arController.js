@@ -4,6 +4,8 @@ var playing = false;
 var currentCard = 0;
 let activity;
 var historyStack = [];
+var renderQueue = [];
+
 
 function run() {
   console.log("activity= " + name);
@@ -23,15 +25,50 @@ function loadActivity(jsonInput) {
   preLoadCard(currentCard);
   console.log(activity);
 }
+
+
+function getCardMarkers(card) {
+  var markerStack = [];
+  if (card.marker != null) {
+    markerStack.push(card.marker);
+    return markerStack;
+  }
+  else if(card.objects!=null){
+    card.objects.forEach(node => {
+      if (node.marker != null) {
+        markerStack.push(node.marker);
+      }
+    });
+  }
+    if(markerStack.length==0){
+      return null;
+    }
+    return markerStack;
+  }
+
+
 function preLoadCard(card) {
-  if(card==null){
+  if (card == null) {
     console.error("check JSON file card is null");
   }
   if (!isPreloaded(card)) {
-    iterateObjects(card.objects, card.marker, setObjectProperties);
+    if (card.marker == null&&card.objects!=null) { //if null we asume its because we are using multipleIndependentMarkers
+      card.objects.forEach(node => {
+        if (node.marker != null) {
+          setObjectProperties(node, node.marker);
+          iterateObjects(node.children, node.id, setObjectProperties);
+        }
+      });
+    }
+    else {
+      iterateObjects(card.objects, card.marker, setObjectProperties); //we use a marker for all objects
+    }
     card.preoloaded = true;
   }
+
+  
 }
+
 function isPreloaded(card) {
   if (card.isPreloaded != null) {
     if (card.isPreloaded == true) {
@@ -49,13 +86,7 @@ function loadCard(card) {
   else {
     console.log("next is null!, no preloading this time");
   }
-
-
   makeCardVisible(card);
- /* if (card.autoplay != null) {
-
-    playPause(card.autoplay);
-  }*/
   drawText(card.description);
   if (card.type == "delay") {
     startTimer(card);
@@ -92,12 +123,8 @@ function logCurrentObjects() {
 }
 function goTo(next) {
   currentTimeout = "";
-  /*if(currentCard.autoplay!=null){
-    playPause(currentCard.autoplay);
-    }*/
   historyStack.push(currentCard.id);
   deleteCard(currentCard);
-  // }
   console.log(next);
   currentCard = activity.get(next);
   if (currentCard == null) {
@@ -106,32 +133,6 @@ function goTo(next) {
   playing = false;
 }
 
-function next(){
-    if(currentCard.autoplay!=null){
-      playPause(currentCard.autoplay);
-    }
-
-  if(currentCard.next!=null){
-    goTo(currentCard.next);
-  }
-  console.log("next!");
-  if(currentCard.next!=null){
-  
-    if(currentCard.next.autoplay!=null){
-      playPause(currentCard.next.autoplay);
-    }
-}
-}
-function previous(){
- var previous=historyStack.pop();
- playPause(currentCard.autoplay);
- if(previous!=null){
-    goTo(previous); 
-    
- }
- historyStack.pop();   
- console.log("previous! "+previous);
-}
 function garbageCollection() {
   console.log("Removing card...");
   getGarbage().forEach(garbage => {
@@ -156,16 +157,14 @@ function getGarbage() {
 }
 
 function setObjectVisible(Jobj, value) {
-
   var obj = document.querySelector('#' + Jobj.id);
   obj.setAttribute('visible', value);
 }
 function setObjectProperties(jObj, fatherID) {
-  var marker = document.querySelector('#' + fatherID);
+  var father = document.querySelector('#' + fatherID);
   var obj = document.createElement(jObj.type);
-  obj.setAttribute('visible', false); //Makes the object invisible by default
+  obj.setAttribute('visible', false); //Makes the object invisible by default so that we can make it visible later
   obj.setAttribute('id', jObj.id);
- 
   obj.setAttribute('scale', jObj.scale);
   obj.setAttribute('rotation', jObj.rotation);
   obj.setAttribute('position', jObj.position);
@@ -173,47 +172,43 @@ function setObjectProperties(jObj, fatherID) {
   obj.setAttribute('height', jObj.height);
   obj.setAttribute('depth', jObj.depth);
   obj.setAttribute('jsonLoaded', '');
-  // obj.setAttribute('loaded',true);
-  if(jObj.file!=null){
+  if (jObj.file != null) {
     obj.setAttribute('obj-model', 'obj', 'url(' + jObj.file + ')');
-
-   // obj.setAttribute('src', jObj.file);
-   // obj.setAttribute('mtl', jObj.mtl );
-  }
-  if (jObj.type == "a-animation") {
-    obj.setAttribute('dur', jObj.dur);
-    obj.setAttribute('fill', jObj.fill);
-    obj.setAttribute('to', jObj.to);
-    obj.setAttribute('repeat', jObj.repeat);
-
   }
   if (jObj.onclick != null) {
     obj.setAttribute('cursor-listener', '');
     obj.setAttribute('onclick', jObj.onclick);
   }
-  if (jObj.material != null) {
+  if (jObj.material != null && jObj.src == null) {
     obj.setAttribute('material', jObj.material);
   }
-
-  else {
+  if (jObj.src != null && jObj.material == null) {
     obj.setAttribute('src', jObj.src);
   }
-  if (jObj.type = "video") {
-
+  if (jObj.src != null && jObj.material != null){
+    obj.setAttribute('src', jObj.src);
+    obj.setAttribute('material', jObj.material);
+  }
+  if (jObj.type == "video") {
     if (jObj.autoplay == "true") {
       obj.setAttribute('autoplay', '');
     }
     obj.setAttribute('loop', jObj.loop);
   }
-  else{
-  obj.setAttribute('color', jObj.color);
-  obj.setAttribute('value', jObj.value);
-  obj.setAttribute('shadow', jObj.shadow);
+  else {
+    obj.setAttribute('color', jObj.color);
+    obj.setAttribute('value', jObj.value);
+    obj.setAttribute('shadow', jObj.shadow);
   }
 
-  marker.appendChild(obj);
+  father.appendChild(obj);
 
 }
+
+/*var html = '<select>  combo</select> '
+json.data.forEach( (elem)  => {
+    html += `<optiion id = "${elem.id}"> ${elem.name} </option>`
+})*/
 
 function iterateObjects(jsonInput, value, callback) {
   if (jsonInput == null || jsonInput == "") {
@@ -226,11 +221,8 @@ function iterateObjects(jsonInput, value, callback) {
 
   }
   objectCount = i;
-  // console.log("objectCount:" + objectCount);
 
 }
-
-
 function appendText(text) {
 
   var obj = document.createElement('li');
@@ -238,8 +230,6 @@ function appendText(text) {
   obj.innerText = text;
   var list = document.querySelector("#checklist");
   list.appendChild(obj);
-
-
 }
 function drawText(text) {
   var obj = document.createElement('li');
@@ -272,14 +262,10 @@ function startTimer(item) {
   }, delayInMilliseconds);
 
 }
-
-
 function firstPlay() {
   hideOrShow("playButton");
   play();
-  //startTimer(activity.get("INICIO"));
   drawText("Comenzando...");
-
 }
 function hideOrShow(id) {
   var x = document.getElementById(id);
@@ -304,7 +290,6 @@ function play(id) {
   aVideoAsset.setAttribute('loop', 'false');
 
 }
-
 function playPause(id) {
   if (id == null) {
     id = currentCard.autoplay;
@@ -327,48 +312,105 @@ function playPause(id) {
 
 }
 
+function increaseScale(entityID,value){
+  var obj = document.querySelector('#'+entityID)
+  var scale = obj.getAttribute('scale');
+  console.log('scale',Number(scale.x+value)+" "+scale.y+value+" "+scale.z+value);
+  obj.setAttribute('scale',Number(scale.x+value)+" "+Number(scale.y+value)+" "+Number(scale.z+value));
+ 
+}
+function resetScale(entityID,value){
+  var obj = document.querySelector('#'+entityID)
+  console.log('scale',Number(value)+" "+value+" "+value);
+  obj.setAttribute('scale',Number(value)+" "+Number(value)+" "+Number(value));
+ 
+}
 
+function getDistance(IDEntity3D,IDOtherEntity3D){
+  console.log("distance...");
+  var entity3D= document.querySelector("#" + IDEntity3D).object3D;
+  var otherEntity3D= document.querySelector("#" + IDOtherEntity3D).object3D;
+  var scene= document.querySelector("#scene").object3D;
+  var from = entity3D.position;
+  var to = otherEntity3D.position;
+  var direction = to.clone().sub(from);
+  var length = direction.length();
+  var arrowHelper = new THREE.ArrowHelper(direction.normalize(), from, length, 0xff0000 );
+  arrowHelper.name="arrowHelper";
+  scene.add( arrowHelper );
+  
+  renderQueue.push(function(){
+    var scene= document.querySelector("#scene").object3D;
+    var object = scene.getObjectByName( "arrowHelper" );
+    scene.remove(object);
+    var entity3D= document.querySelector("#" + IDEntity3D).object3D;
+    var otherEntity3D= document.querySelector("#" + IDOtherEntity3D).object3D;
+    var from = entity3D.position;
+    var to = otherEntity3D.position;
+    var direction = to.clone().sub(from);
+    var length = direction.length();
+    var arrowHelper = new THREE.ArrowHelper(direction.normalize(), from, length, 0xff0000 );
+    arrowHelper.name="arrowHelper";
+    scene.add( arrowHelper );
+    drawText(IDEntity3D +" -> "+IDOtherEntity3D+" : " +from.distanceTo(to));
+  });
+ 
+
+  
+}
 function isCurrentMarkerVisible() {
   if (currentCard == null) {
     return false;
   }
-  if (currentCard.marker == null) {//if it has no marker its excecuted anyway
+  var markerStack = getCardMarkers(currentCard);
+  if (markerStack == null) {//if it has no marker its excecuted anyway
     return true;
   }
-  return document.querySelector("#" + currentCard.marker).object3D.visible;
-
+  var isVisible = false;
+  markerStack.forEach(marker => {
+    isVisible = isVisible | document.querySelector("#" + marker).object3D.visible; //if at least one marker is visible
+  });
+  return isVisible;
 }
-
-
 
 AFRAME.registerComponent('markerhandler', {
   init: function () {
     // Set up the tick throttling. Will check if marker is active every 500ms
     console.log("setting up marker handler...");
-    this.tick = AFRAME.utils.throttleTick(this.tick, 1000, this);
+    this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
   },
 
   tick: function (t, dt) {
     if (activity != null) {
       if (isCurrentMarkerVisible() && playing == false) {
         // MARKER IS PRESENT
-        console.log("Found!");
+        var cursor=document.querySelector('#cursor');
+        cursor.setAttribute('visible', true);
+        document.querySelector('.scanningSpinner').style.display = 'none'; 
         currentTimeout = "";
         playing = true;
         loadCard(currentCard);
 
       } else if ((isCurrentMarkerVisible() == false) && (playing == true)) {
         currentTimeout = "";
-
-
         playing = false;
-        console.log("marker lost!");
+        var cursor=document.querySelector('#cursor');
+        cursor.setAttribute('visible', false);
+        document.querySelector('.scanningSpinner').style.display = '';
       }
       else if ((isCurrentMarkerVisible() == false) && (playing == false)) {
-        if (activity != null) {//not yet loaded
-          console.log("looking for marker... " + currentCard.marker);
+        if (activity != null) { //if its already loading
+          console.log("looking for marker... " + getCardMarkers(currentCard));
         }
       }
+      else if ((isCurrentMarkerVisible() == true) && (playing == true)) {
+        //playing
+        renderQueue.forEach(function(renderFnc){ //executes functions added to the render queue
+          renderFnc();
+        })
+
+      }
+
 
     }
   }
@@ -379,7 +421,9 @@ AFRAME.registerComponent('cursor-listener', {
   init: function () {
     this.el.addEventListener('click', function (evt) {
       console.log("#" + this.id + " was clicked");
-      this.onclick;
+      if(this.object3D.visible){
+        this.onclick;
+      }
     });
   }
 });

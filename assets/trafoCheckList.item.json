@@ -3,6 +3,7 @@
     "id":"first",
   "description": "toca el transformador...",
   "marker":"kanji",
+  "next":"D",
   "objects":[{
       "id": "trafo4Bornes",
       "type":"a-entity",
@@ -76,6 +77,7 @@
   { "id":"C",
     "description": "",
     "marker":"kanji",
+    "next":"H",
     "objects":[
           {
             "id": "image",
