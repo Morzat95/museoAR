@@ -13,9 +13,7 @@ function loadJSON(filename,callback) {
    
 }
 
-
 function parseCSV(filename,callback){
-   
     loadScript("lib/papaparse.min.js",function(){
         Papa.parse(filename, 
         {

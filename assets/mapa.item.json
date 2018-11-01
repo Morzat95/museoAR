@@ -6,12 +6,12 @@
       {
         "id": "image0",
         "marker":"kanji",
-        "position":"0 -0.28538117510589095 0.2942423933567931",
+        "position":"0 -1 0",
         "rotation": "-90 110 0",
         "scale":"2 2 2",
         "type":"a-image",
         "src": "assets/images/demo2.png",
-        "onclick":"increaseScale('image0',2);increaseScale('Y0',0.0001);"
+        "onclick":"increaseScale('image0',2);increaseScale('Y0',0.0001);drawMatrix('100','kanji','25','12.5');"
       },{
         "id": "Y0",
         "marker":"hiro",

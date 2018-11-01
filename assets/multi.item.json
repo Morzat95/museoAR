@@ -21,7 +21,7 @@
       "rotation": "0 0 0",
       "scale": "0.001 0.001 0.001",
       "material": {"color": "#414141"},
-      "onclick":"getDistance('hiro','kanji');"
+      "onclick":"drawDistance('hiro','kanji');"
     },{
       "id": "X0",
       "marker":"hiro",

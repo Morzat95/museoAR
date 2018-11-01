@@ -325,8 +325,50 @@ function resetScale(entityID,value){
   obj.setAttribute('scale',Number(value)+" "+Number(value)+" "+Number(value));
  
 }
+/*function drawMatrix(matrix,marker,width,height){
+  markerObj= document.querySelector("#" + marker).object3D;
+  var scene= document.querySelector("#scene").object3D;
+  var size=Object.keys(matrix).length;
+  var squareWidth = Math.floor(width/size);
+  var squareHeight = Math.floor(height/size);
+  console.log("the matrix squares will be: "+squareWidth+":"+squareHeight +" in size");
+  
+  var material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+  var geometry = new THREE.Geometry();
+  geometry.vertices.push(new THREE.Vector3(0, 0, 0) );
+  geometry.vertices.push(new THREE.Vector3( 0, 10, 0) );
+  geometry.vertices.push(new THREE.Vector3( 10, 10, 0) );
+  geometry.vertices.push(new THREE.Vector3( 10, 0, 0) );
+  geometry.vertices.push(new THREE.Vector3(0, 0, 0) );
+  var line = new THREE.Line( geometry, material );
+  markerObj.add( line );
+}*/
+function drawMatrix(size,marker,width,height){
+  markerObj= document.querySelector("#" + marker).object3D;
+  var squareWidth = width/(size*4);
+  var squareHeight = height/(size*4);
+  console.log("the matrix squares will be: "+squareWidth+":"+squareHeight +" in size");
+  var yOffset=(squareHeight*size);  
+  var xOffset=(squareWidth*size)/4  ;  
+  for (let i = 1; i <= size; i++) {
+    for (let j = 1; j <= size; j++) {
+      var material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+      var geometry = new THREE.Geometry();
+      geometry.vertices.push(new THREE.Vector3(0, 0, 0) );
+      geometry.vertices.push(new THREE.Vector3( (squareWidth*i)-yOffset,0, 0) );
+      geometry.vertices.push(new THREE.Vector3( (squareWidth*i)-yOffset, 0,(squareHeight*j)-xOffset));
+      geometry.vertices.push(new THREE.Vector3( 0, 0, (squareHeight*j)-xOffset) );
+      geometry.vertices.push(new THREE.Vector3(0, 0, 0) );
+      var line = new THREE.Line( geometry, material );
+      markerObj.add( line );
+    }
+   
+    
+  }
+ 
+}
 
-function getDistance(IDEntity3D,IDOtherEntity3D){
+function drawDistance(IDEntity3D,IDOtherEntity3D){
   console.log("distance...");
   var entity3D= document.querySelector("#" + IDEntity3D).object3D;
   var otherEntity3D= document.querySelector("#" + IDOtherEntity3D).object3D;
@@ -338,7 +380,7 @@ function getDistance(IDEntity3D,IDOtherEntity3D){
   var arrowHelper = new THREE.ArrowHelper(direction.normalize(), from, length, 0xff0000 );
   arrowHelper.name="arrowHelper";
   scene.add( arrowHelper );
-  
+
   renderQueue.push(function(){
     var scene= document.querySelector("#scene").object3D;
     var object = scene.getObjectByName( "arrowHelper" );
@@ -353,10 +395,7 @@ function getDistance(IDEntity3D,IDOtherEntity3D){
     arrowHelper.name="arrowHelper";
     scene.add( arrowHelper );
     drawText(IDEntity3D +" -> "+IDOtherEntity3D+" : " +from.distanceTo(to));
-  });
- 
-
-  
+  });  
 }
 function isCurrentMarkerVisible() {
   if (currentCard == null) {
