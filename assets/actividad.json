@@ -2,6 +2,6 @@
   "name":"Ensayo de vacio",
   "description":"Ensayo indirecto del transformador monofasico de potencia, pruba de vacio.",
   "type":"checklist",
-  "preview": "assets/images/transformador4bornes.png",
+  "preview": "assets/images/transformador4bornesPortada.png",
   "activity": "actividad"
   }

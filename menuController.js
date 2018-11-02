@@ -25,11 +25,11 @@ function showActivity(){
 
 function goTo(){
   if(document.getElementById("arCheck").checked){
-    window.location.href = "ar.html?Act="+levelsFile;
+    window.location.href = "ar.html?"+levelsFile;
   }
     else{
       
-     window.location.href = "vr.html?Act="+levelsFile;
+     window.location.href = "vr.html?"+levelsFile;
     }
 }
 

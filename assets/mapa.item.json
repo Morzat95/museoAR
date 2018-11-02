@@ -16,7 +16,7 @@
         "id": "Y0",
         "marker":"hiro",
         "type":"a-entity",
-        "file": "assets/models/windturbine.obj",
+        "file": "assets/models/windturbine.obj",  
         "position": "0.005 -0.465 -0.061",
         "rotation": "0 0 0",
         "scale": "0.001 0.001 0.001",

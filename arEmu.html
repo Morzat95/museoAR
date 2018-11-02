@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <title>
     MuseoAR
@@ -6,35 +7,51 @@
   <meta name="Demo Realidad Aumentada" content="MuseoAR">
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="assets/styles/styles.css" />
-
   <script src="lib/jquery.min.js"></script>
   <script src="fileUtils.js"></script>
-  <script>loadJSON('ARjsMultiMarkerFile',function(response){
-      localStorage.setItem('ARjsMultiMarkerFile',JSON.stringify(response));
-  })</script>
+  <script>loadJSON('ARjsMultiMarkerFile', function (response) {
+      localStorage.setItem('ARjsMultiMarkerFile', JSON.stringify(response));
+    })</script>
   <script src="lib/aframe.min.js"></script>
-  <script src="lib/aframe-ar.js"></script> 
-  <script src="arController.js"></script>
+  <script src="lib/aframe-ar.js"></script>
+  <script src="Controller.js"></script>
+  
+
 </head>
 
 
 <body style='margin : 0px; overflow: hidden;'>
-      <ul id="checklist" class="checklist" style="list-style-type:none">
-        </ul>
-        
-  <!--<a-scene id="scene" markerhandler embedded arjs='sourceType: webcam; debugUIEnabled: false;  detectionMode: mono_and_matrix; matrixCodeType: 3x3_PARITY65; cameraParametersUrl=calibracion.dat' vr-mode-ui="enabled: false;">-->
-  <!--<a-scene id="scene" markerhandler embedded arjs='sourceType: webcam; debugUIEnabled: false; cameraParametersUrl=calibracion.dat' vr-mode-ui="enabled: false;">-->
-  <!--<a-scene id="scene" markerhandler embedded arjs='sourceType: image; sourceUrl: bashScripts/demo.jpg ;debugUIEnabled: false;' vr-mode-ui="enabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">-->
-    <a-scene id="scene" cursor="rayOrigin: mouse" markerhandler embedded arjs='sourceType: image; sourceUrl: demoARtoolkit.png; debugUIEnabled: false; detectionMode: mono; maxDetectionRate:20;' vr-mode-ui="enabled: false;">
-      <a-marker id="multi" preset='area'></a-marker>
-      <a-camera camera>
-        <a-cursor ></a-cursor>
-       </a-camera>
-      </a-scene>
-     <!--<div onclick="previous()" class="previousRect"></div>-->
-    
-      
-      <script>
-      run();</script>
+  <ul id="checklist" class="checklist" style="list-style-type:none">
+  </ul>
+  <div class="scanningSpinner">
+    <label>
+      Scanning
+    </label>
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+  </div>
+
+
+  <a id="playButton" onclick="firstPlay()" class="btn btn-primary play-overlay"></a>
+  <a-scene id="scene" markerhandler render-queue embedded arjs='sourceType: image; sourceUrl: other/kanji-marker.png; debugUIEnabled: false; detectionMode: mono; maxDetectionRate:20;''
+    vr-mode-ui="enabled: false;">
+
+
+    <a-marker id="kanji" type="pattern" preset='kanji'></a-marker>
+    <a-marker id="hiro" type="pattern" preset='hiro'></a-marker>
+    <a-marker id="multi" preset='area'></a-marker>
+
+    </a-marker>
+    <a-entity camera mouse-cursor></a-entity>
+    <a-cursor id="cursor" visible="false" fuse="false" color="yellow"></a-cursor>
+    </a-entity>
+  </a-scene>
+
+
+  <script>
+    hideOrShow("playButton");
+    run();</script>
 </body>
+
 </html>

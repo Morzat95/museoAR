@@ -1,698 +1,562 @@
 [
-
   {
-    "id":"first",
-  "description": "Conecte correctamente la fuente para realizar ensayo de cortocircuito",
-  "marker":"kanji",
-  "next":"second",
-  "objects":[{
-      "id": "trafo",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"0.525 -0.444 0.573",
-      "type":"a-image",
-      "scale": "2 2 1",
-      "src": "assets/images/transformador4bornes.png",
-      "children": [
-          {
-              "id": "A",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.141 -0.467 -0.052",
-              
-              "rotation": "0 0 0",
-              "scale": "0.005 0.005 0.007",
-              "material": {"color": "grey"},
-              "onclick":"goTo('Bsecond')"
-
-            },
-            {
-              "id": "B",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.072 -0.469 -0.049",
-              "rotation": "0 0 0",
-              "scale": "0.005 0.005 0.007",
-              "material": {"color": "grey"},
-              "onclick":"goTo('second')"
-            },
-            {
-              "id": "X",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "0.005 -0.465 -0.061",
-              "rotation": "0 0 0",
-              "scale": "0.005 0.005 0.007",
-              "material": {"color": "grey"},
-              "onclick":"goTo('mal')"
-
-            },
-            {
-              "id": "Y",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "0.110 -0.467 -0.054",
-              "rotation": "0 0 0",
-              "scale": "0.005 0.005 0.007",
-              "material": {"color": "grey"},
-              "onclick":"goTo('mal')"
-            }
-            ]
-    },
-    {
-      "id": "fuente",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
-      "scale":"2 2 1.600",
-      "type":"a-image",
-      "src": "assets/images/Variac8.png",
-      "children": [
-          {
-              "id": "Z",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.09635727546684814 -0.47871469644264775 -0.08526059023938858",
-              "rotation": "0 0 0",
-              "scale": "0.005 0.005 0.007",
-              "material": {"color": "grey"}
-              ,
-              "onclick":"goTo('mal')"
-            },
-            {
-              "id": "W",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.093 -0.282 -0.08", 
-              "rotation": "0 0 0",
-              "scale": "0.005 0.005 0.007",
-              "material": {"color": "red"}       }
-            ]
-    }
-  
-  ]
+    "id": "first",
+    "description": "Conecte correctamente la fuente para realizar ensayo de vacio",
+    "next": "second",
+    "objects": [
+      {
+        "id": "trafo",
+        "marker": "kanji",
+        "rotation": "-67.656 12.618 -11.882",
+        "position": "0.366 0.273 0.125",
+        "type": "a-image",
+        "scale": "2 2 1",
+        "src": "assets/images/transformador4bornes.png"
+      },
+      {
+        "id": "fuente",
+        "marker": "hiro",
+        "rotation": "-60.656 -21.115 17.949",
+        "position": "-0.367 0.015 0.023",
+        "scale": "2 2 1.600",
+        "type": "a-image",
+        "src": "assets/images/Variac8.png"
+      },
+      {
+        "id": "circle",
+        "marker": "hiro",
+        "rotation": "-60.656 -21.115 17.949",
+        "position": "-0.574 -0.171 0.347",
+        "scale": "0.3 0.3 0.3",
+        "type": "a-image",
+        "src": "assets/images/selectCircle.png",
+        "material": {
+          "alphaTest": "0.980"
+        }
+      },
+      {
+        "id": "B",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "-0.042 0.141 0.806",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "drawLine('a',this.id);goTo('second');lastClicked='B1';"
+      },
+      {
+        "id": "C",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.145 0.147 0.813",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "drawLine('a',this.id);goTo('second');lastClicked='C1';"
+      },
+      {
+        "id": "D",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.354 0.163 0.817",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "goTo('mal')"
+      },
+      {
+        "id": "E",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.531 0.178 0.813",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "goTo('mal')"
+      },
+      {
+        "id": "F",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.690 0.179 0.834",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "goTo('mal')"
+      },
+      {
+        "id": "a",
+        "type": "a-entity",
+        "marker": "hiro",
+        "file": "assets/models/borne.obj",
+        "position": "-0.531 0.178 0.484",
+        "rotation": "-60.656 -21.115 17.949",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        }
+      },
+      {
+        "id": "x",
+        "type": "a-entity",
+        "marker": "hiro",
+        "file": "assets/models/borne.obj",
+        "position": "-0.508 0.046 0.824",
+        "rotation": "-60.656 -21.115 17.949",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        }
+      }
+    ]
   },
   {
-    "id":"second",
-  "description": "Aun queda un borne!",
-  "marker":"kanji",
-  "next":"third",
-  "objects":[{
-      "id": "trafo2",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"0.525 -0.444 0.573",
-      "type":"a-image",
-      "scale": "2 2 1",
-      "src": "assets/images/transformador4bornes.png",
-      "children": [
-        {
-            "id": "A2",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.141 -0.467 -0.052",
-            
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"},
-            "onclick":"goTo('third')"
+    "id": "second",
+    "description": "Aun queda un borne!",
+    "next": "third",
+    "objects": [
+      {
+        "id": "trafo1",
+        "marker": "kanji",
+        "rotation": "-67.656 12.618 -11.882",
+        "position": "0.366 0.273 0.125",
+        "type": "a-image",
+        "scale": "2 2 1",
+        "src": "assets/images/transformador4bornes.png"
+      },
+      {
+        "id": "circle1",
+        "marker": "hiro",
+        "rotation": "-60.656 -21.115 17.949",
+        "position": "-0.552 -0.283 0.728",
+        "scale": "0.3 0.3 0.3",
+        "type": "a-image",
+        "src": "assets/images/selectCircle.png",
+        "material": {
+          "alphaTest": "0.980"
+        }
+      },
+      {
+        "id": "fuente1",
+        "marker": "hiro",
+        "rotation": "-60.656 -21.115 17.949",
+        "position": "-0.367 0.015 0.023",
+        "scale": "2 2 1.600",
+        "type": "a-image",
+        "src": "assets/images/Variac8.png"
+      },
+      {
+        "id": "B1",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "-0.042 0.141 0.806",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        }
+        ,
+        "onclick": " if(lastClicked!=this.id){goTo('third');drawLine('x',this.id)}else{goTo('mal')}"
+      },
+      {
+        "id": "C1",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.145 0.147 0.813",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "if(lastClicked!=this.id){goTo('third');drawLine('x',this.id)}else{goTo('mal')}"
+      },
+      {
+        "id": "D1",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.354 0.163 0.817",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "goTo('mal')"
+      },
+      {
+        "id": "E1",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.531 0.178 0.813",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "goTo('mal')"
+      },
+      {
+        "id": "F1",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.690 0.179 0.834",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "goTo('mal')"
+      },
+      {
+        "id": "a1",
+        "type": "a-entity",
+        "marker": "hiro",
+        "file": "assets/models/borne.obj",
+        "position": "-0.531 0.178 0.484",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        }
+      },
+      {
+        "id": "x1",
+        "type": "a-entity",
+        "marker": "hiro",
+        "file": "assets/models/borne.obj",
+        "position": "-0.508 0.046 0.824",
+        "rotation": "63.421 178.575 48.756",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "third",
+    "description": "Ahora si, el transformador esta conectado, solo falta ponerlo en corto...",
+    "delay": "5000",
+    "type": "delay",
+    "next": "corto",
+    "objects": [
+      {
+        "id": "trafo2",
+        "marker": "kanji",
+        "rotation": "-67.656 12.618 -11.882",
+        "position": "0.366 0.273 0.125",
+        "type": "a-image",
+        "scale": "2 2 1",
+        "src": "assets/images/transformador4bornes.png"
+      },
+      {
+        "id": "fuente2",
+        "marker": "hiro",
+        "rotation": "-60.656 -21.115 17.949",
+        "position": "-0.367 0.015 0.023",
+        "scale": "2 2 1.600",
+        "type": "a-image",
+        "src": "assets/images/Variac8.png"
+      }
+    ]
+  },
+  {
+    "id": "corto",
+    "description": "Selecciona un borne para realizar el corto",
+    "delay": "5000",
+    "type": "delay",
+    "next": "corto2",
+    "objects": [
+      {
+        "id": "trafo3",
+        "marker": "kanji",
+        "rotation": "-67.656 12.618 -11.882",
+        "position": "0.366 0.273 0.125",
+        "type": "a-image",
+        "scale": "2 2 1",
+        "src": "assets/images/transformador4bornes.png"
+      },
+      {
+        "id": "fuente3",
+        "marker": "hiro",
+        "rotation": "-60.656 -21.115 17.949",
+        "position": "-0.367 0.015 0.023",
+        "scale": "2 2 1.600",
+        "type": "a-image",
+        "src": "assets/images/Variac8.png"
+      },
+      {
+        "id": "B3",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "-0.042 0.141 0.806",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },"onclick": "goTo('mal')"
+      },
+      {
+        "id": "C3",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.145 0.147 0.813",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "goTo('mal')"
+      },
+      {
+        "id": "D3",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.354 0.163 0.817",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "drawCircle(this.id);goTo('corto2');lastClicked='D4'"
+      },
+      {
+        "id": "E3",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.531 0.178 0.813",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "goTo('mal')"
+      },
+      {
+        "id": "F3",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.690 0.179 0.834",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "drawCircle(this.id);goTo('corto2');lastClicked='F4'"
+      }
+    ]
+  },
+  {
+    "id": "corto2",
+    "description": "Y ahora falta el otro!",
+    "next": "cortoTerminado",
+    "objects": [
+      {
+        "id": "trafo3",
+        "marker": "kanji",
+        "rotation": "-67.656 12.618 -11.882",
+        "position": "0.366 0.273 0.125",
+        "type": "a-image",
+        "scale": "2 2 1",
+        "src": "assets/images/transformador4bornes.png"
+      },
+      {
+        "id": "fuente3",
+        "marker": "hiro",
+        "rotation": "-60.656 -21.115 17.949",
+        "position": "-0.367 0.015 0.023",
+        "scale": "2 2 1.600",
+        "type": "a-image",
+        "src": "assets/images/Variac8.png"
+      },
+      {
+        "id": "B3",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "-0.042 0.141 0.806",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },"onclick": "goTo('mal')"
+      },
+      {
+        "id": "C3",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.145 0.147 0.813",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "goTo('mal')"
+      },
+      {
+        "id": "D3",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.354 0.163 0.817",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "if(lastClicked!=this.id){goTo('cortoTerminado');else{goTo('mal')}"
+      },
+      {
+        "id": "E3",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.531 0.178 0.813",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "goTo('mal')"
+      },
+      {
+        "id": "F3",
+        "type": "a-entity",
+        "marker": "kanji",
+        "file": "assets/models/borne.obj",
+        "position": "0.690 0.179 0.834",
+        "rotation": "67.748 -170.846 7.904",
+        "scale": "0.006 0.006 0.006",
+        "material": {
+          "opacity": "0"
+        },
+        "onclick": "if(lastClicked!=this.id){goTo('cortoTerminado');}else{goTo('mal')}"
+      }
+    ]
+  },
+  {
+    "id": "cortoTerminado",
+    "description": "El transformador se encuentra en corto!",
+    "type":"delay",
+    "delay":"15000",
+    "next":"bien",
+    "objects": [
+      {
+        "id": "trafo2",
+        "marker": "kanji",
+        "rotation": "-67.656 12.618 -11.882",
+        "position": "0.366 0.273 0.125",
+        "type": "a-image",
+        "scale": "2 2 1",
+        "src": "assets/images/transformador4bornes.png",
+        "children":[
+          {
+            "id": "cableCorto",
+            "marker": "kanji",
+            "rotation": "3.590 -2.707 1.021",
+            "position": "0.076 -0.359 0.058",
+            "scale":"0.209 0.046 0.100",
+            "type":"a-image",
+            "src": "assets/images/cable.png",
+            "material": {
+              "alphaTest":"0.980"
+            }}
 
-          },
-          {
-            "id": "B2",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.072 -0.469 -0.049",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "red"}
-          },
-          {
-            "id": "X2",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.005 -0.465 -0.061",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"},
-            "onclick":"goTo('second')"
-
-          },
-          {
-            "id": "Y2",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.110 -0.467 -0.054",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"},
-            "onclick":"goTo('mal')"
-          }
-          ]
-    },
-    {
-      "id": "fuente2",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
-      "scale":"2 2 1.600",
-      "type":"a-image",
-      "src": "assets/images/Variac8.png",
-      "children": [
-          {
-              "id": "Z2",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.096 -0.475 -0.025",
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "#414141"}
-            },
-            {
-              "id": "W2",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.09390324990805245 -0.27123883803220344 0.007540094558910183", 
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "red"}           }
-            ]
-    }
-  
-  ]
+        ]
+      }
+     ,
+      {
+        "id": "fuente2",
+        "marker": "hiro",
+        "rotation": "-60.656 -21.115 17.949",
+        "position": "-0.367 0.015 0.023",
+        "scale": "2 2 1.600",
+        "type": "a-image",
+        "src": "assets/images/Variac8.png"
+      }
+    ]
+  },
+  {
+    "id": "bien",
+    "description": "",
+    "marker": "kanji",
+    "delay": "5000",
+    "type": "delay",
+    "clearAll": true,
+    "next": "finBien",
+    "objects": [
+      {
+        "id": "textB",
+        "type": "a-text",
+        "position": "-1.6902803450574524 -2.350114495667147 -0.5818714939029046",
+        "rotation": "-70.739 7.139 -5.376",
+        "scale": "8 8 8",
+        "side": "double",
+        "color": "orange",
+        "shadow": "receive: true",
+        "value": "Muy bien!",
+        "onclick": "goTo('finBien')"
+      }
+    ]
+  },
+  {
+    "id": "mal",
+    "description": "",
+    "marker": "kanji",
+    "delay": "5000",
+    "clearAll": true,
+    "type": "delay",
+    "next": "finMal",
+    "objects": [
+      {
+        "id": "textM",
+        "type": "a-text",
+        "position": "-1.6902803450574524 -2.350114495667147 -0.5818714939029046",
+        "rotation": "-70.739 7.139 -5.376",
+        "scale": "8 8 8",
+        "side": "double",
+        "color": "orange",
+        "shadow": "receive: true",
+        "value": "Mejor suerte la proxima!",
+        "onclick": "goTo('finMal')"
+      }
+    ]
+  },
+  {
+    "id": "finBien",
+    "description": "",
+    "type": "redirect",
+    "destiny": "menu.html?actividad2"
+  },
+  {
+    "id": "finMal",
+    "description": "",
+    "type": "redirect",
+    "destiny": "menu.html?actividad"
   }
-  ,
-  {
-    "id":"Bsecond",
-  "description": "Aun queda un borne!",
-  "marker":"kanji",
-  "next":"third",
-  "objects":[{
-      "id": "trafo2-B",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"0.525 -0.444 0.573",
-      "type":"a-image",
-      "scale": "2 2 1",
-      "src": "assets/images/transformador4bornes.png",
-      "children": [
-        {
-            "id": "A2-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.141 -0.467 -0.052",
-            
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "red"}
-
-          },
-          {
-            "id": "B2-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.072 -0.469 -0.049",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"}
-            ,
-            "onclick":"goTo('Bthird')"
-          },
-          {
-            "id": "X2-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.005 -0.465 -0.061",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"},
-            "onclick":"goTo('second')"
-
-          },
-          {
-            "id": "Y2-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.110 -0.467 -0.054",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"},
-            "onclick":"goTo('mal')"
-          }
-          ]
-    },
-    {
-      "id": "fuente2-B",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
-      "scale":"2 2 1.600",
-      "type":"a-image",
-      "src": "assets/images/Variac8.png",
-      "children": [
-          {
-              "id": "Z2-B",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.096 -0.475 -0.025",
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "#414141"}
-            },
-            {
-              "id": "W2-B",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.09390324990805245 -0.27123883803220344 0.007540094558910183", 
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "red"}           }
-            ]
-    }
-  
-  ]
-  },{
-    "id":"third",
-  "description": "Ahora si, el transformador esta conectado!",
-  "marker":"kanji",
-  "delay":"5000",
-  "type":"delay",
-  "next":"cortocircuito",
-  "objects":[{
-      "id": "trafo3",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"0.525 -0.444 0.573",
-      "type":"a-image",
-      "scale": "2 2 1",
-      "src": "assets/images/transformador4bornes.png",
-      "children": [
-        {
-            "id": "A3",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.141 -0.467 -0.052",
-            
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "#414141"}
-
-          },
-          {
-            "id": "B3",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.072 -0.469 -0.049",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "red"}
-          },
-          {
-            "id": "X3",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.005 -0.465 -0.061",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"}
-
-          },
-          {
-            "id": "Y3",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.110 -0.467 -0.054",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"}
-          }
-          ]
-    },
-    {
-      "id": "fuente3",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
-      "scale":"2 2 1.600",
-      "type":"a-image",
-      "src": "assets/images/Variac8.png",
-      "children": [
-          {
-              "id": "Z3",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.096 -0.475 -0.025",
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "#414141"}
-            },
-            {
-              "id": "W3",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.09390324990805245 -0.27123883803220344 0.007540094558910183", 
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "red"}}
-            ]
-    }
-  
-  ]
-  },
-  {
-    "id":"Bthird",
-  "description": "Ahora si, el transformador esta conectado y listo para la prueba de cortocircuito!",
-  "marker":"kanji",
-  "delay":"5000",
-  "type":"delay",
-  "next":"cortocircuitoB",
-  "objects":[{
-      "id": "trafo3-B",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"0.525 -0.444 0.573",
-      "type":"a-image",
-      "scale": "2 2 1",
-      "src": "assets/images/transformador4bornes.png",
-      "children": [
-        {
-            "id": "A3-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.141 -0.467 -0.052",
-            
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "red"}
-
-          },
-          {
-            "id": "B3-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.072 -0.469 -0.049",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "#414141"}
-          },
-          {
-            "id": "X3-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.005 -0.465 -0.061",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"}
-
-          },
-          {
-            "id": "Y3-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.110 -0.467 -0.054",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"}
-          }
-          ]
-    },
-    {
-      "id": "fuente3-B",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
-      "scale":"2 2 1.600",
-      "type":"a-image",
-      "src": "assets/images/Variac8.png",
-      "children": [
-          {
-              "id": "Z3-B",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.096 -0.475 -0.025",
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "#414141"}
-            },
-            {
-              "id": "W3-B",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.09390324990805245 -0.27123883803220344 0.007540094558910183", 
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "red"}}
-            ]
-    }
-  
-  ]
-  },{
-    "id":"cortocircuito",
-  "description": "Ahora puenteamos para realizar el cortocircuito",
-  "marker":"kanji",
-  "delay":"5000",
-  "type":"delay",
-  "next":"bien",
-  "objects":[{
-      "id": "trafo4",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"0.525 -0.444 0.573",
-      "type":"a-image",
-      "scale": "2 2 1",
-      "src": "assets/images/transformador4bornes.png",
-      "children": [
-        {
-            "id": "A4",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.141 -0.467 -0.052",
-            
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "#414141"}
-
-          },
-          {
-            "id": "B4",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.072 -0.469 -0.049",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "red"}
-          },
-          {
-            "id": "X4",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.005 -0.465 -0.061",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"}
-
-          },
-          {
-            "id": "Y4",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.110 -0.467 -0.054",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"}
-          }
-          ,
-          {
-            "id": "cableCorto",
-            "rotation": "-0.0014031094921511443 -4.439961782508313 0.16561070397476507",
-            "position":"0.056 -0.3809187668791522 0.10920424782204363",
-            "scale":"0.122 0.046 0.100",
-            "type":"a-image",
-            "src": "assets/images/cable.png",
-            "material": {
-              "alphaTest":"0.980"
-            }}  
-            
-          ]
-          
-    },
-    {
-      "id": "fuente4",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
-      "scale":"2 2 1.600",
-      "type":"a-image",
-      "src": "assets/images/Variac8.png",
-      "children": [
-          {
-              "id": "Z4",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.096 -0.475 -0.025",
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "#414141"}
-            },
-            {
-              "id": "W4",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.09390324990805245 -0.27123883803220344 0.007540094558910183", 
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "red"}}
-            ]
-    }
-  
-  ]
-  },
-  {
-    "id":"cortocircuitoB",
-  "description": "Ahora puenteamos para realizar el cortocircuito!!!",
-  "marker":"kanji",
-  "delay":"5000",
-  "type":"delay",
-  "next":"bien",
-  "objects":[{
-      "id": "trafo4B",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"0.525 -0.444 0.573",
-      "type":"a-image",
-      "scale": "2 2 1",
-      "src": "assets/images/transformador4bornes.png",
-      "children": [
-        {
-            "id": "A4-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.141 -0.467 -0.052",
-            
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "red"}
-
-          },
-          {
-            "id": "B4-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "-0.072 -0.469 -0.049",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "#414141"}
-          },
-          {
-            "id": "X4-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.005 -0.465 -0.061",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"}
-
-          },
-          {
-            "id": "Y4-B",
-            "type":"a-entity",
-            "file": "assets/models/bornera.obj",
-            "position": "0.110 -0.467 -0.054",
-            "rotation": "0 0 0",
-            "scale": "0.005 0.005 0.007",
-            "material": {"color": "grey"}
-          },
-          {
-            "id": "cableCorto",
-            "rotation": "-0.0014031094921511443 -4.439961782508313 0.16561070397476507",
-            "position":"0.056 -0.3809187668791522 0.10920424782204363",
-            "scale":"0.122 0.046 0.100",
-            "type":"a-image",
-            "src": "assets/images/cable.png",
-            "material": {
-              "alphaTest":"0.980"
-            }}  
-          ]
-    },
-    {
-      "id": "fuente4-B",
-      "rotation": "-67.962 7.602 -7.026",
-      "position":"-1.4123249619896938 -0.46719901236041167 0.6974698351149332",
-      "scale":"2 2 1.600",
-      "type":"a-image",
-      "src": "assets/images/Variac8.png",
-      "children": [
-          {
-              "id": "Z4-B",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.096 -0.475 -0.025",
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "#414141"}
-            },
-            {
-              "id": "W4-B",
-              "type":"a-entity",
-              "file": "assets/models/bornera.obj",
-              "position": "-0.09390324990805245 -0.27123883803220344 0.007540094558910183", 
-              "rotation": "0 0 0",
-              "scale": "0.004 0.004 0.004",
-              "material": {"color": "red"}}
-            ]
-    }
-  
-  ]
-  },
-
-
-
-
-
-    { "id":"bien",
-      "description": "",
-      "marker":"kanji",
-      "delay":"5000",
-      "type":"delay",
-      "next":"finBien",
-      "objects":[
-              {
-                "id": "textB",
-                "type":"a-text",
-                "position": "-1.6902803450574524 -2.350114495667147 -0.5818714939029046",
-                "rotation": "-70.739 7.139 -5.376",
-                "scale":"8 8 8",
-                "side":"double",
-                "color": "orange",
-                "shadow":"receive: true",
-                "value":"Muy bien!",
-                "onclick":"goTo('finBien')"
-              }
-              ]
-    },
-    { "id":"mal",
-      "description": "",
-      "marker":"kanji",
-      "delay":"5000",
-      "type":"delay",
-      "next":"finMal",
-      "objects":[
-              {
-                "id": "textM",
-                "type":"a-text",
-                "position": "-1.6902803450574524 -2.350114495667147 -0.5818714939029046",
-                "rotation": "-70.739 7.139 -5.376",
-                "scale":"8 8 8",
-                "side":"double",
-                "side":"double",
-                "color": "orange",
-                "shadow":"receive: true",
-                "value":"Mejor suerte la proxima!",
-                "onclick":"goTo('finMal')"
-              }
-              ]
-    },
-    {
-      "id":"finBien",
-      "description": "",
-      "type":"redirect",
-      "destiny":"menu.html?actividad2"
-    }
-    ,
-    {
-      "id":"finMal",
-      "description": "",
-      "type":"redirect",
-      "destiny":"menu.html?actividad2"
-    }
-
-
-  ]
-  
+]

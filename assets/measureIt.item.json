@@ -8,14 +8,14 @@
         "marker":"kanji",
         "scale":"0.5 0.5 0.5",
         "type":"a-box",
-        "onclick":"drawDistance('kanji','hiro');",
+        "onclick":"drawLine('cube1','cube2');",
         "color": "blue"
       },{
         "id": "cube2",
         "marker":"hiro",
         "scale":"0.5 0.5 0.5",
         "type":"a-box",
-        "onclick":"drawDistance('hiro','kanji');",
+        "onclick":"drawLine('cube2','cube1');",
         "color": "orange"
       }]
     }

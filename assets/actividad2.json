@@ -2,6 +2,6 @@
   "name":"Ensayo de corto",
   "description":"Ensayo indirecto del transformador monofasico de potencia",
   "type":"checklist",
-  "preview": "assets/images/transformador4bornes.png",
+  "preview": "assets/images/transformador4bornesPortada.png",
   "activity": "actividad"
   }
