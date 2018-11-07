@@ -1,7 +1,7 @@
 [
   {
     "id": "first",
-    "description": "Conecte correctamente la fuente para realizar ensayo de vacio",
+    "description": "Conectar la fuente de alimentación para realizar el ensayo de cortocircuito",
     "next": "second",
     "objects": [
       {
@@ -127,7 +127,7 @@
   },
   {
     "id": "second",
-    "description": "Aun queda un borne!",
+    "description": "Ahora seleccione el otro borne",
     "next": "third",
     "objects": [
       {
@@ -254,7 +254,7 @@
   },
   {
     "id": "third",
-    "description": "Ahora si, el transformador esta conectado, solo falta ponerlo en corto...",
+    "description": "La fuente de alimentación se encuentra conectada correctamente",
     "delay": "5000",
     "type": "delay",
     "next": "corto",
@@ -281,7 +281,7 @@
   },
   {
     "id": "corto",
-    "description": "Selecciona un borne para realizar el corto",
+    "description": "Seleccionar los bornes para poner el transformador en cortocircuito",
     "delay": "5000",
     "type": "delay",
     "next": "corto2",
@@ -372,7 +372,7 @@
   },
   {
     "id": "corto2",
-    "description": "Y ahora falta el otro!",
+    "description": "Seleccionar el siguiente borne",
     "next": "cortoTerminado",
     "objects": [
       {
@@ -394,7 +394,7 @@
         "src": "assets/images/Variac8.png"
       },
       {
-        "id": "B3",
+        "id": "B4",
         "type": "a-entity",
         "marker": "kanji",
         "file": "assets/models/borne.obj",
@@ -406,7 +406,7 @@
         },"onclick": "goTo('mal')"
       },
       {
-        "id": "C3",
+        "id": "C4",
         "type": "a-entity",
         "marker": "kanji",
         "file": "assets/models/borne.obj",
@@ -419,7 +419,7 @@
         "onclick": "goTo('mal')"
       },
       {
-        "id": "D3",
+        "id": "D4",
         "type": "a-entity",
         "marker": "kanji",
         "file": "assets/models/borne.obj",
@@ -432,7 +432,7 @@
         "onclick": "if(lastClicked!=this.id){goTo('cortoTerminado');else{goTo('mal')}"
       },
       {
-        "id": "E3",
+        "id": "E4",
         "type": "a-entity",
         "marker": "kanji",
         "file": "assets/models/borne.obj",
@@ -445,7 +445,7 @@
         "onclick": "goTo('mal')"
       },
       {
-        "id": "F3",
+        "id": "F4",
         "type": "a-entity",
         "marker": "kanji",
         "file": "assets/models/borne.obj",
@@ -461,10 +461,10 @@
   },
   {
     "id": "cortoTerminado",
-    "description": "El transformador se encuentra en corto!",
+    "description": "El transformador se encuentra correctamente conectado para el ensayo de cortocircuito",
     "type":"delay",
     "delay":"15000",
-    "next":"bien",
+    "next":"finBien",
     "objects": [
       {
         "id": "trafo2",
@@ -557,6 +557,6 @@
     "id": "finMal",
     "description": "",
     "type": "redirect",
-    "destiny": "menu.html?actividad"
+    "destiny": "menu.html?actividad2"
   }
 ]
