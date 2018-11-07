@@ -29,7 +29,11 @@ function loadActivity(jsonInput) {
   jsonInput.forEach(card => {
     console.log("loading...id:" + card.id + " element: " + card.description)
     activity.set(card.id, card);
-
+    if(card.matrixURL!=null){
+      parseCSV(card.matrixURL,function(result){card.matrix=result;},
+      );
+      console.log(card.matrixURL);
+    }
   });
   preLoadCard(currentCard);
   console.log(activity);
@@ -174,10 +178,16 @@ function getGarbage() {
 }
 
 function setObjectVisible(Jobj, value) {
+  if(Jobj.type=="matrix"){
+    console.log(currentCard.matrix);
+    drawMatrix(currentCard.matrix,Jobj.marker,Jobj.width,Jobj.height);
+    return;
+  }
   var obj = document.querySelector('#' + Jobj.id);
   obj.setAttribute('visible', value);
 }
 function setObjectProperties(jObj, fatherID) {
+
   var father = document.querySelector('#' + fatherID);
   var obj = document.createElement(jObj.type);
   obj.setAttribute('visible', false); //Makes the object invisible by default so that we can make it visible later
@@ -346,24 +356,36 @@ function resetScale(entityID, value) {
   obj.setAttribute('scale', Number(value) + " " + Number(value) + " " + Number(value));
 
 }
-/*function drawMatrix(matrix,marker,width,height){
+
+
+function drawMatrix(matrix,marker,width,height){
   markerObj= document.querySelector("#" + marker).object3D;
-  var scene= document.querySelector("#scene").object3D;
   var size=Object.keys(matrix).length;
-  var squareWidth = Math.floor(width/size);
-  var squareHeight = Math.floor(height/size);
-  console.log("the matrix squares will be: "+squareWidth+":"+squareHeight +" in size");
-  
-  var material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
-  var geometry = new THREE.Geometry();
-  geometry.vertices.push(new THREE.Vector3(0, 0, 0) );
-  geometry.vertices.push(new THREE.Vector3( 0, 10, 0) );
-  geometry.vertices.push(new THREE.Vector3( 10, 10, 0) );
-  geometry.vertices.push(new THREE.Vector3( 10, 0, 0) );
-  geometry.vertices.push(new THREE.Vector3(0, 0, 0) );
-  var line = new THREE.Line( geometry, material );
-  markerObj.add( line );
-}*/
+  var squareWidth = width / (size * 4);
+  var squareHeight = height / (size * 4);
+  console.log("the matrix squares will be: " + squareWidth + ":" + squareHeight + " in size");
+  var yOffset = (squareHeight * size);
+  var xOffset = (squareWidth * size) / 4;
+  for (let i = 1; i <= size; i++) {
+    for (let j = 1; j <= size; j++) {
+      var row = matrix[i-1];
+      var cell = row [j-1]; 
+      console.log(cell);
+      var material = new THREE.LineBasicMaterial({ color: cellColorGenerator(cell)});
+      console.log(cellColorGenerator(cell));
+      var geometry = new THREE.Geometry();
+      geometry.vertices.push(new THREE.Vector3(0, 0, 0));
+      geometry.vertices.push(new THREE.Vector3((squareWidth * i) - yOffset, 0, 0));
+      geometry.vertices.push(new THREE.Vector3((squareWidth * i) - yOffset, 0, (squareHeight * j) - xOffset));
+      geometry.vertices.push(new THREE.Vector3(0, 0, (squareHeight * j) - xOffset));
+      geometry.vertices.push(new THREE.Vector3(0, 0, 0));
+      var line = new THREE.Line(geometry, material);
+      markerObj.add(line);
+    }
+  }
+
+}
+/*
 function drawMatrix(size, marker, width, height) {
   markerObj = document.querySelector("#" + marker).object3D;
   var squareWidth = width / (size * 4);
@@ -387,7 +409,7 @@ function drawMatrix(size, marker, width, height) {
 
   }
 
-}
+}*/
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -395,6 +417,24 @@ function getRandomColor() {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
+}
+
+function cellColorGenerator(cellPoints) {
+	var r, g, b;
+	var h = 1 - (cellPoints / 100);
+	var i = ~~(h * 6);
+	var f = h * 6 - i;
+	var q = 1 - f;
+	switch(i % 6){
+		case 0: r = 1, g = f, b = 0; break;
+		case 1: r = q, g = 1, b = 0; break;
+		case 2: r = 0, g = 1, b = f; break;
+		case 3: r = 0, g = q, b = 1; break;
+		case 4: r = f, g = 0, b = 1; break;
+		case 5: r = 1, g = 0, b = q; break;
+	}
+	var c = "#" + ("00" + (~ ~(r * 235)).toString(16)).slice(-2) + ("00" + (~ ~(g * 235)).toString(16)).slice(-2) + ("00" + (~ ~(b * 235)).toString(16)).slice(-2);
+	return (c);
 }
 
 function drawLine(IDEntity, IDOtherEntity) {
@@ -406,6 +446,9 @@ function guidGenerator() {
   };
   return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
 }
+
+
+
 
 function drawCircle(IDEntity) {
   var circleID = guidGenerator();

@@ -2,6 +2,7 @@
     {
     "id":"A",
     "description": "",
+    "matrixURL":"examples/demo.csv",
     "objects":[
       {
         "id": "image0",
@@ -22,6 +23,13 @@
         "scale": "0.001 0.001 0.001",
         "material": {"color": "#414141"},
         "onclick":"resetScale('image0',2);resetScale('Y0',0.001);"
-      }]
+      },{
+        "id": "matrix",
+        "type":"matrix",
+        "marker":"kanji",
+        "width":"1",
+        "height":"1"
+      }
+    ]
     }
     ]

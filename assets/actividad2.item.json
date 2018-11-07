@@ -340,7 +340,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "drawCircle(this.id);goTo('corto2');lastClicked='D4'"
+        "onclick": "goTo('corto2');drawCircle(this.id);lastClicked='D4'"
       },
       {
         "id": "E3",
@@ -366,7 +366,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "drawCircle(this.id);goTo('corto2');lastClicked='F4'"
+        "onclick": "goTo('corto2');drawCircle(this.id);lastClicked='F4'"
       }
     ]
   },
