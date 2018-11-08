@@ -1,7 +1,7 @@
 [
   {
     "id": "first",
-    "description": "Conecte correctamente la fuente para realizar ensayo de vacio",
+    "description": "Conectar la fuente de alimentación para realizar el ensayo de vacio",
     "next": "second",
     "objects": [
       {
@@ -127,7 +127,7 @@
   },
   {
     "id": "second",
-    "description": "Aun queda un borne!",
+    "description": "Ahora seleccione el otro borne",
     "next": "third",
     "objects": [
       {
@@ -252,10 +252,10 @@
   },
   {
     "id": "third",
-    "description": "Ahora si, el transformador esta conectado",
+    "description": "El transformador se encuentra conectado correctamente",
     "delay": "5000",
     "type": "delay",
-    "next": "bien",
+    "next": "finBien",
     "objects": [
       {
         "id": "trafo2",
@@ -318,7 +318,7 @@
         "side": "double",
         "color": "orange",
         "shadow": "receive: true",
-        "value": "Mejor suerte la proxima!",
+        "value": "La conexion fue incorrecta",
         "onclick": "goTo('finMal')"
       }
     ]

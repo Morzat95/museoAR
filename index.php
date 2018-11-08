@@ -1,1 +1,1 @@
-<?php header( 'Location: /menu.html?mapa' ) ;  ?>
+<?php header( 'Location: /menu.html?actividad' ) ;  ?>
