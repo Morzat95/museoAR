@@ -180,7 +180,7 @@ function getGarbage() {
 function setObjectVisible(Jobj, value) {
   if(Jobj.type=="matrix"){
     console.log(currentCard.matrix);
-    drawMatrix(currentCard.matrix,Jobj.marker,Jobj.width,Jobj.height);
+    drawMatrix(currentCard.matrix,Jobj.marker,Jobj.width,Jobj.height,Jobj.xOffset,Jobj.yOffset);
     return;
   }
   var obj = document.querySelector('#' + Jobj.id);
@@ -358,32 +358,78 @@ function resetScale(entityID, value) {
 }
 
 
-function drawMatrix(matrix,marker,width,height){
+function drawMatrix(matrix,marker,width,height,YOffset,XOffset){
   markerObj= document.querySelector("#" + marker).object3D;
   var size=Object.keys(matrix).length;
-  var squareWidth = width / (size * 4);
-  var squareHeight = height / (size * 4);
-  console.log("the matrix squares will be: " + squareWidth + ":" + squareHeight + " in size");
-  var yOffset = (squareHeight * size);
-  var xOffset = (squareWidth * size) / 4;
-  for (let i = 1; i <= size; i++) {
-    for (let j = 1; j <= size; j++) {
-      var row = matrix[i-1];
-      var cell = row [j-1]; 
-      console.log(cell);
+  var squareWidth = width ;
+  var squareHeight = height;
+  var yOffset = XOffset||0; //if Xoffset is null it uses 0 instead
+  var xOffset = YOffset||0;
+
+  
+  console.log(cellColorGenerator(cell));
+
+  for (let i = 0; i < size-1; i++) {
+    var row = matrix[i];
+    for (let j = 0; j < Object.keys(matrix[i]).length; j++) {
+      var cell = row [j]; 
+      console.log("Row: "+i+"Column: "+j+"cell: "+cell);
       var material = new THREE.LineBasicMaterial({ color: cellColorGenerator(cell)});
-      console.log(cellColorGenerator(cell));
       var geometry = new THREE.Geometry();
-      geometry.vertices.push(new THREE.Vector3(0, 0, 0));
-      geometry.vertices.push(new THREE.Vector3((squareWidth * i) - yOffset, 0, 0));
-      geometry.vertices.push(new THREE.Vector3((squareWidth * i) - yOffset, 0, (squareHeight * j) - xOffset));
-      geometry.vertices.push(new THREE.Vector3(0, 0, (squareHeight * j) - xOffset));
-      geometry.vertices.push(new THREE.Vector3(0, 0, 0));
-      var line = new THREE.Line(geometry, material);
+
+
+      var xroot= (squareWidth * (j))+xOffset;
+      var yroot= (squareHeight * (i))+yOffset;
+      var y= (squareHeight * (i+1))+yOffset;
+      var x= (squareWidth * (j+1))+xOffset;
+    //  console.log("Xroot= "+xroot+" Yroot="+yroot+" x= "+x+"y= "+y);
+
+      geometry.vertices.push(new THREE.Vector3(xroot, 0, yroot));
+      geometry.vertices.push(new THREE.Vector3(xroot , 0, y));
+      geometry.vertices.push(new THREE.Vector3(x, 0, y));
+      geometry.vertices.push(new THREE.Vector3(x , 0, yroot));
+      geometry.vertices.push(new THREE.Vector3(xroot, 0, yroot));
+     // draw3DText(markerObj,(squareWidth * (j+1)) - yOffset,(squareHeight * (i+1)) - xOffset,cell,cellColorGenerator(cell));
+      let line = new THREE.Line(geometry, material);
       markerObj.add(line);
+      
     }
+    
   }
 
+
+ // draw3DText(markerObj,(squareWidth * (j+1)) - yOffset,(squareHeight * (i+1)) - xOffset,cell,cellColorGenerator(cell));
+
+
+
+        //geometry.vertices.push(new THREE.Vector3(0, 0, 0));
+
+
+}
+
+function draw3DText(parent,x,y,text,tcolor){
+var loader = new THREE.FontLoader();
+loader.load( 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/fonts/gentilis_regular.typeface.json', function ( font ) {
+    var textGeo = new THREE.TextGeometry( text, {
+        font: font,
+        size: 20/200, // font size
+        height: 10/200, // how much extrusion (how thick / deep are the letters)
+        curveSegments: 12/200,
+        bevelThickness: 1/200,
+        bevelSize: 1/200,
+        bevelEnabled: true
+    });
+    textGeo.computeBoundingBox();
+    var textMaterial = new THREE.MeshPhongMaterial( { color: tcolor, specular:  tcolor } );
+    var mesh = new THREE.Mesh( textGeo, textMaterial );
+    mesh.position.x = x-0.2;
+    mesh.position.y = 0;
+    mesh.position.z = y-0.1;
+    mesh.rotation.x = -Math.PI/2;
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    parent.add( mesh );
+});
 }
 /*
 function drawMatrix(size, marker, width, height) {
