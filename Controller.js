@@ -155,6 +155,7 @@ function logCurrentObjects() {
   });
 }
 function goTo(next) {
+  
   currentTimeout = "";
   historyStack.push(currentCard.id);
   deleteCard(currentCard);
@@ -163,6 +164,21 @@ function goTo(next) {
   if (currentCard == null) {
     console.error("attemped to redir(ect to: " + next + " but it was not found...");
   }
+
+  $.ajax({
+    url: "https://loggermuseoar.000webhostapp.com/srvLog.php",
+    type: "POST",
+    dataType: "json",
+    cache: false,
+    data: {
+        "action" : "goTo",
+        "value" : currentCard,
+        "id" : id
+    },
+    success: function( data ){
+        console.log(data);
+    }
+});
   playing = false;
 }
 
