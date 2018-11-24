@@ -7,6 +7,7 @@ var historyStack = [];
 var renderFncQueue = [];
 var renderObjsIDs = new Set();
 var lastClicked = "";
+var id;
 
 
 
@@ -19,6 +20,7 @@ function run() {
   }
   console.log("activity= " + name);
   loadJSON("assets/" + name + ".item.json", loadActivity);
+  id=generateUUID();
 }
 
 
@@ -38,7 +40,17 @@ function loadActivity(jsonInput) {
   preLoadCard(currentCard);
   console.log(activity);
 }
-
+function generateUUID() { // Public Domain/MIT
+  var d = new Date().getTime();
+  if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
+      d += performance.now(); //use high-precision timer if available
+  }
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = (d + Math.random() * 16) % 16 | 0;
+      d = Math.floor(d / 16);
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+}
 
 function getCardMarkers(card) {
   var markerSet = new Set;
@@ -699,6 +711,20 @@ AFRAME.registerComponent('cursor-listener', {
       console.log("#" + this.id + " was clicked");
       if (this.object3D.visible) {
         console.log(this.object3D);
+        $.ajax({
+          url: "https://loggermuseoar.000webhostapp.com/srvLog.php",
+          type: "POST",
+          dataType: "json",
+          cache: false,
+          data: {
+              "action" : "click",
+              "value" : this.id,
+              "id" : id
+          },
+          success: function( data ){
+              console.log(data);
+          }
+      });
         this.onclick;
       }
     });
