@@ -8,6 +8,7 @@ var renderFncQueue = [];
 var renderObjsIDs = new Set();
 var lastClicked = "";
 var id;
+var logAddress="https://loggermuseoar.000webhostapp.com/srvLog.php";
 
 
 
@@ -20,7 +21,7 @@ function run() {
   }
   console.log("activity= " + name);
   loadJSON("assets/" + name + ".item.json", loadActivity);
-  id=generateUUID;
+  id=window.btoa(generateUUID);
 }
 
 
@@ -164,22 +165,26 @@ function goTo(next) {
   if (currentCard == null) {
     console.error("attemped to redir(ect to: " + next + " but it was not found...");
   }
+  log("goTo",currentCard.id);
+  playing = false;
+}
 
+
+function log(action, value){
   $.ajax({
-    url: "https://loggermuseoar.000webhostapp.com/srvLog.php",
+    url: logAddress,
     type: "POST",
     dataType: "json",
     cache: false,
     data: {
-        "action" : "goTo",
-        "value" : currentCard.id,
-        "example" : id
+        "action" : window.btoa(action),
+        "value" : window.btoa(value),
+        "id" : id
     },
     success: function( data ){
         console.log(data);
     }
 });
-  playing = false;
 }
 
 function garbageCollection() {
@@ -727,20 +732,7 @@ AFRAME.registerComponent('cursor-listener', {
       console.log("#" + this.id + " was clicked");
       if (this.object3D.visible) {
         console.log(this.object3D);
-        $.ajax({
-          url: "https://loggermuseoar.000webhostapp.com/srvLog.php",
-          type: "POST",
-          dataType: "json",
-          cache: false,
-          data: {
-              "action" : "click",
-              "value" : this.id,
-              "example" : id
-          },
-          success: function( data ){
-              console.log(data);
-          }
-      });
+        log("click",this.id);
         this.onclick;
       }
     });
