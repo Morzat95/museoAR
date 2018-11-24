@@ -742,7 +742,6 @@ AFRAME.registerComponent('cursor-listener', {
       console.log("#" + this.id + " was clicked");
       if (this.object3D.visible) {
         console.log(this.object3D);
-        log("click",this.id);
         this.onclick;
       }
     });
