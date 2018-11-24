@@ -24,7 +24,7 @@ function run() {
   var cookie = document.cookie; 
   if(cookie==""){
     id=generateUUID();
-    document.cookie =id+"; expires=Thu, 18 Dec 2040 12:00:00 UTC;" 
+    document.cookie =id+"; expires=Thu, 1 Jan 2019 12:00:00 UTC;" 
     console.log("cookieGenerated="+document.cookie)
   }
   else{
