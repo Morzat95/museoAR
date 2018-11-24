@@ -20,7 +20,7 @@ function run() {
   }
   console.log("activity= " + name);
   loadJSON("assets/" + name + ".item.json", loadActivity);
-  id=generateUUID();
+  id=5;
 }
 
 
@@ -172,7 +172,7 @@ function goTo(next) {
     cache: false,
     data: {
         "action" : "goTo",
-        "value" : currentCard.id,
+        "value" : "currentCard",
         "id" : id
     },
     success: function( data ){
