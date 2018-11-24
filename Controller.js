@@ -21,7 +21,7 @@ function run() {
   }
   console.log("activity= " + name);
   loadJSON("assets/" + name + ".item.json", loadActivity);
-  id=window.btoa(generateUUID);
+  id=window.btoa(generateUUID());
 }
 
 
