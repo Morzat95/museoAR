@@ -172,7 +172,7 @@ function goTo(next) {
     cache: false,
     data: {
         "action" : "goTo",
-        "value" : currentCard,
+        "value" : currentCard.id,
         "id" : id
     },
     success: function( data ){
