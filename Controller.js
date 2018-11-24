@@ -21,7 +21,17 @@ function run() {
   }
   console.log("activity= " + name);
   loadJSON("assets/" + name + ".item.json", loadActivity);
-  id=window.btoa(generateUUID());
+  var cookie = document.cookie; 
+  if(cookie==""){
+    id=generateUUID();
+    document.cookie =id+"; expires=Thu, 18 Dec 2040 12:00:00 UTC;" 
+    console.log("cookieGenerated="+document.cookie)
+  }
+  else{
+    id=cookie.substring(cookie.indexOf(";"));
+    console.log("cookieLoaded="+cookie)
+  }
+
 }
 
 
@@ -179,7 +189,7 @@ function log(action, value){
     data: {
         "action" : window.btoa(action),
         "value" : window.btoa(value),
-        "id" : id
+        "id" : window.btoa(id)
     },
     success: function( data ){
         console.log(data);
