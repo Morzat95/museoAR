@@ -20,7 +20,7 @@ function run() {
   }
   console.log("activity= " + name);
   loadJSON("assets/" + name + ".item.json", loadActivity);
-  id=5;
+  id=generateUUID;
 }
 
 
@@ -172,8 +172,8 @@ function goTo(next) {
     cache: false,
     data: {
         "action" : "goTo",
-        "value" : "currentCard",
-        "id" : id
+        "value" : currentCard.id,
+        "example" : id
     },
     success: function( data ){
         console.log(data);
@@ -735,7 +735,7 @@ AFRAME.registerComponent('cursor-listener', {
           data: {
               "action" : "click",
               "value" : this.id,
-              "id" : id
+              "example" : id
           },
           success: function( data ){
               console.log(data);

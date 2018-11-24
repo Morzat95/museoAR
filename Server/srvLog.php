@@ -5,9 +5,9 @@
         // data receipt
         $action64 = (isset($_POST['action']) ? $_POST['action'] : "");
         $value64 = (isset($_POST['value']) ? $_POST['value'] : "");
-        $id64 = (isset($_POST['id']) ? $_POST['id'] : "");
+        $example64 = (isset($_POST['example']) ? $_POST['example'] : "");
 
-        if($action64 === "" || $value64 === "" || $id64 === "")
+        if($action64 === "" || $value64 === "" || $example64 === "")
         {
             throw new Exception("Request error!");
         }
@@ -15,11 +15,11 @@
         // BASE64 Decode
         $action = base64_decode($action64);
         $value = base64_decode($value64);
-        $id = base64_decode($id64);
+        $example = base64_decode($example64);
 
         // format
-        $header = "Action;Value;id\n";
-        $row = "$action;$value;$id\n";
+        $header = "Action;Value;Example\n";
+        $row = "$action;$value;$example\n";
 
         if(!file_exists("log.csv")){
             file_put_contents("log.csv", $header);
