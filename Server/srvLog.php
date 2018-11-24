@@ -18,8 +18,8 @@
         $id = base64_decode($id64);
 
         // format
-        $header = "Action;Value;Id\n";
-        $row = "$action;$value;$id\n";
+        $header = "Action,Value,Id\n";
+        $row = "$action,$value,$id\n";
 
         if(!file_exists("log.csv")){
             file_put_contents("log.csv", $header);
