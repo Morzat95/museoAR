@@ -45,7 +45,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "drawLine('a',this.id);goTo('second');lastClicked='B1';"
+        "onclick": "drawLine('a',this.id);goTo('second');lastClicked='B1';log('click',this.id);"
       },
       {
         "id": "C",
@@ -58,7 +58,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "drawLine('a',this.id);goTo('second');lastClicked='C1';"
+        "onclick": "drawLine('a',this.id);goTo('second');lastClicked='C1';log('click',this.id);"
       },
       {
         "id": "D",
@@ -71,7 +71,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('mal')"
+        "onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "E",
@@ -84,7 +84,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('mal')"
+        "onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "F",
@@ -97,7 +97,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('mal')"
+        "onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "a",
@@ -172,7 +172,7 @@
           "opacity": "0"
         }
         ,
-        "onclick": " if(lastClicked!=this.id){goTo('third');drawLine('x',this.id)}else{goTo('mal')}"
+        "onclick": " if(lastClicked!=this.id){goTo('third');drawLine('x',this.id)}else{goTo('mal')};log('click',this.id);"
       },
       {
         "id": "C1",
@@ -185,7 +185,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "if(lastClicked!=this.id){goTo('third');drawLine('x',this.id)}else{goTo('mal')}"
+        "onclick": "if(lastClicked!=this.id){goTo('third');drawLine('x',this.id)}else{goTo('mal')};log('click',this.id);"
       },
       {
         "id": "D1",
@@ -198,7 +198,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('mal')"
+        "onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "E1",
@@ -211,7 +211,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('mal')"
+        "onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "F1",
@@ -224,7 +224,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('mal')"
+        "onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "a1",
@@ -314,7 +314,7 @@
         "scale": "0.006 0.006 0.006",
         "material": {
           "opacity": "0"
-        },"onclick": "goTo('mal')"
+        },"onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "C3",
@@ -327,7 +327,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('mal')"
+        "onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "D3",
@@ -340,7 +340,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('corto2');drawCircle(this.id);lastClicked='D4'"
+        "onclick": "goTo('corto2');drawCircle(this.id);lastClicked='D4';log('click',this.id);"
       },
       {
         "id": "E3",
@@ -353,7 +353,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('mal')"
+        "onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "F3",
@@ -366,7 +366,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('corto2');drawCircle(this.id);lastClicked='F4'"
+        "onclick": "goTo('corto2');drawCircle(this.id);lastClicked='F4';log('click',this.id);"
       }
     ]
   },
@@ -403,7 +403,7 @@
         "scale": "0.006 0.006 0.006",
         "material": {
           "opacity": "0"
-        },"onclick": "goTo('mal')"
+        },"onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "C4",
@@ -416,7 +416,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('mal')"
+        "onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "D4",
@@ -429,7 +429,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "if(lastClicked!=this.id){goTo('cortoTerminado');else{goTo('mal')}"
+        "onclick": "if(lastClicked!=this.id){goTo('cortoTerminado');else{goTo('mal')};log('click',this.id);"
       },
       {
         "id": "E4",
@@ -442,7 +442,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('mal')"
+        "onclick": "goTo('mal');log('click',this.id);"
       },
       {
         "id": "F4",
@@ -455,7 +455,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "if(lastClicked!=this.id){goTo('cortoTerminado');}else{goTo('mal')}"
+        "onclick": "if(lastClicked!=this.id){goTo('cortoTerminado');}else{goTo('mal')};log('click',this.id);"
       }
     ]
   },

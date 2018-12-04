@@ -7,6 +7,8 @@ var historyStack = [];
 var renderFncQueue = [];
 var renderObjsIDs = new Set();
 var lastClicked = "";
+var id;
+var logAddress="https://loggermuseoar.000webhostapp.com/srvLog.php";
 
 
 
@@ -19,6 +21,17 @@ function run() {
   }
   console.log("activity= " + name);
   loadJSON("assets/" + name + ".item.json", loadActivity);
+  var cookie = document.cookie; 
+  if(cookie==""){
+    id=generateUUID();
+    document.cookie =id+"; expires=Thu, 1 Jan 2019 12:00:00 UTC;" 
+    console.log("cookieGenerated="+document.cookie)
+  }
+  else{
+    id=cookie.substring(cookie.indexOf(";"));
+    console.log("cookieLoaded="+cookie)
+  }
+
 }
 
 
@@ -38,7 +51,17 @@ function loadActivity(jsonInput) {
   preLoadCard(currentCard);
   console.log(activity);
 }
-
+function generateUUID() { // Public Domain/MIT
+  var d = new Date().getTime();
+  if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
+      d += performance.now(); //use high-precision timer if available
+  }
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = (d + Math.random() * 16) % 16 | 0;
+      d = Math.floor(d / 16);
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+}
 
 function getCardMarkers(card) {
   var markerSet = new Set;
@@ -143,6 +166,7 @@ function logCurrentObjects() {
   });
 }
 function goTo(next) {
+  
   currentTimeout = "";
   historyStack.push(currentCard.id);
   deleteCard(currentCard);
@@ -151,7 +175,26 @@ function goTo(next) {
   if (currentCard == null) {
     console.error("attemped to redir(ect to: " + next + " but it was not found...");
   }
+  log("goTo",currentCard.id);
   playing = false;
+}
+
+
+function log(action, value){
+  $.ajax({
+    url: logAddress,
+    type: "POST",
+    dataType: "json",
+    cache: false,
+    data: {
+        "action" : window.btoa(action),
+        "value" : window.btoa(value),
+        "id" : window.btoa(id)
+    },
+    success: function( data ){
+        console.log(data);
+    }
+});
 }
 
 function garbageCollection() {
