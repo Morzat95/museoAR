@@ -389,7 +389,8 @@ function drawMatrix(matrix,marker,width,height,YOffset,XOffset){
       geometry.vertices.push(new THREE.Vector3(x, 0, y));
       geometry.vertices.push(new THREE.Vector3(x , 0, yroot));
       geometry.vertices.push(new THREE.Vector3(xroot, 0, yroot));
-     // draw3DText(markerObj,(squareWidth * (j+1)) - yOffset,(squareHeight * (i+1)) - xOffset,cell,cellColorGenerator(cell));
+      draw3DText(markerObj,xroot, yroot,cell,cellColorGenerator(cell),20);
+      console.log("value is "+20/(1/50));
       let line = new THREE.Line(geometry, material);
       markerObj.add(line);
       
@@ -407,24 +408,26 @@ function drawMatrix(matrix,marker,width,height,YOffset,XOffset){
 
 }
 
-function draw3DText(parent,x,y,text,tcolor){
+function draw3DText(parent,x,y,text,tcolor,scale){
 var loader = new THREE.FontLoader();
 loader.load( 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/fonts/gentilis_regular.typeface.json', function ( font ) {
     var textGeo = new THREE.TextGeometry( text, {
         font: font,
-        size: 20/200, // font size
-        height: 10/200, // how much extrusion (how thick / deep are the letters)
-        curveSegments: 12/200,
-        bevelThickness: 1/200,
-        bevelSize: 1/200,
+        size: (scale/100)*0.1, // font size
+        height: (scale/100)*0.05, // how much extrusion (how thick / deep are the letters)
+        curveSegments: (scale/100)*0.06,
+        bevelThickness: (scale/100)*0.005,
+        bevelSize: (scale/100)*0.005,
         bevelEnabled: true
+        
     });
+ 
     textGeo.computeBoundingBox();
     var textMaterial = new THREE.MeshPhongMaterial( { color: tcolor, specular:  tcolor } );
     var mesh = new THREE.Mesh( textGeo, textMaterial );
-    mesh.position.x = x-0.2;
+    mesh.position.x = x+0.01;
     mesh.position.y = 0;
-    mesh.position.z = y-0.1;
+    mesh.position.z = y+0.035;
     mesh.rotation.x = -Math.PI/2;
     mesh.castShadow = true;
     mesh.receiveShadow = true;
