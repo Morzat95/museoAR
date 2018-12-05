@@ -401,14 +401,49 @@ function resetScale(entityID, value) {
 }
 
 
+
 function drawMatrix(matrix,marker,width,height,YOffset,XOffset){
-  markerObj= document.querySelector("#" + marker).object3D;
+  var matrixObjID = guidGenerator();
+  var matrixObj = matrixHelper(matrix,width,height,YOffset,XOffset);
+  renderFncQueue.push(function () {
+    var entity3D = document.querySelector("#" + marker).object3D;
+    var scene = document.querySelector("#scene").object3D;
+    var from = new THREE.Vector3();
+    from.setFromMatrixPosition(entity3D.matrixWorld);
+    matrixObj.position.set(from.x,from.y,from.z);
+    matrixObj.rotation.set( entity3D.getWorldRotation().x,0,0);
+
+    var oldermatrixObj = scene.getObjectByName(matrixObjID);
+    if (oldermatrixObj == null) {
+      matrixObj.name = matrixObjID;
+      scene.add(matrixObj);
+      renderObjsIDs.add(matrixObj.name);
+    }
+    else {
+      scene.remove(oldermatrixObj);
+      matrixObj.name = matrixObjID;
+      scene.add(matrixObj);
+
+    }
+});
+
+    
+  }
+
+
+
+
+
+
+
+
+function matrixHelper(matrix,width,height,YOffset,XOffset){
   var size=Object.keys(matrix).length;
   var squareWidth = width ;
   var squareHeight = height;
   var yOffset = XOffset||0; //if Xoffset is null it uses 0 instead
   var xOffset = YOffset||0;
-
+  var matrixObj= new THREE.Object3D();
   
   console.log(cellColorGenerator(cell));
 
@@ -432,22 +467,20 @@ function drawMatrix(matrix,marker,width,height,YOffset,XOffset){
       geometry.vertices.push(new THREE.Vector3(x, 0, y));
       geometry.vertices.push(new THREE.Vector3(x , 0, yroot));
       geometry.vertices.push(new THREE.Vector3(xroot, 0, yroot));
-      draw3DText(markerObj,xroot, yroot,cell,cellColorGenerator(cell),20);
+      
+      //draw3DText(markerObj,xroot, yroot,cell,cellColorGenerator(cell),20);
       console.log("value is "+20/(1/50));
       let line = new THREE.Line(geometry, material);
-      markerObj.add(line);
+
+
+
+      matrixObj.add(line);
       
     }
     
   }
 
-
- // draw3DText(markerObj,(squareWidth * (j+1)) - yOffset,(squareHeight * (i+1)) - xOffset,cell,cellColorGenerator(cell));
-
-
-
-        //geometry.vertices.push(new THREE.Vector3(0, 0, 0));
-
+  return matrixObj;
 
 }
 
