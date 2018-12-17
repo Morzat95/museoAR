@@ -430,13 +430,6 @@ function drawMatrix(matrix,marker,width,height,YOffset,XOffset){
     
   }
 
-
-
-
-
-
-
-
 function matrixHelper(matrix,width,height,YOffset,XOffset){
   var size=Object.keys(matrix).length;
   var squareWidth = width ;
@@ -462,11 +455,11 @@ function matrixHelper(matrix,width,height,YOffset,XOffset){
       var x= (squareWidth * (j+1))+xOffset;
     //  console.log("Xroot= "+xroot+" Yroot="+yroot+" x= "+x+"y= "+y);
 
-      geometry.vertices.push(new THREE.Vector3(xroot, 0, yroot));
-      geometry.vertices.push(new THREE.Vector3(xroot , 0, y));
-      geometry.vertices.push(new THREE.Vector3(x, 0, y));
-      geometry.vertices.push(new THREE.Vector3(x , 0, yroot));
-      geometry.vertices.push(new THREE.Vector3(xroot, 0, yroot));
+      geometry.vertices.push(new THREE.Vector3(xroot, 0.07, yroot));
+      geometry.vertices.push(new THREE.Vector3(xroot , 0.07, y));
+      geometry.vertices.push(new THREE.Vector3(x, 0.07, y));
+      geometry.vertices.push(new THREE.Vector3(x , 0.07, yroot));
+      geometry.vertices.push(new THREE.Vector3(xroot, 0.07, yroot));
       
       //draw3DText(markerObj,xroot, yroot,cell,cellColorGenerator(cell),20);
       console.log("value is "+20/(1/50));

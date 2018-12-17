@@ -7,7 +7,7 @@
       {
         "id": "image0",
         "marker":"kanji",
-        "position":"0 -1 0",
+        "position":"0 -0.1 0",
         "rotation": "-80.091 -62.822 66.676",
         "scale":"2 2 2",
         "type":"a-image",
@@ -27,10 +27,10 @@
         "id": "matrix",
         "type":"matrix",
         "marker":"kanji",
-        "width":0.05,
-        "height":0.05,
-        "xOffset":-0.75,
-        "yOffset":-0.54
+        "width":0.0615,
+        "height":0.0615,
+        "xOffset":-0.69,
+        "yOffset":-0.87
         
       }
     ]
