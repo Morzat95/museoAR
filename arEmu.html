@@ -6,15 +6,15 @@
   </title>
   <meta name="Demo Realidad Aumentada" content="MuseoAR">
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="assets/styles/styles.css" />
+  <link rel="stylesheet" type="text/css" href="lib/styles/styles.css" />
   <script src="lib/jquery.min.js"></script>
-  <script src="fileUtils.js"></script>
-  <script>loadJSON('ARjsMultiMarkerFile', function (response) {
-      localStorage.setItem('ARjsMultiMarkerFile', JSON.stringify(response));
+  <script src="js/fileUtils.js"></script>
+  <script>loadJSON('other/ARjsMultiMarkerFile', function (response) {
+      localStorage.setItem('other/ARjsMultiMarkerFile', JSON.stringify(response));
     })</script>
   <script src="lib/aframe.min.js"></script>
   <script src="lib/aframe-ar.js"></script>
-  <script src="Controller.js"></script>
+  <script src="js/Controller.js"></script>
   
 
 </head>

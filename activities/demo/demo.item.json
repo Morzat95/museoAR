@@ -1,0 +1,185 @@
+[
+  {
+    "id":"first",
+  "description": "toca el transformador...",
+  "marker":"kanji",
+  "next":"D",
+  "objects":[{
+      "id": "trafo4Bornes",
+      "type":"a-entity",
+      "file": "activities/demo/TRAFO_4BORNES.obj",
+      "scale": ".2 .2 .2",
+      "position": "0 0 0",
+      "rotation": "24.634 0.213 0.132",
+      "material": {"color": "orange"},
+      "onclick":"goTo('D')"
+      
+    }]
+  },
+  {
+    "id":"B",
+    "description": "Un transformador tiene bornes, puedes ver los bornes?",
+    "type":"delay",
+    "delay":"5000",
+    "next":"C",
+    "marker":"kanji",
+  
+      "objects":[{
+        "id": "trafo4Bornes2",
+        "type":"a-entity",
+        "file": "activities/demo/TRAFO_4BORNES.obj",
+        "scale": ".2 .2 .2",
+        "position": "0 0 0",
+        "rotation": "24.634 0.213 0.132",
+        "material": {"color": "orange"},
+        "children": [
+              {
+                "id": "W",
+                "type":"a-entity",
+                "file": "activities/demo/soccerball.obj",
+                "position": "1.396 1.7 -1.770",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "grey"}
+              },{
+  
+                "id": "X",
+                "type":"a-entity",
+                "file": "activities/demo/soccerball.obj",
+                "position": "-1.143 1.7 -1.779",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "grey"}
+              },
+              {
+                "id": "Y",
+                "type":"a-entity",
+                "file": "activities/demo/soccerball.obj",
+                "position": "-1.183 1.7 0.474",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "grey"}
+              },
+              {
+                "id": "Z",
+                "type":"a-entity",
+                "file": "activities/demo/soccerball.obj",
+                "position": "1.378 1.7 0.504",
+                "rotation": "0 0 0",
+                "scale": "0.005 0.005 0.005",
+                "material": {"color": "grey"}
+              }
+              ]
+      }]
+  
+  
+  },
+  { "id":"C",
+    "description": "",
+    "marker":"kanji",
+    "next":"H",
+    "objects":[
+          {
+            "id": "image",
+            "rotation": "-67.962 7.602 -7.026",
+            "type":"a-image",
+            "src": "activities/demo/nextArrow.png"
+            ,"onclick":"goTo('H')"
+  
+          },
+            {
+              "id": "text",
+              "type":"a-text",
+              "position": "-1.132 0.080 -0.792",
+              "rotation": "-70.739 7.139 -5.376",
+              "side":"double",
+              "color": "orange",
+              "shadow":"receive: true",
+              "value":"Toca la flecha!!!",
+              "onclick":"goTo('H')"
+            }
+            ]
+  },
+  {
+    "id":"D",
+    "description": "Asi se ve un transformador en la vida real...",
+    "type":"delay",
+    "delay":"5000",
+    "next":"B",
+    "marker":"kanji",
+    "objects":[
+            {
+              "id": "image3",
+              "rotation": "-67.962 7.602 -7.026",
+              "type":"a-image",
+              "src": "activities/demo/transformador4bornes.png"
+  
+            }
+            ] 
+  },
+  {
+    "id":"E",
+    "description": "y esto es un video de prueba",
+    "marker":"hiro",
+    "objects":[
+            {
+              "id": "video",
+              "rotation": "-67.962 7.602 -7.026",
+              "type":"a-video",
+              "src": "#videoNoLoop",
+              "onclick":"playPause('videoNoLoop')",
+              "children":[
+                {
+                  "id": "videoNoLoop",
+                  "type":"video",
+                  "src": "activities/demo/test.mp4",
+                  "loop":"false",
+                  "autoplay":"false"
+                }
+                , {
+                  "id": "image2",
+                  "position": "0.951 0.114 -0.140",
+                  "rotation":"-64.107 6.931 -6.590",
+                  "type":"a-image",
+                  "src": "activities/demo/nextArrow.png"
+                  ,"onclick":"goTo('F')"
+        
+                },
+                  {
+                    "id": "text",
+                    "type":"a-text",
+                    "position": "-0.545 0.520 -0.571",
+                    "rotation": "-10.060 2.581 -3.028",
+                    "side":"double",
+                    "color": "orange",
+                    "shadow":"receive: true",
+                    "value":"Toca la flecha para finalizar!!!",
+                    "onclick":"goTo('F')"
+                  }
+              ]
+            }
+            ] 
+  },
+  {
+    "id":"F",
+    "description": "Fin de la actividad, Volviendo al inicio",
+    "type":"delay",
+    "delay":"3000",
+    "next":"G"
+  },
+  {
+    "id":"G",
+    "description": "",
+    "type":"redirect",
+    "destiny":"index.html"
+  },
+  {
+    "id":"H",
+    "description": "Ahora busca el marker hiro...",
+    "type":"delay",
+    "delay":"1000",
+    "next":"E"
+  }
+  
+  ]
+  

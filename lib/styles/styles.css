@@ -1,0 +1,201 @@
+.checklist {
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 99999;   
+}
+.checklist-text{
+  color:rgb(231, 231, 112); text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.scanningSpinner {
+	margin: 100px auto;
+	height: 40px;
+	text-align: center;
+}
+.scanningSpinner label {
+	display: block;
+	color: #333;
+	font-size: 200%;
+}
+.scanningSpinner > div {
+	background-color: #333;
+	height: 100%;
+	width: 6px;
+	display: inline-block;
+	
+	-webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+	animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+.scanningSpinner .rect2 {
+	-webkit-animation-delay: -1.1s;
+	animation-delay: -1.1s;
+}
+.scanningSpinner .rect3 {
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+}
+@-webkit-keyframes sk-stretchdelay {
+	0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+	20% { -webkit-transform: scaleY(1.0) }
+}
+@keyframes sk-stretchdelay {
+	0%, 40%, 100% { 
+		transform: scaleY(0.4);
+		-webkit-transform: scaleY(0.4);
+		}
+	20% { 
+		transform: scaleY(1.0);
+		-webkit-transform: scaleY(1.0);
+	}
+}
+.menu-overlay {
+  z-index: 99999;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-sizing: border-box;
+  padding: 1.5em;
+  width: 60px;
+  height: 60px;
+  padding-bottom: 0px;
+  background: rgba(0, 0, 0, 0.5) url(../../assets/images/hamburger-white.png) center no-repeat;
+  background-size: 40px 40px;
+  font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.menu-overlay:hover {
+  background: rgba(0, 0, 0, 0.2) url(../../assets/images/hamburger-white.png) center no-repeat;
+  background-size: 40px 40px;
+}
+.intro-overlay {
+  position: relative;
+  align-content: center;
+  margin: auto;
+  box-sizing: border-box;
+  color: #FFF;
+  background: #000000;
+  margin-right: -50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card-img-top {
+  width: 100%;
+  margin-left: 0.15%;
+}     
+.card {
+  box-sizing: border-box;
+  top: 0%;
+  left: 0%;
+  color: #FFF;
+  background: rgba(0, 0, 0, 0.75);
+  margin-top: 2%;
+  margin-left: 25%;
+  height: 93vh;
+  width: 50%;
+
+}
+
+.play-overlay {
+  z-index: 99999;
+  position: fixed;
+  bottom: 50px;
+  right: 28%;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 12px 24px;
+  padding-bottom: 0px;
+  background: rgba(0, 123, 255) url(../../assets/images/white-play-256.png) center no-repeat;
+  background-size: 40px 40px;
+}
+.play-overlay:hover {
+  background: rgba(0, 0, 0, 0.2) url(../../assets/images/white-play-256.png) center no-repeat;
+  background-size: 40px 40px;
+}
+
+a {
+  text-decoration: none;
+
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #007BFF;
+  color: #ddd;
+}
+.back{
+  position: absolute;
+  width: 30px;
+  height: 40px;
+  top: 2.9%;
+  left: 4%;
+  border-radius: 50%;
+  padding: 12px 24px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.5) url(../../assets/images/backArrow.png) center no-repeat;
+  background-size:  22.5px 22.5px;
+ 
+}
+.next{
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 30%;
+  left: 92%;
+  border-radius: 50%;
+  padding: 12px 24px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.5) url(../../assets/images/nextArrow.png) center no-repeat;
+  background-size:  22.5px 22.5px;
+ 
+}
+.nextRect{
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0%;
+  left: 80%;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0) center no-repeat;
+  background-size:  22.5px 22.5px;
+}
+.previousRect{
+  position: absolute;
+  width: 18%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.1) center no-repeat;
+  background-size:  22.5px 22.5px;
+}
+
+.previous{
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 30%;
+  left: 8%;
+  border-radius: 50%;
+  padding: 12px 24px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.5) url(../../assets/images/previousArrow.png) center no-repeat;
+  background-size:  22.5px 22.5px;
+
+}

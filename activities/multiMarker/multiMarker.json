@@ -1,0 +1,7 @@
+{
+    "name":"Multimarker Map Demo",
+    "description":"demo mapa",
+    "preview": "assets/images/aframe.png",
+    "itemsFile": "activities/multiMarker/multiMarker.item.json"
+    }
+  
