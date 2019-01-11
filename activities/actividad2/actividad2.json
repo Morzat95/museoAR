@@ -482,7 +482,7 @@
             "position": "0.076 -0.359 0.058",
             "scale":"0.209 0.046 0.100",
             "type":"a-image",
-            "src": "assets/images/cable.png",
+            "src": "activities/actividad2/cable.png",
             "material": {
               "alphaTest":"0.980"
             }}

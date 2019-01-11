@@ -2,5 +2,5 @@
   "name":"Demo",
   "description":"Demostracion Del Framework.",
   "preview": "assets/images/aframe.png",
-  "itemsFile": "activities/demo/demo.item.json"
+  "itemsFile": "activities/demo/demo.json"
   }
