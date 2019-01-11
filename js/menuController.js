@@ -2,7 +2,7 @@ var activity;
 var activityItemsFile;
 
 function loadMenu(input){
-  loadJSON("activities/"+input+"/"+input+".json",loadActivity);
+  loadJSON("activities/"+input+".menu",loadActivity);
   activityItemsFile=input;
 }
 

@@ -1,0 +1,7 @@
+{
+  "name":"Ensayo de corto",
+  "description":"Ensayo indirecto del transformador monofasico de potencia",
+  "preview": "activities/actividad/transformador4bornesPortada.png",
+  "itemsFile": "activities/actividad2/actividad2.json"
+  }
+
