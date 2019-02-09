@@ -1,7 +1,77 @@
-{
-    "name":"Demostracion",
-    "description":"...",
-    "type":"checklist",
-    "preview": "assets/images/transformador4bornes.png",
-    "activity": "placas"
-    }
+[
+  {
+    "id": "INICIO",
+    "description": "",
+    "marker": "kanji",
+    "next": "A",
+    "delay": "5000",
+    "autoplay": "source0",
+    "objects": [
+      {
+        "id": "video10",
+        "position":"-0.029 1.417 -3.168",  
+        "rotation": "-62.584 -3.936 4.509", 
+        "scale": "16 9 1",
+        "type": "a-video",
+        "src": "#source0",
+        "children": [
+          {
+            "id": "source0",
+            "type": "video",
+            "src": "assets/video/placas/@PLACA4-SF.webm",
+            "loop": "false",
+            "autoplay": "false"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "A",
+    "description": "",
+    "marker": "kanji",
+    "next":"Z",
+    "delay": "5000",
+    "objects": [
+      {
+        "id": "W",
+        "type": "a-entity",
+        "file": "assets/models/CONTACTOR_EXPLOTADO.obj",
+        "position": "0.132 0.055 -0.418 ",
+        "rotation": "0 0 0",
+        "scale": "0.01 0.01 0.01",
+        "material": {
+          "color": "grey"
+        },
+        "children": [
+          {
+            "id": "anim0",
+            "type": "a-animation",
+            "dur": "10000",
+            "fill": "backwards",
+            "to": "360 0 360",
+            "repeat": "indefinite"
+          }
+        ]}
+    ]
+  },
+  
+  {
+    "id": "Z",
+    "description": "",
+    "marker": "kanji",
+    "delay": "5000",
+    "objects": [
+      {
+        "id": "e",
+        "type": "a-entity",
+        "file": "assets/models/LOGO_STELLIUM.obj",
+        "position": "0.132 0.055 -0.418 ",
+        "rotation": "-75.048 -117.914 116.692",
+        "scale": "0.04 0.04 0.04",
+        "material": {
+          "color": "grey"
+        }}
+    ]
+  }
+]

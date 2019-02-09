@@ -1,0 +1,6 @@
+{
+    "name":"Measure It!",
+    "description":"Measure distance between markers (Hiro and Kanji), you must click on the boxes",
+    "preview": "assets/images/aframe.png",
+    "itemsFile": "activities/measureIt/measureIt.json"
+    }

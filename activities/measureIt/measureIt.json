@@ -1,6 +1,22 @@
-{
-    "name":"Measure It!",
-    "description":"Measure distance between markers (Hiro and Kanji), you must click on the boxes",
-    "preview": "assets/images/aframe.png",
-    "itemsFile": "activities/mapa/mapa.item.json"
+[
+    {
+    "id":"A",
+    "description": "",
+    "objects":[
+      {
+        "id": "cube1",
+        "marker":"kanji",
+        "scale":"0.5 0.5 0.5",
+        "type":"a-box",
+        "onclick":"drawDistance('cube1','cube2');",
+        "color": "blue"
+      },{
+        "id": "cube2",
+        "marker":"hiro",
+        "scale":"0.5 0.5 0.5",
+        "type":"a-box",
+        "onclick":"drawDistance('cube2','cube1');",
+        "color": "orange"
+      }]
     }
+    ]

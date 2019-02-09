@@ -1,0 +1,6 @@
+{
+    "name":"Mapa grande de la republica",
+    "description":"demo mapa grande",
+    "preview": "assets/images/aframe.png",
+    "itemsFile": "activities/mapa/mapa.json"
+    }
