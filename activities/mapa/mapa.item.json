@@ -12,7 +12,7 @@
         "scale":"2 2 2",
         "type":"a-image",
         "src": "activities/mapa/demo2.png",
-        "onclick":"increaseScale('image0',2);increaseScale('Y0',0.0001);drawMatrix('100','kanji','25','12.5');"
+        "onclick":"console.log('click from json');"
       },{
         "id": "Y0",
         "marker":"hiro",

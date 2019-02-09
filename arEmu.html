@@ -15,6 +15,7 @@
   <script src="lib/aframe.min.js"></script>
   <script src="lib/aframe-ar.js"></script>
   <script src="js/Controller.js"></script>
+
   
 
 </head>
@@ -34,7 +35,7 @@
 
 
   <a id="playButton" onclick="firstPlay()" class="btn btn-primary play-overlay"></a>
-  <a-scene id="scene" markerhandler render-queue embedded arjs='sourceType: image; sourceUrl: other/kanji-marker.png; debugUIEnabled: false; detectionMode: mono; maxDetectionRate:20;''
+  <a-scene id="scene" ray markerhandler render-queue embedded arjs='sourceType:image;sourceUrl: other/kanji-marker.png; debugUIEnabled: false; detectionMode: mono; cameraParametersUrl: other/calibracion.dat;  maxDetectionRate:20;'
     vr-mode-ui="enabled: false;">
 
 
@@ -43,8 +44,9 @@
     <a-marker id="multi" preset='area'></a-marker>
 
     </a-marker>
-    <a-entity camera mouse-cursor></a-entity>
-    <a-cursor id="cursor" visible="false" fuse="false" color="yellow"></a-cursor>
+    <a-entity camera id="cursor" ></a-entity>
+
+
     </a-entity>
   </a-scene>
 

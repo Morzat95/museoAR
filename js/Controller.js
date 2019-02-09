@@ -443,8 +443,8 @@ function matrixHelper(matrix,width,height,YOffset,XOffset){
   for (let i = 0; i < size-1; i++) {
     var row = matrix[i];
     for (let j = 0; j < Object.keys(matrix[i]).length; j++) {
-      var cell = row [j]; 
-      console.log("Row: "+i+"Column: "+j+"cell: "+cell);
+      var cell = row [j];
+      //console.log("Row: "+i+"Column: "+j+"cell: "+cell);
       var material = new THREE.LineBasicMaterial({ color: cellColorGenerator(cell)});
       var geometry = new THREE.Geometry();
 
@@ -462,7 +462,7 @@ function matrixHelper(matrix,width,height,YOffset,XOffset){
       geometry.vertices.push(new THREE.Vector3(xroot, 0.07, yroot));
       
       //draw3DText(markerObj,xroot, yroot,cell,cellColorGenerator(cell),20);
-      console.log("value is "+20/(1/50));
+      // console.log("value is "+20/(1/50));
       let line = new THREE.Line(geometry, material);
 
 
@@ -564,12 +564,10 @@ function guidGenerator() {
 }
 
 
-
-
 function drawCircle(IDEntity) {
   var circleID = guidGenerator();
   renderFncQueue.push(function () {
-    var entity3D = document.querySelector("#" + IDEntity).object3D;
+    var entity3D = document.querySelector("#" + IDEntity).camera.object3D;
     var scene = document.querySelector("#scene").object3D;
     var from = new THREE.Vector3();
     from.setFromMatrixPosition(entity3D.matrixWorld);
@@ -784,5 +782,15 @@ AFRAME.registerComponent('cursor-listener', {
     });
   }
 });
+AFRAME.registerComponent('ray', { 
+  init: function () { 
+    document.addEventListener('click', (event) => { 
+      let mouse = new THREE.Vector2();
+      let camera = AFRAME.scenes[0].camera;
+      let rect = document.querySelector('body').getBoundingClientRect(); 
+      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1 ;
+      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1 ;
+      let vector = new THREE.Vector3(mouse.x, mouse.y, -1).unproject(camera);
+       console.log(vector) }) } });
 
 

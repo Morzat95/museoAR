@@ -1,5 +1,10 @@
 Proyecto de realidad aumentada para el museo UNGS
 
+
+`sudo snap install serve`
+`cd museoAR`
+`serve`
+
 Open a-frame Inspector.. Hit *<ctrl> + <alt> + i* on any A-Frame scene.
 
 
