@@ -1,3 +1,5 @@
+//import * as THREE from "../lib/aframe.min";
+
 var a = window.location.toString();
 var name;
 var playing = false;
@@ -24,7 +26,7 @@ function run() {
   var cookie = document.cookie; 
   if(cookie==""){
     id=generateUUID();
-    document.cookie =id+"; expires=Thu, 1 Jan 2019 12:00:00 UTC;" 
+    document.cookie =id+"; expires=Thu, 1 Jan 2019 12:00:00 UTC;";
     console.log("cookieGenerated="+document.cookie)
   }
   else{
@@ -37,10 +39,9 @@ function run() {
 
 function loadActivity(jsonInput) {
   currentCard = jsonInput[0];
-  array = jsonInput;
   activity = new Map();
   jsonInput.forEach(card => {
-    console.log("loading...id:" + card.id + " element: " + card.description)
+    console.log("loading...id:" + card.id + " element: " + card.description);
     activity.set(card.id, card);
     if(card.matrixURL!=null){
       parseCSV(card.matrixURL,function(result){card.matrix=result;},
@@ -89,7 +90,7 @@ function preLoadCard(card) {
 
   }
   if (!isPreloaded(card)) {
-    if (card.marker == null && card.objects != null) { //if null we asume its because we are using multipleIndependentMarkers
+    if (card.marker == null && card.objects != null) { //if null we assume its because we are using multipleIndependentMarkers
       card.objects.forEach(node => {
         if (node.marker != null) {
           setObjectProperties(node, node.marker);
@@ -166,14 +167,12 @@ function logCurrentObjects() {
   });
 }
 function goTo(next) {
-  
-  currentTimeout = "";
   historyStack.push(currentCard.id);
   deleteCard(currentCard);
   console.log(next);
   currentCard = activity.get(next);
   if (currentCard == null) {
-    console.error("attemped to redir(ect to: " + next + " but it was not found...");
+    console.error("attempted to redir(ect to: " + next + " but it was not found...");
   }
   log("goTo",currentCard.id);
   playing = false;
@@ -294,7 +293,6 @@ function iterateObjects(jsonInput, value, callback) {
     iterateObjects(obj.children, obj.id, callback);
 
   }
-  objectCount = i;
 
 }
 function appendText(text) {
@@ -387,14 +385,14 @@ function playPause(id) {
 }
 
 function increaseScale(entityID, value) {
-  var obj = document.querySelector('#' + entityID)
+  var obj = document.querySelector('#' + entityID);
   var scale = obj.getAttribute('scale');
   console.log('scale', Number(scale.x + value) + " " + scale.y + value + " " + scale.z + value);
   obj.setAttribute('scale', Number(scale.x + value) + " " + Number(scale.y + value) + " " + Number(scale.z + value));
 
 }
 function resetScale(entityID, value) {
-  var obj = document.querySelector('#' + entityID)
+  var obj = document.querySelector('#' + entityID);
   console.log('scale', Number(value) + " " + value + " " + value);
   obj.setAttribute('scale', Number(value) + " " + Number(value) + " " + Number(value));
 
@@ -681,7 +679,7 @@ function isCurrentMarkerVisible() {
   }
   var isVisible = false;
   markerSet.forEach(marker => {
-    isVisible = isVisible | document.querySelector("#" + marker).object3D.visible; //if at least one marker is visible
+    isVisible = isVisible || document.querySelector("#" + marker).object3D.visible; //if at least one marker is visible
   });
   return isVisible;
 }
@@ -700,12 +698,10 @@ AFRAME.registerComponent('markerhandler', {
         var cursor = document.querySelector('#cursor');
         cursor.setAttribute('visible', true);
         document.querySelector('.scanningSpinner').style.display = 'none';
-        currentTimeout = "";
         playing = true;
         loadCard(currentCard);
 
       } else if ((isCurrentMarkerVisible() == false) && (playing == true)) {
-        currentTimeout = "";
         playing = false;
         var cursor = document.querySelector('#cursor');
         cursor.setAttribute('visible', false);
@@ -731,7 +727,7 @@ AFRAME.registerComponent('markerhandler', {
   }
 });
 function clearRenderer() {
-  renderFncQueue = []
+  renderFncQueue = [];
   renderObjsIDs.forEach(function (objID) { //delete all objects
     var scene = document.querySelector("#scene").object3D;
     var obj = scene.getObjectByName(objID);
