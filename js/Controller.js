@@ -1,4 +1,3 @@
-//import * as THREE from "../lib/aframe.min";
 
 var a = window.location.toString();
 var name;
@@ -384,6 +383,9 @@ function playPause(id) {
 
 }
 
+
+
+
 function increaseScale(entityID, value) {
   var obj = document.querySelector('#' + entityID);
   var scale = obj.getAttribute('scale');
@@ -631,7 +633,20 @@ function drawLineWOffset(IDEntity, IDOtherEntity, xOffset, yOffset, zOffset, xOf
   });
 }
 
+function calculateOnMatrixPosition(matrixID,PinID){
+  var entity3D = document.querySelector("#" + matrixID).object3D;
+  var otherEntity3D = document.querySelector("#" + PinID).object3D;
+  var matrixVector = new THREE.Vector3();
+  matrixVector.setFromMatrixPosition(entity3D.matrixWorld);
 
+  var pinVector = new THREE.Vector3();
+  var subVector = new THREE.Vector3();
+  pinVector.setFromMatrixPosition(otherEntity3D.matrixWorld);
+  subVector.subVectors(matrixVector,pinVector);
+  console.log("Pin Vector= ("+pinVector.x+","+pinVector.y+","+pinVector.z+")");
+  console.log("Matrix Vector= ("+matrixVector.x+","+matrixVector.y+","+matrixVector.z+")");
+  console.log("Sub Vector= ("+subVector.x+","+subVector.y+","+subVector.z+")");
+}
 
 function drawDistance(IDEntity, IDOtherEntity) {
   var lineColor = getRandomColor();
@@ -778,15 +793,6 @@ AFRAME.registerComponent('cursor-listener', {
     });
   }
 });
-AFRAME.registerComponent('ray', { 
-  init: function () { 
-    document.addEventListener('click', (event) => { 
-      let mouse = new THREE.Vector2();
-      let camera = AFRAME.scenes[0].camera;
-      let rect = document.querySelector('body').getBoundingClientRect(); 
-      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1 ;
-      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1 ;
-      let vector = new THREE.Vector3(mouse.x, mouse.y, -1).unproject(camera);
-       console.log(vector) }) } });
+
 
 
