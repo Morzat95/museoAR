@@ -2,7 +2,7 @@
 
 MuseoAR is a mobile-ready, AR learning framework that allows to easily create AR activities and presentations with little to none programming background. It sits on top of [ar.js](https://github.com/jeromeetienne/AR.js) and [a-frame](https://aframe.io/) using a JSON file that contains an array of **cards**, these objects are transitions similar to what **slides** are in an ordinary presentation, inside museoAR these transitions can be triggered by **delay** or by user interaction. eg by **click**
 
-This project was possible thanks to UNGS's museum of science Scholarship.
+This project was possible thanks to UNGS's science museum Scholarship.
   
 ## Demo Video
  [![Marker](https://user-images.githubusercontent.com/15642727/53751235-9d7af200-3e8a-11e9-972e-c66ab2fe5afe.gif)](https://www.youtube.com/watch?v=ZWhPTb0Ls5A)
@@ -88,7 +88,7 @@ These properties modify the objects contained in each card and modify the behavi
 | children | Objects whose position is relative to this object. Children cannot have a different marker that their father |
 | onclick | The javascript function or script that will be executed when this object is clicked |
 
-##Onclick-Ready Functions
+## Onclick-Ready Functions
 These funcions are designed to be called from the JSON file. However **onclick** accepts any kind of JavaScript you throw at it, yes even conditionals!!
 
 This makes the framework really customizable if needed.
