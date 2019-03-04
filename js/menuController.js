@@ -29,7 +29,7 @@ function goTo(){
   }
     else{
       
-     window.location.href = "vr.html?"+activityItemsFile;
+     window.location.href = "arEmu.html?"+activityItemsFile;
     }
 }
 

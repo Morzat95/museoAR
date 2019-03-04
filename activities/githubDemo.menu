@@ -1,0 +1,6 @@
+{
+  "name":"Demo",
+  "description":"This is a demo for Github :D",
+  "preview": "https://github.githubassets.com/images/modules/open_graph/github-mark.png",
+  "itemsFile": "activities/githubDemo/githubDemo.json"
+  }

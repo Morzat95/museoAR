@@ -710,16 +710,16 @@ AFRAME.registerComponent('markerhandler', {
     if (activity != null) {
       if (isCurrentMarkerVisible() && playing == false) {
         // MARKER IS PRESENT
-        var cursor = document.querySelector('#cursor');
-        cursor.setAttribute('visible', true);
+        var spinner = document.querySelector('#spinner');
+        spinner.setAttribute('visible', true);
         document.querySelector('.scanningSpinner').style.display = 'none';
         playing = true;
         loadCard(currentCard);
 
       } else if ((isCurrentMarkerVisible() == false) && (playing == true)) {
         playing = false;
-        var cursor = document.querySelector('#cursor');
-        cursor.setAttribute('visible', false);
+        var spinner = document.querySelector('#spinner');
+        spinner.setAttribute('visible', false);
         document.querySelector('.scanningSpinner').style.display = '';
       }
       else if ((isCurrentMarkerVisible() == false) && (playing == false)) {
