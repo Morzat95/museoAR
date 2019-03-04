@@ -402,27 +402,27 @@ function resetScale(entityID, value) {
 
 
 
-function drawMatrix(matrix,marker,width,height,YOffset,XOffset){
+function drawMatrix(matrix,markerID,width,height,YOffset,XOffset){
   var matrixObjID = guidGenerator();
   var matrixObj = matrixHelper(matrix,width,height,YOffset,XOffset);
   renderFncQueue.push(function () {
-    var entity3D = document.querySelector("#" + marker).object3D;
-    var scene = document.querySelector("#scene").object3D;
-    var from = new THREE.Vector3();
-    from.setFromMatrixPosition(entity3D.matrixWorld);
-    matrixObj.position.set(from.x,from.y,from.z);
-    matrixObj.rotation.set( entity3D.getWorldRotation().x,0,0);
+    var marker = document.querySelector("#" + markerID).object3D;
+  //  var scene = document.querySelector("#scene").object3D;
+   // var from = new THREE.Vector3();
+   // from.setFromMatrixPosition(entity3D.matrixWorld);
+   // matrixObj.position.set(from.x,from.y,from.z);
+  //  matrixObj.rotation.set( entity3D.getWorldRotation().x,0,0);
 
-    var oldermatrixObj = scene.getObjectByName(matrixObjID);
+    var oldermatrixObj = marker.getObjectByName(matrixObjID);
     if (oldermatrixObj == null) {
       matrixObj.name = matrixObjID;
-      scene.add(matrixObj);
+      marker.add(matrixObj);
       renderObjsIDs.add(matrixObj.name);
     }
     else {
-      scene.remove(oldermatrixObj);
+      marker.remove(oldermatrixObj);
       matrixObj.name = matrixObjID;
-      scene.add(matrixObj);
+      marker.add(matrixObj);
 
     }
 });
@@ -455,11 +455,11 @@ function matrixHelper(matrix,width,height,YOffset,XOffset){
       var x= (squareWidth * (j+1))+xOffset;
     //  console.log("Xroot= "+xroot+" Yroot="+yroot+" x= "+x+"y= "+y);
 
-      geometry.vertices.push(new THREE.Vector3(xroot, 0.07, yroot));
-      geometry.vertices.push(new THREE.Vector3(xroot , 0.07, y));
-      geometry.vertices.push(new THREE.Vector3(x, 0.07, y));
-      geometry.vertices.push(new THREE.Vector3(x , 0.07, yroot));
-      geometry.vertices.push(new THREE.Vector3(xroot, 0.07, yroot));
+      geometry.vertices.push(new THREE.Vector3(xroot, 0, yroot));
+      geometry.vertices.push(new THREE.Vector3(xroot , 0, y));
+      geometry.vertices.push(new THREE.Vector3(x, 0, y));
+      geometry.vertices.push(new THREE.Vector3(x , 0, yroot));
+      geometry.vertices.push(new THREE.Vector3(xroot, 0, yroot));
       
       //draw3DText(markerObj,xroot, yroot,cell,cellColorGenerator(cell),20);
       // console.log("value is "+20/(1/50));
@@ -783,11 +783,11 @@ AFRAME.registerComponent('render-queue', {
 
 AFRAME.registerComponent('cursor-listener', {
   init: function () {
-    this.el.addEventListener('click', function (evt) {
+    this.el.addEventListener('click', function (event) {
 
       console.log("#" + this.id + " was clicked");
       if (this.object3D.visible) {
-        console.log(this.object3D);
+        //console.log(this.object3D);
         this.onclick;
       }
     });
