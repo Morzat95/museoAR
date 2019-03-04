@@ -148,7 +148,9 @@ Because you need https for mobile devices to work you may need a webcam and a de
 ## Credits
 This project was possible thanks to:
 - UNGS's science museum Scholarship.
-- Prof. Maximiliano E. Veliz contribution that allowed us to test the project with his students
 - Prof. Alexis Tcach @atcach for his time and mentorship
 - Jerome Etiene's ar.js framework
 - A-frame
+- Prof. Maximiliano E. Veliz contribution that allowed us to test the project with his students...
+ [![Marker](https://user-images.githubusercontent.com/15642727/53758536-c7d5ab00-3e9c-11e9-97f8-f4271b24afbd.png)]()
+
