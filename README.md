@@ -87,6 +87,7 @@ These properties modify the objects contained in each card and modify the behavi
 | type | The type correspoding to **a-frame**'s naming scheme. eg. a-box |
 | children | Objects whose position is relative to this object. Children cannot have a different marker that their father |
 | onclick | The javascript function or script that will be executed when this object is clicked |
+
 ##Onclick-Ready Functions
 These funcions are designed to be called from the JSON file. However **onclick** accepts any kind of JavaScript you throw at it, yes even conditionals!!
 
