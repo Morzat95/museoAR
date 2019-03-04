@@ -6,7 +6,13 @@ MuseoAR is a mobile-ready, AR learning framework that allows to easily create AR
 
   - As of now [projectAR](https://gitlab.com/pedrogut/proyectAR) (museoAR's GUI) is being developed, this sister-project will allow point and click creation of AR experiences inside museoAR.
   
-### Example
+### Example 
+Click [here](https://museoar.herokuapp.com/menu.html?githubDemo) to try it out!
+
+Just point to this **AR Marker** or uncheck AR on the menu to try it on a desktop
+[![Marker](https://stemkoski.github.io/AR-Examples/markers/kanji.png)]()
+
+### Example Code
 ```JSON
 [
    {
