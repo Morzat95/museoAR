@@ -1,6 +1,6 @@
 {
   "name":"Demo",
-  "description":"Demostracion Del Framework.",
+  "description":"Framework's Media types demonstration",
   "preview": "assets/images/aframe.png",
   "itemsFile": "activities/demo/demo.json"
   }

@@ -62,6 +62,19 @@ Just point to this **AR Marker** or uncheck AR on the menu to try it on a deskto
 ## Upcoming!
 
   - As of now [projectAR](https://gitlab.com/pedrogut/proyectAR) (museoAR's activity-creation-GUI) is being developed, this sister-project will allow point and click creation of AR experiences inside museoAR without ever touching a JSON file.
+### Features
+Works with:
+- 3D objects
+- Images
+- Video (event alpha channel transparent)
+- Multimarker (using **multi** as marker, training and saving your marker [info](https://github.com/agusalex/AR.jsAframeMultimarkerDemo)
+- Multiple Independent markers per object
+
+### More Examples
+- Demo of all media-types mentioned [link](https://museoar.herokuapp.com/menu.html?demo) (kanji)
+- Multiple Independent markers: [measureIt](https://museoar.herokuapp.com/menu.html?measureIt) and [this one](https://museoar.herokuapp.com/menu.html?actividad) (kanji **and** hiro)
+- Multiple Markers combined [link](https://museoar.herokuapp.com/menu.html?multiMarker) you'll need [this](https://github.com/agusalex/museoAR/blob/master/other/demoARtoolkit.png?raw=true) image to try it 
+
 
 ## Installation
 Just run the server!

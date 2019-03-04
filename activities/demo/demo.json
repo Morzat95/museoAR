@@ -1,7 +1,7 @@
 [
   {
     "id":"first",
-  "description": "toca el transformador...",
+  "description": "Touch the 3D object",
   "marker":"kanji",
   "next":"D",
   "objects":[{
@@ -18,7 +18,7 @@
   },
   {
     "id":"B",
-    "description": "Un transformador tiene bornes, puedes ver los bornes?",
+    "description": "Recursive algorithm for adding children, in this case the soccerballs are children of the rectangle object",
     "type":"delay",
     "delay":"5000",
     "next":"C",
@@ -75,16 +75,16 @@
   
   },
   { "id":"C",
-    "description": "",
+    "description": "Can be cool for making 3d hyperlinks ",
     "marker":"kanji",
-    "next":"H",
+    "next":"E",
     "objects":[
           {
             "id": "image",
             "rotation": "-67.962 7.602 -7.026",
             "type":"a-image",
             "src": "activities/demo/nextArrow.png"
-            ,"onclick":"goTo('H')"
+            ,"onclick":"goTo('E')"
   
           },
             {
@@ -95,14 +95,14 @@
               "side":"double",
               "color": "orange",
               "shadow":"receive: true",
-              "value":"Toca la flecha!!!",
-              "onclick":"goTo('H')"
+              "value":"Touch the arrow!!!",
+              "onclick":"goTo('E')"
             }
             ]
   },
   {
     "id":"D",
-    "description": "Asi se ve un transformador en la vida real...",
+    "description": "Works with images too",
     "type":"delay",
     "delay":"5000",
     "next":"B",
@@ -112,15 +112,15 @@
               "id": "image3",
               "rotation": "-67.962 7.602 -7.026",
               "type":"a-image",
-              "src": "activities/demo/transformador4bornes.png"
-  
+              "src": "activities/demo/transformador4bornes.png",
+              "onclick":"goTo('B')"
             }
             ] 
   },
   {
     "id":"E",
-    "description": "y esto es un video de prueba",
-    "marker":"hiro",
+    "description": "and video... Click it to play",
+    "marker":"kanji",
     "objects":[
             {
               "id": "video",
@@ -153,7 +153,7 @@
                     "side":"double",
                     "color": "orange",
                     "shadow":"receive: true",
-                    "value":"Toca la flecha para finalizar!!!",
+                    "value":"Touch this arrow to end",
                     "onclick":"goTo('F')"
                   }
               ]
@@ -162,7 +162,7 @@
   },
   {
     "id":"F",
-    "description": "Fin de la actividad, Volviendo al inicio",
+    "description": "End of activity returning home",
     "type":"delay",
     "delay":"3000",
     "next":"G"
@@ -171,15 +171,7 @@
     "id":"G",
     "description": "",
     "type":"redirect",
-    "destiny":"index.html"
-  },
-  {
-    "id":"H",
-    "description": "Ahora busca el marker hiro...",
-    "type":"delay",
-    "delay":"1000",
-    "next":"E"
+    "destiny":"menu.html?demo"
   }
-  
   ]
   

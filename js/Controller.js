@@ -173,7 +173,7 @@ function goTo(next) {
   if (currentCard == null) {
     console.error("attempted to redir(ect to: " + next + " but it was not found...");
   }
-  log("goTo",currentCard.id);
+  //log("goTo",currentCard.id); logging for data analysis
   playing = false;
 }
 
