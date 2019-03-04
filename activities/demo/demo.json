@@ -139,7 +139,7 @@
                 , {
                   "id": "image2",
                   "position": "0.951 0.114 -0.140",
-                  "rotation":"-64.107 6.931 -6.590",
+                  "rotation":"1.4828147737985706 4.438131081083357 -1.8752908634631846",
                   "type":"a-image",
                   "src": "activities/demo/nextArrow.png"
                   ,"onclick":"goTo('F')"
@@ -164,7 +164,7 @@
     "id":"F",
     "description": "End of activity returning home",
     "type":"delay",
-    "delay":"3000",
+    "delay":"2000",
     "next":"G"
   },
   {
