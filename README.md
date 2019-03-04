@@ -2,7 +2,6 @@
 
 MuseoAR is a mobile-ready, AR learning framework that allows to easily create AR activities and presentations with little to none programming background. It sits on top of [ar.js](https://github.com/jeromeetienne/AR.js) and [a-frame](https://aframe.io/) using a JSON file that contains an array of **cards**, these objects are transitions similar to what **slides** are in an ordinary presentation, inside museoAR these transitions can be triggered by **delay** or by user interaction. eg by **click**
 
-This project was possible thanks to UNGS's science museum Scholarship.
   
 ## Demo Video
  [![Marker](https://user-images.githubusercontent.com/15642727/53751235-9d7af200-3e8a-11e9-972e-c66ab2fe5afe.gif)](https://www.youtube.com/watch?v=ZWhPTb0Ls5A)
@@ -145,3 +144,11 @@ $ cd museoAR
 $ serve
 ```
 Because you need https for mobile devices to work you may need a webcam and a desktop, If you want to test it on mobile you will need an https server.
+
+## Credits
+This project was possible thanks to:
+- UNGS's science museum Scholarship.
+- Maximiliano E. Veliz Contribution that allowed us to test the project with his students
+- Prof. Alexis Tcach @atcach for his time and mentorship
+- Jerome Etiene's ar.js framework
+- a-frame
