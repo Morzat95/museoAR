@@ -120,7 +120,7 @@ The **.menu** files allow to make a simple and fast menu for your activies and t
 
 ## Upcoming!
 
-  - As of now [projectAR](https://gitlab.com/pedrogut/proyectAR) (museoAR's activity-creation-GUI) is being developed, this sister-project will allow point and click creation of AR experiences inside museoAR without ever touching a JSON file.
+  - As of now [projectAR](https://gitlab.com/pedrogut/proyectAR) (museoAR's activity-creation-GUI) is being developed, this sibling-project will allow point and click creation of AR experiences inside museoAR without ever touching a JSON file.
 ### Features
 Works with:
 - 3D objects
@@ -148,9 +148,10 @@ Because you need https for mobile devices to work you may need a webcam and a de
 ## Credits
 This project was possible thanks to:
 - UNGS's science museum Scholarship.
-- Prof. Alexis Tcach @atcach for his time and mentorship
-- Jerome Etiene's ar.js framework
-- A-frame
+- Prof. Alexis Tcach @atcach for his time and mentorship.
+- Pedro Gutierrez @pedrogut who singlehandedly is developing proyectAR.
+- Jerome Etiene's ar.js framework.
+- A-frame.
 - Prof. Maximiliano E. Veliz contribution that allowed us to test the project with his students...
  [![Marker](https://user-images.githubusercontent.com/15642727/53758536-c7d5ab00-3e9c-11e9-97f8-f4271b24afbd.png)]()
 
