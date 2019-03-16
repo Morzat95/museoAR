@@ -1,5 +1,5 @@
-var activity;
-var activityItemsFile;
+let activity;
+let activityItemsFile;
 
 function loadMenu(input){
   loadJSON("activities/"+input+".menu",loadActivity);
@@ -24,13 +24,28 @@ function showActivity(){
 }  
 
 function goTo(){
-  if(document.getElementById("arCheck").checked){
+
+  if(activity.cards==null){ //If cards are not embedded
+
+      if(document.getElementById("arCheck").checked){
     window.location.href = "ar.html?"+activityItemsFile;
   }
     else{
-      
+
      window.location.href = "arEmu.html?"+activityItemsFile;
     }
+  }
+  else{//if cards are embedded on URL
+          if(document.getElementById("arCheck").checked){
+    window.location.href = "ar.html?"+activity.cards;
+  }
+    else{
+
+     window.location.href = "arEmu.html?"+activity.cards;
+    }
+
+  }
+
 }
 
 

@@ -14,15 +14,8 @@ var logAddress="https://loggermuseoar.000webhostapp.com/srvLog.php";
 
 
 function run() {
-  if (a.indexOf('#') == -1) {
-    name = a.substring(a.indexOf("?") + 1);
-  }
-  else {
-    name = a.substring(a.indexOf("?") + 1, a.indexOf('#'));
-  }
-  console.log("activity= " + name);
-  loadJSON(name, loadActivity); //loads .item.json
-  var cookie = document.cookie; 
+
+  let cookie = document.cookie;
   if(cookie==""){
     id=generateUUID();
     document.cookie =id+"; expires=Thu, 1 Jan 2019 12:00:00 UTC;";
@@ -33,12 +26,34 @@ function run() {
     console.log("cookieLoaded="+cookie)
   }
 
-}
 
+  if (a.indexOf('#') === -1) {
+    name = a.substring(a.indexOf("?") + 1);
+  }
+  else {
+    name = a.substring(a.indexOf("?") + 1, a.indexOf('#'));
+  }
+
+
+
+
+  if(IsJsonString(name)){
+    parseJson(name,loadActivity);
+
+
+  }
+  else {
+    console.log("activity= " + name);
+    loadJSON(name, loadActivity); //loads .item.json
+  }
+
+
+}
 
 function loadActivity(jsonInput) {
   currentCard = jsonInput[0];
   activity = new Map();
+  console.log("the parsed result: "+jsonInput);
   jsonInput.forEach(card => {
     console.log("loading...id:" + card.id + " element: " + card.description);
     activity.set(card.id, card);

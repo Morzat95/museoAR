@@ -90,6 +90,9 @@ if (IsJsonString(response)) {
 }
 }
 
+/**
+ * @return {boolean}
+ */
 function IsJsonString(str) {
     try {
         JSON.parse(str);
