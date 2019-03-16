@@ -1,21 +1,22 @@
+
 function loadJSON(filename,callback) {
     console.log("loading file "+ filename);
    var xobj = new XMLHttpRequest();
        xobj.overrideMimeType("application/json");
    xobj.open('GET', filename, true); // Replace 'my_data' with the path to your file
-   xobj.onreadystatechange = function () { 
+   xobj.onreadystatechange = function () {
          if (xobj.readyState == 4 && xobj.status == "200") {
            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
            parseJson(xobj.responseText,callback);
          }
    };
    xobj.send(null);
-   
+
 }
 
 function parseCSV(filename,callback){
     loadScript("lib/papaparse.min.js",function(){
-        Papa.parse(filename, 
+        Papa.parse(filename,
         {
             delimiter: "",	// auto-detect
             newline: "",	// auto-detect
@@ -42,7 +43,7 @@ function parseCSV(filename,callback){
             transform: undefined
         })
     })
-   
+
 }
 
 function loadScript(path, callback) {

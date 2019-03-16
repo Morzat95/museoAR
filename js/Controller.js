@@ -36,9 +36,9 @@ function run() {
 
 
 
-
-  if(IsJsonString(name)){
-    parseJson(name,loadActivity);
+  let testUrlDecoded = window.atob(name);
+  if(IsJsonString(testUrlDecoded)){
+    parseJson(testUrlDecoded,loadActivity);
 
 
   }
@@ -53,7 +53,7 @@ function run() {
 function loadActivity(jsonInput) {
   currentCard = jsonInput[0];
   activity = new Map();
-  console.log("the parsed result: "+jsonInput);
+  console.log(jsonInput);
   jsonInput.forEach(card => {
     console.log("loading...id:" + card.id + " element: " + card.description);
     activity.set(card.id, card);

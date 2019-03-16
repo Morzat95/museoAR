@@ -36,12 +36,13 @@ function goTo(){
     }
   }
   else{//if cards are embedded on URL
+    let cards = window.btoa(JSON.stringify(activity.cards));
           if(document.getElementById("arCheck").checked){
-    window.location.href = "ar.html?"+activity.cards;
+    window.location.href = "ar.html?"+cards;
   }
     else{
 
-     window.location.href = "arEmu.html?"+activity.cards;
+     window.location.href = "arEmu.html?"+cards
     }
 
   }
