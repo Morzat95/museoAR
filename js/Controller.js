@@ -56,7 +56,7 @@ function loadActivity(jsonInput) {
   console.log(jsonInput);
   jsonInput.forEach(card => {
     console.log("loading...id:" + card.id + " element: " + card.description);
-    activity.set(card.id, card);
+    activity.set(card.id.toString(), card);
     if(card.matrixURL!=null){
       parseCSV(card.matrixURL,function(result){card.matrix=result;},
       );
@@ -135,13 +135,13 @@ function isPreloaded(card) {
 
 function loadCard(card) {
   preLoadCard(card);
-  if (card.next != null) { //if possible loads next
+  if (card.next != null&&card.next!=="") { //if possible loads next
     preLoadCard(activity.get(card.next));
   }
   else {
     console.log("next is null!, no preloading this time");
   }
-  if (card.clearAll != null && card.clearAll == true) {
+  if (card.clearAll != null && card.clearAll === true) {
     clearRenderer();
 
   }
@@ -166,7 +166,7 @@ function deleteCard(card) {
 }
 
 function markForRemoval(Jobj, value) {
-  var obj = document.querySelector('#' + Jobj.id);
+  var obj = document.querySelector('#' + Jobj.id.toString());
   obj.setAttribute('remove', value);
 }
 
@@ -239,7 +239,7 @@ function setObjectVisible(Jobj, value) {
     drawMatrix(currentCard.matrix,Jobj.marker,Jobj.width,Jobj.height,Jobj.xOffset,Jobj.yOffset);
     return;
   }
-  var obj = document.querySelector('#' + Jobj.id);
+  var obj = document.querySelector('#' + Jobj.id.toString());
   obj.setAttribute('visible', value);
 }
 function setObjectProperties(jObj, fatherID) {
@@ -247,7 +247,7 @@ function setObjectProperties(jObj, fatherID) {
   var father = document.querySelector('#' + fatherID);
   var obj = document.createElement(jObj.type);
   obj.setAttribute('visible', false); //Makes the object invisible by default so that we can make it visible later
-  obj.setAttribute('id', jObj.id);
+  obj.setAttribute('id', jObj.id.toString());
   obj.setAttribute('scale', jObj.scale);
   obj.setAttribute('rotation', jObj.rotation);
   obj.setAttribute('position', jObj.position);
