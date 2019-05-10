@@ -2,7 +2,7 @@ let activity;
 let activityItemsFile;
 
 function loadMenu(input){
-  loadJSON("activities/"+input+".menu",loadActivity);
+  loadJSON(input,loadActivity);
   activityItemsFile=input;
 }
 
@@ -36,13 +36,13 @@ function goTo(){
     }
   }
   else{//if cards are embedded on URL
-    let cards = window.btoa(JSON.stringify(activity.cards));
+
           if(document.getElementById("arCheck").checked){
-    window.location.href = "ar.html?"+cards;
+    window.location.href = "ar.html?"+"/activity/1/download/";
   }
     else{
 
-     window.location.href = "arEmu.html?"+cards
+     window.location.href = "arEmu.html?"+"/activity/1/download/";
     }
 
   }

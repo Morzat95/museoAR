@@ -1,40 +1,42 @@
-[
-  {
-    "id":"A",
-    "description":"This is a Blue box, touch it to make it Red!",
-    "objects":[
-      {
-        "id":"cube1",
-        "marker":"kanji",
-        "scale":"0.5 0.5 0.5",
-        "rotation":"-31 65 -50",
-        "type":"a-box",
-        "onclick":"goTo('B')",
-        "color":"blue"
-      }
-    ]
-  },
-  {
-    "id":"B",
-    "description":"Congratulations! you made it!",
-    "type":"delay",
-    "delay":"5000",
-    "next": "C",
-    "objects":[
-      {
-        "id":"cube2",
-        "marker":"kanji",
-        "scale":"0.5 0.5 0.5",
-        "rotation":"-31 65 -50",
-        "type":"a-box",
-        "color":"red"
-      }
-    ]
-  },
-  {
-    "id":"C",
-    "description":"",
-    "type":"redirect",
-    "destiny":"menu.html?githubDemo"
-  }
-]
+{
+  "cards": [
+    {
+      "id": "A",
+      "description": "This is a Blue box, touch it to make it Red!",
+      "objects": [
+        {
+          "id": "cube1",
+          "marker": "kanji",
+          "scale": "0.5 0.5 0.5",
+          "rotation": "-31 65 -50",
+          "type": "a-box",
+          "onclick": "goTo('B')",
+          "color": "blue"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "description": "Congratulations! you made it!",
+      "type": "delay",
+      "delay": "5000",
+      "next": "C",
+      "objects": [
+        {
+          "id": "cube2",
+          "marker": "kanji",
+          "scale": "0.5 0.5 0.5",
+          "rotation": "-31 65 -50",
+          "type": "a-box",
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "description": "",
+      "type": "redirect",
+      "destiny": "menu.html?githubDemo"
+    }
+  ]
+}

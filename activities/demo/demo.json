@@ -1,4 +1,4 @@
-[
+{"cards":[
   {
     "id":"first",
   "description": "Touch the 3D object",
@@ -174,4 +174,4 @@
     "destiny":"menu.html?demo"
   }
   ]
-  
+}

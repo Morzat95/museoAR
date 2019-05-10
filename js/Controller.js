@@ -33,24 +33,14 @@ function run() {
   else {
     name = a.substring(a.indexOf("?") + 1, a.indexOf('#'));
   }
-
-
-
-  let testUrlDecoded = window.atob(name);
-  if(IsJsonString(testUrlDecoded)){
-    parseJson(testUrlDecoded,loadActivity);
-
-
-  }
-  else {
     console.log("activity= " + name);
     loadJSON(name, loadActivity); //loads .item.json
-  }
 
 
 }
 
-function loadActivity(jsonInput) {
+function loadActivity(activity) {
+  let jsonInput = activity.cards;
   currentCard = jsonInput[0];
   activity = new Map();
   console.log(jsonInput);

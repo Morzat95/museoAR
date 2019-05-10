@@ -1,38 +1,43 @@
-[
+{
+  "cards": [
     {
-    "id":"A",
-    "description": "",
-    "matrixURL":"other/demo.csv",
-    "objects":[
-      {
-        "id": "image0",
-        "marker":"kanji",
-        "position":"0 -0.1 0",
-        "rotation": "-80.091 -62.822 66.676",
-        "scale":"2 2 2",
-        "type":"a-image",
-        "src": "activities/mapa/demo2.png",
-        "onclick":"calculateOnMatrixPosition('image0','Y0');"
-      },{
-        "id": "Y0",
-        "marker":"hiro",
-        "type":"a-entity",
-        "file": "activities/mapa/windturbine.obj",
-        "position": "0.005 -0.465 -0.061",
-        "rotation": "0 0 0",
-        "scale": "0.001 0.001 0.001",
-        "material": {"color": "#414141"},
-        "onclick":"resetScale('image0',2);resetScale('Y0',0.001);"
-      },{
-        "id": "matrix",
-        "type":"matrix",
-        "marker":"kanji",
-        "width":0.0615,
-        "height":0.0615,
-        "xOffset":-0.69,
-        "yOffset":-0.87
-        
-      }
-    ]
+      "id": "A",
+      "description": "",
+      "matrixURL": "other/demo.csv",
+      "objects": [
+        {
+          "id": "image0",
+          "marker": "kanji",
+          "position": "0 -0.1 0",
+          "rotation": "-80.091 -62.822 66.676",
+          "scale": "2 2 2",
+          "type": "a-image",
+          "src": "activities/mapa/demo2.png",
+          "onclick": "calculateOnMatrixPosition('image0','Y0');"
+        },
+        {
+          "id": "Y0",
+          "marker": "hiro",
+          "type": "a-entity",
+          "file": "activities/mapa/windturbine.obj",
+          "position": "0.005 -0.465 -0.061",
+          "rotation": "0 0 0",
+          "scale": "0.001 0.001 0.001",
+          "material": {
+            "color": "#414141"
+          },
+          "onclick": "resetScale('image0',2);resetScale('Y0',0.001);"
+        },
+        {
+          "id": "matrix",
+          "type": "matrix",
+          "marker": "kanji",
+          "width": 0.0615,
+          "height": 0.0615,
+          "xOffset": -0.69,
+          "yOffset": -0.87
+        }
+      ]
     }
-    ]
+  ]
+}
