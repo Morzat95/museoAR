@@ -142,7 +142,7 @@ function loadCard(card) {
 
   }
   if (currentCard.type == "redirect") {
-    window.location.href = card.destiny;
+    redirect(card.destiny);
   }
 }
 function makeCardVisible(card) {
@@ -199,6 +199,10 @@ function log(action, value){
     }
 });
 }
+function redirect(url){
+  window.location.href = url;
+}
+
 
 function garbageCollection() {
   console.log("Removing card...");

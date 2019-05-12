@@ -106,6 +106,7 @@ This makes the framework really customizable if needed.
 | drawLine(id,otherId)| Draws a random-colored line between objects|
 | drawDistance(id,otherId)| Same as draw line but prints distance|
 | log(action, value)| Sends POST to server, server file on other/srvLog.php|
+| redirect(url)| Redirects to target URL|
 
 ## Menu Properties
 The **.menu** files allow to make a simple and fast menu for your activies and the ability to toggle AR on or off.
