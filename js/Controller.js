@@ -39,12 +39,12 @@ function run() {
 
 }
 
-function loadActivity(activity) {
-  let jsonInput = activity.cards;
-  currentCard = jsonInput[0];
+function loadActivity(input) {
+  let cards = input.cards;
+  currentCard = cards[0];
   activity = new Map();
-  console.log(jsonInput);
-  jsonInput.forEach(card => {
+  console.log(cards);
+  cards.forEach(card => {
     console.log("loading...id:" + card.id + " element: " + card.description);
     activity.set(card.id.toString(), card);
     if(card.matrixURL!=null){
