@@ -126,16 +126,11 @@
               "id": "video",
               "rotation": "-67.962 7.602 -7.026",
               "type":"a-video",
-              "src": "#videoNoLoop",
-              "onclick":"playPause('videoNoLoop')",
-              "children":[
-                {
-                  "id": "videoNoLoop",
-                  "type":"video",
-                  "src": "activities/demo/test.mp4",
-                  "loop":"false",
-                  "autoplay":"false"
-                }
+              "onclick":"playPause(this);",
+              "src": "activities/demo/test.mp4",
+              "loop":"true",
+              "autoplay":"true"
+            }
                 , {
                   "id": "image2",
                   "position": "0.951 0.114 -0.140",
@@ -143,7 +138,7 @@
                   "type":"a-image",
                   "src": "activities/demo/nextArrow.png"
                   ,"onclick":"goTo('F')"
-        
+
                 },
                   {
                     "id": "text",
@@ -156,9 +151,7 @@
                     "value":"Touch this arrow to end",
                     "onclick":"goTo('F')"
                   }
-              ]
-            }
-            ] 
+            ]
   },
   {
     "id":"F",

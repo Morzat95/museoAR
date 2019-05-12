@@ -236,8 +236,28 @@ function setObjectVisible(Jobj, value) {
   var obj = document.querySelector('#' + Jobj.id.toString());
   obj.setAttribute('visible', value);
 }
-function setObjectProperties(jObj, fatherID) {
+function setVideoProperties(jObj,fatherID){
+  console.log("setting video properties");
+  let object = {};
+  object.id = jObj.id+"_videoAsset";
+  object.type = "video";
+  object.src = jObj.src;
+  jObj.src = "#"+object.id;
+  object.loop = jObj.loop;
+  object.autoplay=jObj.autoplay;
+  if(jObj.onclick !== null && jObj.onclick.includes("playPause(this);")){
+    jObj.onclick = jObj.onclick.replace("playPause(this);", "playPause('"+jObj.id+"_videoAsset');");
+  }
+  jObj.loaded=true;
+  setObjectProperties(jObj,fatherID);
+  setObjectProperties(object,jObj.id);
+}
 
+function setObjectProperties(jObj, fatherID) {
+  if(jObj.type==="a-video"&&jObj.loaded==null){
+    setVideoProperties(jObj,fatherID);
+    return;
+  }
   var father = document.querySelector('#' + fatherID);
   var obj = document.createElement(jObj.type);
   obj.setAttribute('visible', false); //Makes the object invisible by default so that we can make it visible later
@@ -257,17 +277,20 @@ function setObjectProperties(jObj, fatherID) {
     obj.setAttribute('material', jObj.material);
   }
   if (jObj.src != null && jObj.material == null) {
+
     obj.setAttribute('src', jObj.src);
   }
   if (jObj.src != null && jObj.material != null) {
     obj.setAttribute('src', jObj.src);
     obj.setAttribute('material', jObj.material);
   }
-  if (jObj.type == "video") {
-    if (jObj.autoplay == "true") {
+  if (jObj.type === "video") {
+    if (jObj.autoplay!==null&&jObj.autoplay === "true") {
       obj.setAttribute('autoplay', '');
     }
-    obj.setAttribute('loop', jObj.loop);
+        if (jObj.loop!==null) {
+          obj.setAttribute('loop', 'true');
+    }
   }
   else {
     obj.setAttribute('color', jObj.color);
@@ -371,11 +394,14 @@ function play(id) {
 
 }
 function playPause(id) {
+  console.log("play pause:"+id);
   if (id == null) {
     id = currentCard.autoplay;
   }
+
   console.log("playPause: " + id);
   var aVideoAsset = document.querySelector('#' + id);
+
   if (aVideoAsset.paused == false) {
     aVideoAsset.pause();
   }
@@ -387,8 +413,9 @@ function playPause(id) {
 
     });
   }
-
-  aVideoAsset.setAttribute('loop', 'false');
+    /*if( aVideoAsset.getAttribute('loop')!==true) {
+      aVideoAsset.removeAttribute('loop');
+    }*/
 
 }
 
