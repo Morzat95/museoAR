@@ -1,51 +1,51 @@
 let activity;
 let activityItemsFile;
 
-function loadMenu(input){
-  loadJSON(input,loadActivity);
-  activityItemsFile=input;
+function loadMenu(input) {
+    loadJSON(input, loadActivity);
+    activityItemsFile = input;
 }
 
-function loadActivity(jsonInput){
-  console.log("loading Activity... "+jsonInput);
-  activity = jsonInput;
-  activityItemsFile=activity.itemsFile;
-  showActivity();
+function loadActivity(jsonInput) {
+    console.log("loading Activity... " + jsonInput);
+    activity = jsonInput;
+    activityItemsFile = activity.itemsFile;
+    showActivity();
 
 }
-function showActivity(){
-  //loads level data and shows it on card
-  $(function () {
-    $("#preview").attr("src",activity.preview);
-    $("#description").text(activity.description);
-    $("#name").text(activity.name);
-    
-  });
-}  
 
-function goTo(){
+function showActivity() {
+    //loads level data and shows it on card
+    $(function () {
+        $("#preview").attr("src", activity.preview);
+        $("#description").text(activity.description);
+        $("#name").text(activity.name);
 
-  if(activity.cards==null){ //If cards are not embedded
+    });
+}
 
-      if(document.getElementById("arCheck").checked){
-    window.location.href = "ar.html?"+activityItemsFile;
-  }
-    else{
+function goTo() {
 
-     window.location.href = "arEmu.html?"+activityItemsFile;
+    if (activity.cards == null) { //If cards are not embedded
+
+        if (document.getElementById("arCheck").checked) {
+            window.location.href = "ar.html?" + activityItemsFile;
+        } else {
+
+            window.location.href = "arEmu.html?" + activityItemsFile;
+        }
+    } else {//if cards are embedded on URL
+
+        let a = window.location.toString();
+        let parameter = a.substring(a.indexOf("?") + 1);
+        if (document.getElementById("arCheck").checked) {
+            window.location.href = "ar.html?" + parameter;
+        } else {
+
+            window.location.href = "arEmu.html?" + parameter;
+        }
+
     }
-  }
-  else{//if cards are embedded on URL
-
-          if(document.getElementById("arCheck").checked){
-    window.location.href = "ar.html?"+"/activity/1/download/";
-  }
-    else{
-
-     window.location.href = "arEmu.html?"+"/activity/1/download/";
-    }
-
-  }
 
 }
 
