@@ -253,7 +253,7 @@
   {
     "id": "third",
     "description": "El transformador se encuentra conectado correctamente",
-    "delay": "5000",
+    "value": "5000",
     "type": "delay",
     "next": "finBien",
     "objects": [
@@ -281,7 +281,7 @@
     "id": "bien",
     "description": "",
     "marker": "kanji",
-    "delay": "5000",
+    "value": "5000",
     "type": "delay",
     "clearAll":true,
     "next": "finBien",
@@ -304,7 +304,7 @@
     "id": "mal",
     "description": "",
     "marker": "kanji",
-    "delay": "5000",
+    "value": "5000",
     "clearAll": true,
     "type": "delay",
     "next": "finMal",

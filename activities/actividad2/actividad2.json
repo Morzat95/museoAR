@@ -256,7 +256,7 @@
   {
     "id": "third",
     "description": "La fuente de alimentación se encuentra conectada correctamente",
-    "delay": "5000",
+    "value": "5000",
     "type": "delay",
     "next": "corto",
     "objects": [
@@ -283,7 +283,7 @@
   {
     "id": "corto",
     "description": "Seleccionar los bornes para poner el transformador en cortocircuito",
-    "delay": "5000",
+    "value": "5000",
     "type": "delay",
     "next": "corto2",
     "objects": [
@@ -464,7 +464,7 @@
     "id": "cortoTerminado",
     "description": "El transformador se encuentra correctamente conectado para el ensayo de cortocircuito",
     "type":"delay",
-    "delay":"15000",
+    "value":"15000",
     "next":"finBien",
     "objects": [
       {
@@ -506,7 +506,7 @@
     "id": "bien",
     "description": "",
     "marker": "kanji",
-    "delay": "5000",
+    "value": "5000",
     "type": "delay",
     "clearAll": true,
     "next": "finBien",
@@ -529,7 +529,7 @@
     "id": "mal",
     "description": "",
     "marker": "kanji",
-    "delay": "5000",
+    "value": "5000",
     "clearAll": true,
     "type": "delay",
     "next": "finMal",
@@ -552,13 +552,13 @@
     "id": "finBien",
     "description": "",
     "type": "redirect",
-    "destiny": "menu.html?actividad2"
+    "value": "menu.html?actividad2"
   },
   {
     "id": "finMal",
     "description": "",
     "type": "redirect",
-    "destiny": "menu.html?actividad2"
+    "value": "menu.html?actividad2"
   }
 ]
 }

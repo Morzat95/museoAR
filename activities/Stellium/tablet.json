@@ -5,7 +5,7 @@
       "description": "@PLACA6A-SF.webm",
       "marker": "kanji",
       "type": "delay",
-      "delay": "5000",
+      "value": "5000",
       "next": "C",
       "autoplay": "source2",
       "objects": [
@@ -32,7 +32,7 @@
       "description": "@PLACA6B-SF.webm",
       "marker": "kanji",
       "type": "delay",
-      "delay": "5000",
+      "value": "5000",
       "next": "D",
       "autoplay": "source3",
       "objects": [
@@ -59,7 +59,7 @@
       "description": "@PLACA6C-SF.webm",
       "marker": "kanji",
       "type": "delay",
-      "delay": "5000",
+      "value": "5000",
       "next": "F",
       "autoplay": "source4",
       "objects": [
@@ -86,7 +86,7 @@
       "description": "@PLACA8A-SF.webm",
       "marker": "kanji",
       "type": "delay",
-      "delay": "5000",
+      "value": "5000",
       "next": "G",
       "autoplay": "source6",
       "objects": [
@@ -113,7 +113,7 @@
       "description": "@PLACA8B-SF.webm",
       "marker": "kanji",
       "type": "delay",
-      "delay": "5000",
+      "value": "5000",
       "next": "H",
       "autoplay": "source7",
       "objects": [
@@ -140,7 +140,7 @@
       "description": "@PLACA8C-SF.webm",
       "marker": "kanji",
       "type": "delay",
-      "delay": "5000",
+      "value": "5000",
       "next": "I",
       "autoplay": "source8",
       "objects": [

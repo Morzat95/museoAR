@@ -137,12 +137,12 @@ function loadCard(card) {
   }
   makeCardVisible(card);
   drawText(card.description);
-  if (card.type == "delay") {
+  if (card.type === "delay") {
     startTimer(card);
 
   }
-  if (currentCard.type == "redirect") {
-    redirect(card.destiny);
+  if (currentCard.type === "redirect") {
+    redirect(card.value);
   }
 }
 function makeCardVisible(card) {
@@ -347,7 +347,7 @@ function drawText(text) {
 }
 
 function startTimer(item) {
-  var delayInMilliseconds = item.delay;
+  var delayInMilliseconds = item.value;
   item.delayStart = Date.now();
   setTimeout(function (timeout) {
     var diff = Date.now() - item.delayStart;

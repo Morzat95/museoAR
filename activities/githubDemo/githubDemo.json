@@ -19,7 +19,7 @@
       "id": "B",
       "description": "Congratulations! you made it!",
       "type": "delay",
-      "delay": "5000",
+      "value": "5000",
       "next": "C",
       "objects": [
         {

@@ -20,7 +20,7 @@
     "id":"B",
     "description": "Recursive algorithm for adding children, in this case the soccerballs are children of the rectangle object",
     "type":"delay",
-    "delay":"5000",
+    "value":"5000",
     "next":"C",
     "marker":"kanji",
   
@@ -104,7 +104,7 @@
     "id":"D",
     "description": "Works with images too",
     "type":"delay",
-    "delay":"5000",
+    "value":"5000",
     "next":"B",
     "marker":"kanji",
     "objects":[
@@ -129,17 +129,17 @@
               "onclick":"playPause(this);",
               "src": "activities/demo/test.mp4",
               "loop":"true",
-              "autoplay":"true"
+              "autoplay":"false"
             }
                 , {
-                  "id": "image2",
-                  "position": "0.951 0.114 -0.140",
-                  "rotation":"1.4828147737985706 4.438131081083357 -1.8752908634631846",
-                  "type":"a-image",
-                  "src": "activities/demo/nextArrow.png"
-                  ,"onclick":"goTo('F')"
+            "id": "image2",
+            "rotation": "-67.962 7.602 -7.026",
+            "position": "0.886 0.161 -0.038",
+            "type":"a-image",
+            "src": "activities/demo/nextArrow.png"
+            ,"onclick":"goTo('F')"
 
-                },
+          },
                   {
                     "id": "text",
                     "type":"a-text",
@@ -157,14 +157,14 @@
     "id":"F",
     "description": "End of activity returning home",
     "type":"delay",
-    "delay":"2000",
+    "value":"2000",
     "next":"G"
   },
   {
     "id":"G",
     "description": "",
     "type":"redirect",
-    "destiny":"menu.html?demo"
+    "value":"menu.html?demo"
   }
   ]
 }
