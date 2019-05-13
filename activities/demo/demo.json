@@ -92,9 +92,7 @@
               "type":"a-text",
               "position": "-1.132 0.080 -0.792",
               "rotation": "-70.739 7.139 -5.376",
-              "side":"double",
               "color": "orange",
-              "shadow":"receive: true",
               "value":"Touch the arrow!!!",
               "onclick":"goTo('E')"
             }
@@ -145,9 +143,7 @@
                     "type":"a-text",
                     "position": "-0.545 0.520 -0.571",
                     "rotation": "-10.060 2.581 -3.028",
-                    "side":"double",
                     "color": "orange",
-                    "shadow":"receive: true",
                     "value":"Touch this arrow to end",
                     "onclick":"goTo('F')"
                   }
