@@ -1,7 +1,9 @@
 let activity;
 let activityItemsFile;
+let hasPassword = false;
 
 function loadMenu(input) {
+
     loadJSON(input, loadActivity);
     activityItemsFile = input;
 }
@@ -20,11 +22,21 @@ function showActivity() {
         $("#preview").attr("src", activity.preview);
         $("#description").text(activity.description);
         $("#name").text(activity.name);
+        if(activity.password!==null&&activity.password!==undefined){
+            hasPassword = true;
+            $("#passwordInput").show();
+        }
 
     });
 }
 
 function goTo() {
+    if(hasPassword){
+        if(activity.password.localeCompare($("#passwordInput").val())!==0){ //if password does not match
+            $("#invalid").show();
+            return;
+        }
+    }
 
     if (activity.cards == null) { //If cards are not embedded
 

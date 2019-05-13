@@ -40,7 +40,10 @@
             <input type="checkbox" class="form-check-input" id="arCheck">
             <label class="form-check-label" for="arCheck">AR</label>
         </div>
-
+        <input class="form-control" id="passwordInput" placeholder="Código">
+        <div id="invalid" class="invalid-feedback">
+        Error...
+        </div>
         <a onclick="goTo()" class="btn btn-primary play-overlay"></a>
     </div>
 </div>
@@ -50,8 +53,10 @@
     let a = window.location.toString();
     let parameter = a.substring(a.indexOf("?") + 1);
     let url = a.substring(0,a.indexOf("/static"));
-    loadJSON(url+parameter, loadActivity);
     $("#arCheck").prop('checked', true);
+    $("#passwordInput").hide();
+    loadJSON(url+parameter, loadActivity);
+
 </script>
 </body>
 </html>
