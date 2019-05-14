@@ -245,7 +245,7 @@ function setVideoProperties(jObj,fatherID){
   jObj.src = "#"+object.id;
   object.loop = jObj.loop;
   object.autoplay=jObj.autoplay;
-  if(jObj.onclick !== null && jObj.onclick.includes("playPause(this);")){
+  if(jObj.onclick !== null &&jObj.onclick!==undefined&& jObj.onclick.includes("playPause(this);")){
     jObj.onclick = jObj.onclick.replace("playPause(this);", "playPause('"+jObj.id+"_videoAsset');");
   }
   jObj.loaded=true;
