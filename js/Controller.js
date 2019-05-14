@@ -273,11 +273,22 @@ function setObjectProperties(jObj, fatherID) {
   obj.setAttribute('height', jObj.height);
   obj.setAttribute('depth', jObj.depth);
   obj.setAttribute('jsonLoaded', '');
-  if (jObj.file != null) {
-    obj.setAttribute('obj-model', 'obj', 'url(' + jObj.file + ')');
+  if(jObj.type==="a-entity") {
+    if(jObj.src!==null&&jObj.src!==undefined){ //if defined using SRC instead of file
+      obj.setAttribute('obj-model', 'obj', 'url(' + jObj.src + ')');
+      if(jObj.color!==null&&jObj.color!==undefined) {
+        obj.setAttribute('material', 'color', jObj.color);
+      }
+
+    }
+    else if (jObj.file !== null&&jObj.file!==undefined) {  //file needs to be deprecated
+      obj.setAttribute('obj-model', 'obj', 'url(' + jObj.file + ')');
+    }
+
   }
 
-  if (jObj.material != null && jObj.src == null) {
+
+  if (jObj.material != null && jObj.src == null) {  //This is a horrible mess and needs to go and be replaced by case by case (type) logic
     obj.setAttribute('material', jObj.material);
   }
   if (jObj.src != null && jObj.material == null) {
