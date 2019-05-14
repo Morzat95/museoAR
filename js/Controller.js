@@ -136,7 +136,11 @@ function loadCard(card) {
 
   }
   makeCardVisible(card);
-  drawText(card.description);
+
+  if(card.description!==null&&card.description!==undefined){
+    drawText(card.description);
+  }
+
   if (card.type === "delay") {
     startTimer(card);
 
