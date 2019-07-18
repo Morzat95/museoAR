@@ -327,13 +327,13 @@
     "id": "finBien",
     "description": "",
     "type": "redirect",
-    "destiny": "menu.html?actividad2"
+    "value": "menu.html?actividad2"
   },
   {
     "id": "finMal",
     "description": "",
     "type": "redirect",
-    "destiny": "menu.html?actividad"
+    "value": "menu.html?actividad"
   }
 ]
 }
