@@ -9,9 +9,9 @@
   <link rel="stylesheet" type="text/css" href="lib/styles/styles.css" />
   <script src="lib/jquery.min.js"></script>
   <script src="js/fileUtils.js"></script>
-  <script>loadJSON('other/ARjsMultiMarkerFile', function (response) {
+ <!-- <script>loadJSON('other/ARjsMultiMarkerFile', function (response) {
       localStorage.setItem('other/ARjsMultiMarkerFile', JSON.stringify(response));
-    })</script>
+    })</script>Disabled due to marker loading issues-->
   <script src="lib/aframe.min.js"></script>
   <script src="lib/aframe-ar.js"></script>
   <script src="js/Controller.js"></script>
@@ -41,7 +41,7 @@
 
     <a-marker id="kanji" type="pattern" preset='kanji'></a-marker>
     <a-marker id="hiro" type="pattern" preset='hiro'></a-marker>
-    <a-marker id="multi" preset='area'></a-marker>
+    <!--<a-marker id="multi" preset='area'></a-marker>Disabled due to marker loading issues-->
 
     </a-marker>
     <a-entity camera mouse-cursor></a-entity>
