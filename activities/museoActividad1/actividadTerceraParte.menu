@@ -1,0 +1,12 @@
+{
+    "name":"Tarjeta Inversa",
+    "description":"Buscá una tarjeta igual a esta y apuntale con la cámara.",
+    "preview": "activities/museoActividad1/hiro.png",
+    "cards": [
+        {
+            "id": "Redirect",
+            "type": "redirect",
+            "value": "../../ar.html?activities/museoActividad1/actividadTerceraParte.json"
+        }
+    ]
+}

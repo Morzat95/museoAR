@@ -1,0 +1,36 @@
+{"cards":[
+    {
+      "id": "first",
+      "description": "Este es un mensaje de testeo",
+      "next": "second",
+      "objects": [
+        {
+          "id": "cuboverde",
+          "marker": "custom",
+          "rotation": "0 0 0",
+          "position": "0 0 0",
+          "type": "a-box",
+          "scale": "1 1 1",
+          "color": "green",
+          "onclick": "goTo('second')"
+        }
+      ]
+    },
+    {
+      "id": "second",
+      "description": "Otro test",
+      "objects": [
+        {
+          "id": "cuboverde",
+          "marker": "custom",
+          "rotation": "0 0 0",
+          "position": "0 0 0",
+          "type": "a-box",
+          "scale": "1 1 1",
+          "color": "red",
+          "onclick": "goTo('first')"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+    "name":"Test Hiro Invertido",
+    "description":"Testeando Hiro invertido para actividad de los espejos.",
+    "preview": "activities/testActivity/hiroInvertidoV3.png",
+    "itemsFile": "activities/testActivity/actividad.json"
+}

@@ -35,26 +35,23 @@
 
 
   <a id="playButton" onclick="firstPlay()" class="btn btn-primary play-overlay"></a>
-  <a-scene id="scene" markerhandler render-queue embedded arjs='sourceType:webcam; debugUIEnabled: false; detectionMode: mono; cameraParametersUrl: other/calibracion.dat;  maxDetectionRate:20;'
-    vr-mode-ui="enabled: false;">
+  <a-scene id="scene" markerhandler cursor="rayOrigin: mouse" render-queue embedded  arjs='sourceType:image;sourceUrl: other/hiroInvertidoV3.png; debugUIEnabled: false; detectionMode: mono; cameraParametersUrl: other/calibracion.dat;  maxDetectionRate:20;'
+    vr-mode-ui="enabled: false;"> 
 
-
-    <a-marker id="kanji" type="pattern" preset='kanji'></a-marker>
-    <a-marker id="hiro" type="pattern" preset='hiro'></a-marker>
-    <a-marker id="custom" type="pattern" preset="custom" url="other/hiroInvertidoV2.patt"></a-marker>
+    <a-marker id="custom" preset="custom" type="pattern" url="other/hiroInvertidoV2.patt"></a-marker>
     <!--<a-marker id="multi" preset='area'></a-marker>Disabled due to marker loading issues-->
 
     </a-marker>
-    <a-entity camera mouse-cursor></a-entity>
-    <a-cursor id="spinner" visible="false" fuse="false" color="yellow"></a-cursor>
+
+    <a-entity camera id="spinner"></a-entity>
+
     </a-entity>
   </a-scene>
 
 
   <script>
     hideOrShow("playButton");
-    run();
-  </script>
+    run();</script>
 </body>
 
 </html>

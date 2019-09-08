@@ -1,0 +1,16 @@
+{"cards":
+    [
+        {
+            "id": "TarjInvers",
+            "type": "delay",
+            "value": 1,
+            "marker": "hiro",
+            "next": "FinMenu"
+        },
+        {
+            "id": "FinMenu",
+            "type": "redirect",
+            "value": "../../genMenu.html?activities/museoActividad1/actividadFin.menu"
+        }
+    ]
+}

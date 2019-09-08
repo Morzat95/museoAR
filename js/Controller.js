@@ -1,4 +1,3 @@
-
 var a = window.location.toString();
 var name;
 var playing = false;
@@ -10,7 +9,6 @@ var renderObjsIDs = new Set();
 var lastClicked = "";
 var id;
 var logAddress="https://loggermuseoar.000webhostapp.com/srvLog.php";
-
 
 
 function run() {
@@ -26,17 +24,15 @@ function run() {
     console.log("cookieLoaded="+cookie)
   }
 
-
   if (a.indexOf('#') === -1) {
     name = a.substring(a.indexOf("?") + 1);
   }
   else {
     name = a.substring(a.indexOf("?") + 1, a.indexOf('#'));
   }
-    console.log("activity= " + name);
-    loadJSON(name, loadActivity); //loads .item.json
 
-
+  console.log("activity= " + name);
+  loadJSON(name, loadActivity); //loads .item.json
 }
 
 function loadActivity(input) {
@@ -194,6 +190,7 @@ function log(action, value){
     dataType: "json",
     cache: false,
     data: {
+        "name": window.btoa(name),
         "action" : window.btoa(action),
         "value" : window.btoa(value),
         "id" : window.btoa(id)
@@ -201,8 +198,9 @@ function log(action, value){
     success: function( data ){
         console.log(data);
     }
-});
+  });
 }
+
 function redirect(url){
   window.location.href = url;
 }
