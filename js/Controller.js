@@ -20,7 +20,7 @@ function run() {
     options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short'};
 
     id=generateUUID();
-    document.cookie = id + "; expires=" + expirationDate.toLocaleDateString("es-AR", options);
+    document.cookie = id + "; expires=" + expirationDate.toLocaleDateString("es-AR", options) + ";";
     console.log("cookieGenerated=" + document.cookie)
   }
   else {
