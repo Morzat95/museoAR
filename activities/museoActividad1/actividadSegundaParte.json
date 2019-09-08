@@ -1,0 +1,98 @@
+{"cards":
+    [
+        {
+            "id": "Manos",
+            "description": "Tu reflejo/imagen en el espejo, ¿qué mano levanta?",
+            "objects": [
+                {
+                    "id": "BtnIzq",
+                    "position": "-0.6 0 0",
+                    "rotation": "-59.011 -8.634 2.707",
+                    "scale": "1 1 1",
+                    "type": "a-image",
+                    "onclick": "goTo('MsgMal')",
+                    "src": "activities/museoActividad1/mano_izquierda.png",
+                    "marker": "kanji",
+                    "children": [
+                        {
+                            "id": "btnManoIzq",
+                            "position": "0 -0.6 0",
+                            "rotation": "-25.595 21.075 1.090",
+                            "scale": "0.5 0.2 0.2",
+                            "type": "a-box",
+                            "color": "red",
+                            "onclick": "goTo('MsgMal')",
+                            "children": [
+                                {
+                                    "id": "textoBtnManoIzq",
+                                    "position": "-0.49 0 0.5",
+                                    "rotation": "-20 -16 1",
+                                    "scale": "3 3 3",
+                                    "type": "a-text",
+                                    "color": "black",
+                                    "value": "Mano Izquierda"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "BtnDer",
+                    "position": "0.6 0 0",
+                    "rotation": "-59.011 -8.634 2.707",
+                    "scale": "1 1 1",
+                    "type": "a-image",
+                    "onclick": "goTo('MsgBien');",
+                    "src": "activities/museoActividad1/mano_derecha.png",
+                    "marker": "kanji",
+                    "children": [
+                        {
+                            "id": "btnManoDer",
+                            "position": "0 -0.6 0",
+                            "rotation": "-23.488 -2.459 2.9",
+                            "scale": "0.5 0.2 0.2",
+                            "type": "a-box",
+                            "color": "green",
+                            "onclick": "goTo('MsgBien')",
+                            "children": [
+                                {
+                                    "id": "textoBtnManoDer",
+                                    "position": "-0.49 0 0.5",
+                                    "rotation": "-20 -16 0",
+                                    "scale": "3 3 3",
+                                    "type": "a-text",
+                                    "color": "black",
+                                    "value": "Mano Derecha"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "MsgMal",
+            "description": "Volvé a intentarlo.",
+            "type": "delay",
+            "value": 3000,
+            "next": "Retry"
+        },
+        {
+            "id": "Retry",
+            "type": "redirect",
+            "value": "../../genMenu.html?activities/museoActividad1/actividadSegundaParte.menu"
+        },
+        {
+            "id": "MsgBien",
+            "description": "¡Excelente! Pasás a la siguiente etapa.",
+            "type": "delay",
+            "value": 3000,
+            "next": "RedirectBien"
+        },
+        {
+            "id": "RedirectBien",
+            "type": "redirect",
+            "value": "../../genMenu.html?activities/museoActividad1/actividadTerceraParte.menu"
+        }
+    ]
+}

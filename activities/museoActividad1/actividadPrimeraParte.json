@@ -1,0 +1,15 @@
+{"cards":
+    [
+        {
+            "name": "Hágase la Luz",
+            "description": "Para conseguir la pieza de tetris de esta sala tendrás que encontrar el código que abre el candado.",
+            "cards": [
+                {
+                    "id": "Redirect",
+                    "type": "redirect",
+                    "value": "https://proyectar-alt.herokuapp.com/static/AR/genMenu.html?/activity/5/download/"
+                }
+            ]
+        }
+    ]
+}

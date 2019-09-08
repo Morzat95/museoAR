@@ -1,0 +1,82 @@
+{
+    "name":"Hágase la Luz",
+    "description":"Para conseguir la pieza de tetris de esta sala tendrás que encontrar el código que abre el candado.",
+    "cards":
+    [
+        {
+            "name": "Levanta Mano",
+            "description": "Levantá la mano izquierda frente al espejo plano. Después tocá el botón.",
+            "cards": [
+                {
+                    "id": "Manos",
+                    "description": "Tu reflejo/imagen en el espejo, ¿qué mano levanta?",
+                    "objects": [
+                        {
+                            "id": "BtnIzq",
+                            "position": "0 0 0",
+                            "rotation": "0 0 0",
+                            "scale": "1 1 1",
+                            "type": "a-image",
+                            "onclick": "goTo('Retry')",
+                            "src": "mano_izq1.jpg",
+                            "marker": "hiro"
+                        },
+                        {
+                            "id": "BtnDer",
+                            "position": "0 0 0",
+                            "rotation": "0 0 0",
+                            "scale": "1 1 1",
+                            "type": "a-image",
+                            "onclick": "redirect('https://proyectar-alt.herokuapp.com/static/AR/genMenu.html?/activity/9/download/')",
+                            "src": "mano_der3.jpg",
+                            "marker": "kanji"
+                        }
+                    ]
+                },
+                {
+                    "id": "Retry",
+                    "description": "Volvé a intentarlo.",
+                    "type": "redirect",
+                    "value": "https://proyectar-alt.herokuapp.com/static/AR/genMenu.html?/activity/5/download/"
+                }
+            ]
+        },
+        {
+            "name": "Tarjeta Inversa",
+            "description": "Buscá una tarjeta igual a esta y apuntale con la cámara. (imgen de lo que tiene que buscar)",
+            "cards": [
+                {
+                    "id": "TarjInvers",
+                    "objects": [
+                        {
+                            "id": "ImgOk",
+                            "position": "0 0 0",
+                            "rotation": "0 0 0",
+                            "scale": "1 1 1",
+                            "type": "a-image",
+                            "onclick": "drawText('¡Lo lograste! El código es ANismanLoMataron. Usalo para abrir el candado.')",
+                            "src": "../../media/Morzat/ImgOk/hiro_ok.png",
+                            "marker": "kanji"
+                        },
+                        {
+                            "id": "ImgErr",
+                            "position": "0 0 0",
+                            "rotation": "0 0 0",
+                            "scale": "1 1 1",
+                            "type": "a-image",
+                            "onclick": "goTo('RetryInver')",
+                            "src": "../../media/Morzat/ImgErr/hiro_invertido.png",
+                            "marker": "hiro"
+                        }
+                    ]
+                },
+                {
+                    "id": "RetryInver",
+                    "description": "Estás cerca. Volvé a intentarlo.",
+                    "type": "redirect",
+                    "value": "https://proyectar-alt.herokuapp.com/static/AR/genMenu.html?/activity/9/download/"
+                }
+            ]
+        }
+    ]
+}
