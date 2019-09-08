@@ -14,12 +14,16 @@ var logAddress="https://loggermuseoar.000webhostapp.com/srvLog.php";
 function run() {
 
   let cookie = document.cookie;
-  if(cookie==""){
+  if(cookie=="") {
+    expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 365); // Coookie expires 1 year from now
+    options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short'};
+
     id=generateUUID();
-    document.cookie =id+"; expires=Thu, 1 Jan 2019 12:00:00 UTC;";
-    console.log("cookieGenerated="+document.cookie)
+    document.cookie = id + "; expires=" + expirationDate.toLocaleDateString("es-AR", options);
+    console.log("cookieGenerated=" + document.cookie)
   }
-  else{
+  else {
     id=cookie.substring(cookie.indexOf(";"));
     console.log("cookieLoaded="+cookie)
   }
@@ -52,6 +56,7 @@ function loadActivity(input) {
   preLoadCard(currentCard);
   console.log(activity);
 }
+
 function generateUUID() { // Public Domain/MIT
   var d = new Date().getTime();
   if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
@@ -82,7 +87,6 @@ function getCardMarkers(card) {
   }
   return markerSet;
 }
-
 
 function preLoadCard(card) {
   if (card == null) {
@@ -145,9 +149,11 @@ function loadCard(card) {
     redirect(card.value);
   }
 }
+
 function makeCardVisible(card) {
   iterateObjects(card.objects, true, setObjectVisible);
 }
+
 function deleteCard(card) {
   iterateObjects(card.objects, false, setObjectVisible);
   iterateObjects(card.objects, true, markForRemoval);
@@ -170,6 +176,7 @@ function logCurrentObjects() {
 
   });
 }
+
 function goTo(next) {
   historyStack.push(currentCard.id);
   deleteCard(currentCard);
@@ -181,7 +188,6 @@ function goTo(next) {
   //log("goTo",currentCard.id); logging for data analysis
   playing = false;
 }
-
 
 function log(action, value){
   $.ajax({
@@ -204,7 +210,6 @@ function log(action, value){
 function redirect(url){
   window.location.href = url;
 }
-
 
 function garbageCollection() {
   console.log("Removing card...");
@@ -238,6 +243,7 @@ function setObjectVisible(Jobj, value) {
   var obj = document.querySelector('#' + Jobj.id.toString());
   obj.setAttribute('visible', value);
 }
+
 function setVideoProperties(jObj,fatherID){
   console.log("setting video properties");
   let object = {};
@@ -339,6 +345,7 @@ function iterateObjects(jsonInput, value, callback) {
   }
 
 }
+
 function appendText(text) {
 
   var obj = document.createElement('li');
@@ -347,6 +354,7 @@ function appendText(text) {
   var list = document.querySelector("#checklist");
   list.appendChild(obj);
 }
+
 function drawText(text) {
   var obj = document.createElement('li');
   obj.innerText = text;
@@ -378,11 +386,13 @@ function startTimer(item) {
   }, delayInMilliseconds);
 
 }
+
 function firstPlay() {
   hideOrShow("playButton");
   play();
   drawText("Comenzando...");
 }
+
 function hideOrShow(id) {
   var x = document.getElementById(id);
   if (x.style.display === "none") {
@@ -391,6 +401,7 @@ function hideOrShow(id) {
     x.style.display = "none";
   }
 }
+
 function play(id) {
   if (id == null) {
     id = currentCard.autoplay;
@@ -406,6 +417,7 @@ function play(id) {
   aVideoAsset.setAttribute('loop', 'false');
 
 }
+
 function playPause(id) {
   console.log("play pause:"+id);
   if (id == null) {
@@ -432,9 +444,6 @@ function playPause(id) {
 
 }
 
-
-
-
 function increaseScale(entityID, value) {
   var obj = document.querySelector('#' + entityID);
   var scale = obj.getAttribute('scale');
@@ -442,14 +451,13 @@ function increaseScale(entityID, value) {
   obj.setAttribute('scale', Number(scale.x + value) + " " + Number(scale.y + value) + " " + Number(scale.z + value));
 
 }
+
 function resetScale(entityID, value) {
   var obj = document.querySelector('#' + entityID);
   console.log('scale', Number(value) + " " + value + " " + value);
   obj.setAttribute('scale', Number(value) + " " + Number(value) + " " + Number(value));
 
 }
-
-
 
 function drawMatrix(matrix,markerID,width,height,YOffset,XOffset){
   var matrixObjID = guidGenerator();
@@ -474,10 +482,8 @@ function drawMatrix(matrix,markerID,width,height,YOffset,XOffset){
       marker.add(matrixObj);
 
     }
-});
-
-    
-  }
+  });  
+}
 
 function matrixHelper(matrix,width,height,YOffset,XOffset){
   var size=Object.keys(matrix).length;
@@ -604,14 +610,12 @@ function cellColorGenerator(cellPoints) {
 	return (c);
 }
 
-
 function guidGenerator() {
   var S4 = function () {
     return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
   };
   return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
 }
-
 
 function drawCircle(IDEntity) {
   var circleID = guidGenerator();
@@ -733,6 +737,7 @@ function drawDistance(IDEntity, IDOtherEntity) {
   });
 
 }
+
 function isCurrentMarkerVisible() {
   if (currentCard == null) {
     return false;
@@ -801,6 +806,7 @@ function clearRenderer() {
   renderObjsIDs = new Set();
   console.log("clearing renderder...");
 }
+
 AFRAME.registerComponent('render-queue', {
   init: function () {
     // Set up the tick throttling. Will check if marker is active every 500ms
@@ -842,6 +848,3 @@ AFRAME.registerComponent('cursor-listener', {
     });
   }
 });
-
-
-
