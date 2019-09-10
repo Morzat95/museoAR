@@ -1,0 +1,12 @@
+{
+    "name":"Desde Prometeo y el Fuego",
+    "description":"Para conseguir la pieza de tetris de esta sala tendrรกs que obtener el cรณdigo del candado.",
+    "preview": "other/Prometeo.png",
+    "cards": [
+        {
+            "id": "Redirect",
+            "type": "redirect",
+            "value": "../../arMuseo.html?activities/museoActividad3/actividadPrimeraParte.json"
+        }
+    ]
+}

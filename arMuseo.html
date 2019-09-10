@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <title>
+    MuseoAR
+  </title>
+  <meta name="Demo Realidad Aumentada" content="MuseoAR">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="lib/styles/styles.css" />
+  <script src="lib/jquery.min.js"></script>
+  <script src="js/fileUtils.js"></script>
+ <!-- <script>loadJSON('other/ARjsMultiMarkerFile', function (response) {
+      localStorage.setItem('other/ARjsMultiMarkerFile', JSON.stringify(response));
+    })</script>Disabled due to marker loading issues-->
+  <script src="lib/aframe.min.js"></script>
+  <script src="lib/aframe-ar.js"></script>
+  <script src="js/Controller.js"></script>
+  <script src="js/museoActividad3.js"></script>
+
+  
+
+</head>
+
+
+<body style='margin : 0px; overflow: hidden;'>
+  <ul id="checklist" class="checklist" style="list-style-type:none">
+  </ul>
+  <div class="scanningSpinner">
+    <label>
+      Scanning
+    </label>
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+  </div>
+
+
+  <a id="playButton" onclick="firstPlay()" class="btn btn-primary play-overlay"></a>
+  <a-scene id="scene" markerhandler render-queue embedded arjs='sourceType:webcam; debugUIEnabled: false; detectionMode: mono; cameraParametersUrl: other/calibracion.dat;  maxDetectionRate:20;'
+    vr-mode-ui="enabled: false;">
+
+
+    <a-marker id="A" type="pattern" preset="custom" url="other/pattern-A.patt"></a-marker>
+    <a-marker id="B" type="pattern" preset="custom" url="other/pattern-B.patt"></a-marker>
+    <a-marker id="C" type="pattern" preset="custom" url="other/pattern-C.patt"></a-marker>
+    <a-marker id="D" type="pattern" preset="custom" url="other/pattern-D.patt"></a-marker>
+
+    </a-marker>
+    <a-entity camera mouse-cursor></a-entity>
+    <a-cursor id="spinner" visible="false" fuse="false" color="yellow"></a-cursor>
+    </a-entity>
+  </a-scene>
+
+
+  <script>
+    hideOrShow("playButton");
+    run();
+  </script>
+</body>
+
+</html>

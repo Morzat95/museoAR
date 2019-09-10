@@ -1,0 +1,142 @@
+{
+    "cards": [
+        {
+            "id": "Telefonos",
+            "description": "Prestá mucha atención a la información",
+            "objects": [
+                {
+                    "id": "BtnTel1",
+                    "type": "a-box",
+                    "marker": "A",
+                    "color": "orange",
+                    "position":"0 0 0.5",
+                    "rotation": "0 0 -20",
+                    "scale": "0.5 0.2 0.2",
+                    "onclick": "read(0);changeColor('BtnTel1', '#03c6fc');changeValue('TxtBtnTel1', 'Visto');hide('InfoTel1');",
+                    "children": [
+                        {
+                            "id": "InfoTel1",
+                            "type": "a-text",
+                            "value": "2019-07-01",
+                            "color": "red",
+                            "position": "-1 0 -3",
+                            "rotation": "-71.105 -174.799 177.579",
+                            "scale": "10 10 5"
+                        },
+                        {
+                            "id": "TxtBtnTel1",
+                            "type": "a-text",
+                            "value": "Ya lo vi",
+                            "color": "black",
+                            "position": "-0.35 1 0",
+                            "rotation": "-71.105 -174.799 177.579",
+                            "scale": "5 5 5"
+                        }
+                    ]
+                },
+                {
+                    "id": "BtnTel2",
+                    "type": "a-box",
+                    "marker": "B",
+                    "color": "orange",
+                    "position":"0 0 0.5",
+                    "rotation": "0 0 20",
+                    "scale": "0.5 0.2 0.2",
+                    "onclick": "read(1);changeColor('BtnTel2', '#03c6fc');changeValue('TxtBtnTel2', 'Visto');hide('InfoTel2');",
+                    "children": [
+                        {
+                            "id": "InfoTel2",
+                            "type": "a-text",
+                            "value": "2019-06-23",
+                            "color": "red",
+                            "position": "-1 0 -3",
+                            "rotation": "-69.862 -167.793 165.692",
+                            "scale": "10 10 5"
+                        },
+                        {
+                            "id": "TxtBtnTel2",
+                            "type": "a-text",
+                            "value": "Ya lo vi",
+                            "color": "black",
+                            "position": "-0.35 1 0",
+                            "rotation": "-71.105 -174.799 177.579",
+                            "scale": "5 5 5"
+                        }
+                    ]
+                },
+                {
+                    "id": "BtnTel3",
+                    "type": "a-box",
+                    "marker": "C",
+                    "color": "orange",
+                    "position":"0 0 0.5",
+                    "rotation": "0 0 -20",
+                    "scale": "0.5 0.2 0.2",
+                    "onclick": "read(2);changeColor('BtnTel3', '#03c6fc');changeValue('TxtBtnTel3', 'Visto');hide('InfoTel3');",
+                    "children": [
+                        {
+                            "id": "InfoTel3",
+                            "type": "a-text",
+                            "value": "2015-09-04",
+                            "color": "red",
+                            "position": "-1 0 -3",
+                            "rotation": "-71.105 -174.799 177.579",
+                            "scale": "10 10 5"
+                        },
+                        {
+                            "id": "TxtBtnTel3",
+                            "type": "a-text",
+                            "value": "Ya lo vi",
+                            "color": "black",
+                            "position": "-0.35 1 0",
+                            "rotation": "-71.105 -174.799 177.579",
+                            "scale": "5 5 5"
+                        }
+                    ]
+                },
+                {
+                    "id": "BtnTel4",
+                    "type": "a-box",
+                    "marker": "D",
+                    "color": "orange",
+                    "position":"0 0 0.5",
+                    "rotation": "0 0 20",
+                    "scale": "0.5 0.2 0.2",
+                    "onclick": "read(3);changeColor('BtnTel4', '#03c6fc');changeValue('TxtBtnTel4', 'Visto');hide('InfoTel4');",
+                    "children": [
+                        {
+                            "id": "InfoTel4",
+                            "type": "a-text",
+                            "value": "2018-02-16",
+                            "color": "red",
+                            "position": "-1 0 -3",
+                            "rotation": "-71.105 -174.799 177.579",
+                            "scale": "10 10 5"
+                        },
+                        {
+                            "id": "TxtBtnTel4",
+                            "type": "a-text",
+                            "value": "Ya lo vi",
+                            "color": "black",
+                            "position": "-0.35 1 0",
+                            "rotation": "-71.105 -174.799 177.579",
+                            "scale": "5 5 5"
+                        }
+                    ] 
+                }
+            ]
+        },
+        {
+            
+            "id": "Ordenar",
+            "type": "delay",
+            "value": 1,
+            "next": "Ordenar2"
+        },
+        {
+            "id": "Ordenar2",
+            "type": "redirect",
+            "value": "genMenuMuseo.html?activities/museoActividad3/actividadSegundaParte.menu"
+        }
+    ]
+}
