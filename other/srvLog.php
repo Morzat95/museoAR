@@ -9,6 +9,7 @@
         $timestamp64 = (isset($_POST['timestamp']) ? $_POST['timestamp'] : "");
         $id64 = (isset($_POST['id']) ? $_POST['id'] : "");
 
+
         if($activityID64 === "" || $action64 === "" || $value64 === "" || $timestamp64 === "" ||$id64 === "")
         {
             throw new Exception("Request error!");
@@ -24,6 +25,7 @@
         // format
         $header = "ActivityID,Action,Value,Timestamp,Id\n";
         $row = "$activityID,$action,$value,$timestamp,$id\n";
+
 
         if(!file_exists("log.csv")){
             file_put_contents("log.csv", $header);
