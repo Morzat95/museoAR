@@ -6,7 +6,7 @@
         {
             "id": "Redirect",
             "type": "redirect",
-            "value": "../../arMuseo.html?activities/museoActividad3/actividadPrimeraParte.json"
+            "value": "arMuseo.html?activities/museoActividad3/actividadPrimeraParte.json"
         }
     ]
 }
