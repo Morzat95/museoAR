@@ -55,7 +55,7 @@ Just point to this **AR Marker** or uncheck AR on the menu to try it on a deskto
       "id":"C",
       "description":"",
       "type":"redirect",
-      "destiny":"menu.html?githubDemo"
+      "value":"menu.html?githubDemo"
    }
 ]
 ```
