@@ -190,6 +190,10 @@ function goTo(next) {
 }
 
 function log(action, value){
+  // Adding time format
+  options = {year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'};
+  timestamp = (new Date()).toLocaleDateString("es-AR", options);
+
   $.ajax({
     url: logAddress,
     type: "POST",
@@ -199,6 +203,7 @@ function log(action, value){
         "name": window.btoa(name),
         "action" : window.btoa(action),
         "value" : window.btoa(value),
+        "timestamp": window.btoa(timestamp),
         "id" : window.btoa(id)
     },
     success: function( data ){
