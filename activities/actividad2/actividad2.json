@@ -391,6 +391,18 @@
         "src": "activities/actividad2/Variac8.png"
       },
       {
+        "id": "circle3",
+        "marker": "kanji",
+        "position": "0.3 0.7 0.963",
+        "rotation": "-60.656 -21.115 17.949",
+        "scale": "0.2 0.2 0.2",
+        "type": "a-image",
+        "src": "activities/actividad2/selectCircle.png",
+        "material": {
+          "alphaTest": "0.980"
+        }
+      },
+      {
         "id": "B4",
         "type": "a-entity",
         "marker": "kanji",
