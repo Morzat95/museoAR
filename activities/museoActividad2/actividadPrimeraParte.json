@@ -1,0 +1,44 @@
+{
+    "cards": [
+        {
+            "id": "Esfera",
+            "description": "Encontrá el código en el tubo con la ayuda de la esfera de plasma y abrí el cofre para obtener la pieza.",
+            "marker": "hiro",
+            "objects": [
+                {
+                    "id": "Colores",
+                    "position": "0 -0.5 0.023",
+                    "rotation": "-90.356 -30.716 27.681",
+                    "scale": "2 1 1",
+                    "type": "a-image",
+                    "src": "activities/museoActividad2/colores.png"
+                },
+                {
+                    "id": "Btn",
+                    "position": "0 0.5 0.674",
+                    "rotation": "-110.687 -3.656 5.796",
+                    "scale": "1 0.3 0.2",
+                    "type": "a-box",
+                    "color": "green",
+                    "onclick": "goTo('Tubo')",
+                    "children": [
+                        {
+                            "id": "TxtBtn",
+                            "position": "-0.4 0 1",
+                            "rotation": "-7.985 -5.469 3.274",
+                            "scale": "4 4 4",
+                            "type": "a-text",
+                            "color": "black",
+                            "value": "Confirmar"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "Tubo",
+            "type": "redirect",
+            "value": "../../genMenu.html?activities/museoActividad2/actividadFin.menu"
+        }
+    ]
+}

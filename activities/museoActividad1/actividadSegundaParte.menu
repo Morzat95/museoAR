@@ -1,0 +1,5 @@
+{
+    "name":"Levanta Mano",
+    "description":"Levantá la mano izquierda frente al espejo plano. Después tocá el botón.",
+    "itemsFile": "activities/museoActividad1/actividadSegundaParte.json"
+}

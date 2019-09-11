@@ -15,8 +15,8 @@
   <script src="lib/aframe.min.js"></script>
   <script src="lib/aframe-ar.js"></script>
   <script src="js/Controller.js"></script>
+  <script src="activities/museoActividad3/museoActividad3.js"></script>
 
-  
 
 </head>
 
@@ -35,24 +35,35 @@
 
 
   <a id="playButton" onclick="firstPlay()" class="btn btn-primary play-overlay"></a>
-  <a-scene id="scene" markerhandler render-queue embedded arjs='sourceType:webcam; debugUIEnabled: false; detectionMode: mono; cameraParametersUrl: other/calibracion.dat;  maxDetectionRate:20;'
+  <a id="BackButton" onclick="goBack()" class="btn btn-primary play-overlay"></a>
+  <a-scene id="scene" markerhandler cursor="rayOrigin: mouse" render-queue embedded  arjs='sourceType:image;sourceUrl: other/A-B-C-D2.png; debugUIEnabled: false; detectionMode: mono; cameraParametersUrl: other/calibracion.dat;  maxDetectionRate:20;'
     vr-mode-ui="enabled: false;">
 
 
-    <a-marker id="kanji" type="pattern" preset='kanji'></a-marker>
-    <a-marker id="hiro" type="pattern" preset='hiro'></a-marker>
-    <a-marker id="custom" type="pattern" preset="custom" url="other/hiroInvertidoV2.patt"></a-marker>
+    <!-- <a-marker id="A" type="pattern" preset='kanji'></a-marker>
+    <a-marker id="B" type="pattern" preset='hiro'></a-marker> -->
+    <a-marker id="A" type="pattern" preset="custom" url="other/pattern-A.patt"></a-marker>
+    <a-marker id="B" type="pattern" preset="custom" url="other/pattern-B.patt"></a-marker>
+    <a-marker id="C" type="pattern" preset="custom" url="other/pattern-C.patt"></a-marker>
+    <a-marker id="D" type="pattern" preset="custom" url="other/pattern-D.patt"></a-marker>
     <!--<a-marker id="multi" preset='area'></a-marker>Disabled due to marker loading issues-->
 
     </a-marker>
-    <a-entity camera mouse-cursor></a-entity>
-    <a-cursor id="spinner" visible="false" fuse="false" color="yellow"></a-cursor>
+
+    <a-entity camera id="spinner"></a-entity>
+
     </a-entity>
   </a-scene>
 
 
   <script>
+
+    function goBack() {
+      window.location.href = "arEmuMuseo.html?activities/museoActividad3/actividadPrimeraParte.json";
+    }
+
     hideOrShow("playButton");
+    hideOrShow("BackButton");
     run();
   </script>
 </body>

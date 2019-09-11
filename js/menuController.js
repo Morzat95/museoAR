@@ -13,7 +13,6 @@ function loadActivity(jsonInput) {
     activity = jsonInput;
     activityItemsFile = activity.itemsFile;
     showActivity();
-
 }
 
 function showActivity() {
