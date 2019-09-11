@@ -645,7 +645,7 @@ function guidGenerator() {
 function drawCircle(IDEntity) {
   var circleID = guidGenerator();
   renderFncQueue.push(function () {
-    var entity3D = document.querySelector("#" + IDEntity).camera.object3D;
+    var entity3D = document.querySelector("#" + IDEntity).object3D;
     var scene = document.querySelector("#scene").object3D;
     var from = new THREE.Vector3();
     from.setFromMatrixPosition(entity3D.matrixWorld);
