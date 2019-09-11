@@ -1,0 +1,13 @@
+{
+    "name": "Ordenar",
+    "description": "Ordená los teléfonos del más viejo al más nuevo e ingresá el número de cada uno en el orden para abrir el candado.",
+    "password_required": "true",
+    "password": "pass",
+    "cards": [
+        {
+            "id": "Redirect",
+            "type": "redirect",
+            "value": "../../genMenu.html?activities/museoActividad3/actividadFin.menu"
+        }
+    ]
+}

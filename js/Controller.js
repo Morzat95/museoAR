@@ -454,14 +454,34 @@ function increaseScale(entityID, value) {
   var scale = obj.getAttribute('scale');
   console.log('scale', Number(scale.x + value) + " " + scale.y + value + " " + scale.z + value);
   obj.setAttribute('scale', Number(scale.x + value) + " " + Number(scale.y + value) + " " + Number(scale.z + value));
-
 }
 
 function resetScale(entityID, value) {
   var obj = document.querySelector('#' + entityID);
   console.log('scale', Number(value) + " " + value + " " + value);
   obj.setAttribute('scale', Number(value) + " " + Number(value) + " " + Number(value));
+}
 
+function changeColor(entityID, value) {
+  changeProperty(entityID, 'color', value);
+}
+
+function changeValue(entityID, value) {
+  changeProperty(entityID, 'value', value);
+}
+
+function hide(entityID) {
+  changeProperty(entityID, 'visible', 'false');
+}
+
+function show(entityID) {
+  changeProperty(entityID, 'visible', 'true');
+}
+
+function changeProperty(entityID, property, value) {
+  let obj = document.querySelector('#' + entityID);
+  console.log(entityID + '\'s ' +  String(property).toUpperCase() + ' property changed from \'' + obj.getAttribute(String(property)) + '\' to ' + String('\''+value+'\''));
+  obj.setAttribute(String(property), String(value));
 }
 
 function drawMatrix(matrix,markerID,width,height,YOffset,XOffset){
