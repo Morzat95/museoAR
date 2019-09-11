@@ -283,8 +283,6 @@
   {
     "id": "corto",
     "description": "Seleccionar los bornes para poner el transformador en cortocircuito",
-    "value": "5000",
-    "type": "delay",
     "next": "corto2",
     "objects": [
       {
@@ -341,7 +339,7 @@
         "material": {
           "opacity": "0"
         },
-        "onclick": "goTo('corto2');drawCircle(this.id);lastClicked='D4';log('click',this.id);"
+        "onclick": "goTo('corto2');drawCircle('D4');lastClicked='D4';log('click',this.id);"
       },
       {
         "id": "E3",
