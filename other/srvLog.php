@@ -10,9 +10,7 @@
         $id64 = (isset($_POST['id']) ? $_POST['id'] : "");
 
 
-
         if($activityID64 === "" || $action64 === "" || $value64 === "" || $timestamp64 === "" ||$id64 === "")
-
         {
             throw new Exception("Request error!");
         }

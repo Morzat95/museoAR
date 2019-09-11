@@ -1,6 +1,7 @@
 {
     "name":"Hágase la Luz",
     "description":"Para conseguir la pieza de tetris de esta sala tendrás que encontrar el código que abre el candado.",
+    "preview": "activities/museoActividad1/reflection1.jpg",
     "cards": [
         {
             "id": "Redirect",
