@@ -11,6 +11,7 @@
 
 
         if($activityID64 === "" || $action64 === "" || $value64 === "" || $timestamp64 === "" ||$id64 === "")
+
         {
             throw new Exception("Request error!");
         }
@@ -23,6 +24,7 @@
         $id = base64_decode($id64);
 
         // format
+
         $header = "ActivityID,Action,Value,Timestamp,Id\n";
         $row = "$activityID,$action,$value,$timestamp,$id\n";
 
