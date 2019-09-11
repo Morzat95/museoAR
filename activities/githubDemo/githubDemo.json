@@ -36,7 +36,7 @@
       "id": "C",
       "description": "",
       "type": "redirect",
-      "destiny": "menu.html?githubDemo"
+      "value": "menu.html?githubDemo"
     }
   ]
 }
