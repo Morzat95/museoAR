@@ -12,14 +12,14 @@
                     "position":"0 0 0.5",
                     "rotation": "0 0 -20",
                     "scale": "0.5 0.2 0.2",
-                    "onclick": "read(0);changeColor('BtnTel1', '#03c6fc');changeValue('TxtBtnTel1', 'Visto');hide('InfoTel1');",
+                    "onclick": "read(0);changeColor('BtnTel1', '#03c6fc');changeValue('TxtBtnTel1', 'Visto');hide('InfoTel1');appendText('Modelo: Samsung Galaxy S10');appendText('Año de fabricación: 2019');appendText('Código: 9');",
                     "children": [
                         {
                             "id": "InfoTel1",
                             "type": "a-text",
-                            "value": "2019-07-01",
+                            "value": "9",
                             "color": "red",
-                            "position": "-1 0 -3",
+                            "position": "0 0 -3",
                             "rotation": "-71.105 -174.799 177.579",
                             "scale": "10 10 5"
                         },
@@ -42,14 +42,14 @@
                     "position":"0 0 0.5",
                     "rotation": "0 0 20",
                     "scale": "0.5 0.2 0.2",
-                    "onclick": "read(1);changeColor('BtnTel2', '#03c6fc');changeValue('TxtBtnTel2', 'Visto');hide('InfoTel2');",
+                    "onclick": "read(1);changeColor('BtnTel2', '#03c6fc');changeValue('TxtBtnTel2', 'Visto');hide('InfoTel2');appendText('Modelo: Samsung Galaxy J7');appendText('Año de fabricación: 2016');appendText('Código: 7');",
                     "children": [
                         {
                             "id": "InfoTel2",
                             "type": "a-text",
-                            "value": "2019-06-23",
+                            "value": "7",
                             "color": "red",
-                            "position": "-1 0 -3",
+                            "position": "0 0 -3",
                             "rotation": "-69.862 -167.793 165.692",
                             "scale": "10 10 5"
                         },
@@ -72,14 +72,14 @@
                     "position":"0 0 0.5",
                     "rotation": "0 0 -20",
                     "scale": "0.5 0.2 0.2",
-                    "onclick": "read(2);changeColor('BtnTel3', '#03c6fc');changeValue('TxtBtnTel3', 'Visto');hide('InfoTel3');",
+                    "onclick": "read(2);changeColor('BtnTel3', '#03c6fc');changeValue('TxtBtnTel3', 'Visto');hide('InfoTel3');appendText('Modelo: Samsung Galaxy J2');appendText('Año de fabricación: 2015');appendText('Código: 0');",
                     "children": [
                         {
                             "id": "InfoTel3",
                             "type": "a-text",
-                            "value": "2015-09-04",
+                            "value": "0",
                             "color": "red",
-                            "position": "-1 0 -3",
+                            "position": "0 0 -3",
                             "rotation": "-71.105 -174.799 177.579",
                             "scale": "10 10 5"
                         },
@@ -102,14 +102,14 @@
                     "position":"0 0 0.5",
                     "rotation": "0 0 20",
                     "scale": "0.5 0.2 0.2",
-                    "onclick": "read(3);changeColor('BtnTel4', '#03c6fc');changeValue('TxtBtnTel4', 'Visto');hide('InfoTel4');",
+                    "onclick": "read(3);changeColor('BtnTel4', '#03c6fc');changeValue('TxtBtnTel4', 'Visto');hide('InfoTel4');appendText('Modelo: Samsung Galaxy Grand');appendText('Año de fabricación: 2013');appendText('Código: 2');",
                     "children": [
                         {
                             "id": "InfoTel4",
                             "type": "a-text",
-                            "value": "2018-02-16",
+                            "value": "2",
                             "color": "red",
-                            "position": "-1 0 -3",
+                            "position": "0 0 -3",
                             "rotation": "-71.105 -174.799 177.579",
                             "scale": "10 10 5"
                         },

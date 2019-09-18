@@ -1,8 +1,15 @@
 var telefonos = [false, false, false, false];
 var timer;
 var count = 5;
+var displayingPhonesInfo = false;
 
 function read(idx){
+
+    if (!displayingPhonesInfo) {
+        drawText('');
+        displayingPhonesInfo = true;
+    }
+
     telefonos[idx] = true;
 
     let ret = true;
