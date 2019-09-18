@@ -2,5 +2,13 @@
     "name": "Rayos y Centellas",
     "description": "Para conseguir la pieza de tetris de esta sala tendrás que conseguir el código de colores para abrir el candado. Explorá la esfera de plasma, encendela, observala, tocala, etc.",
     "preview": "activities/museoActividad2/Esfera_de_plasma.jpg",
-    "itemsFile": "activities/museoActividad2/actividadPrimeraParte.json"
+    "password_required": "true",
+    "password": "verde rojo azul amarillo",
+    "cards": [
+        {
+            "id": "Redirect",
+            "type": "redirect",
+            "value": "../../genMenu.html?activities/museoActividad2/actividadFin.menu"
+        }
+    ]
 }
